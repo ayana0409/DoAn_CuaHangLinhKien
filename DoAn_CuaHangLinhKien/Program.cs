@@ -1,5 +1,4 @@
 using GUI;
-
 namespace DoAn_CuaHangLinhKien
 {
     internal static class Program
@@ -16,6 +15,7 @@ namespace DoAn_CuaHangLinhKien
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
+
             Application.Run(new frmManage());
         }
     }
