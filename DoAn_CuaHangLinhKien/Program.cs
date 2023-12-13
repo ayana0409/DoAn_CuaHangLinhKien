@@ -18,6 +18,7 @@ namespace DoAn_CuaHangLinhKien
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
 
             Application.Run(new frmManage());
+
         }
     }
 }
