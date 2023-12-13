@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "DoAn_CuaHangLinhKien\GUI.csproj", "{77B205CE-2860-4FF3-9646-424E3287F223}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI", "DoAn_CuaHangLinhKien\GUI.csproj", "{77B205CE-2860-4FF3-9646-424E3287F223}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{04E7AB48-06F2-4CFE-A7CC-DC37F774A254}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{04E7AB48-06F2-4CFE-A7CC-DC37F774A254}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{71DAC44E-370B-42E8-8D03-F7053088C611}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{71DAC44E-370B-42E8-8D03-F7053088C611}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

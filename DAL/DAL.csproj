@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="RGN-images\" />
+    <Folder Include="product-images\" />
+  </ItemGroup>
+
 </Project>
