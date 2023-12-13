@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManage));
             TabControl = new TabControl();
             tpCustomer = new TabPage();
             splitContainer1 = new SplitContainer();
@@ -36,6 +38,7 @@
             groupBox1 = new GroupBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             button1 = new Button();
+            imageList1 = new ImageList(components);
             label1 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
@@ -85,8 +88,8 @@
             comboBox11 = new ComboBox();
             groupBox6 = new GroupBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
-            button7 = new Button();
             button8 = new Button();
+            button7 = new Button();
             button9 = new Button();
             button10 = new Button();
             tpProduct = new TabPage();
@@ -148,9 +151,9 @@
             textBox21 = new TextBox();
             groupBox14 = new GroupBox();
             flowLayoutPanel6 = new FlowLayoutPanel();
-            button19 = new Button();
-            button20 = new Button();
-            button21 = new Button();
+            button39 = new Button();
+            button40 = new Button();
+            button41 = new Button();
             tpCategory = new TabPage();
             splitContainer17 = new SplitContainer();
             dataGridView5 = new DataGridView();
@@ -170,10 +173,9 @@
             textBox25 = new TextBox();
             textBox26 = new TextBox();
             groupBox17 = new GroupBox();
-            flowLayoutPanel7 = new FlowLayoutPanel();
-            button23 = new Button();
-            button24 = new Button();
-            button25 = new Button();
+            button19 = new Button();
+            button20 = new Button();
+            button21 = new Button();
             tpGRN = new TabPage();
             splitContainer20 = new SplitContainer();
             dataGridView6 = new DataGridView();
@@ -231,9 +233,9 @@
             textBox35 = new TextBox();
             groupBox23 = new GroupBox();
             flowLayoutPanel9 = new FlowLayoutPanel();
-            button31 = new Button();
-            button32 = new Button();
-            button33 = new Button();
+            button23 = new Button();
+            button24 = new Button();
+            button25 = new Button();
             tpAccount = new TabPage();
             splitContainer29 = new SplitContainer();
             dataGridView9 = new DataGridView();
@@ -260,9 +262,9 @@
             comboBox9 = new ComboBox();
             groupBox28 = new GroupBox();
             flowLayoutPanel10 = new FlowLayoutPanel();
-            button36 = new Button();
-            button37 = new Button();
-            button38 = new Button();
+            button31 = new Button();
+            button32 = new Button();
+            button33 = new Button();
             dataGridView3 = new DataGridView();
             splitContainer8 = new SplitContainer();
             groupBox7 = new GroupBox();
@@ -411,7 +413,6 @@
             groupBox16.SuspendLayout();
             tableLayoutPanel12.SuspendLayout();
             groupBox17.SuspendLayout();
-            flowLayoutPanel7.SuspendLayout();
             tpGRN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer20).BeginInit();
             splitContainer20.Panel1.SuspendLayout();
@@ -618,12 +619,30 @@
             // 
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button1.ForeColor = Color.Brown;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.ImageIndex = 0;
+            button1.ImageList = imageList1;
             button1.Location = new Point(94, 113);
             button1.Name = "button1";
-            button1.Size = new Size(110, 44);
+            button1.Size = new Size(122, 44);
             button1.TabIndex = 2;
             button1.Text = "Tìm kiếm";
+            button1.TextAlign = ContentAlignment.MiddleRight;
             button1.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "icons8-search-32.png");
+            imageList1.Images.SetKeyName(1, "icons8-add-64.png");
+            imageList1.Images.SetKeyName(2, "icons8-add-male-user-64.png");
+            imageList1.Images.SetKeyName(3, "icons8-save-64.png");
+            imageList1.Images.SetKeyName(4, "icons8-update-file-64.png");
+            imageList1.Images.SetKeyName(5, "icons8-add-file-64.png");
+            imageList1.Images.SetKeyName(6, "icons8-delete-64.png");
+            imageList1.Images.SetKeyName(7, "icons8-file-64.png");
             // 
             // label1
             // 
@@ -814,33 +833,45 @@
             // 
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button3.ForeColor = Color.Brown;
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.ImageKey = "icons8-add-male-user-64.png";
+            button3.ImageList = imageList1;
             button3.Location = new Point(3, 3);
             button3.Name = "button3";
             button3.Size = new Size(93, 50);
             button3.TabIndex = 2;
-            button3.Text = "Sửa";
+            button3.Text = "Thêm";
+            button3.TextAlign = ContentAlignment.MiddleRight;
             button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button2.ForeColor = Color.Brown;
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.ImageKey = "icons8-update-file-64.png";
+            button2.ImageList = imageList1;
             button2.Location = new Point(102, 3);
             button2.Name = "button2";
             button2.Size = new Size(93, 50);
             button2.TabIndex = 2;
-            button2.Text = "Thêm";
+            button2.Text = "Sửa";
+            button2.TextAlign = ContentAlignment.MiddleRight;
             button2.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
             button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button4.ForeColor = Color.Brown;
+            button4.ImageAlign = ContentAlignment.MiddleLeft;
+            button4.ImageKey = "icons8-save-64.png";
+            button4.ImageList = imageList1;
             button4.Location = new Point(201, 3);
             button4.Name = "button4";
             button4.Size = new Size(93, 50);
             button4.TabIndex = 2;
             button4.Text = "Lưu";
+            button4.TextAlign = ContentAlignment.MiddleRight;
             button4.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -848,6 +879,9 @@
             button5.BackColor = Color.FromArgb(194, 231, 255);
             button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button5.ForeColor = Color.Brown;
+            button5.ImageAlign = ContentAlignment.MiddleLeft;
+            button5.ImageKey = "(none)";
+            button5.ImageList = imageList1;
             button5.Location = new Point(3, 59);
             button5.Name = "button5";
             button5.Size = new Size(291, 43);
@@ -859,11 +893,11 @@
             // 
             tpOrder.BackColor = Color.Azure;
             tpOrder.Controls.Add(splitContainer4);
-            tpOrder.Location = new Point(4, 29);
+            tpOrder.Location = new Point(4, 24);
             tpOrder.Margin = new Padding(3, 4, 3, 4);
             tpOrder.Name = "tpOrder";
             tpOrder.Padding = new Padding(3, 4, 3, 4);
-            tpOrder.Size = new Size(1256, 624);
+            tpOrder.Size = new Size(1256, 629);
             tpOrder.TabIndex = 1;
             tpOrder.Text = "Đơn hàng";
             // 
@@ -882,7 +916,7 @@
             // 
             splitContainer4.Panel2.Controls.Add(splitContainer5);
             splitContainer4.Panel2MinSize = 400;
-            splitContainer4.Size = new Size(1250, 616);
+            splitContainer4.Size = new Size(1250, 621);
             splitContainer4.SplitterDistance = 842;
             splitContainer4.TabIndex = 3;
             // 
@@ -893,7 +927,7 @@
             dataGridView2.Dock = DockStyle.Fill;
             dataGridView2.Location = new Point(0, 0);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(842, 616);
+            dataGridView2.Size = new Size(842, 621);
             dataGridView2.TabIndex = 0;
             // 
             // splitContainer5
@@ -914,7 +948,7 @@
             // 
             splitContainer5.Panel2.Controls.Add(splitContainer6);
             splitContainer5.Panel2MinSize = 250;
-            splitContainer5.Size = new Size(404, 616);
+            splitContainer5.Size = new Size(404, 621);
             splitContainer5.SplitterDistance = 234;
             splitContainer5.TabIndex = 4;
             // 
@@ -1007,11 +1041,15 @@
             // 
             button6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button6.ForeColor = Color.Brown;
+            button6.ImageAlign = ContentAlignment.MiddleLeft;
+            button6.ImageKey = "icons8-search-32.png";
+            button6.ImageList = imageList1;
             button6.Location = new Point(93, 165);
             button6.Name = "button6";
             button6.Size = new Size(110, 40);
             button6.TabIndex = 2;
             button6.Text = "Tìm kiếm";
+            button6.TextAlign = ContentAlignment.MiddleRight;
             button6.UseVisualStyleBackColor = true;
             // 
             // label12
@@ -1094,7 +1132,7 @@
             // splitContainer6.Panel2
             // 
             splitContainer6.Panel2.Controls.Add(groupBox6);
-            splitContainer6.Size = new Size(404, 378);
+            splitContainer6.Size = new Size(404, 383);
             splitContainer6.SplitterDistance = 248;
             splitContainer6.TabIndex = 1;
             // 
@@ -1226,75 +1264,87 @@
             groupBox6.Dock = DockStyle.Fill;
             groupBox6.Location = new Point(0, 0);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(404, 126);
+            groupBox6.Size = new Size(404, 131);
             groupBox6.TabIndex = 2;
             groupBox6.TabStop = false;
             groupBox6.Text = "Chức năng";
             // 
             // flowLayoutPanel2
             // 
-            flowLayoutPanel2.Controls.Add(button7);
             flowLayoutPanel2.Controls.Add(button8);
+            flowLayoutPanel2.Controls.Add(button7);
             flowLayoutPanel2.Controls.Add(button9);
             flowLayoutPanel2.Controls.Add(button10);
             flowLayoutPanel2.Dock = DockStyle.Fill;
             flowLayoutPanel2.Location = new Point(3, 23);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(398, 100);
+            flowLayoutPanel2.Size = new Size(398, 105);
             flowLayoutPanel2.TabIndex = 3;
+            // 
+            // button8
+            // 
+            button8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button8.ForeColor = Color.Brown;
+            button8.ImageAlign = ContentAlignment.MiddleLeft;
+            button8.ImageKey = "icons8-add-file-64.png";
+            button8.ImageList = imageList1;
+            button8.Location = new Point(3, 3);
+            button8.Name = "button8";
+            button8.Size = new Size(121, 43);
+            button8.TabIndex = 2;
+            button8.Text = "Thêm đơn";
+            button8.TextAlign = ContentAlignment.MiddleRight;
+            button8.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
             button7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button7.ForeColor = Color.Brown;
-            button7.Location = new Point(3, 3);
+            button7.Location = new Point(130, 3);
             button7.Name = "button7";
             button7.Size = new Size(190, 43);
             button7.TabIndex = 2;
             button7.Text = "Xem chi tiết - Chỉnh sửa";
             button7.UseVisualStyleBackColor = true;
             // 
-            // button8
-            // 
-            button8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button8.ForeColor = Color.Brown;
-            button8.Location = new Point(199, 3);
-            button8.Name = "button8";
-            button8.Size = new Size(93, 43);
-            button8.TabIndex = 2;
-            button8.Text = "Thêm đơn";
-            button8.UseVisualStyleBackColor = true;
-            // 
             // button9
             // 
             button9.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button9.ForeColor = Color.Brown;
-            button9.Location = new Point(298, 3);
+            button9.ImageAlign = ContentAlignment.MiddleLeft;
+            button9.ImageKey = "icons8-delete-64.png";
+            button9.ImageList = imageList1;
+            button9.Location = new Point(3, 52);
             button9.Name = "button9";
-            button9.Size = new Size(93, 43);
+            button9.Size = new Size(121, 43);
             button9.TabIndex = 2;
             button9.Text = "Hủy đơn";
+            button9.TextAlign = ContentAlignment.MiddleRight;
             button9.UseVisualStyleBackColor = true;
             // 
             // button10
             // 
             button10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button10.ForeColor = Color.Brown;
-            button10.Location = new Point(3, 52);
+            button10.ImageAlign = ContentAlignment.MiddleLeft;
+            button10.ImageKey = "icons8-file-64.png";
+            button10.ImageList = imageList1;
+            button10.Location = new Point(130, 52);
             button10.Name = "button10";
-            button10.Size = new Size(93, 43);
+            button10.Size = new Size(121, 43);
             button10.TabIndex = 3;
             button10.Text = "Xuất file";
+            button10.TextAlign = ContentAlignment.MiddleRight;
             button10.UseVisualStyleBackColor = true;
             // 
             // tpProduct
             // 
             tpProduct.BackColor = Color.Azure;
             tpProduct.Controls.Add(splitContainer10);
-            tpProduct.Location = new Point(4, 29);
+            tpProduct.Location = new Point(4, 24);
             tpProduct.Name = "tpProduct";
             tpProduct.Padding = new Padding(3);
-            tpProduct.Size = new Size(1256, 624);
+            tpProduct.Size = new Size(1256, 629);
             tpProduct.TabIndex = 2;
             tpProduct.Text = "Sản phẩm";
             // 
@@ -1313,7 +1363,7 @@
             // 
             splitContainer10.Panel2.Controls.Add(splitContainer11);
             splitContainer10.Panel2MinSize = 400;
-            splitContainer10.Size = new Size(1250, 618);
+            splitContainer10.Size = new Size(1250, 623);
             splitContainer10.SplitterDistance = 842;
             splitContainer10.TabIndex = 4;
             // 
@@ -1323,7 +1373,7 @@
             flowLayoutPanel5.Dock = DockStyle.Fill;
             flowLayoutPanel5.Location = new Point(0, 0);
             flowLayoutPanel5.Name = "flowLayoutPanel5";
-            flowLayoutPanel5.Size = new Size(842, 618);
+            flowLayoutPanel5.Size = new Size(842, 623);
             flowLayoutPanel5.TabIndex = 0;
             // 
             // splitContainer11
@@ -1344,7 +1394,7 @@
             // 
             splitContainer11.Panel2.Controls.Add(splitContainer12);
             splitContainer11.Panel2MinSize = 150;
-            splitContainer11.Size = new Size(404, 618);
+            splitContainer11.Size = new Size(404, 623);
             splitContainer11.SplitterDistance = 150;
             splitContainer11.TabIndex = 4;
             // 
@@ -1416,11 +1466,15 @@
             // 
             button12.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button12.ForeColor = Color.Brown;
+            button12.ImageAlign = ContentAlignment.MiddleLeft;
+            button12.ImageKey = "icons8-search-32.png";
+            button12.ImageList = imageList1;
             button12.Location = new Point(93, 79);
             button12.Name = "button12";
             button12.Size = new Size(110, 42);
             button12.TabIndex = 2;
             button12.Text = "Tìm kiếm";
+            button12.TextAlign = ContentAlignment.MiddleRight;
             button12.UseVisualStyleBackColor = true;
             // 
             // textBox22
@@ -1447,7 +1501,7 @@
             // splitContainer12.Panel2
             // 
             splitContainer12.Panel2.Controls.Add(groupBox11);
-            splitContainer12.Size = new Size(404, 464);
+            splitContainer12.Size = new Size(404, 469);
             splitContainer12.SplitterDistance = 387;
             splitContainer12.TabIndex = 1;
             // 
@@ -1724,7 +1778,7 @@
             groupBox11.Dock = DockStyle.Fill;
             groupBox11.Location = new Point(0, 0);
             groupBox11.Name = "groupBox11";
-            groupBox11.Size = new Size(404, 73);
+            groupBox11.Size = new Size(404, 78);
             groupBox11.TabIndex = 2;
             groupBox11.TabStop = false;
             groupBox11.Text = "Chức năng";
@@ -1737,40 +1791,52 @@
             flowLayoutPanel3.Dock = DockStyle.Fill;
             flowLayoutPanel3.Location = new Point(3, 23);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(398, 47);
+            flowLayoutPanel3.Size = new Size(398, 52);
             flowLayoutPanel3.TabIndex = 3;
             // 
             // button14
             // 
             button14.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button14.ForeColor = Color.Brown;
+            button14.ImageAlign = ContentAlignment.MiddleLeft;
+            button14.ImageKey = "icons8-add-file-64.png";
+            button14.ImageList = imageList1;
             button14.Location = new Point(3, 3);
             button14.Name = "button14";
             button14.Size = new Size(93, 43);
             button14.TabIndex = 2;
             button14.Text = "Thêm";
+            button14.TextAlign = ContentAlignment.MiddleRight;
             button14.UseVisualStyleBackColor = true;
             // 
             // button15
             // 
             button15.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button15.ForeColor = Color.Brown;
+            button15.ImageAlign = ContentAlignment.MiddleLeft;
+            button15.ImageKey = "icons8-update-file-64.png";
+            button15.ImageList = imageList1;
             button15.Location = new Point(102, 3);
             button15.Name = "button15";
             button15.Size = new Size(93, 43);
             button15.TabIndex = 2;
             button15.Text = "Sửa";
+            button15.TextAlign = ContentAlignment.MiddleRight;
             button15.UseVisualStyleBackColor = true;
             // 
             // button16
             // 
             button16.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button16.ForeColor = Color.Brown;
+            button16.ImageAlign = ContentAlignment.MiddleLeft;
+            button16.ImageKey = "icons8-save-64.png";
+            button16.ImageList = imageList1;
             button16.Location = new Point(201, 3);
             button16.Name = "button16";
             button16.Size = new Size(93, 43);
             button16.TabIndex = 3;
             button16.Text = "Lưu";
+            button16.TextAlign = ContentAlignment.MiddleRight;
             button16.UseVisualStyleBackColor = true;
             // 
             // tpBrand
@@ -1870,11 +1936,15 @@
             // 
             button13.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button13.ForeColor = Color.Brown;
+            button13.ImageAlign = ContentAlignment.MiddleLeft;
+            button13.ImageKey = "icons8-search-32.png";
+            button13.ImageList = imageList1;
             button13.Location = new Point(94, 107);
             button13.Name = "button13";
             button13.Size = new Size(110, 44);
             button13.TabIndex = 2;
             button13.Text = "Tìm kiếm";
+            button13.TextAlign = ContentAlignment.MiddleRight;
             button13.UseVisualStyleBackColor = true;
             // 
             // label29
@@ -2024,56 +2094,68 @@
             // 
             // flowLayoutPanel6
             // 
-            flowLayoutPanel6.Controls.Add(button19);
-            flowLayoutPanel6.Controls.Add(button20);
-            flowLayoutPanel6.Controls.Add(button21);
+            flowLayoutPanel6.Controls.Add(button39);
+            flowLayoutPanel6.Controls.Add(button40);
+            flowLayoutPanel6.Controls.Add(button41);
             flowLayoutPanel6.Dock = DockStyle.Fill;
             flowLayoutPanel6.Location = new Point(3, 23);
             flowLayoutPanel6.Name = "flowLayoutPanel6";
             flowLayoutPanel6.Size = new Size(398, 130);
             flowLayoutPanel6.TabIndex = 3;
             // 
-            // button19
+            // button39
             // 
-            button19.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button19.ForeColor = Color.Brown;
-            button19.Location = new Point(3, 3);
-            button19.Name = "button19";
-            button19.Size = new Size(93, 43);
-            button19.TabIndex = 2;
-            button19.Text = "Sửa";
-            button19.UseVisualStyleBackColor = true;
+            button39.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button39.ForeColor = Color.Brown;
+            button39.ImageAlign = ContentAlignment.MiddleLeft;
+            button39.ImageKey = "icons8-add-file-64.png";
+            button39.ImageList = imageList1;
+            button39.Location = new Point(3, 3);
+            button39.Name = "button39";
+            button39.Size = new Size(93, 43);
+            button39.TabIndex = 4;
+            button39.Text = "Thêm";
+            button39.TextAlign = ContentAlignment.MiddleRight;
+            button39.UseVisualStyleBackColor = true;
             // 
-            // button20
+            // button40
             // 
-            button20.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button20.ForeColor = Color.Brown;
-            button20.Location = new Point(102, 3);
-            button20.Name = "button20";
-            button20.Size = new Size(93, 43);
-            button20.TabIndex = 2;
-            button20.Text = "Thêm";
-            button20.UseVisualStyleBackColor = true;
+            button40.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button40.ForeColor = Color.Brown;
+            button40.ImageAlign = ContentAlignment.MiddleLeft;
+            button40.ImageKey = "icons8-update-file-64.png";
+            button40.ImageList = imageList1;
+            button40.Location = new Point(102, 3);
+            button40.Name = "button40";
+            button40.Size = new Size(93, 43);
+            button40.TabIndex = 5;
+            button40.Text = "Sửa";
+            button40.TextAlign = ContentAlignment.MiddleRight;
+            button40.UseVisualStyleBackColor = true;
             // 
-            // button21
+            // button41
             // 
-            button21.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button21.ForeColor = Color.Brown;
-            button21.Location = new Point(201, 3);
-            button21.Name = "button21";
-            button21.Size = new Size(93, 43);
-            button21.TabIndex = 2;
-            button21.Text = "Lưu";
-            button21.UseVisualStyleBackColor = true;
+            button41.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button41.ForeColor = Color.Brown;
+            button41.ImageAlign = ContentAlignment.MiddleLeft;
+            button41.ImageKey = "icons8-save-64.png";
+            button41.ImageList = imageList1;
+            button41.Location = new Point(201, 3);
+            button41.Name = "button41";
+            button41.Size = new Size(93, 43);
+            button41.TabIndex = 6;
+            button41.Text = "Lưu";
+            button41.TextAlign = ContentAlignment.MiddleRight;
+            button41.UseVisualStyleBackColor = true;
             // 
             // tpCategory
             // 
             tpCategory.BackColor = Color.Azure;
             tpCategory.Controls.Add(splitContainer17);
-            tpCategory.Location = new Point(4, 29);
+            tpCategory.Location = new Point(4, 24);
             tpCategory.Name = "tpCategory";
             tpCategory.Padding = new Padding(3);
-            tpCategory.Size = new Size(1256, 624);
+            tpCategory.Size = new Size(1256, 629);
             tpCategory.TabIndex = 4;
             tpCategory.Text = "Danh mục";
             // 
@@ -2092,7 +2174,7 @@
             // 
             splitContainer17.Panel2.Controls.Add(splitContainer18);
             splitContainer17.Panel2MinSize = 400;
-            splitContainer17.Size = new Size(1250, 618);
+            splitContainer17.Size = new Size(1250, 623);
             splitContainer17.SplitterDistance = 842;
             splitContainer17.TabIndex = 4;
             // 
@@ -2103,7 +2185,7 @@
             dataGridView5.Dock = DockStyle.Fill;
             dataGridView5.Location = new Point(0, 0);
             dataGridView5.Name = "dataGridView5";
-            dataGridView5.Size = new Size(842, 618);
+            dataGridView5.Size = new Size(842, 623);
             dataGridView5.TabIndex = 0;
             // 
             // splitContainer18
@@ -2124,7 +2206,7 @@
             // 
             splitContainer18.Panel2.Controls.Add(splitContainer19);
             splitContainer18.Panel2MinSize = 250;
-            splitContainer18.Size = new Size(404, 618);
+            splitContainer18.Size = new Size(404, 623);
             splitContainer18.SplitterDistance = 211;
             splitContainer18.TabIndex = 4;
             // 
@@ -2163,11 +2245,15 @@
             // 
             button22.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button22.ForeColor = Color.Brown;
+            button22.ImageAlign = ContentAlignment.MiddleLeft;
+            button22.ImageKey = "icons8-search-32.png";
+            button22.ImageList = imageList1;
             button22.Location = new Point(94, 107);
             button22.Name = "button22";
             button22.Size = new Size(110, 44);
             button22.TabIndex = 2;
             button22.Text = "Tìm kiếm";
+            button22.TextAlign = ContentAlignment.MiddleRight;
             button22.UseVisualStyleBackColor = true;
             // 
             // label33
@@ -2228,7 +2314,7 @@
             // splitContainer19.Panel2
             // 
             splitContainer19.Panel2.Controls.Add(groupBox17);
-            splitContainer19.Size = new Size(404, 403);
+            splitContainer19.Size = new Size(404, 408);
             splitContainer19.SplitterDistance = 248;
             splitContainer19.TabIndex = 1;
             // 
@@ -2306,67 +2392,70 @@
             // 
             // groupBox17
             // 
-            groupBox17.Controls.Add(flowLayoutPanel7);
+            groupBox17.Controls.Add(button19);
+            groupBox17.Controls.Add(button20);
+            groupBox17.Controls.Add(button21);
             groupBox17.Dock = DockStyle.Fill;
             groupBox17.Location = new Point(0, 0);
             groupBox17.Name = "groupBox17";
-            groupBox17.Size = new Size(404, 151);
+            groupBox17.Size = new Size(404, 156);
             groupBox17.TabIndex = 2;
             groupBox17.TabStop = false;
             groupBox17.Text = "Chức năng";
             // 
-            // flowLayoutPanel7
+            // button19
             // 
-            flowLayoutPanel7.Controls.Add(button23);
-            flowLayoutPanel7.Controls.Add(button24);
-            flowLayoutPanel7.Controls.Add(button25);
-            flowLayoutPanel7.Dock = DockStyle.Fill;
-            flowLayoutPanel7.Location = new Point(3, 23);
-            flowLayoutPanel7.Name = "flowLayoutPanel7";
-            flowLayoutPanel7.Size = new Size(398, 125);
-            flowLayoutPanel7.TabIndex = 3;
+            button19.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button19.ForeColor = Color.Brown;
+            button19.ImageAlign = ContentAlignment.MiddleLeft;
+            button19.ImageKey = "icons8-add-file-64.png";
+            button19.ImageList = imageList1;
+            button19.Location = new Point(6, 26);
+            button19.Name = "button19";
+            button19.Size = new Size(93, 43);
+            button19.TabIndex = 4;
+            button19.Text = "Thêm";
+            button19.TextAlign = ContentAlignment.MiddleRight;
+            button19.UseVisualStyleBackColor = true;
             // 
-            // button23
+            // button20
             // 
-            button23.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button23.ForeColor = Color.Brown;
-            button23.Location = new Point(3, 3);
-            button23.Name = "button23";
-            button23.Size = new Size(93, 43);
-            button23.TabIndex = 2;
-            button23.Text = "Sửa";
-            button23.UseVisualStyleBackColor = true;
+            button20.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button20.ForeColor = Color.Brown;
+            button20.ImageAlign = ContentAlignment.MiddleLeft;
+            button20.ImageKey = "icons8-update-file-64.png";
+            button20.ImageList = imageList1;
+            button20.Location = new Point(105, 26);
+            button20.Name = "button20";
+            button20.Size = new Size(93, 43);
+            button20.TabIndex = 5;
+            button20.Text = "Sửa";
+            button20.TextAlign = ContentAlignment.MiddleRight;
+            button20.UseVisualStyleBackColor = true;
             // 
-            // button24
+            // button21
             // 
-            button24.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button24.ForeColor = Color.Brown;
-            button24.Location = new Point(102, 3);
-            button24.Name = "button24";
-            button24.Size = new Size(93, 43);
-            button24.TabIndex = 2;
-            button24.Text = "Thêm";
-            button24.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            button25.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button25.ForeColor = Color.Brown;
-            button25.Location = new Point(201, 3);
-            button25.Name = "button25";
-            button25.Size = new Size(93, 43);
-            button25.TabIndex = 2;
-            button25.Text = "Lưu";
-            button25.UseVisualStyleBackColor = true;
+            button21.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button21.ForeColor = Color.Brown;
+            button21.ImageAlign = ContentAlignment.MiddleLeft;
+            button21.ImageKey = "icons8-save-64.png";
+            button21.ImageList = imageList1;
+            button21.Location = new Point(204, 26);
+            button21.Name = "button21";
+            button21.Size = new Size(93, 43);
+            button21.TabIndex = 6;
+            button21.Text = "Lưu";
+            button21.TextAlign = ContentAlignment.MiddleRight;
+            button21.UseVisualStyleBackColor = true;
             // 
             // tpGRN
             // 
             tpGRN.BackColor = Color.Azure;
             tpGRN.Controls.Add(splitContainer20);
-            tpGRN.Location = new Point(4, 29);
+            tpGRN.Location = new Point(4, 24);
             tpGRN.Name = "tpGRN";
             tpGRN.Padding = new Padding(3);
-            tpGRN.Size = new Size(1256, 624);
+            tpGRN.Size = new Size(1256, 629);
             tpGRN.TabIndex = 5;
             tpGRN.Text = "Phiếu nhập";
             // 
@@ -2385,7 +2474,7 @@
             // 
             splitContainer20.Panel2.Controls.Add(splitContainer21);
             splitContainer20.Panel2MinSize = 400;
-            splitContainer20.Size = new Size(1250, 618);
+            splitContainer20.Size = new Size(1250, 623);
             splitContainer20.SplitterDistance = 842;
             splitContainer20.TabIndex = 4;
             // 
@@ -2396,7 +2485,7 @@
             dataGridView6.Dock = DockStyle.Fill;
             dataGridView6.Location = new Point(0, 0);
             dataGridView6.Name = "dataGridView6";
-            dataGridView6.Size = new Size(842, 618);
+            dataGridView6.Size = new Size(842, 623);
             dataGridView6.TabIndex = 0;
             // 
             // splitContainer21
@@ -2416,7 +2505,7 @@
             // 
             splitContainer21.Panel2.Controls.Add(splitContainer22);
             splitContainer21.Panel2MinSize = 250;
-            splitContainer21.Size = new Size(404, 618);
+            splitContainer21.Size = new Size(404, 623);
             splitContainer21.SplitterDistance = 211;
             splitContainer21.TabIndex = 4;
             // 
@@ -2543,11 +2632,15 @@
             // 
             button26.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button26.ForeColor = Color.Brown;
+            button26.ImageAlign = ContentAlignment.MiddleLeft;
+            button26.ImageKey = "icons8-search-32.png";
+            button26.ImageList = imageList1;
             button26.Location = new Point(93, 147);
             button26.Name = "button26";
             button26.Size = new Size(110, 35);
             button26.TabIndex = 2;
             button26.Text = "Tìm kiếm";
+            button26.TextAlign = ContentAlignment.MiddleRight;
             button26.UseVisualStyleBackColor = true;
             // 
             // splitContainer22
@@ -2566,7 +2659,7 @@
             // splitContainer22.Panel2
             // 
             splitContainer22.Panel2.Controls.Add(groupBox20);
-            splitContainer22.Size = new Size(404, 403);
+            splitContainer22.Size = new Size(404, 408);
             splitContainer22.SplitterDistance = 248;
             splitContainer22.TabIndex = 1;
             // 
@@ -2673,7 +2766,7 @@
             groupBox20.Dock = DockStyle.Fill;
             groupBox20.Location = new Point(0, 0);
             groupBox20.Name = "groupBox20";
-            groupBox20.Size = new Size(404, 151);
+            groupBox20.Size = new Size(404, 156);
             groupBox20.TabIndex = 2;
             groupBox20.TabStop = false;
             groupBox20.Text = "Chức năng";
@@ -2686,7 +2779,7 @@
             flowLayoutPanel8.Dock = DockStyle.Fill;
             flowLayoutPanel8.Location = new Point(3, 23);
             flowLayoutPanel8.Name = "flowLayoutPanel8";
-            flowLayoutPanel8.Size = new Size(398, 125);
+            flowLayoutPanel8.Size = new Size(398, 130);
             flowLayoutPanel8.TabIndex = 3;
             // 
             // button27
@@ -2715,21 +2808,25 @@
             // 
             button30.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button30.ForeColor = Color.Brown;
+            button30.ImageAlign = ContentAlignment.MiddleLeft;
+            button30.ImageKey = "icons8-file-64.png";
+            button30.ImageList = imageList1;
             button30.Location = new Point(3, 52);
             button30.Name = "button30";
-            button30.Size = new Size(93, 43);
+            button30.Size = new Size(107, 43);
             button30.TabIndex = 3;
             button30.Text = "Xuất file";
+            button30.TextAlign = ContentAlignment.MiddleRight;
             button30.UseVisualStyleBackColor = true;
             // 
             // tpEmployee
             // 
             tpEmployee.BackColor = Color.Azure;
             tpEmployee.Controls.Add(splitContainer23);
-            tpEmployee.Location = new Point(4, 29);
+            tpEmployee.Location = new Point(4, 24);
             tpEmployee.Name = "tpEmployee";
             tpEmployee.Padding = new Padding(3);
-            tpEmployee.Size = new Size(1256, 624);
+            tpEmployee.Size = new Size(1256, 629);
             tpEmployee.TabIndex = 6;
             tpEmployee.Text = "Nhân viên";
             // 
@@ -2748,7 +2845,7 @@
             // 
             splitContainer23.Panel2.Controls.Add(splitContainer24);
             splitContainer23.Panel2MinSize = 400;
-            splitContainer23.Size = new Size(1250, 618);
+            splitContainer23.Size = new Size(1250, 623);
             splitContainer23.SplitterDistance = 842;
             splitContainer23.TabIndex = 3;
             // 
@@ -2759,7 +2856,7 @@
             dataGridView7.Dock = DockStyle.Fill;
             dataGridView7.Location = new Point(0, 0);
             dataGridView7.Name = "dataGridView7";
-            dataGridView7.Size = new Size(842, 618);
+            dataGridView7.Size = new Size(842, 623);
             dataGridView7.TabIndex = 0;
             // 
             // splitContainer24
@@ -2780,7 +2877,7 @@
             // 
             splitContainer24.Panel2.Controls.Add(splitContainer25);
             splitContainer24.Panel2MinSize = 250;
-            splitContainer24.Size = new Size(404, 618);
+            splitContainer24.Size = new Size(404, 623);
             splitContainer24.SplitterDistance = 150;
             splitContainer24.TabIndex = 4;
             // 
@@ -2819,11 +2916,15 @@
             // 
             button29.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button29.ForeColor = Color.Brown;
+            button29.ImageAlign = ContentAlignment.MiddleLeft;
+            button29.ImageKey = "icons8-search-32.png";
+            button29.ImageList = imageList1;
             button29.Location = new Point(94, 76);
             button29.Name = "button29";
             button29.Size = new Size(110, 44);
             button29.TabIndex = 2;
             button29.Text = "Tìm kiếm";
+            button29.TextAlign = ContentAlignment.MiddleRight;
             button29.UseVisualStyleBackColor = true;
             // 
             // label44
@@ -2884,7 +2985,7 @@
             // splitContainer25.Panel2
             // 
             splitContainer25.Panel2.Controls.Add(groupBox23);
-            splitContainer25.Size = new Size(404, 464);
+            splitContainer25.Size = new Size(404, 469);
             splitContainer25.SplitterDistance = 331;
             splitContainer25.TabIndex = 1;
             // 
@@ -3065,63 +3166,75 @@
             groupBox23.Dock = DockStyle.Fill;
             groupBox23.Location = new Point(0, 0);
             groupBox23.Name = "groupBox23";
-            groupBox23.Size = new Size(404, 129);
+            groupBox23.Size = new Size(404, 134);
             groupBox23.TabIndex = 2;
             groupBox23.TabStop = false;
             groupBox23.Text = "Chức năng";
             // 
             // flowLayoutPanel9
             // 
-            flowLayoutPanel9.Controls.Add(button31);
-            flowLayoutPanel9.Controls.Add(button32);
-            flowLayoutPanel9.Controls.Add(button33);
+            flowLayoutPanel9.Controls.Add(button23);
+            flowLayoutPanel9.Controls.Add(button24);
+            flowLayoutPanel9.Controls.Add(button25);
             flowLayoutPanel9.Dock = DockStyle.Fill;
             flowLayoutPanel9.Location = new Point(3, 23);
             flowLayoutPanel9.Name = "flowLayoutPanel9";
-            flowLayoutPanel9.Size = new Size(398, 103);
+            flowLayoutPanel9.Size = new Size(398, 108);
             flowLayoutPanel9.TabIndex = 3;
             // 
-            // button31
+            // button23
             // 
-            button31.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button31.ForeColor = Color.Brown;
-            button31.Location = new Point(3, 3);
-            button31.Name = "button31";
-            button31.Size = new Size(93, 43);
-            button31.TabIndex = 2;
-            button31.Text = "Sửa";
-            button31.UseVisualStyleBackColor = true;
+            button23.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button23.ForeColor = Color.Brown;
+            button23.ImageAlign = ContentAlignment.MiddleLeft;
+            button23.ImageKey = "icons8-add-file-64.png";
+            button23.ImageList = imageList1;
+            button23.Location = new Point(3, 3);
+            button23.Name = "button23";
+            button23.Size = new Size(93, 43);
+            button23.TabIndex = 4;
+            button23.Text = "Thêm";
+            button23.TextAlign = ContentAlignment.MiddleRight;
+            button23.UseVisualStyleBackColor = true;
             // 
-            // button32
+            // button24
             // 
-            button32.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button32.ForeColor = Color.Brown;
-            button32.Location = new Point(102, 3);
-            button32.Name = "button32";
-            button32.Size = new Size(93, 43);
-            button32.TabIndex = 2;
-            button32.Text = "Thêm";
-            button32.UseVisualStyleBackColor = true;
+            button24.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button24.ForeColor = Color.Brown;
+            button24.ImageAlign = ContentAlignment.MiddleLeft;
+            button24.ImageKey = "icons8-update-file-64.png";
+            button24.ImageList = imageList1;
+            button24.Location = new Point(102, 3);
+            button24.Name = "button24";
+            button24.Size = new Size(93, 43);
+            button24.TabIndex = 5;
+            button24.Text = "Sửa";
+            button24.TextAlign = ContentAlignment.MiddleRight;
+            button24.UseVisualStyleBackColor = true;
             // 
-            // button33
+            // button25
             // 
-            button33.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button33.ForeColor = Color.Brown;
-            button33.Location = new Point(201, 3);
-            button33.Name = "button33";
-            button33.Size = new Size(93, 43);
-            button33.TabIndex = 2;
-            button33.Text = "Lưu";
-            button33.UseVisualStyleBackColor = true;
+            button25.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button25.ForeColor = Color.Brown;
+            button25.ImageAlign = ContentAlignment.MiddleLeft;
+            button25.ImageKey = "icons8-save-64.png";
+            button25.ImageList = imageList1;
+            button25.Location = new Point(201, 3);
+            button25.Name = "button25";
+            button25.Size = new Size(93, 43);
+            button25.TabIndex = 6;
+            button25.Text = "Lưu";
+            button25.TextAlign = ContentAlignment.MiddleRight;
+            button25.UseVisualStyleBackColor = true;
             // 
             // tpAccount
             // 
             tpAccount.BackColor = Color.Azure;
             tpAccount.Controls.Add(splitContainer29);
-            tpAccount.Location = new Point(4, 29);
+            tpAccount.Location = new Point(4, 24);
             tpAccount.Name = "tpAccount";
             tpAccount.Padding = new Padding(3);
-            tpAccount.Size = new Size(1256, 624);
+            tpAccount.Size = new Size(1256, 629);
             tpAccount.TabIndex = 7;
             tpAccount.Text = "Tài khoản";
             // 
@@ -3140,7 +3253,7 @@
             // 
             splitContainer29.Panel2.Controls.Add(splitContainer30);
             splitContainer29.Panel2MinSize = 400;
-            splitContainer29.Size = new Size(1250, 618);
+            splitContainer29.Size = new Size(1250, 623);
             splitContainer29.SplitterDistance = 842;
             splitContainer29.TabIndex = 5;
             // 
@@ -3151,7 +3264,7 @@
             dataGridView9.Dock = DockStyle.Fill;
             dataGridView9.Location = new Point(0, 0);
             dataGridView9.Name = "dataGridView9";
-            dataGridView9.Size = new Size(842, 618);
+            dataGridView9.Size = new Size(842, 623);
             dataGridView9.TabIndex = 0;
             // 
             // splitContainer30
@@ -3172,7 +3285,7 @@
             // 
             splitContainer30.Panel2.Controls.Add(splitContainer31);
             splitContainer30.Panel2MinSize = 250;
-            splitContainer30.Size = new Size(404, 618);
+            splitContainer30.Size = new Size(404, 623);
             splitContainer30.SplitterDistance = 211;
             splitContainer30.TabIndex = 4;
             // 
@@ -3211,11 +3324,15 @@
             // 
             button35.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button35.ForeColor = Color.Brown;
+            button35.ImageAlign = ContentAlignment.MiddleLeft;
+            button35.ImageKey = "icons8-search-32.png";
+            button35.ImageList = imageList1;
             button35.Location = new Point(94, 107);
             button35.Name = "button35";
             button35.Size = new Size(110, 44);
             button35.TabIndex = 2;
             button35.Text = "Tìm kiếm";
+            button35.TextAlign = ContentAlignment.MiddleRight;
             button35.UseVisualStyleBackColor = true;
             // 
             // label59
@@ -3278,7 +3395,7 @@
             // splitContainer31.Panel2
             // 
             splitContainer31.Panel2.Controls.Add(groupBox28);
-            splitContainer31.Size = new Size(404, 403);
+            splitContainer31.Size = new Size(404, 408);
             splitContainer31.SplitterDistance = 295;
             splitContainer31.TabIndex = 1;
             // 
@@ -3434,54 +3551,66 @@
             groupBox28.Dock = DockStyle.Fill;
             groupBox28.Location = new Point(0, 0);
             groupBox28.Name = "groupBox28";
-            groupBox28.Size = new Size(404, 104);
+            groupBox28.Size = new Size(404, 109);
             groupBox28.TabIndex = 2;
             groupBox28.TabStop = false;
             groupBox28.Text = "Chức năng";
             // 
             // flowLayoutPanel10
             // 
-            flowLayoutPanel10.Controls.Add(button36);
-            flowLayoutPanel10.Controls.Add(button37);
-            flowLayoutPanel10.Controls.Add(button38);
+            flowLayoutPanel10.Controls.Add(button31);
+            flowLayoutPanel10.Controls.Add(button32);
+            flowLayoutPanel10.Controls.Add(button33);
             flowLayoutPanel10.Dock = DockStyle.Fill;
             flowLayoutPanel10.Location = new Point(3, 23);
             flowLayoutPanel10.Name = "flowLayoutPanel10";
-            flowLayoutPanel10.Size = new Size(398, 78);
+            flowLayoutPanel10.Size = new Size(398, 83);
             flowLayoutPanel10.TabIndex = 3;
             // 
-            // button36
+            // button31
             // 
-            button36.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button36.ForeColor = Color.Brown;
-            button36.Location = new Point(3, 3);
-            button36.Name = "button36";
-            button36.Size = new Size(93, 43);
-            button36.TabIndex = 2;
-            button36.Text = "Sửa";
-            button36.UseVisualStyleBackColor = true;
+            button31.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button31.ForeColor = Color.Brown;
+            button31.ImageAlign = ContentAlignment.MiddleLeft;
+            button31.ImageKey = "icons8-add-file-64.png";
+            button31.ImageList = imageList1;
+            button31.Location = new Point(3, 3);
+            button31.Name = "button31";
+            button31.Size = new Size(93, 43);
+            button31.TabIndex = 4;
+            button31.Text = "Thêm";
+            button31.TextAlign = ContentAlignment.MiddleRight;
+            button31.UseVisualStyleBackColor = true;
             // 
-            // button37
+            // button32
             // 
-            button37.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button37.ForeColor = Color.Brown;
-            button37.Location = new Point(102, 3);
-            button37.Name = "button37";
-            button37.Size = new Size(93, 43);
-            button37.TabIndex = 2;
-            button37.Text = "Thêm";
-            button37.UseVisualStyleBackColor = true;
+            button32.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button32.ForeColor = Color.Brown;
+            button32.ImageAlign = ContentAlignment.MiddleLeft;
+            button32.ImageKey = "icons8-update-file-64.png";
+            button32.ImageList = imageList1;
+            button32.Location = new Point(102, 3);
+            button32.Name = "button32";
+            button32.Size = new Size(93, 43);
+            button32.TabIndex = 5;
+            button32.Text = "Sửa";
+            button32.TextAlign = ContentAlignment.MiddleRight;
+            button32.UseVisualStyleBackColor = true;
             // 
-            // button38
+            // button33
             // 
-            button38.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button38.ForeColor = Color.Brown;
-            button38.Location = new Point(201, 3);
-            button38.Name = "button38";
-            button38.Size = new Size(93, 43);
-            button38.TabIndex = 2;
-            button38.Text = "Lưu";
-            button38.UseVisualStyleBackColor = true;
+            button33.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button33.ForeColor = Color.Brown;
+            button33.ImageAlign = ContentAlignment.MiddleLeft;
+            button33.ImageKey = "icons8-save-64.png";
+            button33.ImageList = imageList1;
+            button33.Location = new Point(201, 3);
+            button33.Name = "button33";
+            button33.Size = new Size(93, 43);
+            button33.TabIndex = 6;
+            button33.Text = "Lưu";
+            button33.TextAlign = ContentAlignment.MiddleRight;
+            button33.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
             // 
@@ -3922,6 +4051,7 @@
             Controls.Add(TabControl);
             Controls.Add(menuStrip1);
             Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmManage";
@@ -4043,7 +4173,6 @@
             tableLayoutPanel12.ResumeLayout(false);
             tableLayoutPanel12.PerformLayout();
             groupBox17.ResumeLayout(false);
-            flowLayoutPanel7.ResumeLayout(false);
             tpGRN.ResumeLayout(false);
             splitContainer20.Panel1.ResumeLayout(false);
             splitContainer20.Panel2.ResumeLayout(false);
@@ -4281,9 +4410,6 @@
         private TextBox textBox21;
         private GroupBox groupBox14;
         private FlowLayoutPanel flowLayoutPanel6;
-        private Button button19;
-        private Button button20;
-        private Button button21;
         private TextBox textBox15;
         private ComboBox comboBox1;
         private ComboBox comboBox2;
@@ -4306,10 +4432,6 @@
         private TextBox textBox25;
         private TextBox textBox26;
         private GroupBox groupBox17;
-        private FlowLayoutPanel flowLayoutPanel7;
-        private Button button23;
-        private Button button24;
-        private Button button25;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private ToolStripMenuItem hướngDẫnToolStripMenuItem;
@@ -4366,10 +4488,6 @@
         private TextBox textBox34;
         private RichTextBox richTextBox3;
         private GroupBox groupBox23;
-        private FlowLayoutPanel flowLayoutPanel9;
-        private Button button31;
-        private Button button32;
-        private Button button33;
         private Label label52;
         private Label label53;
         private Label label54;
@@ -4394,9 +4512,6 @@
         private TextBox textBox41;
         private GroupBox groupBox28;
         private FlowLayoutPanel flowLayoutPanel10;
-        private Button button36;
-        private Button button37;
-        private Button button38;
         private SplitContainer splitContainer26;
         private DataGridView dataGridView8;
         private SplitContainer splitContainer27;
@@ -4423,5 +4538,19 @@
         private ComboBox comboBox10;
         private ComboBox comboBox11;
         private ToolStripSeparator toolStripMenuItem1;
+        private ImageList imageList1;
+        private Button button39;
+        private Button button40;
+        private Button button41;
+        private Button button19;
+        private Button button20;
+        private Button button21;
+        private FlowLayoutPanel flowLayoutPanel9;
+        private Button button23;
+        private Button button24;
+        private Button button25;
+        private Button button31;
+        private Button button32;
+        private Button button33;
     }
 }

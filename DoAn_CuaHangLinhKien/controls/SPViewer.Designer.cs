@@ -37,6 +37,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(194, 117);
@@ -48,9 +49,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(3, 123);
             label1.Name = "label1";
-            label1.Size = new Size(24, 15);
+            label1.Size = new Size(43, 15);
             label1.TabIndex = 1;
-            label1.Text = "mã";
+            label1.Text = "Mã SP:";
             // 
             // label2
             // 
@@ -58,18 +59,18 @@
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(3, 155);
             label2.Name = "label2";
-            label2.Size = new Size(30, 20);
+            label2.Size = new Size(52, 20);
             label2.TabIndex = 2;
-            label2.Text = "tên";
+            label2.Text = "Tên SP";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(41, 226);
+            label4.Location = new Point(3, 235);
             label4.Name = "label4";
-            label4.Size = new Size(23, 15);
+            label4.Size = new Size(47, 15);
             label4.TabIndex = 5;
-            label4.Text = "giá";
+            label4.Text = "Giá bán";
             // 
             // SPViewer
             // 
