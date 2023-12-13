@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 using GUI;
 namespace DoAn_CuaHangLinhKien
+=======
+namespace GUI 
+>>>>>>> CoHai-GUI
 {
     internal static class Program
     {
@@ -11,12 +15,17 @@ namespace DoAn_CuaHangLinhKien
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+<<<<<<< HEAD
             //ApplicationConfiguration.Initialize();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
 
             Application.Run(new frmManage());
+=======
+           // ApplicationConfiguration.Initialize();
+            Application.Run(new frmChiTietNhapHang());
+>>>>>>> CoHai-GUI
         }
     }
 }

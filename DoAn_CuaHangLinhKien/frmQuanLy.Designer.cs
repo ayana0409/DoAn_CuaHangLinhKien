@@ -1341,10 +1341,10 @@
             // 
             tpProduct.BackColor = Color.Azure;
             tpProduct.Controls.Add(splitContainer10);
-            tpProduct.Location = new Point(4, 29);
+            tpProduct.Location = new Point(4, 24);
             tpProduct.Name = "tpProduct";
             tpProduct.Padding = new Padding(3);
-            tpProduct.Size = new Size(1256, 624);
+            tpProduct.Size = new Size(1256, 629);
             tpProduct.TabIndex = 2;
             tpProduct.Text = "Sản phẩm";
             // 
@@ -1363,7 +1363,7 @@
             // 
             splitContainer10.Panel2.Controls.Add(splitContainer11);
             splitContainer10.Panel2MinSize = 400;
-            splitContainer10.Size = new Size(1250, 618);
+            splitContainer10.Size = new Size(1250, 623);
             splitContainer10.SplitterDistance = 842;
             splitContainer10.TabIndex = 4;
             // 
@@ -1373,7 +1373,7 @@
             flowLayoutPanel5.Dock = DockStyle.Fill;
             flowLayoutPanel5.Location = new Point(0, 0);
             flowLayoutPanel5.Name = "flowLayoutPanel5";
-            flowLayoutPanel5.Size = new Size(842, 618);
+            flowLayoutPanel5.Size = new Size(842, 623);
             flowLayoutPanel5.TabIndex = 0;
             // 
             // splitContainer11
@@ -1394,7 +1394,7 @@
             // 
             splitContainer11.Panel2.Controls.Add(splitContainer12);
             splitContainer11.Panel2MinSize = 150;
-            splitContainer11.Size = new Size(404, 618);
+            splitContainer11.Size = new Size(404, 623);
             splitContainer11.SplitterDistance = 150;
             splitContainer11.TabIndex = 4;
             // 
@@ -1501,7 +1501,7 @@
             // splitContainer12.Panel2
             // 
             splitContainer12.Panel2.Controls.Add(groupBox11);
-            splitContainer12.Size = new Size(404, 464);
+            splitContainer12.Size = new Size(404, 469);
             splitContainer12.SplitterDistance = 387;
             splitContainer12.TabIndex = 1;
             // 
@@ -1778,7 +1778,7 @@
             groupBox11.Dock = DockStyle.Fill;
             groupBox11.Location = new Point(0, 0);
             groupBox11.Name = "groupBox11";
-            groupBox11.Size = new Size(404, 73);
+            groupBox11.Size = new Size(404, 78);
             groupBox11.TabIndex = 2;
             groupBox11.TabStop = false;
             groupBox11.Text = "Chức năng";
@@ -1791,7 +1791,7 @@
             flowLayoutPanel3.Dock = DockStyle.Fill;
             flowLayoutPanel3.Location = new Point(3, 23);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(398, 47);
+            flowLayoutPanel3.Size = new Size(398, 52);
             flowLayoutPanel3.TabIndex = 3;
             // 
             // button14
