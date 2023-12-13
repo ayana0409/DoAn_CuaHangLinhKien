@@ -16,7 +16,7 @@ namespace DoAn_CuaHangLinhKien
             Application.SetCompatibleTextRenderingDefault(false);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
 
-            Application.Run(new frmManage());
+            Application.Run(new frmPhieuNhap());
         }
     }
 }
