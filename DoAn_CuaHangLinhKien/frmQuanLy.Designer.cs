@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManage));
             TabControl = new TabControl();
             tpCustomer = new TabPage();
@@ -38,7 +37,6 @@
             groupBox1 = new GroupBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             button1 = new Button();
-            imageList1 = new ImageList(components);
             label1 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
@@ -621,7 +619,6 @@
             button1.ForeColor = Color.Brown;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.ImageIndex = 0;
-            button1.ImageList = imageList1;
             button1.Location = new Point(94, 113);
             button1.Name = "button1";
             button1.Size = new Size(122, 44);
@@ -629,20 +626,6 @@
             button1.Text = "Tìm kiếm";
             button1.TextAlign = ContentAlignment.MiddleRight;
             button1.UseVisualStyleBackColor = true;
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "icons8-search-32.png");
-            imageList1.Images.SetKeyName(1, "icons8-add-64.png");
-            imageList1.Images.SetKeyName(2, "icons8-add-male-user-64.png");
-            imageList1.Images.SetKeyName(3, "icons8-save-64.png");
-            imageList1.Images.SetKeyName(4, "icons8-update-file-64.png");
-            imageList1.Images.SetKeyName(5, "icons8-add-file-64.png");
-            imageList1.Images.SetKeyName(6, "icons8-delete-64.png");
-            imageList1.Images.SetKeyName(7, "icons8-file-64.png");
             // 
             // label1
             // 
@@ -835,7 +818,6 @@
             button3.ForeColor = Color.Brown;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
             button3.ImageKey = "icons8-add-male-user-64.png";
-            button3.ImageList = imageList1;
             button3.Location = new Point(3, 3);
             button3.Name = "button3";
             button3.Size = new Size(93, 50);
@@ -850,7 +832,6 @@
             button2.ForeColor = Color.Brown;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
             button2.ImageKey = "icons8-update-file-64.png";
-            button2.ImageList = imageList1;
             button2.Location = new Point(102, 3);
             button2.Name = "button2";
             button2.Size = new Size(93, 50);
@@ -865,7 +846,6 @@
             button4.ForeColor = Color.Brown;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
             button4.ImageKey = "icons8-save-64.png";
-            button4.ImageList = imageList1;
             button4.Location = new Point(201, 3);
             button4.Name = "button4";
             button4.Size = new Size(93, 50);
@@ -881,7 +861,6 @@
             button5.ForeColor = Color.Brown;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
             button5.ImageKey = "(none)";
-            button5.ImageList = imageList1;
             button5.Location = new Point(3, 59);
             button5.Name = "button5";
             button5.Size = new Size(291, 43);
@@ -1043,7 +1022,6 @@
             button6.ForeColor = Color.Brown;
             button6.ImageAlign = ContentAlignment.MiddleLeft;
             button6.ImageKey = "icons8-search-32.png";
-            button6.ImageList = imageList1;
             button6.Location = new Point(93, 165);
             button6.Name = "button6";
             button6.Size = new Size(110, 40);
@@ -1287,7 +1265,6 @@
             button8.ForeColor = Color.Brown;
             button8.ImageAlign = ContentAlignment.MiddleLeft;
             button8.ImageKey = "icons8-add-file-64.png";
-            button8.ImageList = imageList1;
             button8.Location = new Point(3, 3);
             button8.Name = "button8";
             button8.Size = new Size(121, 43);
@@ -1313,7 +1290,6 @@
             button9.ForeColor = Color.Brown;
             button9.ImageAlign = ContentAlignment.MiddleLeft;
             button9.ImageKey = "icons8-delete-64.png";
-            button9.ImageList = imageList1;
             button9.Location = new Point(3, 52);
             button9.Name = "button9";
             button9.Size = new Size(121, 43);
@@ -1328,7 +1304,6 @@
             button10.ForeColor = Color.Brown;
             button10.ImageAlign = ContentAlignment.MiddleLeft;
             button10.ImageKey = "icons8-file-64.png";
-            button10.ImageList = imageList1;
             button10.Location = new Point(130, 52);
             button10.Name = "button10";
             button10.Size = new Size(121, 43);
@@ -1468,7 +1443,6 @@
             button12.ForeColor = Color.Brown;
             button12.ImageAlign = ContentAlignment.MiddleLeft;
             button12.ImageKey = "icons8-search-32.png";
-            button12.ImageList = imageList1;
             button12.Location = new Point(93, 79);
             button12.Name = "button12";
             button12.Size = new Size(110, 42);
@@ -1800,7 +1774,6 @@
             button14.ForeColor = Color.Brown;
             button14.ImageAlign = ContentAlignment.MiddleLeft;
             button14.ImageKey = "icons8-add-file-64.png";
-            button14.ImageList = imageList1;
             button14.Location = new Point(3, 3);
             button14.Name = "button14";
             button14.Size = new Size(93, 43);
@@ -1815,7 +1788,6 @@
             button15.ForeColor = Color.Brown;
             button15.ImageAlign = ContentAlignment.MiddleLeft;
             button15.ImageKey = "icons8-update-file-64.png";
-            button15.ImageList = imageList1;
             button15.Location = new Point(102, 3);
             button15.Name = "button15";
             button15.Size = new Size(93, 43);
@@ -1830,7 +1802,6 @@
             button16.ForeColor = Color.Brown;
             button16.ImageAlign = ContentAlignment.MiddleLeft;
             button16.ImageKey = "icons8-save-64.png";
-            button16.ImageList = imageList1;
             button16.Location = new Point(201, 3);
             button16.Name = "button16";
             button16.Size = new Size(93, 43);
@@ -1938,7 +1909,6 @@
             button13.ForeColor = Color.Brown;
             button13.ImageAlign = ContentAlignment.MiddleLeft;
             button13.ImageKey = "icons8-search-32.png";
-            button13.ImageList = imageList1;
             button13.Location = new Point(94, 107);
             button13.Name = "button13";
             button13.Size = new Size(110, 44);
@@ -2109,7 +2079,6 @@
             button39.ForeColor = Color.Brown;
             button39.ImageAlign = ContentAlignment.MiddleLeft;
             button39.ImageKey = "icons8-add-file-64.png";
-            button39.ImageList = imageList1;
             button39.Location = new Point(3, 3);
             button39.Name = "button39";
             button39.Size = new Size(93, 43);
@@ -2124,7 +2093,6 @@
             button40.ForeColor = Color.Brown;
             button40.ImageAlign = ContentAlignment.MiddleLeft;
             button40.ImageKey = "icons8-update-file-64.png";
-            button40.ImageList = imageList1;
             button40.Location = new Point(102, 3);
             button40.Name = "button40";
             button40.Size = new Size(93, 43);
@@ -2139,7 +2107,6 @@
             button41.ForeColor = Color.Brown;
             button41.ImageAlign = ContentAlignment.MiddleLeft;
             button41.ImageKey = "icons8-save-64.png";
-            button41.ImageList = imageList1;
             button41.Location = new Point(201, 3);
             button41.Name = "button41";
             button41.Size = new Size(93, 43);
@@ -2247,7 +2214,6 @@
             button22.ForeColor = Color.Brown;
             button22.ImageAlign = ContentAlignment.MiddleLeft;
             button22.ImageKey = "icons8-search-32.png";
-            button22.ImageList = imageList1;
             button22.Location = new Point(94, 107);
             button22.Name = "button22";
             button22.Size = new Size(110, 44);
@@ -2409,7 +2375,6 @@
             button19.ForeColor = Color.Brown;
             button19.ImageAlign = ContentAlignment.MiddleLeft;
             button19.ImageKey = "icons8-add-file-64.png";
-            button19.ImageList = imageList1;
             button19.Location = new Point(6, 26);
             button19.Name = "button19";
             button19.Size = new Size(93, 43);
@@ -2424,7 +2389,6 @@
             button20.ForeColor = Color.Brown;
             button20.ImageAlign = ContentAlignment.MiddleLeft;
             button20.ImageKey = "icons8-update-file-64.png";
-            button20.ImageList = imageList1;
             button20.Location = new Point(105, 26);
             button20.Name = "button20";
             button20.Size = new Size(93, 43);
@@ -2439,7 +2403,6 @@
             button21.ForeColor = Color.Brown;
             button21.ImageAlign = ContentAlignment.MiddleLeft;
             button21.ImageKey = "icons8-save-64.png";
-            button21.ImageList = imageList1;
             button21.Location = new Point(204, 26);
             button21.Name = "button21";
             button21.Size = new Size(93, 43);
@@ -2634,7 +2597,6 @@
             button26.ForeColor = Color.Brown;
             button26.ImageAlign = ContentAlignment.MiddleLeft;
             button26.ImageKey = "icons8-search-32.png";
-            button26.ImageList = imageList1;
             button26.Location = new Point(93, 147);
             button26.Name = "button26";
             button26.Size = new Size(110, 35);
@@ -2810,7 +2772,6 @@
             button30.ForeColor = Color.Brown;
             button30.ImageAlign = ContentAlignment.MiddleLeft;
             button30.ImageKey = "icons8-file-64.png";
-            button30.ImageList = imageList1;
             button30.Location = new Point(3, 52);
             button30.Name = "button30";
             button30.Size = new Size(107, 43);
@@ -2918,7 +2879,6 @@
             button29.ForeColor = Color.Brown;
             button29.ImageAlign = ContentAlignment.MiddleLeft;
             button29.ImageKey = "icons8-search-32.png";
-            button29.ImageList = imageList1;
             button29.Location = new Point(94, 76);
             button29.Name = "button29";
             button29.Size = new Size(110, 44);
@@ -3188,7 +3148,6 @@
             button23.ForeColor = Color.Brown;
             button23.ImageAlign = ContentAlignment.MiddleLeft;
             button23.ImageKey = "icons8-add-file-64.png";
-            button23.ImageList = imageList1;
             button23.Location = new Point(3, 3);
             button23.Name = "button23";
             button23.Size = new Size(93, 43);
@@ -3203,7 +3162,6 @@
             button24.ForeColor = Color.Brown;
             button24.ImageAlign = ContentAlignment.MiddleLeft;
             button24.ImageKey = "icons8-update-file-64.png";
-            button24.ImageList = imageList1;
             button24.Location = new Point(102, 3);
             button24.Name = "button24";
             button24.Size = new Size(93, 43);
@@ -3218,7 +3176,6 @@
             button25.ForeColor = Color.Brown;
             button25.ImageAlign = ContentAlignment.MiddleLeft;
             button25.ImageKey = "icons8-save-64.png";
-            button25.ImageList = imageList1;
             button25.Location = new Point(201, 3);
             button25.Name = "button25";
             button25.Size = new Size(93, 43);
@@ -3326,7 +3283,6 @@
             button35.ForeColor = Color.Brown;
             button35.ImageAlign = ContentAlignment.MiddleLeft;
             button35.ImageKey = "icons8-search-32.png";
-            button35.ImageList = imageList1;
             button35.Location = new Point(94, 107);
             button35.Name = "button35";
             button35.Size = new Size(110, 44);
@@ -3573,7 +3529,6 @@
             button31.ForeColor = Color.Brown;
             button31.ImageAlign = ContentAlignment.MiddleLeft;
             button31.ImageKey = "icons8-add-file-64.png";
-            button31.ImageList = imageList1;
             button31.Location = new Point(3, 3);
             button31.Name = "button31";
             button31.Size = new Size(93, 43);
@@ -3588,7 +3543,6 @@
             button32.ForeColor = Color.Brown;
             button32.ImageAlign = ContentAlignment.MiddleLeft;
             button32.ImageKey = "icons8-update-file-64.png";
-            button32.ImageList = imageList1;
             button32.Location = new Point(102, 3);
             button32.Name = "button32";
             button32.Size = new Size(93, 43);
@@ -3603,7 +3557,6 @@
             button33.ForeColor = Color.Brown;
             button33.ImageAlign = ContentAlignment.MiddleLeft;
             button33.ImageKey = "icons8-save-64.png";
-            button33.ImageList = imageList1;
             button33.Location = new Point(201, 3);
             button33.Name = "button33";
             button33.Size = new Size(93, 43);
@@ -4538,7 +4491,6 @@
         private ComboBox comboBox10;
         private ComboBox comboBox11;
         private ToolStripSeparator toolStripMenuItem1;
-        private ImageList imageList1;
         private Button button39;
         private Button button40;
         private Button button41;
