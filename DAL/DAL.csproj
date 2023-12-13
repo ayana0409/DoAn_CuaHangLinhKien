@@ -8,8 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="RGN-images\" />
-    <Folder Include="product-images\" />
+    <Compile Remove="product-images\**" />
+    <Compile Remove="RGN-images\**" />
+    <EmbeddedResource Remove="product-images\**" />
+    <EmbeddedResource Remove="RGN-images\**" />
+    <None Remove="product-images\**" />
+    <None Remove="RGN-images\**" />
   </ItemGroup>
 
 </Project>
