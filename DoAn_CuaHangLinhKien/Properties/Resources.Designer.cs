@@ -59,50 +59,5 @@ namespace GUI.Properties {
                 resourceCulture = value;
             }
         }
-<<<<<<< HEAD
-=======
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _131553753_computer_and_laptop_white_screen_with_many_gadgets_on_table_in_pastel_blue_tone_3d_rendering {
-            get {
-                object obj = ResourceManager.GetObject("131553753-computer-and-laptop-white-screen-with-many-gadgets-on-table-in-pastel-b" +
-                        "lue-tone-3d-rendering", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _131553753_computer_and_laptop_white_screen_with_many_gadgets_on_table_in_pastel_blue_tone_3d_rendering1 {
-            get {
-                object obj = ResourceManager.GetObject("131553753-computer-and-laptop-white-screen-with-many-gadgets-on-table-in-pastel-b" +
-                        "lue-tone-3d-rendering1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Screenshot_2023_12_12_195750 {
-            get {
-                object obj = ResourceManager.GetObject("Screenshot 2023-12-12 195750", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Screenshot_2023_12_12_1957501 {
-            get {
-                object obj = ResourceManager.GetObject("Screenshot 2023-12-12 1957501", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
->>>>>>> CoHai-GUI
     }
 }
