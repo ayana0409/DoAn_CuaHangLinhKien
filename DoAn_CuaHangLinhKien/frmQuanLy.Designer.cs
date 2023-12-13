@@ -2823,10 +2823,10 @@
             // 
             tpEmployee.BackColor = Color.Azure;
             tpEmployee.Controls.Add(splitContainer23);
-            tpEmployee.Location = new Point(4, 29);
+            tpEmployee.Location = new Point(4, 24);
             tpEmployee.Name = "tpEmployee";
             tpEmployee.Padding = new Padding(3);
-            tpEmployee.Size = new Size(1256, 624);
+            tpEmployee.Size = new Size(1256, 629);
             tpEmployee.TabIndex = 6;
             tpEmployee.Text = "Nhân viên";
             // 
@@ -2845,7 +2845,7 @@
             // 
             splitContainer23.Panel2.Controls.Add(splitContainer24);
             splitContainer23.Panel2MinSize = 400;
-            splitContainer23.Size = new Size(1250, 618);
+            splitContainer23.Size = new Size(1250, 623);
             splitContainer23.SplitterDistance = 842;
             splitContainer23.TabIndex = 3;
             // 
@@ -2856,7 +2856,7 @@
             dataGridView7.Dock = DockStyle.Fill;
             dataGridView7.Location = new Point(0, 0);
             dataGridView7.Name = "dataGridView7";
-            dataGridView7.Size = new Size(842, 618);
+            dataGridView7.Size = new Size(842, 623);
             dataGridView7.TabIndex = 0;
             // 
             // splitContainer24
@@ -2877,7 +2877,7 @@
             // 
             splitContainer24.Panel2.Controls.Add(splitContainer25);
             splitContainer24.Panel2MinSize = 250;
-            splitContainer24.Size = new Size(404, 618);
+            splitContainer24.Size = new Size(404, 623);
             splitContainer24.SplitterDistance = 150;
             splitContainer24.TabIndex = 4;
             // 
@@ -2985,7 +2985,7 @@
             // splitContainer25.Panel2
             // 
             splitContainer25.Panel2.Controls.Add(groupBox23);
-            splitContainer25.Size = new Size(404, 464);
+            splitContainer25.Size = new Size(404, 469);
             splitContainer25.SplitterDistance = 331;
             splitContainer25.TabIndex = 1;
             // 
@@ -3166,7 +3166,7 @@
             groupBox23.Dock = DockStyle.Fill;
             groupBox23.Location = new Point(0, 0);
             groupBox23.Name = "groupBox23";
-            groupBox23.Size = new Size(404, 129);
+            groupBox23.Size = new Size(404, 134);
             groupBox23.TabIndex = 2;
             groupBox23.TabStop = false;
             groupBox23.Text = "Chức năng";
@@ -3179,7 +3179,7 @@
             flowLayoutPanel9.Dock = DockStyle.Fill;
             flowLayoutPanel9.Location = new Point(3, 23);
             flowLayoutPanel9.Name = "flowLayoutPanel9";
-            flowLayoutPanel9.Size = new Size(398, 103);
+            flowLayoutPanel9.Size = new Size(398, 108);
             flowLayoutPanel9.TabIndex = 3;
             // 
             // button23
