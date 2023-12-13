@@ -55,7 +55,8 @@
             // 
             // txbUserName
             // 
-            txbUserName.BackColor = Color.White;
+            txbUserName.BackColor = Color.FromArgb(255, 253, 239);
+            txbUserName.ForeColor = Color.Wheat;
             txbUserName.Location = new Point(139, 5);
             txbUserName.Margin = new Padding(3, 2, 3, 2);
             txbUserName.Name = "txbUserName";
@@ -65,7 +66,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label2.Location = new Point(5, 7);
             label2.Name = "label2";
             label2.Size = new Size(120, 20);
@@ -96,7 +97,8 @@
             // 
             // txtPassWord
             // 
-            txtPassWord.BackColor = Color.White;
+            txtPassWord.BackColor = Color.FromArgb(255, 253, 239);
+            txtPassWord.ForeColor = Color.Wheat;
             txtPassWord.Location = new Point(139, 5);
             txtPassWord.Margin = new Padding(3, 2, 3, 2);
             txtPassWord.Name = "txtPassWord";
@@ -107,7 +109,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label3.Location = new Point(5, 7);
             label3.Name = "label3";
             label3.Size = new Size(79, 20);
@@ -117,7 +119,7 @@
             // btnLogin
             // 
             btnLogin.BackColor = Color.LightGray;
-            btnLogin.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnLogin.ForeColor = Color.Brown;
             btnLogin.Location = new Point(224, 8);
             btnLogin.Margin = new Padding(3, 2, 3, 2);
@@ -131,7 +133,7 @@
             // btnExit
             // 
             btnExit.BackColor = Color.LightGray;
-            btnExit.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExit.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnExit.ForeColor = Color.Brown;
             btnExit.Location = new Point(347, 8);
             btnExit.Margin = new Padding(3, 2, 3, 2);

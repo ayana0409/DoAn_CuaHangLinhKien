@@ -114,6 +114,7 @@
             // 
             groupBox1.Controls.Add(panel1);
             groupBox1.Dock = DockStyle.Fill;
+            groupBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(345, 155);
@@ -127,7 +128,7 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(3, 19);
+            panel1.Location = new Point(3, 23);
             panel1.Name = "panel1";
             panel1.Size = new Size(339, 91);
             panel1.TabIndex = 2;
@@ -143,6 +144,7 @@
             // button1
             // 
             button1.Dock = DockStyle.Fill;
+            button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button1.Location = new Point(0, 0);
             button1.Name = "button1";
             button1.Size = new Size(132, 37);
@@ -152,17 +154,19 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(99, 6);
+            textBox1.BackColor = Color.FromArgb(255, 253, 239);
+            textBox1.Location = new Point(126, 6);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(237, 23);
+            textBox1.Size = new Size(210, 27);
             textBox1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label1.Location = new Point(3, 9);
             label1.Name = "label1";
-            label1.Size = new Size(90, 15);
+            label1.Size = new Size(117, 20);
             label1.TabIndex = 0;
             label1.Text = "Mã phiếu nhập:";
             // 
@@ -189,6 +193,7 @@
             // button3
             // 
             button3.Dock = DockStyle.Fill;
+            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button3.Location = new Point(0, 0);
             button3.Name = "button3";
             button3.Size = new Size(132, 37);
@@ -225,6 +230,7 @@
             // 
             // textBox6
             // 
+            textBox6.BackColor = Color.FromArgb(255, 253, 239);
             textBox6.Dock = DockStyle.Fill;
             textBox6.Location = new Point(75, 119);
             textBox6.Name = "textBox6";
@@ -233,6 +239,7 @@
             // 
             // textBox5
             // 
+            textBox5.BackColor = Color.FromArgb(255, 253, 239);
             textBox5.Dock = DockStyle.Fill;
             textBox5.Location = new Point(75, 90);
             textBox5.Name = "textBox5";
@@ -241,6 +248,7 @@
             // 
             // textBox4
             // 
+            textBox4.BackColor = Color.FromArgb(255, 253, 239);
             textBox4.Dock = DockStyle.Fill;
             textBox4.Location = new Point(75, 61);
             textBox4.Name = "textBox4";
@@ -249,6 +257,7 @@
             // 
             // textBox3
             // 
+            textBox3.BackColor = Color.FromArgb(255, 253, 239);
             textBox3.Dock = DockStyle.Fill;
             textBox3.Location = new Point(75, 32);
             textBox3.Name = "textBox3";
@@ -258,63 +267,70 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label2.Location = new Point(3, 0);
             label2.Name = "label2";
-            label2.Size = new Size(43, 15);
+            label2.Size = new Size(56, 20);
             label2.TabIndex = 0;
             label2.Text = "Mã SP:";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label4.Location = new Point(3, 58);
             label4.Name = "label4";
-            label4.Size = new Size(57, 15);
+            label4.Size = new Size(54, 29);
             label4.TabIndex = 2;
             label4.Text = "Số lượng:";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label3.Location = new Point(3, 29);
             label3.Name = "label3";
-            label3.Size = new Size(44, 15);
+            label3.Size = new Size(59, 20);
             label3.TabIndex = 1;
             label3.Text = "Tên SP:";
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label5.Location = new Point(3, 87);
             label5.Name = "label5";
-            label5.Size = new Size(57, 15);
+            label5.Size = new Size(48, 29);
             label5.TabIndex = 3;
             label5.Text = "Giá nhập:";
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label6.Location = new Point(3, 116);
             label6.Name = "label6";
-            label6.Size = new Size(66, 30);
+            label6.Size = new Size(63, 36);
             label6.TabIndex = 4;
             label6.Text = "Chi tiết sản phẩm: ";
             // 
             // textBox2
             // 
+            textBox2.BackColor = Color.FromArgb(255, 253, 239);
             textBox2.Dock = DockStyle.Fill;
             textBox2.Location = new Point(75, 3);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(261, 23);
             textBox2.TabIndex = 5;
             // 
-            // frmChiTiepNhapHang
+            // frmChiTietNhapHang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Azure;
             ClientSize = new Size(704, 441);
             Controls.Add(splitContainer1);
-            Name = "frmChiTiepNhapHang";
+            Name = "frmChiTietNhapHang";
             Text = "frmChiTiepNhapHang";
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
