@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace DTO
         public AccountType(DataRow row)
         {
             this.TypeID = (int)row["MaLoaiTK"];
-            this.TypeName = (string)row["TenLoaiTK"]
+            this.TypeName = (string)row["TenLoaiTK"];
         }
 
         public int TypeID { get; set; }
