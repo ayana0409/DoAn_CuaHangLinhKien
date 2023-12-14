@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            splitContainer1 = new SplitContainer();
             tableLayoutPanel2 = new TableLayoutPanel();
             label1 = new Label();
             label2 = new Label();
@@ -37,53 +36,30 @@
             textBox2 = new TextBox();
             button1 = new Button();
             label3 = new Label();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
-            splitContainer1.Panel1.SuspendLayout();
-            splitContainer1.Panel2.SuspendLayout();
-            splitContainer1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
-            // splitContainer1
-            // 
-            splitContainer1.BackColor = Color.Transparent;
-            splitContainer1.FixedPanel = FixedPanel.Panel2;
-            splitContainer1.IsSplitterFixed = true;
-            splitContainer1.Location = new Point(119, 153);
-            splitContainer1.Name = "splitContainer1";
-            splitContainer1.Orientation = Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            splitContainer1.Panel1.Controls.Add(tableLayoutPanel2);
-            // 
-            // splitContainer1.Panel2
-            // 
-            splitContainer1.Panel2.Controls.Add(button1);
-            splitContainer1.Size = new Size(381, 157);
-            splitContainer1.SplitterDistance = 105;
-            splitContainer1.TabIndex = 0;
-            // 
             // tableLayoutPanel2
             // 
+            tableLayoutPanel2.BackColor = Color.Transparent;
             tableLayoutPanel2.ColumnCount = 4;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.56168F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.8845139F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60.8923874F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.5091858F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 58.2677155F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.661417F));
             tableLayoutPanel2.Controls.Add(label1, 1, 1);
+            tableLayoutPanel2.Controls.Add(button1, 2, 3);
             tableLayoutPanel2.Controls.Add(label2, 1, 2);
             tableLayoutPanel2.Controls.Add(textBox1, 2, 1);
             tableLayoutPanel2.Controls.Add(textBox2, 2, 2);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Location = new Point(122, 153);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 4;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 15.6862745F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 84.31373F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 12F));
-            tableLayoutPanel2.Size = new Size(381, 105);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 54F));
+            tableLayoutPanel2.Size = new Size(381, 159);
             tableLayoutPanel2.TabIndex = 0;
             // 
             // label1
@@ -92,9 +68,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label1.ForeColor = Color.Lavender;
-            label1.Location = new Point(28, 8);
+            label1.Location = new Point(28, 9);
             label1.Name = "label1";
-            label1.Size = new Size(85, 45);
+            label1.Size = new Size(95, 50);
             label1.TabIndex = 0;
             label1.Text = "Tài khoản:";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -105,9 +81,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label2.ForeColor = Color.Lavender;
-            label2.Location = new Point(28, 53);
+            label2.Location = new Point(28, 59);
             label2.Name = "label2";
-            label2.Size = new Size(85, 39);
+            label2.Size = new Size(95, 45);
             label2.TabIndex = 0;
             label2.Text = "Mật khẩu:";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -116,29 +92,28 @@
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             textBox1.BackColor = Color.LavenderBlush;
-            textBox1.Location = new Point(119, 11);
+            textBox1.Location = new Point(129, 12);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(226, 33);
+            textBox1.Size = new Size(216, 33);
             textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
             textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             textBox2.BackColor = Color.LavenderBlush;
-            textBox2.Location = new Point(119, 56);
+            textBox2.Location = new Point(129, 62);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(226, 33);
+            textBox2.Size = new Size(216, 33);
             textBox2.TabIndex = 2;
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.None;
             button1.BackColor = Color.FromArgb(152, 188, 226);
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.MidnightBlue;
-            button1.Location = new Point(479, 6);
+            button1.Location = new Point(129, 107);
             button1.Name = "button1";
             button1.Size = new Size(121, 43);
             button1.TabIndex = 0;
@@ -165,8 +140,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(624, 441);
+            Controls.Add(tableLayoutPanel2);
             Controls.Add(label3);
-            Controls.Add(splitContainer1);
             DoubleBuffered = true;
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -174,10 +149,6 @@
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             FormClosing += frmLogin_FormClosing;
-            splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
-            splitContainer1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
@@ -185,7 +156,6 @@
         }
 
         #endregion
-        private SplitContainer splitContainer1;
         private TableLayoutPanel tableLayoutPanel2;
         private Button button1;
         private Label label1;
