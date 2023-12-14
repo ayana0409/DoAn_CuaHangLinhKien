@@ -28,166 +28,169 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            txbUserName = new TextBox();
-            label2 = new Label();
+            splitContainer1 = new SplitContainer();
+            tableLayoutPanel2 = new TableLayoutPanel();
             label1 = new Label();
-            panel2 = new Panel();
-            txtPassWord = new TextBox();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            button1 = new Button();
             label3 = new Label();
-            btnLogin = new Button();
-            btnExit = new Button();
-            panel3 = new Panel();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // splitContainer1
             // 
-            panel1.Controls.Add(txbUserName);
-            panel1.Controls.Add(label2);
-            panel1.Location = new Point(10, 38);
-            panel1.Margin = new Padding(3, 2, 3, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(467, 30);
-            panel1.TabIndex = 0;
+            splitContainer1.BackColor = Color.Transparent;
+            splitContainer1.FixedPanel = FixedPanel.Panel2;
+            splitContainer1.IsSplitterFixed = true;
+            splitContainer1.Location = new Point(119, 153);
+            splitContainer1.Name = "splitContainer1";
+            splitContainer1.Orientation = Orientation.Horizontal;
             // 
-            // txbUserName
+            // splitContainer1.Panel1
             // 
-            txbUserName.BackColor = Color.FromArgb(255, 253, 239);
-            txbUserName.ForeColor = Color.Wheat;
-            txbUserName.Location = new Point(139, 5);
-            txbUserName.Margin = new Padding(3, 2, 3, 2);
-            txbUserName.Name = "txbUserName";
-            txbUserName.Size = new Size(318, 23);
-            txbUserName.TabIndex = 1;
+            splitContainer1.Panel1.Controls.Add(tableLayoutPanel2);
             // 
-            // label2
+            // splitContainer1.Panel2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            label2.Location = new Point(5, 7);
-            label2.Name = "label2";
-            label2.Size = new Size(120, 20);
-            label2.TabIndex = 0;
-            label2.Text = "Tên đăng nhập: ";
+            splitContainer1.Panel2.Controls.Add(button1);
+            splitContainer1.Size = new Size(381, 157);
+            splitContainer1.SplitterDistance = 105;
+            splitContainer1.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 4;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.56168F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.8845139F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60.8923874F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.661417F));
+            tableLayoutPanel2.Controls.Add(label1, 1, 1);
+            tableLayoutPanel2.Controls.Add(label2, 1, 2);
+            tableLayoutPanel2.Controls.Add(textBox1, 2, 1);
+            tableLayoutPanel2.Controls.Add(textBox2, 2, 2);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 4;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 15.6862745F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 84.31373F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 12F));
+            tableLayoutPanel2.Size = new Size(381, 105);
+            tableLayoutPanel2.TabIndex = 0;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.ImageAlign = ContentAlignment.BottomCenter;
-            label1.Location = new Point(196, 9);
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label1.ForeColor = Color.Lavender;
+            label1.Location = new Point(28, 8);
             label1.Name = "label1";
-            label1.Size = new Size(133, 25);
-            label1.TabIndex = 1;
-            label1.Text = "ĐĂNG NHẬP ";
+            label1.Size = new Size(85, 45);
+            label1.TabIndex = 0;
+            label1.Text = "Tài khoản:";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // label2
             // 
-            panel2.Controls.Add(txtPassWord);
-            panel2.Controls.Add(label3);
-            panel2.Location = new Point(10, 73);
-            panel2.Margin = new Padding(3, 2, 3, 2);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(467, 30);
-            panel2.TabIndex = 2;
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label2.ForeColor = Color.Lavender;
+            label2.Location = new Point(28, 53);
+            label2.Name = "label2";
+            label2.Size = new Size(85, 39);
+            label2.TabIndex = 0;
+            label2.Text = "Mật khẩu:";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // txtPassWord
+            // textBox1
             // 
-            txtPassWord.BackColor = Color.FromArgb(255, 253, 239);
-            txtPassWord.ForeColor = Color.Wheat;
-            txtPassWord.Location = new Point(139, 5);
-            txtPassWord.Margin = new Padding(3, 2, 3, 2);
-            txtPassWord.Name = "txtPassWord";
-            txtPassWord.Size = new Size(318, 23);
-            txtPassWord.TabIndex = 1;
-            txtPassWord.UseSystemPasswordChar = true;
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            textBox1.BackColor = Color.LavenderBlush;
+            textBox1.Location = new Point(119, 11);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(226, 33);
+            textBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            textBox2.BackColor = Color.LavenderBlush;
+            textBox2.Location = new Point(119, 56);
+            textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
+            textBox2.Size = new Size(226, 33);
+            textBox2.TabIndex = 2;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.FromArgb(152, 188, 226);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.MidnightBlue;
+            button1.Location = new Point(249, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(121, 43);
+            button1.TabIndex = 0;
+            button1.Text = "Đăng nhập";
+            button1.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            label3.Location = new Point(5, 7);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Lavender;
+            label3.Location = new Point(133, 118);
             label3.Name = "label3";
-            label3.Size = new Size(79, 20);
-            label3.TabIndex = 0;
-            label3.Text = "Mật khẩu:";
-            // 
-            // btnLogin
-            // 
-            btnLogin.BackColor = Color.LightGray;
-            btnLogin.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnLogin.ForeColor = Color.Brown;
-            btnLogin.Location = new Point(224, 8);
-            btnLogin.Margin = new Padding(3, 2, 3, 2);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(96, 25);
-            btnLogin.TabIndex = 3;
-            btnLogin.Text = "Đăng nhập ";
-            btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.Click += btnLogin_Click;
-            // 
-            // btnExit
-            // 
-            btnExit.BackColor = Color.LightGray;
-            btnExit.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnExit.ForeColor = Color.Brown;
-            btnExit.Location = new Point(347, 8);
-            btnExit.Margin = new Padding(3, 2, 3, 2);
-            btnExit.Name = "btnExit";
-            btnExit.Size = new Size(96, 25);
-            btnExit.TabIndex = 4;
-            btnExit.Text = "Thoát";
-            btnExit.UseVisualStyleBackColor = false;
-            btnExit.Click += btnExit_Click;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(btnLogin);
-            panel3.Controls.Add(btnExit);
-            panel3.Location = new Point(10, 107);
-            panel3.Margin = new Padding(3, 2, 3, 2);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(467, 39);
-            panel3.TabIndex = 5;
+            label3.Size = new Size(358, 32);
+            label3.TabIndex = 1;
+            label3.Text = "ĐĂNG NHẬP VÀO ỨNG DỤNG";
             // 
             // frmLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
-            ClientSize = new Size(488, 155);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(label1);
-            Controls.Add(panel1);
-            Margin = new Padding(3, 2, 3, 2);
+            BackgroundImage = Properties.Resources.login_background;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(624, 441);
+            Controls.Add(label3);
+            Controls.Add(splitContainer1);
+            DoubleBuffered = true;
+            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(5, 3, 5, 3);
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             FormClosing += frmLogin_FormClosing;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel3.ResumeLayout(false);
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
-        private TextBox txbUserName;
-        private Label label2;
+        private SplitContainer splitContainer1;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Button button1;
         private Label label1;
-        private Panel panel2;
-        private TextBox txtPassWord;
+        private Label label2;
+        private TextBox textBox1;
+        private TextBox textBox2;
         private Label label3;
-        private Button btnLogin;
-        private Button btnExit;
-        private Panel panel3;
     }
 }

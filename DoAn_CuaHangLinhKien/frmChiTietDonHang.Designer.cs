@@ -160,6 +160,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.Brown;
             label2.Location = new Point(4, 0);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
@@ -171,6 +172,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label3.ForeColor = Color.Brown;
             label3.Location = new Point(4, 33);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
@@ -182,6 +184,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label4.ForeColor = Color.Brown;
             label4.Location = new Point(4, 66);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
@@ -215,6 +218,7 @@
             // 
             button1.Anchor = AnchorStyles.Right;
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button1.ForeColor = Color.Brown;
             button1.Location = new Point(155, 105);
             button1.Margin = new Padding(4);
             button1.Name = "button1";
@@ -292,6 +296,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.ForeColor = Color.Brown;
             label5.Location = new Point(4, 0);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
@@ -303,6 +308,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label6.ForeColor = Color.Brown;
             label6.Location = new Point(4, 33);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
@@ -314,6 +320,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label7.ForeColor = Color.Brown;
             label7.Location = new Point(4, 66);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
@@ -325,6 +332,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label8.ForeColor = Color.Brown;
             label8.Location = new Point(4, 99);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
@@ -336,6 +344,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label9.ForeColor = Color.Brown;
             label9.Location = new Point(4, 132);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
@@ -347,6 +356,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label10.ForeColor = Color.Brown;
             label10.Location = new Point(4, 165);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
@@ -378,6 +388,7 @@
             // 
             button2.Anchor = AnchorStyles.Right;
             button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button2.ForeColor = Color.Brown;
             button2.Location = new Point(155, 202);
             button2.Margin = new Padding(4);
             button2.Name = "button2";

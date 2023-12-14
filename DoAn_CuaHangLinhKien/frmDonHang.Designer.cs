@@ -31,12 +31,12 @@
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             tableLayoutPanel3 = new TableLayoutPanel();
-            textBox3 = new TextBox();
             textBox2 = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             textBox1 = new TextBox();
+            richTextBox1 = new RichTextBox();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             label6 = new Label();
@@ -49,9 +49,9 @@
             button1 = new Button();
             button4 = new Button();
             button3 = new Button();
-            textBox5 = new TextBox();
             textBox6 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
+            comboBox1 = new ComboBox();
             label5 = new Label();
             dataGridView1 = new DataGridView();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -78,6 +78,8 @@
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.FixedPanel = FixedPanel.Panel1;
+            splitContainer1.IsSplitterFixed = true;
             splitContainer1.Location = new Point(0, 0);
             splitContainer1.Margin = new Padding(3, 2, 3, 2);
             splitContainer1.Name = "splitContainer1";
@@ -91,14 +93,15 @@
             // 
             splitContainer1.Panel2.Controls.Add(dataGridView1);
             splitContainer1.Panel2.Paint += splitContainer2_Panel2_Paint;
-            splitContainer1.Size = new Size(1264, 634);
-            splitContainer1.SplitterDistance = 230;
+            splitContainer1.Size = new Size(1264, 681);
+            splitContainer1.SplitterDistance = 247;
             splitContainer1.SplitterWidth = 3;
             splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
             // 
             splitContainer2.Dock = DockStyle.Fill;
+            splitContainer2.IsSplitterFixed = true;
             splitContainer2.Location = new Point(0, 0);
             splitContainer2.Margin = new Padding(3, 2, 3, 2);
             splitContainer2.Name = "splitContainer2";
@@ -113,7 +116,7 @@
             splitContainer2.Panel2.Controls.Add(tableLayoutPanel1);
             splitContainer2.Panel2.Controls.Add(label5);
             splitContainer2.Panel2.Paint += splitContainer2_Panel2_Paint;
-            splitContainer2.Size = new Size(1264, 230);
+            splitContainer2.Size = new Size(1264, 247);
             splitContainer2.SplitterDistance = 636;
             splitContainer2.TabIndex = 0;
             // 
@@ -122,74 +125,92 @@
             tableLayoutPanel3.ColumnCount = 2;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.2546577F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80.74534F));
-            tableLayoutPanel3.Controls.Add(textBox3, 1, 2);
             tableLayoutPanel3.Controls.Add(textBox2, 1, 1);
             tableLayoutPanel3.Controls.Add(label2, 0, 0);
             tableLayoutPanel3.Controls.Add(label3, 0, 1);
             tableLayoutPanel3.Controls.Add(label4, 0, 2);
             tableLayoutPanel3.Controls.Add(textBox1, 1, 0);
+            tableLayoutPanel3.Controls.Add(richTextBox1, 1, 2);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(0, 0);
             tableLayoutPanel3.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 4;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 44.27481F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 55.72519F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 70F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
-            tableLayoutPanel3.Size = new Size(636, 230);
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50.9090919F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 49.0909081F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 123F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tableLayoutPanel3.Size = new Size(636, 247);
             tableLayoutPanel3.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(125, 134);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(507, 23);
-            textBox3.TabIndex = 5;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(125, 60);
+            textBox2.BackColor = Color.FromArgb(255, 253, 239);
+            textBox2.Dock = DockStyle.Fill;
+            textBox2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            textBox2.Location = new Point(125, 42);
             textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(507, 23);
+            textBox2.Size = new Size(508, 27);
             textBox2.TabIndex = 4;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Azure;
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label2.ForeColor = Color.Brown;
             label2.Location = new Point(3, 0);
             label2.Name = "label2";
-            label2.Size = new Size(95, 15);
+            label2.Size = new Size(86, 40);
             label2.TabIndex = 0;
             label2.Text = "SĐT khách hàng:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(3, 58);
+            label3.BackColor = Color.Azure;
+            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label3.ForeColor = Color.Brown;
+            label3.Location = new Point(3, 40);
             label3.Name = "label3";
-            label3.Size = new Size(61, 15);
+            label3.Size = new Size(80, 20);
             label3.TabIndex = 1;
             label3.Text = "Họ và tên:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(3, 132);
+            label4.BackColor = Color.Azure;
+            label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label4.ForeColor = Color.Brown;
+            label4.Location = new Point(3, 78);
             label4.Name = "label4";
-            label4.Size = new Size(46, 15);
+            label4.Size = new Size(60, 20);
             label4.TabIndex = 2;
             label4.Text = "Địa chỉ:";
             // 
             // textBox1
             // 
+            textBox1.BackColor = Color.FromArgb(255, 253, 239);
+            textBox1.Dock = DockStyle.Fill;
+            textBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             textBox1.Location = new Point(125, 2);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(507, 23);
+            textBox1.Size = new Size(508, 27);
             textBox1.TabIndex = 3;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.BackColor = Color.FromArgb(255, 253, 239);
+            richTextBox1.Dock = DockStyle.Fill;
+            richTextBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            richTextBox1.Location = new Point(125, 81);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(508, 117);
+            richTextBox1.TabIndex = 5;
+            richTextBox1.Text = "";
             // 
             // label1
             // 
@@ -211,9 +232,9 @@
             tableLayoutPanel1.Controls.Add(textBox4, 1, 0);
             tableLayoutPanel1.Controls.Add(label9, 0, 3);
             tableLayoutPanel1.Controls.Add(splitContainer3, 1, 4);
-            tableLayoutPanel1.Controls.Add(textBox5, 1, 2);
             tableLayoutPanel1.Controls.Add(textBox6, 1, 3);
             tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 1);
+            tableLayoutPanel1.Controls.Add(comboBox1, 1, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
@@ -221,19 +242,22 @@
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 49.0566025F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50.9433975F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 46F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 68F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 37F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 98F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
-            tableLayoutPanel1.Size = new Size(624, 230);
+            tableLayoutPanel1.Size = new Size(624, 247);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Azure;
+            label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label6.ForeColor = Color.Brown;
             label6.Location = new Point(3, 0);
             label6.Name = "label6";
-            label6.Size = new Size(81, 15);
+            label6.Size = new Size(62, 33);
             label6.TabIndex = 1;
             label6.Text = "Mã đơn hàng:";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -241,9 +265,12 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(3, 34);
+            label7.BackColor = Color.Azure;
+            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label7.ForeColor = Color.Brown;
+            label7.Location = new Point(3, 33);
             label7.Name = "label7";
-            label7.Size = new Size(68, 15);
+            label7.Size = new Size(89, 20);
             label7.TabIndex = 2;
             label7.Text = "Ngày nhập:";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -251,34 +278,42 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(3, 70);
+            label8.BackColor = Color.Azure;
+            label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label8.ForeColor = Color.Brown;
+            label8.Location = new Point(3, 67);
             label8.Name = "label8";
-            label8.Size = new Size(62, 15);
+            label8.Size = new Size(84, 20);
             label8.TabIndex = 3;
             label8.Text = "Trạng thái:";
             // 
             // textBox4
             // 
+            textBox4.BackColor = Color.FromArgb(255, 253, 239);
             textBox4.Dock = DockStyle.Fill;
+            textBox4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             textBox4.Location = new Point(113, 2);
             textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(508, 23);
+            textBox4.Size = new Size(508, 27);
             textBox4.TabIndex = 5;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(3, 116);
+            label9.BackColor = Color.Azure;
+            label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label9.ForeColor = Color.Brown;
+            label9.Location = new Point(3, 104);
             label9.Name = "label9";
-            label9.Size = new Size(73, 15);
+            label9.Size = new Size(98, 20);
             label9.TabIndex = 4;
             label9.Text = "Tổng giá trị: ";
             // 
             // splitContainer3
             // 
-            splitContainer3.Anchor = AnchorStyles.Right;
-            splitContainer3.Location = new Point(188, 164);
+            splitContainer3.Dock = DockStyle.Fill;
+            splitContainer3.Location = new Point(113, 150);
             splitContainer3.Margin = new Padding(3, 2, 3, 2);
             splitContainer3.Name = "splitContainer3";
             splitContainer3.Orientation = Orientation.Horizontal;
@@ -292,71 +327,92 @@
             // 
             splitContainer3.Panel2.Controls.Add(button4);
             splitContainer3.Panel2.Controls.Add(button3);
-            splitContainer3.Size = new Size(433, 62);
-            splitContainer3.SplitterDistance = 27;
+            splitContainer3.Size = new Size(508, 95);
+            splitContainer3.SplitterDistance = 44;
             splitContainer3.SplitterWidth = 3;
             splitContainer3.TabIndex = 12;
             // 
             // button2
             // 
-            button2.Location = new Point(348, 0);
+            button2.BackColor = Color.Azure;
+            button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button2.ForeColor = Color.Brown;
+            button2.Location = new Point(378, -1);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(82, 30);
+            button2.Size = new Size(121, 43);
             button2.TabIndex = 1;
             button2.Text = "Hủy đơn";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
-            button1.Location = new Point(266, -1);
+            button1.BackColor = Color.Azure;
+            button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button1.ForeColor = Color.Brown;
+            button1.Location = new Point(251, -1);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(82, 30);
+            button1.Size = new Size(121, 43);
             button1.TabIndex = 0;
             button1.Text = "Thanh toán";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
-            button4.Location = new Point(348, 1);
+            button4.BackColor = Color.Azure;
+            button4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button4.ForeColor = Color.Brown;
+            button4.Location = new Point(378, 2);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(82, 30);
+            button4.Size = new Size(121, 43);
             button4.TabIndex = 3;
             button4.Text = "Xóa SP";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            button3.Location = new Point(266, 2);
+            button3.BackColor = Color.Azure;
+            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button3.ForeColor = Color.Brown;
+            button3.Location = new Point(251, 2);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(82, 30);
+            button3.Size = new Size(121, 43);
             button3.TabIndex = 2;
             button3.Text = "Thêm SP";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(113, 73);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(507, 23);
-            textBox5.TabIndex = 13;
+            button3.UseVisualStyleBackColor = false;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(113, 119);
+            textBox6.BackColor = Color.FromArgb(255, 253, 239);
+            textBox6.Dock = DockStyle.Fill;
+            textBox6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            textBox6.Location = new Point(113, 107);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(507, 23);
+            textBox6.Size = new Size(508, 27);
             textBox6.TabIndex = 14;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(113, 37);
+            dateTimePicker1.Dock = DockStyle.Fill;
+            dateTimePicker1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.Location = new Point(113, 36);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(507, 23);
+            dateTimePicker1.Size = new Size(508, 27);
             dateTimePicker1.TabIndex = 15;
+            // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = Color.FromArgb(255, 253, 239);
+            comboBox1.Dock = DockStyle.Fill;
+            comboBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(113, 70);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(508, 28);
+            comboBox1.TabIndex = 16;
             // 
             // label5
             // 
@@ -369,13 +425,14 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.FromArgb(194, 231, 255);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1264, 401);
+            dataGridView1.Size = new Size(1264, 431);
             dataGridView1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -414,7 +471,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1264, 634);
+            BackColor = Color.Azure;
+            ClientSize = new Size(1264, 681);
             Controls.Add(splitContainer1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmDonHang";
@@ -462,7 +520,6 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
         private SplitContainer splitContainer3;
@@ -471,8 +528,9 @@
         private Button button4;
         private Button button3;
         private DataGridView dataGridView1;
-        private TextBox textBox5;
         private TextBox textBox6;
         private DateTimePicker dateTimePicker1;
+        private RichTextBox richTextBox1;
+        private ComboBox comboBox1;
     }
 }

@@ -44,9 +44,9 @@
             button1 = new Button();
             button2 = new Button();
             groupBox2 = new GroupBox();
-            panel2 = new Panel();
+            splitContainer3 = new SplitContainer();
             dataGridView1 = new DataGridView();
-            panel1 = new Panel();
+            flowLayoutPanel2 = new FlowLayoutPanel();
             button5 = new Button();
             button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -62,14 +62,19 @@
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             groupBox2.SuspendLayout();
-            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer3).BeginInit();
+            splitContainer3.Panel1.SuspendLayout();
+            splitContainer3.Panel2.SuspendLayout();
+            splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel1.SuspendLayout();
+            flowLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.FixedPanel = FixedPanel.Panel2;
+            splitContainer1.IsSplitterFixed = true;
             splitContainer1.Location = new Point(0, 0);
             splitContainer1.Margin = new Padding(3, 2, 3, 2);
             splitContainer1.Name = "splitContainer1";
@@ -168,6 +173,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label1.ForeColor = Color.Brown;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
             label1.Size = new Size(117, 20);
@@ -178,6 +184,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label2.ForeColor = Color.Brown;
             label2.Location = new Point(3, 29);
             label2.Name = "label2";
             label2.Size = new Size(97, 20);
@@ -188,6 +195,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label3.ForeColor = Color.Brown;
             label3.Location = new Point(3, 58);
             label3.Name = "label3";
             label3.Size = new Size(89, 20);
@@ -216,6 +224,7 @@
             // 
             button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button3.ForeColor = Color.Brown;
             button3.Location = new Point(370, 180);
             button3.Name = "button3";
             button3.Size = new Size(213, 37);
@@ -237,6 +246,7 @@
             // 
             button1.Anchor = AnchorStyles.None;
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button1.ForeColor = Color.Brown;
             button1.Location = new Point(3, 3);
             button1.Name = "button1";
             button1.Size = new Size(108, 38);
@@ -248,6 +258,7 @@
             // 
             button2.Anchor = AnchorStyles.None;
             button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            button2.ForeColor = Color.Brown;
             button2.Location = new Point(3, 47);
             button2.Name = "button2";
             button2.Size = new Size(108, 38);
@@ -257,8 +268,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(panel2);
-            groupBox2.Controls.Add(panel1);
+            groupBox2.Controls.Add(splitContainer3);
             groupBox2.Dock = DockStyle.Fill;
             groupBox2.Location = new Point(0, 0);
             groupBox2.Name = "groupBox2";
@@ -267,39 +277,51 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh sách sản phẩm đã nhập ";
             // 
-            // panel2
+            // splitContainer3
             // 
-            panel2.Controls.Add(dataGridView1);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(3, 19);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(586, 370);
-            panel2.TabIndex = 2;
+            splitContainer3.Dock = DockStyle.Fill;
+            splitContainer3.FixedPanel = FixedPanel.Panel2;
+            splitContainer3.IsSplitterFixed = true;
+            splitContainer3.Location = new Point(3, 19);
+            splitContainer3.Name = "splitContainer3";
+            splitContainer3.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            splitContainer3.Panel1.Controls.Add(dataGridView1);
+            // 
+            // splitContainer3.Panel2
+            // 
+            splitContainer3.Panel2.Controls.Add(flowLayoutPanel2);
+            splitContainer3.Size = new Size(586, 416);
+            splitContainer3.SplitterDistance = 366;
+            splitContainer3.TabIndex = 3;
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.FromArgb(194, 231, 255);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(586, 370);
+            dataGridView1.Size = new Size(586, 366);
             dataGridView1.TabIndex = 0;
             // 
-            // panel1
+            // flowLayoutPanel2
             // 
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(3, 395);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(586, 40);
-            panel1.TabIndex = 1;
+            flowLayoutPanel2.Controls.Add(button5);
+            flowLayoutPanel2.Controls.Add(button4);
+            flowLayoutPanel2.Dock = DockStyle.Fill;
+            flowLayoutPanel2.Location = new Point(0, 0);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new Size(586, 46);
+            flowLayoutPanel2.TabIndex = 0;
             // 
             // button5
             // 
-            button5.Dock = DockStyle.Right;
             button5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button5.Location = new Point(339, 0);
+            button5.ForeColor = Color.Brown;
+            button5.Location = new Point(3, 3);
             button5.Name = "button5";
             button5.Size = new Size(247, 40);
             button5.TabIndex = 2;
@@ -308,9 +330,9 @@
             // 
             // button4
             // 
-            button4.Dock = DockStyle.Left;
             button4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button4.Location = new Point(0, 0);
+            button4.ForeColor = Color.Brown;
+            button4.Location = new Point(256, 3);
             button4.Name = "button4";
             button4.Size = new Size(257, 40);
             button4.TabIndex = 1;
@@ -341,9 +363,12 @@
             tableLayoutPanel1.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
-            panel2.ResumeLayout(false);
+            splitContainer3.Panel1.ResumeLayout(false);
+            splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer3).EndInit();
+            splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel1.ResumeLayout(false);
+            flowLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -365,10 +390,10 @@
         private Button button2;
         private Button button3;
         private GroupBox groupBox2;
-        private Panel panel1;
         private Button button4;
         private Button button5;
-        private Panel panel2;
+        private SplitContainer splitContainer3;
         private DataGridView dataGridView1;
+        private FlowLayoutPanel flowLayoutPanel2;
     }
 }

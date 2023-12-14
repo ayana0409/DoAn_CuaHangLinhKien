@@ -838,7 +838,7 @@
             button3.ImageList = imageList1;
             button3.Location = new Point(3, 3);
             button3.Name = "button3";
-            button3.Size = new Size(93, 50);
+            button3.Size = new Size(93, 43);
             button3.TabIndex = 2;
             button3.Text = "Thêm";
             button3.TextAlign = ContentAlignment.MiddleRight;
@@ -853,7 +853,7 @@
             button2.ImageList = imageList1;
             button2.Location = new Point(102, 3);
             button2.Name = "button2";
-            button2.Size = new Size(93, 50);
+            button2.Size = new Size(93, 43);
             button2.TabIndex = 2;
             button2.Text = "Sửa";
             button2.TextAlign = ContentAlignment.MiddleRight;
@@ -868,7 +868,7 @@
             button4.ImageList = imageList1;
             button4.Location = new Point(201, 3);
             button4.Name = "button4";
-            button4.Size = new Size(93, 50);
+            button4.Size = new Size(93, 43);
             button4.TabIndex = 2;
             button4.Text = "Lưu";
             button4.TextAlign = ContentAlignment.MiddleRight;
@@ -882,7 +882,7 @@
             button5.ImageAlign = ContentAlignment.MiddleLeft;
             button5.ImageKey = "(none)";
             button5.ImageList = imageList1;
-            button5.Location = new Point(3, 59);
+            button5.Location = new Point(3, 52);
             button5.Name = "button5";
             button5.Size = new Size(291, 43);
             button5.TabIndex = 2;
@@ -893,11 +893,11 @@
             // 
             tpOrder.BackColor = Color.Azure;
             tpOrder.Controls.Add(splitContainer4);
-            tpOrder.Location = new Point(4, 24);
+            tpOrder.Location = new Point(4, 29);
             tpOrder.Margin = new Padding(3, 4, 3, 4);
             tpOrder.Name = "tpOrder";
             tpOrder.Padding = new Padding(3, 4, 3, 4);
-            tpOrder.Size = new Size(1256, 629);
+            tpOrder.Size = new Size(1256, 624);
             tpOrder.TabIndex = 1;
             tpOrder.Text = "Đơn hàng";
             // 
@@ -916,7 +916,7 @@
             // 
             splitContainer4.Panel2.Controls.Add(splitContainer5);
             splitContainer4.Panel2MinSize = 400;
-            splitContainer4.Size = new Size(1250, 621);
+            splitContainer4.Size = new Size(1250, 616);
             splitContainer4.SplitterDistance = 842;
             splitContainer4.TabIndex = 3;
             // 
@@ -927,7 +927,7 @@
             dataGridView2.Dock = DockStyle.Fill;
             dataGridView2.Location = new Point(0, 0);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(842, 621);
+            dataGridView2.Size = new Size(842, 616);
             dataGridView2.TabIndex = 0;
             // 
             // splitContainer5
@@ -948,7 +948,7 @@
             // 
             splitContainer5.Panel2.Controls.Add(splitContainer6);
             splitContainer5.Panel2MinSize = 250;
-            splitContainer5.Size = new Size(404, 621);
+            splitContainer5.Size = new Size(404, 616);
             splitContainer5.SplitterDistance = 234;
             splitContainer5.TabIndex = 4;
             // 
@@ -1132,7 +1132,7 @@
             // splitContainer6.Panel2
             // 
             splitContainer6.Panel2.Controls.Add(groupBox6);
-            splitContainer6.Size = new Size(404, 383);
+            splitContainer6.Size = new Size(404, 378);
             splitContainer6.SplitterDistance = 248;
             splitContainer6.TabIndex = 1;
             // 
@@ -1264,7 +1264,7 @@
             groupBox6.Dock = DockStyle.Fill;
             groupBox6.Location = new Point(0, 0);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(404, 131);
+            groupBox6.Size = new Size(404, 126);
             groupBox6.TabIndex = 2;
             groupBox6.TabStop = false;
             groupBox6.Text = "Chức năng";
@@ -1278,7 +1278,7 @@
             flowLayoutPanel2.Dock = DockStyle.Fill;
             flowLayoutPanel2.Location = new Point(3, 23);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(398, 105);
+            flowLayoutPanel2.Size = new Size(398, 100);
             flowLayoutPanel2.TabIndex = 3;
             // 
             // button8
@@ -4057,6 +4057,7 @@
             Name = "frmManage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản lý cửa hàng";
+            Load += frmManage_Load;
             TabControl.ResumeLayout(false);
             tpCustomer.ResumeLayout(false);
             splitContainer1.Panel1.ResumeLayout(false);
