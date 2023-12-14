@@ -11,12 +11,12 @@ namespace DTO
     {
         public int ProductID { get; set; }
         public int StaffID { get; set; }
-        public int CustomerNumberPhone { get; set; }
+        public string CustomerNumberPhone { get; set; }
         public DateOnly Date { get; set; }
         public string Status { get; set; }
         public float Total { get; set; }
 
-        public Order( int productID, int staffID, int customerNumberPhone, DateOnly date, string status, float total)
+        public Order( int productID, int staffID, string customerNumberPhone, DateOnly date, string status, float total)
         {
             this.ProductID = productID;
             this.StaffID = staffID;
@@ -30,7 +30,7 @@ namespace DTO
         {
             this.ProductID = (int)row["MaSanPham"];
             this.StaffID = (int)row["MaNhanVien"];
-            this.CustomerNumberPhone = (int)row["SDTKhachHang"];
+            this.CustomerNumberPhone = (string)row["SDTKhachHang"];
             this.Date = (DateOnly)row["NgayNhap"];
             this.Status = (string)row["TrangThai"];
             this.Total = (float)row["TongGiaTien"];

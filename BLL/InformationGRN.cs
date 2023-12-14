@@ -26,7 +26,7 @@ namespace DTO
             this.GRNID = (int)row["MaPhieuNhap"];
             this.ProductID = (int)row["MaSanPham"];
             this.Quantity = (int)row["SoLuongNhap"];
-            this.Price = (int)row["GiaNhap"];
+            this.Price = (float)row["GiaNhap"];
 
         }
 
