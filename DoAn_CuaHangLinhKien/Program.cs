@@ -15,7 +15,7 @@ namespace DoAn_CuaHangLinhKien
             //ApplicationConfiguration.Initialize();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.SetHighDpiMode(HighDpiMode.DpiUnaware);
 
             Application.Run(new frmLogin());
 
