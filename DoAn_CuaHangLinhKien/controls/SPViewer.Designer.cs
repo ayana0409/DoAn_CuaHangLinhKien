@@ -28,70 +28,121 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            label4 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pbImage = new PictureBox();
+            lbID = new Label();
+            lbName = new Label();
+            lbPrice = new Label();
+            lbQuantity = new Label();
+            panel1 = new Panel();
+            lbInfomation = new Label();
+            ((System.ComponentModel.ISupportInitialize)pbImage).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pbImage
             // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(194, 117);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pbImage.BorderStyle = BorderStyle.FixedSingle;
+            pbImage.Dock = DockStyle.Fill;
+            pbImage.Image = Properties.Resources.icons8_product_90;
+            pbImage.ImageLocation = "";
+            pbImage.Location = new Point(0, 0);
+            pbImage.Name = "pbImage";
+            pbImage.Size = new Size(192, 117);
+            pbImage.SizeMode = PictureBoxSizeMode.Zoom;
+            pbImage.TabIndex = 0;
+            pbImage.TabStop = false;
+            pbImage.Click += SPViewer_Click;
             // 
-            // label1
+            // lbID
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(3, 123);
-            label1.Name = "label1";
-            label1.Size = new Size(43, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Mã SP:";
+            lbID.AutoSize = true;
+            lbID.Location = new Point(3, 123);
+            lbID.Name = "lbID";
+            lbID.Size = new Size(17, 15);
+            lbID.TabIndex = 1;
+            lbID.Text = "id";
+            lbID.Click += SPViewer_Click;
             // 
-            // label2
+            // lbName
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(3, 155);
-            label2.Name = "label2";
-            label2.Size = new Size(52, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Tên SP";
+            lbName.AllowDrop = true;
+            lbName.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbName.Location = new Point(3, 139);
+            lbName.Name = "lbName";
+            lbName.Size = new Size(194, 42);
+            lbName.TabIndex = 2;
+            lbName.Text = "Name";
+            lbName.Click += SPViewer_Click;
             // 
-            // label4
+            // lbPrice
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(3, 235);
-            label4.Name = "label4";
-            label4.Size = new Size(47, 15);
-            label4.TabIndex = 5;
-            label4.Text = "Giá bán";
+            lbPrice.AutoSize = true;
+            lbPrice.Location = new Point(3, 224);
+            lbPrice.Name = "lbPrice";
+            lbPrice.Size = new Size(33, 15);
+            lbPrice.TabIndex = 5;
+            lbPrice.Text = "Price";
+            lbPrice.Click += SPViewer_Click;
+            // 
+            // lbQuantity
+            // 
+            lbQuantity.AutoSize = true;
+            lbQuantity.Location = new Point(142, 123);
+            lbQuantity.Name = "lbQuantity";
+            lbQuantity.Size = new Size(53, 15);
+            lbQuantity.TabIndex = 7;
+            lbQuantity.Text = "Quantity";
+            lbQuantity.Click += SPViewer_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(pbImage);
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(192, 117);
+            panel1.TabIndex = 8;
+            // 
+            // lbInfomation
+            // 
+            lbInfomation.AllowDrop = true;
+            lbInfomation.BorderStyle = BorderStyle.FixedSingle;
+            lbInfomation.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbInfomation.Location = new Point(3, 181);
+            lbInfomation.Name = "lbInfomation";
+            lbInfomation.Size = new Size(192, 43);
+            lbInfomation.TabIndex = 9;
+            lbInfomation.Text = "Infomation";
+            lbInfomation.Click += SPViewer_Click;
             // 
             // SPViewer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label4);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
+            BackColor = Color.Azure;
+            BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(lbInfomation);
+            Controls.Add(panel1);
+            Controls.Add(lbQuantity);
+            Controls.Add(lbPrice);
+            Controls.Add(lbName);
+            Controls.Add(lbID);
             Name = "SPViewer";
-            Size = new Size(200, 250);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Size = new Size(198, 248);
+            Click += SPViewer_Click;
+            ((System.ComponentModel.ISupportInitialize)pbImage).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private Label label1;
-        private Label label2;
-        private Label label4;
+        private PictureBox pbImage;
+        private Label lbID;
+        private Label lbName;
+        private Label lbPrice;
+        private Label lbQuantity;
+        private Panel panel1;
+        private Label lbInfomation;
     }
 }

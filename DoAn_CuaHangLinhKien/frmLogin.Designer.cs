@@ -30,14 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             tableLayoutPanel2 = new TableLayoutPanel();
-            label1 = new Label();
-            button1 = new Button();
+            panel1 = new Panel();
+            btnLogin = new Button();
+            btnExit = new Button();
+            txtAccountID = new TextBox();
+            txtPassword = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            label1 = new Label();
             label3 = new Label();
-            button2 = new Button();
             tableLayoutPanel2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -46,14 +48,13 @@
             tableLayoutPanel2.ColumnCount = 4;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.56168F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.5091858F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 53.8057747F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.6482935F));
-            tableLayoutPanel2.Controls.Add(label1, 1, 1);
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 59.8425179F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7.61154842F));
+            tableLayoutPanel2.Controls.Add(panel1, 2, 3);
+            tableLayoutPanel2.Controls.Add(txtAccountID, 2, 1);
+            tableLayoutPanel2.Controls.Add(txtPassword, 2, 2);
             tableLayoutPanel2.Controls.Add(label2, 1, 2);
-            tableLayoutPanel2.Controls.Add(textBox1, 2, 1);
-            tableLayoutPanel2.Controls.Add(textBox2, 2, 2);
-            tableLayoutPanel2.Controls.Add(button1, 2, 3);
-            tableLayoutPanel2.Controls.Add(button2, 3, 3);
+            tableLayoutPanel2.Controls.Add(label1, 1, 1);
             tableLayoutPanel2.Location = new Point(122, 153);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 4;
@@ -64,63 +65,84 @@
             tableLayoutPanel2.Size = new Size(381, 159);
             tableLayoutPanel2.TabIndex = 0;
             // 
-            // label1
+            // panel1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            label1.ForeColor = Color.Lavender;
-            label1.Location = new Point(27, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(94, 50);
-            label1.TabIndex = 0;
-            label1.Text = "Tài khoản:";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            panel1.Controls.Add(btnLogin);
+            panel1.Controls.Add(btnExit);
+            panel1.Location = new Point(127, 107);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(220, 49);
+            panel1.TabIndex = 3;
             // 
-            // button1
+            // btnLogin
             // 
-            button1.BackColor = Color.FromArgb(152, 188, 226);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.MidnightBlue;
-            button1.Location = new Point(127, 107);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 43);
-            button1.TabIndex = 0;
-            button1.Text = "Đăng nhập";
-            button1.UseVisualStyleBackColor = false;
+            btnLogin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            btnLogin.BackColor = Color.FromArgb(152, 188, 226);
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.MidnightBlue;
+            btnLogin.Location = new Point(0, 3);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(121, 43);
+            btnLogin.TabIndex = 0;
+            btnLogin.Text = "Đăng nhập";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
+            // 
+            // btnExit
+            // 
+            btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnExit.BackColor = Color.FromArgb(152, 188, 226);
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExit.ForeColor = Color.MidnightBlue;
+            btnExit.Image = Properties.Resources.icons8_export_26;
+            btnExit.Location = new Point(174, 3);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(43, 43);
+            btnExit.TabIndex = 2;
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
+            // 
+            // txtAccountID
+            // 
+            txtAccountID.BackColor = Color.LavenderBlush;
+            txtAccountID.Location = new Point(127, 12);
+            txtAccountID.Name = "txtAccountID";
+            txtAccountID.Size = new Size(220, 33);
+            txtAccountID.TabIndex = 2;
+            // 
+            // txtPassword
+            // 
+            txtPassword.BackColor = Color.LavenderBlush;
+            txtPassword.Location = new Point(127, 62);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(220, 33);
+            txtPassword.TabIndex = 2;
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label2.ForeColor = Color.Lavender;
             label2.Location = new Point(27, 59);
             label2.Name = "label2";
-            label2.Size = new Size(94, 45);
+            label2.Size = new Size(94, 36);
             label2.TabIndex = 0;
             label2.Text = "Mật khẩu:";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // label1
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBox1.BackColor = Color.LavenderBlush;
-            textBox1.Location = new Point(127, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(197, 33);
-            textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBox2.BackColor = Color.LavenderBlush;
-            textBox2.Location = new Point(127, 62);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(197, 33);
-            textBox2.TabIndex = 2;
+            label1.Anchor = AnchorStyles.None;
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label1.ForeColor = Color.Lavender;
+            label1.Location = new Point(27, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(94, 29);
+            label1.TabIndex = 0;
+            label1.Text = "Tài khoản:";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -133,20 +155,6 @@
             label3.Size = new Size(358, 32);
             label3.TabIndex = 1;
             label3.Text = "ĐĂNG NHẬP VÀO ỨNG DỤNG";
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.BackColor = Color.FromArgb(152, 188, 226);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.MidnightBlue;
-            button2.Location = new Point(335, 107);
-            button2.Name = "button2";
-            button2.Size = new Size(43, 43);
-            button2.TabIndex = 2;
-            button2.Text = "X";
-            button2.UseVisualStyleBackColor = false;
             // 
             // frmLogin
             // 
@@ -167,18 +175,20 @@
             FormClosing += frmLogin_FormClosing;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private TableLayoutPanel tableLayoutPanel2;
-        private Button button1;
+        private Button btnLogin;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtAccountID;
+        private TextBox txtPassword;
         private Label label3;
-        private Button button2;
+        private Button btnExit;
+        private Panel panel1;
     }
 }

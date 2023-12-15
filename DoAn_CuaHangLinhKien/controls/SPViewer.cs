@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,52 @@ namespace GUI
 {
     public partial class SPViewer : UserControl
     {
-        public SPViewer()
+        private Product product;
+        private bool isSelected;
+
+        public event EventHandler<EventArgs> WasClicked;
+
+        public SPViewer(Product product)
         {
             InitializeComponent();
+            this.Product = product;
+            this.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+
+        public Product Product
+        {
+            get => product;
+            set
+            {
+                product = value;
+                lbID.Text = product.ProductID.ToString();
+                lbName.Text = product.ProductName;
+                lbQuantity.Text = product.Quantity.ToString();
+                lbPrice.Text = product.Price.ToString() + "đ";
+                lbInfomation.Text = product.Information;
+                pbImage.ImageLocation = Application.StartupPath.Split("\\DoAn_CuaHangLinhKien", StringSplitOptions.None)[0] + @"\DoAn_CuaHangLinhKien\BLL\product-images\" + product.Image;
+            }
+        }
+
+        public bool IsSelected
+        {
+            get { return isSelected; }
+            set
+            {
+                isSelected = value;
+                this.BackColor = IsSelected ? Color.FromArgb(255, 253, 239) : Color.Azure;
+            }
+        }
+
+        private void SPViewer_Click(object sender, EventArgs e)
+        {
+            var wasClicked = WasClicked;
+            if (wasClicked != null)
+            {
+                WasClicked(this, EventArgs.Empty);
+            }
+
+            IsSelected = true;
         }
     }
 }

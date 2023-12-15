@@ -26,9 +26,10 @@ namespace DTO
         {
             this.AccountID = (string)row["MaTaiKhoan"];
             this.Password = (string)row["MatKhau"];
-            this.TypeID = (int)row["MaLoaiTK "];
+            this.TypeID = (int)row["MaLoaiTK"];
             // Có thể lỗi
-            this.StaffID = (int)row["MaNhanVien"];
+            if (row["MaNhanVien"] != System.DBNull.Value)
+                this.StaffID = (int)row["MaNhanVien"];
         }
     }
 }
