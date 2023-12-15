@@ -15,10 +15,10 @@ namespace DTO
         public string ProductName { get; set;}
         public string Information { get; set;}
         public int Quantity { get; set;}
-        public float Price { get; set;} 
+        public double Price { get; set;} 
         public string Image { get; set;}
 
-        public Product (int productID, int categoryID, int manufacturer, string productName, string information, int quantity, float price, string image ) 
+        public Product (int productID, int categoryID, int manufacturer, string productName, string information, int quantity, double price, string image ) 
         { 
             this.ProductID = productID;
             this.CategoryID = categoryID;
@@ -35,10 +35,12 @@ namespace DTO
             this.CategoryID = (int)row["MaDanhMuc"];
             this.ManufacturerID = (int)row["MaHangSX"];
             this.ProductName = (string)row["TenSanPham"];
-            this.Information = (string)row["TTChiTiet"];
+            if (row["TTChiTiet"] != System.DBNull.Value)
+                this.Information = (string)row["TTChiTiet"];
             this.Quantity = (int)row["SoLuong"];
-            this.Price = (float)row["GiaBan"];
-            this.Image = (string)row["HinhAnhSanPham"];
+            this.Price = (double)row["Gia"];
+            if (row["HinhAnhSanPham"] != System.DBNull.Value)
+                this.Image = (string)row["HinhAnhSanPham"];
         }
 
     }

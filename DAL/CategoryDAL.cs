@@ -1,16 +1,18 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL
 {
-    internal class CategoryDAL
+    public class CategoryDAL
     {
         private static CategoryDAL instance;
 
-        internal static CategoryDAL Instance 
+        public static CategoryDAL Instance 
         {
             get { if (instance == null) instance = new CategoryDAL(); return instance; }
             private set => instance = value; 
@@ -19,7 +21,21 @@ namespace DAL
 
 
 
+        public List<Category> GetListCategory()
+        {
+            List<Category> list = new List<Category>();
+            string query = "select * from DanhMucSanPham";
 
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach(DataRow row in data.Rows) 
+            {
+                Category category = new(row);
+                list.Add(category);
+            }
+
+            return list;
+        }
 
 
         public bool InsertCategory(string name)

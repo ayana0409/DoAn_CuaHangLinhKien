@@ -1,16 +1,18 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL
 {
-    internal class ManufacturerDAL
+    public class ManufacturerDAL
     {
         private static ManufacturerDAL instance;
 
-        internal static ManufacturerDAL Instance
+        public static ManufacturerDAL Instance
         {
             get { if (instance == null) instance = new ManufacturerDAL(); return instance; }
             private set => instance = value;
@@ -18,7 +20,21 @@ namespace DAL
         private ManufacturerDAL() { }
 
 
+        public List<Manufacturer> GetListManufacturer()
+        {
+            List<Manufacturer> list = new();
+            string query = "select * from HangSX";
 
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in data.Rows)
+            {
+                Manufacturer mnu = new(row);
+                list.Add(mnu);
+            }
+
+            return list;
+        }
 
         public bool InsertManufacturer(string name)
         {

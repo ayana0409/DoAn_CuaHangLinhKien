@@ -22,5 +22,10 @@ namespace DTO
             this.ManufacturerID = (int)row["MaHangSX"];
             this.ManufacturerName = (string)row["TenHangSX"];
         }
+
+        public override string ToString()
+        {
+            return this.ManufacturerName;
+        }
     }
 }

@@ -22,5 +22,10 @@ namespace DTO
             this.CategoryID = (int)row["MaDanhMuc"];
             this.CategoryName = (string)row["TenDanhMuc"];
         }
+
+        public override string ToString()
+        {
+            return this.CategoryName;
+        }
     }
 }

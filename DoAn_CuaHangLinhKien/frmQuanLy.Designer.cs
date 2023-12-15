@@ -109,28 +109,28 @@
             label26 = new Label();
             label27 = new Label();
             label28 = new Label();
-            textBox17 = new TextBox();
-            textBox18 = new TextBox();
-            numericUpDown1 = new NumericUpDown();
+            txtProductName = new TextBox();
+            txtProductID = new TextBox();
+            nmudQuantity = new NumericUpDown();
             label23 = new Label();
             label24 = new Label();
-            richTextBox2 = new RichTextBox();
+            rtbProductInfomation = new RichTextBox();
             splitContainer13 = new SplitContainer();
-            pictureBox1 = new PictureBox();
+            pbProductImage = new PictureBox();
             flowLayoutPanel4 = new FlowLayoutPanel();
-            button17 = new Button();
-            button18 = new Button();
+            btnSelectProductImage = new Button();
+            btnDeleteProductImage = new Button();
             label25 = new Label();
             label34 = new Label();
             label35 = new Label();
-            textBox15 = new TextBox();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            txtProductPrice = new TextBox();
+            cbProductCategory = new ComboBox();
+            cbProductManufacturer = new ComboBox();
             groupBox11 = new GroupBox();
             flowLayoutPanel3 = new FlowLayoutPanel();
-            button14 = new Button();
-            button15 = new Button();
-            button16 = new Button();
+            btnAddProduct = new Button();
+            btnUpdateProduct = new Button();
+            btnSaveProduct = new Button();
             tpManufacturer = new TabPage();
             splitContainer14 = new SplitContainer();
             dataGridView4 = new DataGridView();
@@ -286,7 +286,7 @@
             label19 = new Label();
             label20 = new Label();
             splitContainer7 = new SplitContainer();
-            openFileDialog1 = new OpenFileDialog();
+            ofdSelectProductImage = new OpenFileDialog();
             menuStrip1 = new MenuStrip();
             đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
@@ -365,12 +365,12 @@
             splitContainer12.SuspendLayout();
             groupBox10.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nmudQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer13).BeginInit();
             splitContainer13.Panel1.SuspendLayout();
             splitContainer13.Panel2.SuspendLayout();
             splitContainer13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbProductImage).BeginInit();
             flowLayoutPanel4.SuspendLayout();
             groupBox11.SuspendLayout();
             flowLayoutPanel3.SuspendLayout();
@@ -1525,19 +1525,19 @@
             tableLayoutPanel8.Controls.Add(label26, 0, 0);
             tableLayoutPanel8.Controls.Add(label27, 0, 1);
             tableLayoutPanel8.Controls.Add(label28, 0, 2);
-            tableLayoutPanel8.Controls.Add(textBox17, 1, 1);
-            tableLayoutPanel8.Controls.Add(textBox18, 1, 0);
-            tableLayoutPanel8.Controls.Add(numericUpDown1, 1, 2);
+            tableLayoutPanel8.Controls.Add(txtProductName, 1, 1);
+            tableLayoutPanel8.Controls.Add(txtProductID, 1, 0);
+            tableLayoutPanel8.Controls.Add(nmudQuantity, 1, 2);
             tableLayoutPanel8.Controls.Add(label23, 0, 3);
             tableLayoutPanel8.Controls.Add(label24, 0, 4);
-            tableLayoutPanel8.Controls.Add(richTextBox2, 1, 3);
+            tableLayoutPanel8.Controls.Add(rtbProductInfomation, 1, 3);
             tableLayoutPanel8.Controls.Add(splitContainer13, 1, 4);
             tableLayoutPanel8.Controls.Add(label25, 0, 5);
             tableLayoutPanel8.Controls.Add(label34, 0, 6);
             tableLayoutPanel8.Controls.Add(label35, 0, 7);
-            tableLayoutPanel8.Controls.Add(textBox15, 1, 7);
-            tableLayoutPanel8.Controls.Add(comboBox1, 1, 5);
-            tableLayoutPanel8.Controls.Add(comboBox2, 1, 6);
+            tableLayoutPanel8.Controls.Add(txtProductPrice, 1, 7);
+            tableLayoutPanel8.Controls.Add(cbProductCategory, 1, 5);
+            tableLayoutPanel8.Controls.Add(cbProductManufacturer, 1, 6);
             tableLayoutPanel8.Dock = DockStyle.Fill;
             tableLayoutPanel8.Location = new Point(3, 23);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -1589,32 +1589,34 @@
             label28.TabIndex = 0;
             label28.Text = "Số lượng:";
             // 
-            // textBox17
+            // txtProductName
             // 
-            textBox17.BackColor = Color.FromArgb(255, 253, 239);
-            textBox17.Dock = DockStyle.Fill;
-            textBox17.Location = new Point(93, 37);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(302, 27);
-            textBox17.TabIndex = 1;
+            txtProductName.BackColor = Color.FromArgb(255, 253, 239);
+            txtProductName.Dock = DockStyle.Fill;
+            txtProductName.Location = new Point(93, 37);
+            txtProductName.Name = "txtProductName";
+            txtProductName.Size = new Size(302, 27);
+            txtProductName.TabIndex = 1;
             // 
-            // textBox18
+            // txtProductID
             // 
-            textBox18.BackColor = Color.FromArgb(255, 253, 239);
-            textBox18.Dock = DockStyle.Fill;
-            textBox18.Location = new Point(93, 3);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(302, 27);
-            textBox18.TabIndex = 1;
+            txtProductID.BackColor = Color.FromArgb(255, 253, 239);
+            txtProductID.Dock = DockStyle.Fill;
+            txtProductID.Location = new Point(93, 3);
+            txtProductID.Name = "txtProductID";
+            txtProductID.ReadOnly = true;
+            txtProductID.Size = new Size(302, 27);
+            txtProductID.TabIndex = 1;
             // 
-            // numericUpDown1
+            // nmudQuantity
             // 
-            numericUpDown1.BackColor = Color.FromArgb(255, 253, 239);
-            numericUpDown1.Dock = DockStyle.Fill;
-            numericUpDown1.Location = new Point(93, 70);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(302, 27);
-            numericUpDown1.TabIndex = 2;
+            nmudQuantity.BackColor = Color.FromArgb(255, 253, 239);
+            nmudQuantity.Dock = DockStyle.Fill;
+            nmudQuantity.Location = new Point(93, 70);
+            nmudQuantity.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            nmudQuantity.Name = "nmudQuantity";
+            nmudQuantity.Size = new Size(302, 27);
+            nmudQuantity.TabIndex = 2;
             // 
             // label23
             // 
@@ -1639,15 +1641,15 @@
             label24.TabIndex = 4;
             label24.Text = "Ảnh:";
             // 
-            // richTextBox2
+            // rtbProductInfomation
             // 
-            richTextBox2.BackColor = Color.FromArgb(255, 253, 239);
-            richTextBox2.Dock = DockStyle.Fill;
-            richTextBox2.Location = new Point(93, 99);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(302, 72);
-            richTextBox2.TabIndex = 5;
-            richTextBox2.Text = "";
+            rtbProductInfomation.BackColor = Color.FromArgb(255, 253, 239);
+            rtbProductInfomation.Dock = DockStyle.Fill;
+            rtbProductInfomation.Location = new Point(93, 99);
+            rtbProductInfomation.Name = "rtbProductInfomation";
+            rtbProductInfomation.Size = new Size(302, 72);
+            rtbProductInfomation.TabIndex = 5;
+            rtbProductInfomation.Text = "";
             // 
             // splitContainer13
             // 
@@ -1657,7 +1659,7 @@
             // 
             // splitContainer13.Panel1
             // 
-            splitContainer13.Panel1.Controls.Add(pictureBox1);
+            splitContainer13.Panel1.Controls.Add(pbProductImage);
             // 
             // splitContainer13.Panel2
             // 
@@ -1666,47 +1668,50 @@
             splitContainer13.SplitterDistance = 124;
             splitContainer13.TabIndex = 6;
             // 
-            // pictureBox1
+            // pbProductImage
             // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(124, 65);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pbProductImage.BackgroundImageLayout = ImageLayout.None;
+            pbProductImage.BorderStyle = BorderStyle.FixedSingle;
+            pbProductImage.Dock = DockStyle.Fill;
+            pbProductImage.Location = new Point(0, 0);
+            pbProductImage.Name = "pbProductImage";
+            pbProductImage.Size = new Size(124, 65);
+            pbProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbProductImage.TabIndex = 0;
+            pbProductImage.TabStop = false;
             // 
             // flowLayoutPanel4
             // 
-            flowLayoutPanel4.Controls.Add(button17);
-            flowLayoutPanel4.Controls.Add(button18);
+            flowLayoutPanel4.Controls.Add(btnSelectProductImage);
+            flowLayoutPanel4.Controls.Add(btnDeleteProductImage);
             flowLayoutPanel4.Dock = DockStyle.Fill;
             flowLayoutPanel4.Location = new Point(0, 0);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
             flowLayoutPanel4.Size = new Size(174, 65);
             flowLayoutPanel4.TabIndex = 0;
             // 
-            // button17
+            // btnSelectProductImage
             // 
-            button17.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button17.ForeColor = Color.Brown;
-            button17.Location = new Point(3, 3);
-            button17.Name = "button17";
-            button17.Size = new Size(81, 44);
-            button17.TabIndex = 0;
-            button17.Text = "Chọn";
-            button17.UseVisualStyleBackColor = true;
+            btnSelectProductImage.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnSelectProductImage.ForeColor = Color.Brown;
+            btnSelectProductImage.Location = new Point(3, 3);
+            btnSelectProductImage.Name = "btnSelectProductImage";
+            btnSelectProductImage.Size = new Size(81, 44);
+            btnSelectProductImage.TabIndex = 0;
+            btnSelectProductImage.Text = "Chọn";
+            btnSelectProductImage.UseVisualStyleBackColor = true;
+            btnSelectProductImage.Click += btnSelectProductImage_Click;
             // 
-            // button18
+            // btnDeleteProductImage
             // 
-            button18.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button18.ForeColor = Color.Brown;
-            button18.Location = new Point(90, 3);
-            button18.Name = "button18";
-            button18.Size = new Size(81, 44);
-            button18.TabIndex = 1;
-            button18.Text = "Xóa";
-            button18.UseVisualStyleBackColor = true;
+            btnDeleteProductImage.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnDeleteProductImage.ForeColor = Color.Brown;
+            btnDeleteProductImage.Location = new Point(90, 3);
+            btnDeleteProductImage.Name = "btnDeleteProductImage";
+            btnDeleteProductImage.Size = new Size(81, 44);
+            btnDeleteProductImage.TabIndex = 1;
+            btnDeleteProductImage.Text = "Xóa";
+            btnDeleteProductImage.UseVisualStyleBackColor = true;
             // 
             // label25
             // 
@@ -1744,34 +1749,34 @@
             label35.TabIndex = 10;
             label35.Text = "Giá:";
             // 
-            // textBox15
+            // txtProductPrice
             // 
-            textBox15.BackColor = Color.FromArgb(255, 253, 239);
-            textBox15.Dock = DockStyle.Fill;
-            textBox15.Location = new Point(93, 328);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(302, 27);
-            textBox15.TabIndex = 11;
+            txtProductPrice.BackColor = Color.FromArgb(255, 253, 239);
+            txtProductPrice.Dock = DockStyle.Fill;
+            txtProductPrice.Location = new Point(93, 328);
+            txtProductPrice.Name = "txtProductPrice";
+            txtProductPrice.Size = new Size(302, 27);
+            txtProductPrice.TabIndex = 11;
             // 
-            // comboBox1
+            // cbProductCategory
             // 
-            comboBox1.BackColor = Color.FromArgb(255, 253, 239);
-            comboBox1.Dock = DockStyle.Fill;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(93, 248);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(302, 28);
-            comboBox1.TabIndex = 12;
+            cbProductCategory.BackColor = Color.FromArgb(255, 253, 239);
+            cbProductCategory.Dock = DockStyle.Fill;
+            cbProductCategory.FormattingEnabled = true;
+            cbProductCategory.Location = new Point(93, 248);
+            cbProductCategory.Name = "cbProductCategory";
+            cbProductCategory.Size = new Size(302, 28);
+            cbProductCategory.TabIndex = 12;
             // 
-            // comboBox2
+            // cbProductManufacturer
             // 
-            comboBox2.BackColor = Color.FromArgb(255, 253, 239);
-            comboBox2.Dock = DockStyle.Fill;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(93, 288);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(302, 28);
-            comboBox2.TabIndex = 13;
+            cbProductManufacturer.BackColor = Color.FromArgb(255, 253, 239);
+            cbProductManufacturer.Dock = DockStyle.Fill;
+            cbProductManufacturer.FormattingEnabled = true;
+            cbProductManufacturer.Location = new Point(93, 288);
+            cbProductManufacturer.Name = "cbProductManufacturer";
+            cbProductManufacturer.Size = new Size(302, 28);
+            cbProductManufacturer.TabIndex = 13;
             // 
             // groupBox11
             // 
@@ -1786,59 +1791,62 @@
             // 
             // flowLayoutPanel3
             // 
-            flowLayoutPanel3.Controls.Add(button14);
-            flowLayoutPanel3.Controls.Add(button15);
-            flowLayoutPanel3.Controls.Add(button16);
+            flowLayoutPanel3.Controls.Add(btnAddProduct);
+            flowLayoutPanel3.Controls.Add(btnUpdateProduct);
+            flowLayoutPanel3.Controls.Add(btnSaveProduct);
             flowLayoutPanel3.Dock = DockStyle.Fill;
             flowLayoutPanel3.Location = new Point(3, 23);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             flowLayoutPanel3.Size = new Size(398, 52);
             flowLayoutPanel3.TabIndex = 3;
             // 
-            // button14
+            // btnAddProduct
             // 
-            button14.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button14.ForeColor = Color.Brown;
-            button14.ImageAlign = ContentAlignment.MiddleLeft;
-            button14.ImageKey = "icons8-add-file-64.png";
-            button14.ImageList = imageList1;
-            button14.Location = new Point(3, 3);
-            button14.Name = "button14";
-            button14.Size = new Size(93, 43);
-            button14.TabIndex = 2;
-            button14.Text = "Thêm";
-            button14.TextAlign = ContentAlignment.MiddleRight;
-            button14.UseVisualStyleBackColor = true;
+            btnAddProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnAddProduct.ForeColor = Color.Brown;
+            btnAddProduct.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAddProduct.ImageKey = "icons8-add-file-64.png";
+            btnAddProduct.ImageList = imageList1;
+            btnAddProduct.Location = new Point(3, 3);
+            btnAddProduct.Name = "btnAddProduct";
+            btnAddProduct.Size = new Size(93, 43);
+            btnAddProduct.TabIndex = 2;
+            btnAddProduct.Text = "Thêm";
+            btnAddProduct.TextAlign = ContentAlignment.MiddleRight;
+            btnAddProduct.UseVisualStyleBackColor = true;
+            btnAddProduct.Click += btnAddProduct_Click;
             // 
-            // button15
+            // btnUpdateProduct
             // 
-            button15.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button15.ForeColor = Color.Brown;
-            button15.ImageAlign = ContentAlignment.MiddleLeft;
-            button15.ImageKey = "icons8-update-file-64.png";
-            button15.ImageList = imageList1;
-            button15.Location = new Point(102, 3);
-            button15.Name = "button15";
-            button15.Size = new Size(93, 43);
-            button15.TabIndex = 2;
-            button15.Text = "Sửa";
-            button15.TextAlign = ContentAlignment.MiddleRight;
-            button15.UseVisualStyleBackColor = true;
+            btnUpdateProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnUpdateProduct.ForeColor = Color.Brown;
+            btnUpdateProduct.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUpdateProduct.ImageKey = "icons8-update-file-64.png";
+            btnUpdateProduct.ImageList = imageList1;
+            btnUpdateProduct.Location = new Point(102, 3);
+            btnUpdateProduct.Name = "btnUpdateProduct";
+            btnUpdateProduct.Size = new Size(93, 43);
+            btnUpdateProduct.TabIndex = 2;
+            btnUpdateProduct.Text = "Sửa";
+            btnUpdateProduct.TextAlign = ContentAlignment.MiddleRight;
+            btnUpdateProduct.UseVisualStyleBackColor = true;
             // 
-            // button16
+            // btnSaveProduct
             // 
-            button16.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button16.ForeColor = Color.Brown;
-            button16.ImageAlign = ContentAlignment.MiddleLeft;
-            button16.ImageKey = "icons8-save-64.png";
-            button16.ImageList = imageList1;
-            button16.Location = new Point(201, 3);
-            button16.Name = "button16";
-            button16.Size = new Size(93, 43);
-            button16.TabIndex = 3;
-            button16.Text = "Lưu";
-            button16.TextAlign = ContentAlignment.MiddleRight;
-            button16.UseVisualStyleBackColor = true;
+            btnSaveProduct.Enabled = false;
+            btnSaveProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnSaveProduct.ForeColor = Color.Brown;
+            btnSaveProduct.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSaveProduct.ImageKey = "icons8-save-64.png";
+            btnSaveProduct.ImageList = imageList1;
+            btnSaveProduct.Location = new Point(201, 3);
+            btnSaveProduct.Name = "btnSaveProduct";
+            btnSaveProduct.Size = new Size(93, 43);
+            btnSaveProduct.TabIndex = 3;
+            btnSaveProduct.Text = "Lưu";
+            btnSaveProduct.TextAlign = ContentAlignment.MiddleRight;
+            btnSaveProduct.UseVisualStyleBackColor = true;
+            btnSaveProduct.Click += btnSaveProduct_Click;
             // 
             // tpManufacturer
             // 
@@ -3840,9 +3848,9 @@
             splitContainer7.SplitterDistance = 143;
             splitContainer7.TabIndex = 0;
             // 
-            // openFileDialog1
+            // ofdSelectProductImage
             // 
-            openFileDialog1.FileName = "openFileDialog1";
+            ofdSelectProductImage.FileName = "openFileDialog1";
             // 
             // menuStrip1
             // 
@@ -4123,12 +4131,12 @@
             groupBox10.ResumeLayout(false);
             tableLayoutPanel8.ResumeLayout(false);
             tableLayoutPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nmudQuantity).EndInit();
             splitContainer13.Panel1.ResumeLayout(false);
             splitContainer13.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer13).EndInit();
             splitContainer13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbProductImage).EndInit();
             flowLayoutPanel4.ResumeLayout(false);
             groupBox11.ResumeLayout(false);
             flowLayoutPanel3.ResumeLayout(false);
@@ -4351,13 +4359,13 @@
         private Label label26;
         private Label label27;
         private Label label28;
-        private TextBox textBox17;
-        private TextBox textBox18;
+        private TextBox txtProductName;
+        private TextBox txtProductID;
         private GroupBox groupBox11;
         private FlowLayoutPanel flowLayoutPanel3;
-        private Button button14;
-        private Button button15;
-        private Button button16;
+        private Button btnAddProduct;
+        private Button btnUpdateProduct;
+        private Button btnSaveProduct;
         private DataGridView dataGridView3;
         private SplitContainer splitContainer8;
         private GroupBox groupBox7;
@@ -4379,17 +4387,17 @@
         private Label label19;
         private Label label20;
         private SplitContainer splitContainer7;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown nmudQuantity;
         private Label label23;
         private Label label24;
-        private RichTextBox richTextBox2;
+        private RichTextBox rtbProductInfomation;
         private SplitContainer splitContainer13;
-        private PictureBox pictureBox1;
+        private PictureBox pbProductImage;
         private FlowLayoutPanel flowLayoutPanel4;
-        private Button button17;
-        private Button button18;
+        private Button btnSelectProductImage;
+        private Button btnDeleteProductImage;
         private Label label25;
-        private OpenFileDialog openFileDialog1;
+        private OpenFileDialog ofdSelectProductImage;
         private FlowLayoutPanel flpProduct;
         private Label label34;
         private Label label35;
@@ -4412,9 +4420,9 @@
         private TextBox textBox21;
         private GroupBox groupBox14;
         private FlowLayoutPanel flowLayoutPanel6;
-        private TextBox textBox15;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private TextBox txtProductPrice;
+        private ComboBox cbProductCategory;
+        private ComboBox cbProductManufacturer;
         private TextBox textBox22;
         private SplitContainer splitContainer17;
         private DataGridView dataGridView5;
