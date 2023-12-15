@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            panel1 = new Panel();
             btnLogin = new Button();
             btnExit = new Button();
             txtAccountID = new TextBox();
@@ -37,18 +36,7 @@
             label2 = new Label();
             label1 = new Label();
             label3 = new Label();
-            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(btnLogin);
-            panel1.Controls.Add(btnExit);
-            panel1.Location = new Point(238, 258);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(253, 49);
-            panel1.TabIndex = 3;
             // 
             // btnLogin
             // 
@@ -57,7 +45,7 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.MidnightBlue;
-            btnLogin.Location = new Point(0, 3);
+            btnLogin.Location = new Point(238, 258);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(121, 43);
             btnLogin.TabIndex = 0;
@@ -73,7 +61,7 @@
             btnExit.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = Color.MidnightBlue;
             btnExit.Image = Properties.Resources.icons8_export_26;
-            btnExit.Location = new Point(207, 3);
+            btnExit.Location = new Point(448, 258);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(43, 43);
             btnExit.TabIndex = 1;
@@ -144,7 +132,8 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             CancelButton = btnExit;
             ClientSize = new Size(624, 441);
-            Controls.Add(panel1);
+            Controls.Add(btnExit);
+            Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtAccountID);
             Controls.Add(label2);
@@ -157,7 +146,6 @@
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             FormClosing += frmLogin_FormClosing;
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,6 +158,5 @@
         private TextBox txtPassword;
         private Label label3;
         private Button btnExit;
-        private Panel panel1;
     }
 }
