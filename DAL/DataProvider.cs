@@ -21,7 +21,7 @@ namespace DAL
 
         private string connectionSTR = "Data Source=.;Initial Catalog=QLCHBanLinhKien;Integrated Security=True;TrustServerCertificate=True";
 
-
+        // Dùng cho select
         public DataTable ExecuteQuery(string query, object[]? parameter = null)
         {
             DataTable data = new();
@@ -56,6 +56,7 @@ namespace DAL
             return data;
         }
 
+        // Dùng I U D
         public int ExecuteNonQuery(string query, object[]? parameter = null)
         {
             int data = 0;

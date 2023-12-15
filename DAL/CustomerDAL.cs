@@ -16,7 +16,10 @@ namespace DAL
             private set => instance = value;
         }
         private CustomerDAL() { }
+        // GetListCustomer
 
+
+        #region CRUD
         public bool InsertCustomer(string numberphone, string name, string address)
         {
             string query = string.Format("Insert KhachHang ( SDTKhachHang, HoVaTenKhachHang, DiaChi ) values (N'{0}',N'{1}',N'{2}')",
@@ -34,5 +37,6 @@ namespace DAL
 
             return result > 0;
         }
+        #endregion
     }
 }

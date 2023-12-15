@@ -23,6 +23,10 @@ namespace GUI
         private void frmManage_Load(object sender, EventArgs e)
         {
             CheckRole();
+
+
+
+            #region FAKE
             string query = "select * from ThongTinPhieuNhap";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             
@@ -62,7 +66,9 @@ namespace GUI
                 view.WasClicked += FlowLayOutPanel_Controls_WasClicked;
                 flpProduct.Controls.Add(view);
             }
+            #endregion
         }
+        // LoadCustomer -- source = CustomerDAL.I.Get....
 
         private void CheckRole()
         {

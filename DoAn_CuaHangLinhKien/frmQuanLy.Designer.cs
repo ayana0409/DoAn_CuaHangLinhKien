@@ -33,7 +33,7 @@
             TabControl = new TabControl();
             tpCustomer = new TabPage();
             splitContainer1 = new SplitContainer();
-            dataGridView1 = new DataGridView();
+            dtgvCustomer = new DataGridView();
             splitContainer2 = new SplitContainer();
             groupBox1 = new GroupBox();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -313,7 +313,7 @@
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvCustomer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
@@ -540,7 +540,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(dataGridView1);
+            splitContainer1.Panel1.Controls.Add(dtgvCustomer);
             // 
             // splitContainer1.Panel2
             // 
@@ -550,15 +550,15 @@
             splitContainer1.SplitterDistance = 842;
             splitContainer1.TabIndex = 2;
             // 
-            // dataGridView1
+            // dtgvCustomer
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(194, 231, 255);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(842, 616);
-            dataGridView1.TabIndex = 0;
+            dtgvCustomer.BackgroundColor = Color.FromArgb(194, 231, 255);
+            dtgvCustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvCustomer.Dock = DockStyle.Fill;
+            dtgvCustomer.Location = new Point(0, 0);
+            dtgvCustomer.Name = "dtgvCustomer";
+            dtgvCustomer.Size = new Size(842, 616);
+            dtgvCustomer.TabIndex = 0;
             // 
             // splitContainer2
             // 
@@ -1341,10 +1341,10 @@
             // 
             tpProduct.BackColor = Color.Azure;
             tpProduct.Controls.Add(splitContainer10);
-            tpProduct.Location = new Point(4, 29);
+            tpProduct.Location = new Point(4, 24);
             tpProduct.Name = "tpProduct";
             tpProduct.Padding = new Padding(3);
-            tpProduct.Size = new Size(1256, 624);
+            tpProduct.Size = new Size(1256, 629);
             tpProduct.TabIndex = 2;
             tpProduct.Text = "Sản phẩm";
             // 
@@ -1363,7 +1363,7 @@
             // 
             splitContainer10.Panel2.Controls.Add(splitContainer11);
             splitContainer10.Panel2MinSize = 400;
-            splitContainer10.Size = new Size(1250, 618);
+            splitContainer10.Size = new Size(1250, 623);
             splitContainer10.SplitterDistance = 842;
             splitContainer10.TabIndex = 4;
             // 
@@ -1374,7 +1374,7 @@
             flpProduct.Dock = DockStyle.Fill;
             flpProduct.Location = new Point(0, 0);
             flpProduct.Name = "flpProduct";
-            flpProduct.Size = new Size(842, 618);
+            flpProduct.Size = new Size(842, 623);
             flpProduct.TabIndex = 0;
             // 
             // splitContainer11
@@ -1395,7 +1395,7 @@
             // 
             splitContainer11.Panel2.Controls.Add(splitContainer12);
             splitContainer11.Panel2MinSize = 150;
-            splitContainer11.Size = new Size(404, 618);
+            splitContainer11.Size = new Size(404, 623);
             splitContainer11.SplitterDistance = 150;
             splitContainer11.TabIndex = 4;
             // 
@@ -1502,7 +1502,7 @@
             // splitContainer12.Panel2
             // 
             splitContainer12.Panel2.Controls.Add(groupBox11);
-            splitContainer12.Size = new Size(404, 464);
+            splitContainer12.Size = new Size(404, 469);
             splitContainer12.SplitterDistance = 387;
             splitContainer12.TabIndex = 1;
             // 
@@ -1779,7 +1779,7 @@
             groupBox11.Dock = DockStyle.Fill;
             groupBox11.Location = new Point(0, 0);
             groupBox11.Name = "groupBox11";
-            groupBox11.Size = new Size(404, 73);
+            groupBox11.Size = new Size(404, 78);
             groupBox11.TabIndex = 2;
             groupBox11.TabStop = false;
             groupBox11.Text = "Chức năng";
@@ -1792,7 +1792,7 @@
             flowLayoutPanel3.Dock = DockStyle.Fill;
             flowLayoutPanel3.Location = new Point(3, 23);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(398, 47);
+            flowLayoutPanel3.Size = new Size(398, 52);
             flowLayoutPanel3.TabIndex = 3;
             // 
             // button14
@@ -4065,7 +4065,7 @@
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvCustomer).EndInit();
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
@@ -4284,7 +4284,7 @@
         private SplitContainer splitContainer1;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dtgvCustomer;
         private GroupBox groupBox2;
         private RichTextBox richTextBox1;
         private Label label3;
