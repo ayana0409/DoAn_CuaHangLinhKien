@@ -12,9 +12,9 @@ namespace DTO
         public int GRNID { get; set; }
         public int ProductID { get; set;}
         public int Quantity { get; set; }
-        public float Price { get; set; }
+        public double Price { get; set; }
 
-        public InformationGRN(int gRNID, int productID, int quantity, float price) 
+        public InformationGRN(int gRNID, int productID, int quantity, double price) 
         {
             this.GRNID = gRNID;
             this.ProductID = productID;
@@ -26,7 +26,7 @@ namespace DTO
             this.GRNID = (int)row["MaPhieuNhap"];
             this.ProductID = (int)row["MaSanPham"];
             this.Quantity = (int)row["SoLuongNhap"];
-            this.Price = (float)row["GiaNhap"];
+            this.Price = (double)row["GiaNhap"];
 
         }
 

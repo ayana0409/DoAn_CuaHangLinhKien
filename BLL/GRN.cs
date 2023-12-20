@@ -12,11 +12,19 @@ namespace DTO
         public int GRNID { get; set; }
         public int StaffID { get; set; }
         public string Unit { get; set; }
-        public DateOnly Date { get; set; }
+        public DateTime Date { get; set; }
         public string Image { get; set; }
-        public float Total { get; set; }
-
-        public GRN(int gRNID, int staffID, string unit, DateOnly date, string image, float total)
+        public double Total { get; set; }
+        public GRN()
+        {
+            GRNID = 0;
+            StaffID = 0;
+            Unit = "Unknown";
+            Date = DateTime.Now;
+            Image = "Unknown";
+            Total = 0;
+        }
+        public GRN(int gRNID, int staffID, string unit, DateTime date, string image, double total)
         {
             this.GRNID = gRNID;
             this.StaffID = staffID;
@@ -31,9 +39,12 @@ namespace DTO
             this.StaffID = (int)row["MaNhanVien"];
             this.GRNID = (int)row["MaPhieuNhap"];
             this.Unit = (string)row["DonViNhap"];
-            this.Date = (DateOnly)row["NgayNhapPhieu"];
-            this.Image = (string)row["HinhAnhPhieuNhap"];
-            this.Total = (float)row["TongGiaTri"];
+            this.Date = (DateTime)row["NgayNhapPhieu"];
+            if (row["HinhAnhPhieuNhap"] != System.DBNull.Value)
+                this.Image = (string)row["HinhAnhPhieuNhap"];
+            else
+                this.Image = "Unknown";
+            this.Total = (double)row["TongGiaTri"];
         }
     }
 }

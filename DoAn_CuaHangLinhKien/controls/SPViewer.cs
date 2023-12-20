@@ -16,7 +16,7 @@ namespace GUI
         private Product product;
         private bool isSelected;
 
-        public event EventHandler<EventArgs> WasClicked;
+        public event EventHandler WasClicked;
 
         public SPViewer(Product product)
         {
@@ -36,7 +36,13 @@ namespace GUI
                 lbQuantity.Text = product.Quantity.ToString();
                 lbPrice.Text = product.Price.ToString() + "đ";
                 lbInfomation.Text = product.Information;
-                pbImage.ImageLocation = Application.StartupPath.Split("\\DoAn_CuaHangLinhKien", StringSplitOptions.None)[0] + @"\DoAn_CuaHangLinhKien\BLL\product-images\" + product.Image;
+                string path = 
+                    Application.StartupPath.Split("\\DoAn_CuaHangLinhKien", StringSplitOptions.None)[0] 
+                        + @"\DoAn_CuaHangLinhKien\BLL\product-images\";
+                if (product.Image == "Unknown" || product.Image == String.Empty)
+                    pbImage.ImageLocation = path + "default-product.png";
+                else
+                    pbImage.ImageLocation = path + product.Image;
             }
         }
 
@@ -52,12 +58,14 @@ namespace GUI
 
         private void SPViewer_Click(object sender, EventArgs e)
         {
+            /*
             var wasClicked = WasClicked;
             if (wasClicked != null)
             {
                 WasClicked(this, EventArgs.Empty);
             }
-
+            */
+            WasClicked?.Invoke(this, e);
             IsSelected = true;
         }
     }

@@ -37,7 +37,14 @@ namespace DAL
             return list;
         }
 
+        public Category GetCategory(int id)
+        {
+            string query = "select * from DanhMucSanPham where MaDanhMuc = " + id + "";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            Category category = new(data.Rows[0]);
 
+            return category;
+        }
         public bool InsertCategory(string name)
         {
             string query = string.Format("Insert DanhMucSanPham (TenDanhMuc) values (N'{0}')", name);  

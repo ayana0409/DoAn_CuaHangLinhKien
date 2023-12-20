@@ -4,22 +4,23 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 
 namespace DTO
 {
     public class Staff
     {
         public int StaffID { get; set; }
-        public int AccountID { get; set; }
+        public string? AccountID { get; set; }
         public int RoleID { get; set; }
         public string StaffName { get; set; }
-        public DateOnly Date { get; set; }
+        public DateTime Date { get; set; }
         public string Sex { get; set; }
         public string Address { get; set; }
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public string Status { get; set; }
 
-        public Staff(int staffID,int AccountID,int RoleID, string staffName, DateOnly date, string sex, string address, int phoneNumber, string status)
+        public Staff(int staffID,string AccountID,int roleID, string staffName, DateTime date, string sex, string address, string phoneNumber, string status)
         {
             this.StaffID = staffID;
             this.AccountID = AccountID;
@@ -35,14 +36,22 @@ namespace DTO
         public Staff(DataRow row)
         {
             this.StaffID = (int)row["MaNhanVien"];
-            this.AccountID = (int)row["MaTaiKhoan"];
+            if (row["MaTaiKhoan"] != System.DBNull.Value)
+                this.AccountID = (string)row["MaTaiKhoan"];
+            else
+                this.AccountID = null;
             this.RoleID = (int)row["MaChucVu"];
-            this.StaffName = (string)row["TenNhanVien"];
-            this.Date = (DateOnly)row["NgaySinh"];
+            this.StaffName = (string)row["HoVaTen"];
+            this.Date = (DateTime)row["NgaySinh"];
             this.Sex = (string)row["GioiTinh"];
             this.Address = (string)row["DiaChi"];
-            this.PhoneNumber = (int)row["SDT"];
+            this.PhoneNumber = (string)row["SDT"];
             this.Status = (string)row["TrangThai"];
         } 
+
+        public override string ToString()
+        {
+            return this.StaffName;
+        }
     }
 }

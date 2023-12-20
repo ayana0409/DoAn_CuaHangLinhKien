@@ -38,7 +38,6 @@
             groupBox1 = new GroupBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             button1 = new Button();
-            imageList1 = new ImageList(components);
             label1 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
@@ -99,10 +98,10 @@
             groupBox9 = new GroupBox();
             tableLayoutPanel7 = new TableLayoutPanel();
             label21 = new Label();
-            textBox14 = new TextBox();
+            txtSearchProductID = new TextBox();
             label22 = new Label();
-            button12 = new Button();
-            textBox22 = new TextBox();
+            txtSearchProductName = new TextBox();
+            btnSearchProduct = new Button();
             splitContainer12 = new SplitContainer();
             groupBox10 = new GroupBox();
             tableLayoutPanel8 = new TableLayoutPanel();
@@ -178,64 +177,86 @@
             button21 = new Button();
             tpGRN = new TabPage();
             splitContainer20 = new SplitContainer();
-            dataGridView6 = new DataGridView();
+            dtgvGRN = new DataGridView();
+            Column10 = new DataGridViewTextBoxColumn();
+            Column12 = new DataGridViewTextBoxColumn();
+            Column11 = new DataGridViewTextBoxColumn();
+            Column13 = new DataGridViewTextBoxColumn();
+            Column14 = new DataGridViewTextBoxColumn();
             splitContainer21 = new SplitContainer();
             groupBox18 = new GroupBox();
             tableLayoutPanel13 = new TableLayoutPanel();
             label40 = new Label();
-            textBox27 = new TextBox();
+            txtSearchGRNID = new TextBox();
             label41 = new Label();
             label42 = new Label();
-            label43 = new Label();
-            dateTimePicker5 = new DateTimePicker();
-            textBox28 = new TextBox();
-            dateTimePicker6 = new DateTimePicker();
-            button26 = new Button();
+            dtpkSearchGRNTo = new DateTimePicker();
+            dtpkSearchGRNFrom = new DateTimePicker();
+            panel1 = new Panel();
+            btnSearchGRNCancel = new Button();
+            btnSearchGRN = new Button();
             splitContainer22 = new SplitContainer();
             groupBox19 = new GroupBox();
             tableLayoutPanel14 = new TableLayoutPanel();
             label45 = new Label();
             label46 = new Label();
             label47 = new Label();
-            textBox30 = new TextBox();
-            textBox31 = new TextBox();
-            comboBox4 = new ComboBox();
+            txtGRNUnit = new TextBox();
+            label43 = new Label();
+            txtGRNID = new TextBox();
+            cbGRNStaff = new ComboBox();
+            txtGRNTotal = new TextBox();
+            dtpkGRNDate = new DateTimePicker();
+            label68 = new Label();
             groupBox20 = new GroupBox();
             flowLayoutPanel8 = new FlowLayoutPanel();
-            button27 = new Button();
-            button28 = new Button();
+            btnDetailAndUpdateGRN = new Button();
+            btnAddGRN = new Button();
             button30 = new Button();
             tpStaff = new TabPage();
             splitContainer23 = new SplitContainer();
-            dataGridView7 = new DataGridView();
+            dtgvStaff = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
             splitContainer24 = new SplitContainer();
             groupBox21 = new GroupBox();
             tableLayoutPanel15 = new TableLayoutPanel();
-            button29 = new Button();
+            btnSearchStaff = new Button();
             label44 = new Label();
-            textBox29 = new TextBox();
-            textBox32 = new TextBox();
+            txtSearchStaffName = new TextBox();
+            txtSearchStaffID = new TextBox();
             label48 = new Label();
             splitContainer25 = new SplitContainer();
             groupBox22 = new GroupBox();
             tableLayoutPanel16 = new TableLayoutPanel();
             label49 = new Label();
             label50 = new Label();
-            textBox33 = new TextBox();
-            textBox34 = new TextBox();
-            label51 = new Label();
-            richTextBox3 = new RichTextBox();
+            txtStaffName = new TextBox();
+            txtStaffID = new TextBox();
             label52 = new Label();
             label53 = new Label();
             label54 = new Label();
-            comboBox6 = new ComboBox();
-            comboBox5 = new ComboBox();
-            textBox35 = new TextBox();
+            cbStaffGender = new ComboBox();
+            label51 = new Label();
+            label66 = new Label();
+            rtbStaffAdress = new RichTextBox();
+            label67 = new Label();
+            cbStaffRole = new ComboBox();
+            cboStaffStatus = new ComboBox();
+            txtStaffPhone = new TextBox();
+            dtpStaffBornDate = new DateTimePicker();
             groupBox23 = new GroupBox();
             flowLayoutPanel9 = new FlowLayoutPanel();
-            button23 = new Button();
-            button24 = new Button();
-            button25 = new Button();
+            btnAddStaff = new Button();
+            btnUpdateStaff = new Button();
+            btnSaveStaff = new Button();
             tpAccount = new TabPage();
             splitContainer29 = new SplitContainer();
             dataGridView9 = new DataGridView();
@@ -265,6 +286,7 @@
             button31 = new Button();
             button32 = new Button();
             button33 = new Button();
+            staffBindingSource = new BindingSource(components);
             dataGridView3 = new DataGridView();
             splitContainer8 = new SplitContainer();
             groupBox7 = new GroupBox();
@@ -418,13 +440,14 @@
             splitContainer20.Panel1.SuspendLayout();
             splitContainer20.Panel2.SuspendLayout();
             splitContainer20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvGRN).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer21).BeginInit();
             splitContainer21.Panel1.SuspendLayout();
             splitContainer21.Panel2.SuspendLayout();
             splitContainer21.SuspendLayout();
             groupBox18.SuspendLayout();
             tableLayoutPanel13.SuspendLayout();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer22).BeginInit();
             splitContainer22.Panel1.SuspendLayout();
             splitContainer22.Panel2.SuspendLayout();
@@ -438,7 +461,7 @@
             splitContainer23.Panel1.SuspendLayout();
             splitContainer23.Panel2.SuspendLayout();
             splitContainer23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvStaff).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer24).BeginInit();
             splitContainer24.Panel1.SuspendLayout();
             splitContainer24.Panel2.SuspendLayout();
@@ -473,6 +496,7 @@
             tableLayoutPanel20.SuspendLayout();
             groupBox28.SuspendLayout();
             flowLayoutPanel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)staffBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer8).BeginInit();
             splitContainer8.Panel1.SuspendLayout();
@@ -557,6 +581,7 @@
             dtgvCustomer.Dock = DockStyle.Fill;
             dtgvCustomer.Location = new Point(0, 0);
             dtgvCustomer.Name = "dtgvCustomer";
+            dtgvCustomer.RowHeadersWidth = 62;
             dtgvCustomer.Size = new Size(842, 616);
             dtgvCustomer.TabIndex = 0;
             // 
@@ -619,9 +644,8 @@
             // 
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button1.ForeColor = Color.Brown;
+            button1.Image = Properties.Resources.icons8_search_32;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.ImageIndex = 0;
-            button1.ImageList = imageList1;
             button1.Location = new Point(94, 113);
             button1.Name = "button1";
             button1.Size = new Size(122, 44);
@@ -629,20 +653,6 @@
             button1.Text = "Tìm kiếm";
             button1.TextAlign = ContentAlignment.MiddleRight;
             button1.UseVisualStyleBackColor = true;
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "icons8-search-32.png");
-            imageList1.Images.SetKeyName(1, "icons8-add-64.png");
-            imageList1.Images.SetKeyName(2, "icons8-add-male-user-64.png");
-            imageList1.Images.SetKeyName(3, "icons8-save-64.png");
-            imageList1.Images.SetKeyName(4, "icons8-update-file-64.png");
-            imageList1.Images.SetKeyName(5, "icons8-add-file-64.png");
-            imageList1.Images.SetKeyName(6, "icons8-delete-64.png");
-            imageList1.Images.SetKeyName(7, "icons8-file-64.png");
             // 
             // label1
             // 
@@ -833,9 +843,8 @@
             // 
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button3.ForeColor = Color.Brown;
+            button3.Image = Properties.Resources.icons8_add_32__1_;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.ImageKey = "icons8-add-male-user-64.png";
-            button3.ImageList = imageList1;
             button3.Location = new Point(3, 3);
             button3.Name = "button3";
             button3.Size = new Size(93, 43);
@@ -848,9 +857,8 @@
             // 
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button2.ForeColor = Color.Brown;
+            button2.Image = Properties.Resources.icons8_change_32;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.ImageKey = "icons8-update-file-64.png";
-            button2.ImageList = imageList1;
             button2.Location = new Point(102, 3);
             button2.Name = "button2";
             button2.Size = new Size(93, 43);
@@ -863,9 +871,8 @@
             // 
             button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button4.ForeColor = Color.Brown;
+            button4.Image = Properties.Resources.icons8_save_321;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.ImageKey = "icons8-save-64.png";
-            button4.ImageList = imageList1;
             button4.Location = new Point(201, 3);
             button4.Name = "button4";
             button4.Size = new Size(93, 43);
@@ -881,7 +888,6 @@
             button5.ForeColor = Color.Brown;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
             button5.ImageKey = "(none)";
-            button5.ImageList = imageList1;
             button5.Location = new Point(3, 52);
             button5.Name = "button5";
             button5.Size = new Size(291, 43);
@@ -927,6 +933,7 @@
             dataGridView2.Dock = DockStyle.Fill;
             dataGridView2.Location = new Point(0, 0);
             dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 62;
             dataGridView2.Size = new Size(842, 621);
             dataGridView2.TabIndex = 0;
             // 
@@ -1041,9 +1048,8 @@
             // 
             button6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button6.ForeColor = Color.Brown;
+            button6.Image = Properties.Resources.icons8_search_32;
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.ImageKey = "icons8-search-32.png";
-            button6.ImageList = imageList1;
             button6.Location = new Point(93, 165);
             button6.Name = "button6";
             button6.Size = new Size(110, 40);
@@ -1285,9 +1291,8 @@
             // 
             button8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button8.ForeColor = Color.Brown;
+            button8.Image = Properties.Resources.icons8_add_32__1_;
             button8.ImageAlign = ContentAlignment.MiddleLeft;
-            button8.ImageKey = "icons8-add-file-64.png";
-            button8.ImageList = imageList1;
             button8.Location = new Point(3, 3);
             button8.Name = "button8";
             button8.Size = new Size(121, 43);
@@ -1311,9 +1316,8 @@
             // 
             button9.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button9.ForeColor = Color.Brown;
+            button9.Image = Properties.Resources.icons8_cancel_32;
             button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.ImageKey = "icons8-delete-64.png";
-            button9.ImageList = imageList1;
             button9.Location = new Point(3, 52);
             button9.Name = "button9";
             button9.Size = new Size(121, 43);
@@ -1326,9 +1330,8 @@
             // 
             button10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button10.ForeColor = Color.Brown;
+            button10.Image = Properties.Resources.icons8_export_pdf_32;
             button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.ImageKey = "icons8-file-64.png";
-            button10.ImageList = imageList1;
             button10.Location = new Point(130, 52);
             button10.Name = "button10";
             button10.Size = new Size(121, 43);
@@ -1416,10 +1419,10 @@
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.6130657F));
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77.38693F));
             tableLayoutPanel7.Controls.Add(label21, 0, 0);
-            tableLayoutPanel7.Controls.Add(textBox14, 1, 0);
+            tableLayoutPanel7.Controls.Add(txtSearchProductID, 1, 0);
             tableLayoutPanel7.Controls.Add(label22, 0, 1);
-            tableLayoutPanel7.Controls.Add(button12, 1, 2);
-            tableLayoutPanel7.Controls.Add(textBox22, 1, 1);
+            tableLayoutPanel7.Controls.Add(txtSearchProductName, 1, 1);
+            tableLayoutPanel7.Controls.Add(btnSearchProduct, 1, 2);
             tableLayoutPanel7.Dock = DockStyle.Fill;
             tableLayoutPanel7.Location = new Point(3, 23);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -1442,14 +1445,14 @@
             label21.TabIndex = 0;
             label21.Text = "Mã SP:";
             // 
-            // textBox14
+            // txtSearchProductID
             // 
-            textBox14.BackColor = Color.FromArgb(255, 253, 239);
-            textBox14.Dock = DockStyle.Fill;
-            textBox14.Location = new Point(93, 3);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(302, 27);
-            textBox14.TabIndex = 1;
+            txtSearchProductID.BackColor = Color.FromArgb(255, 253, 239);
+            txtSearchProductID.Dock = DockStyle.Fill;
+            txtSearchProductID.Location = new Point(93, 3);
+            txtSearchProductID.Name = "txtSearchProductID";
+            txtSearchProductID.Size = new Size(302, 27);
+            txtSearchProductID.TabIndex = 1;
             // 
             // label22
             // 
@@ -1463,29 +1466,29 @@
             label22.TabIndex = 0;
             label22.Text = "Tên SP:";
             // 
-            // button12
+            // txtSearchProductName
             // 
-            button12.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button12.ForeColor = Color.Brown;
-            button12.ImageAlign = ContentAlignment.MiddleLeft;
-            button12.ImageKey = "icons8-search-32.png";
-            button12.ImageList = imageList1;
-            button12.Location = new Point(93, 79);
-            button12.Name = "button12";
-            button12.Size = new Size(110, 42);
-            button12.TabIndex = 2;
-            button12.Text = "Tìm kiếm";
-            button12.TextAlign = ContentAlignment.MiddleRight;
-            button12.UseVisualStyleBackColor = true;
+            txtSearchProductName.BackColor = Color.FromArgb(255, 253, 239);
+            txtSearchProductName.Dock = DockStyle.Fill;
+            txtSearchProductName.Location = new Point(93, 42);
+            txtSearchProductName.Name = "txtSearchProductName";
+            txtSearchProductName.Size = new Size(302, 27);
+            txtSearchProductName.TabIndex = 3;
             // 
-            // textBox22
+            // btnSearchProduct
             // 
-            textBox22.BackColor = Color.FromArgb(255, 253, 239);
-            textBox22.Dock = DockStyle.Fill;
-            textBox22.Location = new Point(93, 42);
-            textBox22.Name = "textBox22";
-            textBox22.Size = new Size(302, 27);
-            textBox22.TabIndex = 3;
+            btnSearchProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnSearchProduct.ForeColor = Color.Brown;
+            btnSearchProduct.Image = Properties.Resources.icons8_search_32;
+            btnSearchProduct.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSearchProduct.Location = new Point(93, 79);
+            btnSearchProduct.Name = "btnSearchProduct";
+            btnSearchProduct.Size = new Size(110, 42);
+            btnSearchProduct.TabIndex = 4;
+            btnSearchProduct.Text = "Tìm kiếm";
+            btnSearchProduct.TextAlign = ContentAlignment.MiddleRight;
+            btnSearchProduct.UseVisualStyleBackColor = true;
+            btnSearchProduct.Click += btnSearchProduct_Click;
             // 
             // splitContainer12
             // 
@@ -1712,6 +1715,7 @@
             btnDeleteProductImage.TabIndex = 1;
             btnDeleteProductImage.Text = "Xóa";
             btnDeleteProductImage.UseVisualStyleBackColor = true;
+            btnDeleteProductImage.Click += btnDeleteProductImage_Click;
             // 
             // label25
             // 
@@ -1804,9 +1808,8 @@
             // 
             btnAddProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnAddProduct.ForeColor = Color.Brown;
+            btnAddProduct.Image = Properties.Resources.icons8_add_32__1_;
             btnAddProduct.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddProduct.ImageKey = "icons8-add-file-64.png";
-            btnAddProduct.ImageList = imageList1;
             btnAddProduct.Location = new Point(3, 3);
             btnAddProduct.Name = "btnAddProduct";
             btnAddProduct.Size = new Size(93, 43);
@@ -1820,9 +1823,8 @@
             // 
             btnUpdateProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnUpdateProduct.ForeColor = Color.Brown;
+            btnUpdateProduct.Image = Properties.Resources.icons8_add_32__1_;
             btnUpdateProduct.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUpdateProduct.ImageKey = "icons8-update-file-64.png";
-            btnUpdateProduct.ImageList = imageList1;
             btnUpdateProduct.Location = new Point(102, 3);
             btnUpdateProduct.Name = "btnUpdateProduct";
             btnUpdateProduct.Size = new Size(93, 43);
@@ -1830,15 +1832,15 @@
             btnUpdateProduct.Text = "Sửa";
             btnUpdateProduct.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateProduct.UseVisualStyleBackColor = true;
+            btnUpdateProduct.Click += btnUpdateProduct_Click;
             // 
             // btnSaveProduct
             // 
             btnSaveProduct.Enabled = false;
             btnSaveProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnSaveProduct.ForeColor = Color.Brown;
+            btnSaveProduct.Image = Properties.Resources.icons8_save_32;
             btnSaveProduct.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSaveProduct.ImageKey = "icons8-save-64.png";
-            btnSaveProduct.ImageList = imageList1;
             btnSaveProduct.Location = new Point(201, 3);
             btnSaveProduct.Name = "btnSaveProduct";
             btnSaveProduct.Size = new Size(93, 43);
@@ -1885,6 +1887,7 @@
             dataGridView4.Dock = DockStyle.Fill;
             dataGridView4.Location = new Point(0, 0);
             dataGridView4.Name = "dataGridView4";
+            dataGridView4.RowHeadersWidth = 62;
             dataGridView4.Size = new Size(842, 623);
             dataGridView4.TabIndex = 0;
             // 
@@ -1945,9 +1948,8 @@
             // 
             button13.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button13.ForeColor = Color.Brown;
+            button13.Image = Properties.Resources.icons8_search_32;
             button13.ImageAlign = ContentAlignment.MiddleLeft;
-            button13.ImageKey = "icons8-search-32.png";
-            button13.ImageList = imageList1;
             button13.Location = new Point(94, 107);
             button13.Name = "button13";
             button13.Size = new Size(110, 44);
@@ -2116,9 +2118,8 @@
             // 
             button39.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button39.ForeColor = Color.Brown;
+            button39.Image = Properties.Resources.icons8_add_32__1_;
             button39.ImageAlign = ContentAlignment.MiddleLeft;
-            button39.ImageKey = "icons8-add-file-64.png";
-            button39.ImageList = imageList1;
             button39.Location = new Point(3, 3);
             button39.Name = "button39";
             button39.Size = new Size(93, 43);
@@ -2131,9 +2132,8 @@
             // 
             button40.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button40.ForeColor = Color.Brown;
+            button40.Image = Properties.Resources.icons8_change_32;
             button40.ImageAlign = ContentAlignment.MiddleLeft;
-            button40.ImageKey = "icons8-update-file-64.png";
-            button40.ImageList = imageList1;
             button40.Location = new Point(102, 3);
             button40.Name = "button40";
             button40.Size = new Size(93, 43);
@@ -2146,9 +2146,8 @@
             // 
             button41.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button41.ForeColor = Color.Brown;
+            button41.Image = Properties.Resources.icons8_save_32;
             button41.ImageAlign = ContentAlignment.MiddleLeft;
-            button41.ImageKey = "icons8-save-64.png";
-            button41.ImageList = imageList1;
             button41.Location = new Point(201, 3);
             button41.Name = "button41";
             button41.Size = new Size(93, 43);
@@ -2194,6 +2193,7 @@
             dataGridView5.Dock = DockStyle.Fill;
             dataGridView5.Location = new Point(0, 0);
             dataGridView5.Name = "dataGridView5";
+            dataGridView5.RowHeadersWidth = 62;
             dataGridView5.Size = new Size(842, 623);
             dataGridView5.TabIndex = 0;
             // 
@@ -2254,9 +2254,8 @@
             // 
             button22.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button22.ForeColor = Color.Brown;
+            button22.Image = Properties.Resources.icons8_search_32;
             button22.ImageAlign = ContentAlignment.MiddleLeft;
-            button22.ImageKey = "icons8-search-32.png";
-            button22.ImageList = imageList1;
             button22.Location = new Point(94, 107);
             button22.Name = "button22";
             button22.Size = new Size(110, 44);
@@ -2416,9 +2415,8 @@
             // 
             button19.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button19.ForeColor = Color.Brown;
+            button19.Image = Properties.Resources.icons8_add_32__1_;
             button19.ImageAlign = ContentAlignment.MiddleLeft;
-            button19.ImageKey = "icons8-add-file-64.png";
-            button19.ImageList = imageList1;
             button19.Location = new Point(6, 26);
             button19.Name = "button19";
             button19.Size = new Size(93, 43);
@@ -2431,9 +2429,8 @@
             // 
             button20.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button20.ForeColor = Color.Brown;
+            button20.Image = Properties.Resources.icons8_change_32;
             button20.ImageAlign = ContentAlignment.MiddleLeft;
-            button20.ImageKey = "icons8-update-file-64.png";
-            button20.ImageList = imageList1;
             button20.Location = new Point(105, 26);
             button20.Name = "button20";
             button20.Size = new Size(93, 43);
@@ -2446,9 +2443,8 @@
             // 
             button21.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button21.ForeColor = Color.Brown;
+            button21.Image = Properties.Resources.icons8_save_32;
             button21.ImageAlign = ContentAlignment.MiddleLeft;
-            button21.ImageKey = "icons8-save-64.png";
-            button21.ImageList = imageList1;
             button21.Location = new Point(204, 26);
             button21.Name = "button21";
             button21.Size = new Size(93, 43);
@@ -2477,7 +2473,7 @@
             // 
             // splitContainer20.Panel1
             // 
-            splitContainer20.Panel1.Controls.Add(dataGridView6);
+            splitContainer20.Panel1.Controls.Add(dtgvGRN);
             // 
             // splitContainer20.Panel2
             // 
@@ -2487,15 +2483,57 @@
             splitContainer20.SplitterDistance = 842;
             splitContainer20.TabIndex = 4;
             // 
-            // dataGridView6
+            // dtgvGRN
             // 
-            dataGridView6.BackgroundColor = Color.FromArgb(194, 231, 255);
-            dataGridView6.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView6.Dock = DockStyle.Fill;
-            dataGridView6.Location = new Point(0, 0);
-            dataGridView6.Name = "dataGridView6";
-            dataGridView6.Size = new Size(842, 623);
-            dataGridView6.TabIndex = 0;
+            dtgvGRN.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgvGRN.BackgroundColor = Color.FromArgb(194, 231, 255);
+            dtgvGRN.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvGRN.Columns.AddRange(new DataGridViewColumn[] { Column10, Column12, Column11, Column13, Column14 });
+            dtgvGRN.Dock = DockStyle.Fill;
+            dtgvGRN.Location = new Point(0, 0);
+            dtgvGRN.MultiSelect = false;
+            dtgvGRN.Name = "dtgvGRN";
+            dtgvGRN.ReadOnly = true;
+            dtgvGRN.RowHeadersWidth = 62;
+            dtgvGRN.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgvGRN.Size = new Size(842, 623);
+            dtgvGRN.TabIndex = 0;
+            dtgvGRN.CellClick += dtgvGRN_CellClick;
+            // 
+            // Column10
+            // 
+            Column10.HeaderText = "Mã phiếu nhập";
+            Column10.MinimumWidth = 8;
+            Column10.Name = "Column10";
+            Column10.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            Column12.HeaderText = "Đơn vị";
+            Column12.MinimumWidth = 8;
+            Column12.Name = "Column12";
+            Column12.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            Column11.HeaderText = "Nhân viên";
+            Column11.MinimumWidth = 8;
+            Column11.Name = "Column11";
+            Column11.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            Column13.HeaderText = "Ngày nhập";
+            Column13.MinimumWidth = 8;
+            Column13.Name = "Column13";
+            Column13.ReadOnly = true;
+            // 
+            // Column14
+            // 
+            Column14.HeaderText = "Tổng giá trị";
+            Column14.MinimumWidth = 8;
+            Column14.Name = "Column14";
+            Column14.ReadOnly = true;
             // 
             // splitContainer21
             // 
@@ -2535,14 +2573,12 @@
             tableLayoutPanel13.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.6130657F));
             tableLayoutPanel13.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77.38693F));
             tableLayoutPanel13.Controls.Add(label40, 0, 0);
-            tableLayoutPanel13.Controls.Add(textBox27, 1, 0);
+            tableLayoutPanel13.Controls.Add(txtSearchGRNID, 1, 0);
             tableLayoutPanel13.Controls.Add(label41, 0, 1);
             tableLayoutPanel13.Controls.Add(label42, 0, 2);
-            tableLayoutPanel13.Controls.Add(label43, 0, 3);
-            tableLayoutPanel13.Controls.Add(dateTimePicker5, 1, 2);
-            tableLayoutPanel13.Controls.Add(textBox28, 1, 3);
-            tableLayoutPanel13.Controls.Add(dateTimePicker6, 1, 1);
-            tableLayoutPanel13.Controls.Add(button26, 1, 4);
+            tableLayoutPanel13.Controls.Add(dtpkSearchGRNTo, 1, 2);
+            tableLayoutPanel13.Controls.Add(dtpkSearchGRNFrom, 1, 1);
+            tableLayoutPanel13.Controls.Add(panel1, 1, 3);
             tableLayoutPanel13.Dock = DockStyle.Fill;
             tableLayoutPanel13.Location = new Point(3, 23);
             tableLayoutPanel13.Name = "tableLayoutPanel13";
@@ -2550,8 +2586,8 @@
             tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 47.9452057F));
             tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 52.0547943F));
             tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
-            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Absolute, 37F));
-            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
             tableLayoutPanel13.Size = new Size(398, 185);
             tableLayoutPanel13.TabIndex = 3;
             // 
@@ -2567,14 +2603,14 @@
             label40.TabIndex = 0;
             label40.Text = "Mã phiếu:";
             // 
-            // textBox27
+            // txtSearchGRNID
             // 
-            textBox27.BackColor = Color.FromArgb(255, 253, 239);
-            textBox27.Dock = DockStyle.Fill;
-            textBox27.Location = new Point(93, 3);
-            textBox27.Name = "textBox27";
-            textBox27.Size = new Size(302, 27);
-            textBox27.TabIndex = 1;
+            txtSearchGRNID.BackColor = Color.FromArgb(255, 253, 239);
+            txtSearchGRNID.Dock = DockStyle.Fill;
+            txtSearchGRNID.Location = new Point(93, 3);
+            txtSearchGRNID.Name = "txtSearchGRNID";
+            txtSearchGRNID.Size = new Size(302, 27);
+            txtSearchGRNID.TabIndex = 1;
             // 
             // label41
             // 
@@ -2600,57 +2636,57 @@
             label42.TabIndex = 3;
             label42.Text = "Đến ngày:";
             // 
-            // label43
+            // dtpkSearchGRNTo
             // 
-            label43.AutoSize = true;
-            label43.Dock = DockStyle.Fill;
-            label43.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            label43.ForeColor = Color.Brown;
-            label43.Location = new Point(3, 107);
-            label43.Name = "label43";
-            label43.Size = new Size(84, 37);
-            label43.TabIndex = 4;
-            label43.Text = "Tổng giá:";
+            dtpkSearchGRNTo.Dock = DockStyle.Fill;
+            dtpkSearchGRNTo.Location = new Point(93, 76);
+            dtpkSearchGRNTo.Name = "dtpkSearchGRNTo";
+            dtpkSearchGRNTo.Size = new Size(302, 27);
+            dtpkSearchGRNTo.TabIndex = 5;
             // 
-            // dateTimePicker5
+            // dtpkSearchGRNFrom
             // 
-            dateTimePicker5.Dock = DockStyle.Fill;
-            dateTimePicker5.Location = new Point(93, 76);
-            dateTimePicker5.Name = "dateTimePicker5";
-            dateTimePicker5.Size = new Size(302, 27);
-            dateTimePicker5.TabIndex = 5;
+            dtpkSearchGRNFrom.Dock = DockStyle.Fill;
+            dtpkSearchGRNFrom.Location = new Point(93, 38);
+            dtpkSearchGRNFrom.Name = "dtpkSearchGRNFrom";
+            dtpkSearchGRNFrom.Size = new Size(302, 27);
+            dtpkSearchGRNFrom.TabIndex = 9;
             // 
-            // textBox28
+            // panel1
             // 
-            textBox28.BackColor = Color.FromArgb(255, 253, 239);
-            textBox28.Dock = DockStyle.Fill;
-            textBox28.Location = new Point(93, 110);
-            textBox28.Name = "textBox28";
-            textBox28.Size = new Size(302, 27);
-            textBox28.TabIndex = 6;
+            panel1.Controls.Add(btnSearchGRNCancel);
+            panel1.Controls.Add(btnSearchGRN);
+            panel1.Location = new Point(93, 110);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(249, 44);
+            panel1.TabIndex = 10;
             // 
-            // dateTimePicker6
+            // btnSearchGRNCancel
             // 
-            dateTimePicker6.Dock = DockStyle.Fill;
-            dateTimePicker6.Location = new Point(93, 38);
-            dateTimePicker6.Name = "dateTimePicker6";
-            dateTimePicker6.Size = new Size(302, 27);
-            dateTimePicker6.TabIndex = 9;
+            btnSearchGRNCancel.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnSearchGRNCancel.ForeColor = Color.Brown;
+            btnSearchGRNCancel.Image = Properties.Resources.icons8_cancel_32;
+            btnSearchGRNCancel.Location = new Point(200, 1);
+            btnSearchGRNCancel.Name = "btnSearchGRNCancel";
+            btnSearchGRNCancel.Size = new Size(43, 43);
+            btnSearchGRNCancel.TabIndex = 2;
+            btnSearchGRNCancel.UseVisualStyleBackColor = true;
+            btnSearchGRNCancel.Click += btnSearchGRNCancel_Click;
             // 
-            // button26
+            // btnSearchGRN
             // 
-            button26.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button26.ForeColor = Color.Brown;
-            button26.ImageAlign = ContentAlignment.MiddleLeft;
-            button26.ImageKey = "icons8-search-32.png";
-            button26.ImageList = imageList1;
-            button26.Location = new Point(93, 147);
-            button26.Name = "button26";
-            button26.Size = new Size(110, 35);
-            button26.TabIndex = 2;
-            button26.Text = "Tìm kiếm";
-            button26.TextAlign = ContentAlignment.MiddleRight;
-            button26.UseVisualStyleBackColor = true;
+            btnSearchGRN.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnSearchGRN.ForeColor = Color.Brown;
+            btnSearchGRN.Image = Properties.Resources.icons8_search_32;
+            btnSearchGRN.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSearchGRN.Location = new Point(3, 0);
+            btnSearchGRN.Name = "btnSearchGRN";
+            btnSearchGRN.Size = new Size(110, 43);
+            btnSearchGRN.TabIndex = 2;
+            btnSearchGRN.Text = "Tìm kiếm";
+            btnSearchGRN.TextAlign = ContentAlignment.MiddleRight;
+            btnSearchGRN.UseVisualStyleBackColor = true;
+            btnSearchGRN.Click += btnSearchGRN_Click;
             // 
             // splitContainer22
             // 
@@ -2691,17 +2727,22 @@
             tableLayoutPanel14.Controls.Add(label45, 0, 0);
             tableLayoutPanel14.Controls.Add(label46, 0, 1);
             tableLayoutPanel14.Controls.Add(label47, 0, 2);
-            tableLayoutPanel14.Controls.Add(textBox30, 1, 1);
-            tableLayoutPanel14.Controls.Add(textBox31, 1, 0);
-            tableLayoutPanel14.Controls.Add(comboBox4, 1, 2);
+            tableLayoutPanel14.Controls.Add(txtGRNUnit, 1, 1);
+            tableLayoutPanel14.Controls.Add(label43, 0, 4);
+            tableLayoutPanel14.Controls.Add(txtGRNID, 1, 0);
+            tableLayoutPanel14.Controls.Add(cbGRNStaff, 1, 2);
+            tableLayoutPanel14.Controls.Add(txtGRNTotal, 1, 4);
+            tableLayoutPanel14.Controls.Add(dtpkGRNDate, 1, 3);
+            tableLayoutPanel14.Controls.Add(label68, 0, 3);
             tableLayoutPanel14.Dock = DockStyle.Fill;
             tableLayoutPanel14.Location = new Point(3, 23);
             tableLayoutPanel14.Name = "tableLayoutPanel14";
-            tableLayoutPanel14.RowCount = 4;
-            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 26.7973862F));
-            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 26.1437912F));
-            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 47.0588226F));
-            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Absolute, 71F));
+            tableLayoutPanel14.RowCount = 5;
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 32.4324341F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 34.2342339F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Absolute, 78F));
             tableLayoutPanel14.Size = new Size(398, 222);
             tableLayoutPanel14.TabIndex = 0;
             // 
@@ -2713,7 +2754,7 @@
             label45.ForeColor = Color.Brown;
             label45.Location = new Point(3, 0);
             label45.Name = "label45";
-            label45.Size = new Size(84, 40);
+            label45.Size = new Size(84, 34);
             label45.TabIndex = 0;
             label45.Text = "Mã đơn:";
             // 
@@ -2723,51 +2764,95 @@
             label46.Dock = DockStyle.Fill;
             label46.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label46.ForeColor = Color.Brown;
-            label46.Location = new Point(3, 40);
+            label46.Location = new Point(3, 34);
             label46.Name = "label46";
-            label46.Size = new Size(84, 39);
+            label46.Size = new Size(84, 35);
             label46.TabIndex = 0;
             label46.Text = "Đơn vị nhập:";
             // 
             // label47
             // 
             label47.AutoSize = true;
-            label47.Dock = DockStyle.Fill;
             label47.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label47.ForeColor = Color.Brown;
-            label47.Location = new Point(3, 79);
+            label47.Location = new Point(3, 69);
             label47.Name = "label47";
-            label47.Size = new Size(84, 71);
+            label47.Size = new Size(84, 20);
             label47.TabIndex = 0;
             label47.Text = "Nhân viên:";
             // 
-            // textBox30
+            // txtGRNUnit
             // 
-            textBox30.BackColor = Color.FromArgb(255, 253, 239);
-            textBox30.Dock = DockStyle.Fill;
-            textBox30.Location = new Point(93, 43);
-            textBox30.Name = "textBox30";
-            textBox30.Size = new Size(302, 27);
-            textBox30.TabIndex = 1;
+            txtGRNUnit.BackColor = Color.FromArgb(255, 253, 239);
+            txtGRNUnit.Dock = DockStyle.Fill;
+            txtGRNUnit.Enabled = false;
+            txtGRNUnit.Location = new Point(93, 37);
+            txtGRNUnit.Name = "txtGRNUnit";
+            txtGRNUnit.Size = new Size(302, 27);
+            txtGRNUnit.TabIndex = 1;
             // 
-            // textBox31
+            // label43
             // 
-            textBox31.BackColor = Color.FromArgb(255, 253, 239);
-            textBox31.Dock = DockStyle.Fill;
-            textBox31.Location = new Point(93, 3);
-            textBox31.Name = "textBox31";
-            textBox31.Size = new Size(302, 27);
-            textBox31.TabIndex = 1;
+            label43.AutoSize = true;
+            label43.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label43.ForeColor = Color.Brown;
+            label43.Location = new Point(3, 143);
+            label43.Name = "label43";
+            label43.Size = new Size(74, 20);
+            label43.TabIndex = 4;
+            label43.Text = "Tổng giá:";
             // 
-            // comboBox4
+            // txtGRNID
             // 
-            comboBox4.BackColor = Color.FromArgb(255, 253, 239);
-            comboBox4.Dock = DockStyle.Fill;
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(93, 82);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(302, 28);
-            comboBox4.TabIndex = 4;
+            txtGRNID.BackColor = Color.FromArgb(255, 253, 239);
+            txtGRNID.Dock = DockStyle.Fill;
+            txtGRNID.Enabled = false;
+            txtGRNID.Location = new Point(93, 3);
+            txtGRNID.Name = "txtGRNID";
+            txtGRNID.ReadOnly = true;
+            txtGRNID.Size = new Size(302, 27);
+            txtGRNID.TabIndex = 1;
+            // 
+            // cbGRNStaff
+            // 
+            cbGRNStaff.BackColor = Color.FromArgb(255, 253, 239);
+            cbGRNStaff.Dock = DockStyle.Fill;
+            cbGRNStaff.Enabled = false;
+            cbGRNStaff.FormattingEnabled = true;
+            cbGRNStaff.Location = new Point(93, 72);
+            cbGRNStaff.Name = "cbGRNStaff";
+            cbGRNStaff.Size = new Size(302, 28);
+            cbGRNStaff.TabIndex = 4;
+            // 
+            // txtGRNTotal
+            // 
+            txtGRNTotal.BackColor = Color.FromArgb(255, 253, 239);
+            txtGRNTotal.Enabled = false;
+            txtGRNTotal.Location = new Point(93, 146);
+            txtGRNTotal.Name = "txtGRNTotal";
+            txtGRNTotal.ReadOnly = true;
+            txtGRNTotal.Size = new Size(302, 27);
+            txtGRNTotal.TabIndex = 6;
+            // 
+            // dtpkGRNDate
+            // 
+            dtpkGRNDate.Dock = DockStyle.Fill;
+            dtpkGRNDate.Enabled = false;
+            dtpkGRNDate.Location = new Point(93, 108);
+            dtpkGRNDate.Name = "dtpkGRNDate";
+            dtpkGRNDate.Size = new Size(302, 27);
+            dtpkGRNDate.TabIndex = 6;
+            // 
+            // label68
+            // 
+            label68.AutoSize = true;
+            label68.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label68.ForeColor = Color.Brown;
+            label68.Location = new Point(3, 105);
+            label68.Name = "label68";
+            label68.Size = new Size(50, 38);
+            label68.TabIndex = 0;
+            label68.Text = "Ngày nhập:";
             // 
             // groupBox20
             // 
@@ -2782,8 +2867,8 @@
             // 
             // flowLayoutPanel8
             // 
-            flowLayoutPanel8.Controls.Add(button27);
-            flowLayoutPanel8.Controls.Add(button28);
+            flowLayoutPanel8.Controls.Add(btnDetailAndUpdateGRN);
+            flowLayoutPanel8.Controls.Add(btnAddGRN);
             flowLayoutPanel8.Controls.Add(button30);
             flowLayoutPanel8.Dock = DockStyle.Fill;
             flowLayoutPanel8.Location = new Point(3, 23);
@@ -2791,35 +2876,36 @@
             flowLayoutPanel8.Size = new Size(398, 130);
             flowLayoutPanel8.TabIndex = 3;
             // 
-            // button27
+            // btnDetailAndUpdateGRN
             // 
-            button27.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button27.ForeColor = Color.Brown;
-            button27.Location = new Point(3, 3);
-            button27.Name = "button27";
-            button27.Size = new Size(190, 43);
-            button27.TabIndex = 2;
-            button27.Text = "Xem chi tiết - Chỉnh sửa";
-            button27.UseVisualStyleBackColor = true;
+            btnDetailAndUpdateGRN.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnDetailAndUpdateGRN.ForeColor = Color.Brown;
+            btnDetailAndUpdateGRN.Location = new Point(3, 3);
+            btnDetailAndUpdateGRN.Name = "btnDetailAndUpdateGRN";
+            btnDetailAndUpdateGRN.Size = new Size(190, 43);
+            btnDetailAndUpdateGRN.TabIndex = 2;
+            btnDetailAndUpdateGRN.Text = "Xem chi tiết";
+            btnDetailAndUpdateGRN.UseVisualStyleBackColor = true;
+            btnDetailAndUpdateGRN.Click += btnDetailAndUpdateGRN_Click;
             // 
-            // button28
+            // btnAddGRN
             // 
-            button28.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button28.ForeColor = Color.Brown;
-            button28.Location = new Point(199, 3);
-            button28.Name = "button28";
-            button28.Size = new Size(185, 43);
-            button28.TabIndex = 2;
-            button28.Text = "Thêm phiếu nhập";
-            button28.UseVisualStyleBackColor = true;
+            btnAddGRN.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnAddGRN.ForeColor = Color.Brown;
+            btnAddGRN.Location = new Point(199, 3);
+            btnAddGRN.Name = "btnAddGRN";
+            btnAddGRN.Size = new Size(185, 43);
+            btnAddGRN.TabIndex = 2;
+            btnAddGRN.Text = "Thêm phiếu nhập";
+            btnAddGRN.UseVisualStyleBackColor = true;
+            btnAddGRN.Click += btnAddGRN_Click;
             // 
             // button30
             // 
             button30.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button30.ForeColor = Color.Brown;
+            button30.Image = Properties.Resources.icons8_export_pdf_32;
             button30.ImageAlign = ContentAlignment.MiddleLeft;
-            button30.ImageKey = "icons8-file-64.png";
-            button30.ImageList = imageList1;
             button30.Location = new Point(3, 52);
             button30.Name = "button30";
             button30.Size = new Size(107, 43);
@@ -2848,7 +2934,7 @@
             // 
             // splitContainer23.Panel1
             // 
-            splitContainer23.Panel1.Controls.Add(dataGridView7);
+            splitContainer23.Panel1.Controls.Add(dtgvStaff);
             // 
             // splitContainer23.Panel2
             // 
@@ -2858,15 +2944,95 @@
             splitContainer23.SplitterDistance = 842;
             splitContainer23.TabIndex = 3;
             // 
-            // dataGridView7
+            // dtgvStaff
             // 
-            dataGridView7.BackgroundColor = Color.FromArgb(194, 231, 255);
-            dataGridView7.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView7.Dock = DockStyle.Fill;
-            dataGridView7.Location = new Point(0, 0);
-            dataGridView7.Name = "dataGridView7";
-            dataGridView7.Size = new Size(842, 623);
-            dataGridView7.TabIndex = 0;
+            dtgvStaff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgvStaff.BackgroundColor = Color.FromArgb(194, 231, 255);
+            dtgvStaff.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvStaff.Columns.AddRange(new DataGridViewColumn[] { Column1, Column5, Column2, Column9, Column3, Column4, Column6, Column7, Column8 });
+            dtgvStaff.Dock = DockStyle.Fill;
+            dtgvStaff.ImeMode = ImeMode.NoControl;
+            dtgvStaff.Location = new Point(0, 0);
+            dtgvStaff.MultiSelect = false;
+            dtgvStaff.Name = "dtgvStaff";
+            dtgvStaff.ReadOnly = true;
+            dtgvStaff.RowHeadersWidth = 62;
+            dtgvStaff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgvStaff.Size = new Size(842, 623);
+            dtgvStaff.TabIndex = 0;
+            dtgvStaff.CellClick += dtgvStaff_CellClick;
+            // 
+            // Column1
+            // 
+            Column1.DataPropertyName = "StaffID";
+            Column1.HeaderText = "Mã NV";
+            Column1.MinimumWidth = 8;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.DataPropertyName = "RoleID";
+            Column5.HeaderText = "Chức vụ";
+            Column5.MinimumWidth = 8;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.DataPropertyName = "StaffName";
+            Column2.HeaderText = "Họ và tên";
+            Column2.MinimumWidth = 8;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            Column9.DataPropertyName = "Status";
+            Column9.HeaderText = "Trạng thái";
+            Column9.MinimumWidth = 8;
+            Column9.Name = "Column9";
+            Column9.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.DataPropertyName = "Sex";
+            Column3.HeaderText = "Giới tính";
+            Column3.MinimumWidth = 8;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.DataPropertyName = "PhoneNumber";
+            Column4.HeaderText = "SDT";
+            Column4.MinimumWidth = 8;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.DataPropertyName = "Date";
+            Column6.HeaderText = "Ngày sinh";
+            Column6.MinimumWidth = 8;
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.DataPropertyName = "Address";
+            Column7.HeaderText = "Địa chỉ";
+            Column7.MinimumWidth = 8;
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.DataPropertyName = "AccountID";
+            Column8.HeaderText = "Tài khoản";
+            Column8.MinimumWidth = 8;
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
             // 
             // splitContainer24
             // 
@@ -2906,10 +3072,10 @@
             tableLayoutPanel15.ColumnCount = 2;
             tableLayoutPanel15.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23F));
             tableLayoutPanel15.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77F));
-            tableLayoutPanel15.Controls.Add(button29, 1, 2);
+            tableLayoutPanel15.Controls.Add(btnSearchStaff, 1, 2);
             tableLayoutPanel15.Controls.Add(label44, 0, 0);
-            tableLayoutPanel15.Controls.Add(textBox29, 1, 1);
-            tableLayoutPanel15.Controls.Add(textBox32, 1, 0);
+            tableLayoutPanel15.Controls.Add(txtSearchStaffName, 1, 1);
+            tableLayoutPanel15.Controls.Add(txtSearchStaffID, 1, 0);
             tableLayoutPanel15.Controls.Add(label48, 0, 1);
             tableLayoutPanel15.Dock = DockStyle.Fill;
             tableLayoutPanel15.Location = new Point(3, 23);
@@ -2921,20 +3087,20 @@
             tableLayoutPanel15.Size = new Size(398, 124);
             tableLayoutPanel15.TabIndex = 3;
             // 
-            // button29
+            // btnSearchStaff
             // 
-            button29.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button29.ForeColor = Color.Brown;
-            button29.ImageAlign = ContentAlignment.MiddleLeft;
-            button29.ImageKey = "icons8-search-32.png";
-            button29.ImageList = imageList1;
-            button29.Location = new Point(94, 76);
-            button29.Name = "button29";
-            button29.Size = new Size(110, 44);
-            button29.TabIndex = 2;
-            button29.Text = "Tìm kiếm";
-            button29.TextAlign = ContentAlignment.MiddleRight;
-            button29.UseVisualStyleBackColor = true;
+            btnSearchStaff.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearchStaff.ForeColor = Color.Brown;
+            btnSearchStaff.Image = Properties.Resources.icons8_search_32;
+            btnSearchStaff.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSearchStaff.Location = new Point(94, 76);
+            btnSearchStaff.Name = "btnSearchStaff";
+            btnSearchStaff.Size = new Size(110, 44);
+            btnSearchStaff.TabIndex = 2;
+            btnSearchStaff.Text = "Tìm kiếm";
+            btnSearchStaff.TextAlign = ContentAlignment.MiddleRight;
+            btnSearchStaff.UseVisualStyleBackColor = true;
+            btnSearchStaff.Click += btnSearchStaff_Click;
             // 
             // label44
             // 
@@ -2948,23 +3114,23 @@
             label44.TabIndex = 0;
             label44.Text = "Mã NV:";
             // 
-            // textBox29
+            // txtSearchStaffName
             // 
-            textBox29.BackColor = Color.FromArgb(255, 253, 239);
-            textBox29.Dock = DockStyle.Fill;
-            textBox29.Location = new Point(94, 39);
-            textBox29.Name = "textBox29";
-            textBox29.Size = new Size(301, 27);
-            textBox29.TabIndex = 1;
+            txtSearchStaffName.BackColor = Color.FromArgb(255, 253, 239);
+            txtSearchStaffName.Dock = DockStyle.Fill;
+            txtSearchStaffName.Location = new Point(94, 39);
+            txtSearchStaffName.Name = "txtSearchStaffName";
+            txtSearchStaffName.Size = new Size(301, 27);
+            txtSearchStaffName.TabIndex = 1;
             // 
-            // textBox32
+            // txtSearchStaffID
             // 
-            textBox32.BackColor = Color.FromArgb(255, 253, 239);
-            textBox32.Dock = DockStyle.Fill;
-            textBox32.Location = new Point(94, 3);
-            textBox32.Name = "textBox32";
-            textBox32.Size = new Size(301, 27);
-            textBox32.TabIndex = 1;
+            txtSearchStaffID.BackColor = Color.FromArgb(255, 253, 239);
+            txtSearchStaffID.Dock = DockStyle.Fill;
+            txtSearchStaffID.Location = new Point(94, 3);
+            txtSearchStaffID.Name = "txtSearchStaffID";
+            txtSearchStaffID.Size = new Size(301, 27);
+            txtSearchStaffID.TabIndex = 1;
             // 
             // label48
             // 
@@ -3012,30 +3178,36 @@
             // tableLayoutPanel16
             // 
             tableLayoutPanel16.ColumnCount = 2;
-            tableLayoutPanel16.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.3618088F));
-            tableLayoutPanel16.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77.63819F));
+            tableLayoutPanel16.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.86935F));
+            tableLayoutPanel16.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76.13065F));
             tableLayoutPanel16.Controls.Add(label49, 0, 0);
             tableLayoutPanel16.Controls.Add(label50, 0, 1);
-            tableLayoutPanel16.Controls.Add(textBox33, 1, 1);
-            tableLayoutPanel16.Controls.Add(textBox34, 1, 0);
-            tableLayoutPanel16.Controls.Add(label51, 0, 5);
-            tableLayoutPanel16.Controls.Add(richTextBox3, 1, 5);
+            tableLayoutPanel16.Controls.Add(txtStaffName, 1, 1);
+            tableLayoutPanel16.Controls.Add(txtStaffID, 1, 0);
             tableLayoutPanel16.Controls.Add(label52, 0, 2);
             tableLayoutPanel16.Controls.Add(label53, 0, 3);
             tableLayoutPanel16.Controls.Add(label54, 0, 4);
-            tableLayoutPanel16.Controls.Add(comboBox6, 1, 4);
-            tableLayoutPanel16.Controls.Add(comboBox5, 1, 2);
-            tableLayoutPanel16.Controls.Add(textBox35, 1, 3);
+            tableLayoutPanel16.Controls.Add(cbStaffGender, 1, 2);
+            tableLayoutPanel16.Controls.Add(label51, 0, 6);
+            tableLayoutPanel16.Controls.Add(label66, 0, 5);
+            tableLayoutPanel16.Controls.Add(rtbStaffAdress, 1, 7);
+            tableLayoutPanel16.Controls.Add(label67, 0, 7);
+            tableLayoutPanel16.Controls.Add(cbStaffRole, 1, 6);
+            tableLayoutPanel16.Controls.Add(cboStaffStatus, 1, 5);
+            tableLayoutPanel16.Controls.Add(txtStaffPhone, 1, 4);
+            tableLayoutPanel16.Controls.Add(dtpStaffBornDate, 1, 3);
             tableLayoutPanel16.Dock = DockStyle.Fill;
             tableLayoutPanel16.Location = new Point(3, 23);
             tableLayoutPanel16.Name = "tableLayoutPanel16";
-            tableLayoutPanel16.RowCount = 6;
-            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Percent, 33.8461533F));
+            tableLayoutPanel16.RowCount = 8;
+            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Percent, 33.84615F));
             tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Percent, 33.0769234F));
             tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Percent, 33.0769234F));
-            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
-            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
-            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 105F));
+            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
+            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 58F));
             tableLayoutPanel16.Size = new Size(398, 305);
             tableLayoutPanel16.TabIndex = 0;
             // 
@@ -3047,7 +3219,7 @@
             label49.ForeColor = Color.Brown;
             label49.Location = new Point(3, 0);
             label49.Name = "label49";
-            label49.Size = new Size(83, 41);
+            label49.Size = new Size(89, 37);
             label49.TabIndex = 0;
             label49.Text = "Mã NV:";
             // 
@@ -3057,58 +3229,37 @@
             label50.Dock = DockStyle.Fill;
             label50.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label50.ForeColor = Color.Brown;
-            label50.Location = new Point(3, 41);
+            label50.Location = new Point(3, 37);
             label50.Name = "label50";
-            label50.Size = new Size(83, 40);
+            label50.Size = new Size(89, 36);
             label50.TabIndex = 0;
             label50.Text = "Họ và tên:";
             // 
-            // textBox33
+            // txtStaffName
             // 
-            textBox33.BackColor = Color.FromArgb(255, 253, 239);
-            textBox33.Dock = DockStyle.Fill;
-            textBox33.Location = new Point(92, 44);
-            textBox33.Name = "textBox33";
-            textBox33.Size = new Size(303, 27);
-            textBox33.TabIndex = 1;
+            txtStaffName.BackColor = Color.FromArgb(255, 253, 239);
+            txtStaffName.Dock = DockStyle.Fill;
+            txtStaffName.Location = new Point(98, 40);
+            txtStaffName.Name = "txtStaffName";
+            txtStaffName.Size = new Size(297, 27);
+            txtStaffName.TabIndex = 1;
             // 
-            // textBox34
+            // txtStaffID
             // 
-            textBox34.BackColor = Color.FromArgb(255, 253, 239);
-            textBox34.Dock = DockStyle.Fill;
-            textBox34.Location = new Point(92, 3);
-            textBox34.Name = "textBox34";
-            textBox34.Size = new Size(303, 27);
-            textBox34.TabIndex = 1;
-            // 
-            // label51
-            // 
-            label51.AutoSize = true;
-            label51.Dock = DockStyle.Fill;
-            label51.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            label51.ForeColor = Color.Brown;
-            label51.Location = new Point(3, 198);
-            label51.Name = "label51";
-            label51.Size = new Size(83, 107);
-            label51.TabIndex = 0;
-            label51.Text = "Địa chỉ:";
-            // 
-            // richTextBox3
-            // 
-            richTextBox3.BackColor = Color.FromArgb(255, 253, 239);
-            richTextBox3.Dock = DockStyle.Fill;
-            richTextBox3.Location = new Point(92, 201);
-            richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(303, 101);
-            richTextBox3.TabIndex = 1;
-            richTextBox3.Text = "";
+            txtStaffID.BackColor = Color.FromArgb(255, 253, 239);
+            txtStaffID.Dock = DockStyle.Fill;
+            txtStaffID.Location = new Point(98, 3);
+            txtStaffID.Name = "txtStaffID";
+            txtStaffID.ReadOnly = true;
+            txtStaffID.Size = new Size(297, 27);
+            txtStaffID.TabIndex = 1;
             // 
             // label52
             // 
             label52.AutoSize = true;
             label52.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label52.ForeColor = Color.Brown;
-            label52.Location = new Point(3, 81);
+            label52.Location = new Point(3, 73);
             label52.Name = "label52";
             label52.Size = new Size(73, 20);
             label52.TabIndex = 2;
@@ -3120,11 +3271,11 @@
             label53.Dock = DockStyle.Fill;
             label53.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label53.ForeColor = Color.Brown;
-            label53.Location = new Point(3, 121);
+            label53.Location = new Point(3, 109);
             label53.Name = "label53";
-            label53.Size = new Size(83, 38);
+            label53.Size = new Size(89, 35);
             label53.TabIndex = 3;
-            label53.Text = "SDT:";
+            label53.Text = "Ngày sinh:";
             // 
             // label54
             // 
@@ -3132,42 +3283,106 @@
             label54.Dock = DockStyle.Fill;
             label54.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label54.ForeColor = Color.Brown;
-            label54.Location = new Point(3, 159);
+            label54.Location = new Point(3, 144);
             label54.Name = "label54";
-            label54.Size = new Size(83, 39);
+            label54.Size = new Size(89, 35);
             label54.TabIndex = 4;
-            label54.Text = "Trạng thái:";
+            label54.Text = "SDT:";
             // 
-            // comboBox6
+            // cbStaffGender
             // 
-            comboBox6.BackColor = Color.FromArgb(255, 253, 239);
-            comboBox6.Dock = DockStyle.Fill;
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Items.AddRange(new object[] { "Đang làm", "Tạm nghỉ", "Nghỉ luôn" });
-            comboBox6.Location = new Point(92, 162);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(303, 28);
-            comboBox6.TabIndex = 6;
+            cbStaffGender.BackColor = Color.FromArgb(255, 253, 239);
+            cbStaffGender.Dock = DockStyle.Fill;
+            cbStaffGender.FormattingEnabled = true;
+            cbStaffGender.Items.AddRange(new object[] { "Nam", "Nữ", "Khác" });
+            cbStaffGender.Location = new Point(98, 76);
+            cbStaffGender.Name = "cbStaffGender";
+            cbStaffGender.Size = new Size(297, 28);
+            cbStaffGender.TabIndex = 6;
             // 
-            // comboBox5
+            // label51
             // 
-            comboBox5.BackColor = Color.FromArgb(255, 253, 239);
-            comboBox5.Dock = DockStyle.Fill;
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Items.AddRange(new object[] { "Nam", "Nữ", "Khác" });
-            comboBox5.Location = new Point(92, 84);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(303, 28);
-            comboBox5.TabIndex = 6;
+            label51.AutoSize = true;
+            label51.Dock = DockStyle.Fill;
+            label51.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label51.ForeColor = Color.Brown;
+            label51.Location = new Point(3, 215);
+            label51.Name = "label51";
+            label51.Size = new Size(89, 30);
+            label51.TabIndex = 0;
+            label51.Text = "Chức vụ:";
             // 
-            // textBox35
+            // label66
             // 
-            textBox35.BackColor = Color.FromArgb(255, 253, 239);
-            textBox35.Dock = DockStyle.Fill;
-            textBox35.Location = new Point(92, 124);
-            textBox35.Name = "textBox35";
-            textBox35.Size = new Size(303, 27);
-            textBox35.TabIndex = 7;
+            label66.AutoSize = true;
+            label66.Dock = DockStyle.Fill;
+            label66.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label66.ForeColor = Color.Brown;
+            label66.Location = new Point(3, 179);
+            label66.Name = "label66";
+            label66.Size = new Size(89, 36);
+            label66.TabIndex = 4;
+            label66.Text = "Trạng thái:";
+            // 
+            // rtbStaffAdress
+            // 
+            rtbStaffAdress.BackColor = Color.FromArgb(255, 253, 239);
+            rtbStaffAdress.Dock = DockStyle.Fill;
+            rtbStaffAdress.Location = new Point(98, 248);
+            rtbStaffAdress.Name = "rtbStaffAdress";
+            rtbStaffAdress.Size = new Size(297, 54);
+            rtbStaffAdress.TabIndex = 9;
+            rtbStaffAdress.Text = "";
+            // 
+            // label67
+            // 
+            label67.AutoSize = true;
+            label67.Dock = DockStyle.Fill;
+            label67.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label67.ForeColor = Color.Brown;
+            label67.Location = new Point(3, 245);
+            label67.Name = "label67";
+            label67.Size = new Size(89, 60);
+            label67.TabIndex = 0;
+            label67.Text = "Địa chỉ:";
+            // 
+            // cbStaffRole
+            // 
+            cbStaffRole.BackColor = Color.FromArgb(255, 253, 239);
+            cbStaffRole.Dock = DockStyle.Fill;
+            cbStaffRole.FormattingEnabled = true;
+            cbStaffRole.Location = new Point(98, 218);
+            cbStaffRole.Name = "cbStaffRole";
+            cbStaffRole.Size = new Size(297, 28);
+            cbStaffRole.TabIndex = 8;
+            // 
+            // cboStaffStatus
+            // 
+            cboStaffStatus.BackColor = Color.FromArgb(255, 253, 239);
+            cboStaffStatus.Dock = DockStyle.Fill;
+            cboStaffStatus.FormattingEnabled = true;
+            cboStaffStatus.Items.AddRange(new object[] { "Đang làm", "Tạm nghỉ", "Nghỉ luôn" });
+            cboStaffStatus.Location = new Point(98, 182);
+            cboStaffStatus.Name = "cboStaffStatus";
+            cboStaffStatus.Size = new Size(297, 28);
+            cboStaffStatus.TabIndex = 6;
+            // 
+            // txtStaffPhone
+            // 
+            txtStaffPhone.BackColor = Color.FromArgb(255, 253, 239);
+            txtStaffPhone.Dock = DockStyle.Fill;
+            txtStaffPhone.Location = new Point(98, 147);
+            txtStaffPhone.Name = "txtStaffPhone";
+            txtStaffPhone.Size = new Size(297, 27);
+            txtStaffPhone.TabIndex = 7;
+            // 
+            // dtpStaffBornDate
+            // 
+            dtpStaffBornDate.Dock = DockStyle.Fill;
+            dtpStaffBornDate.Location = new Point(98, 112);
+            dtpStaffBornDate.Name = "dtpStaffBornDate";
+            dtpStaffBornDate.Size = new Size(297, 27);
+            dtpStaffBornDate.TabIndex = 10;
             // 
             // groupBox23
             // 
@@ -3182,59 +3397,60 @@
             // 
             // flowLayoutPanel9
             // 
-            flowLayoutPanel9.Controls.Add(button23);
-            flowLayoutPanel9.Controls.Add(button24);
-            flowLayoutPanel9.Controls.Add(button25);
+            flowLayoutPanel9.Controls.Add(btnAddStaff);
+            flowLayoutPanel9.Controls.Add(btnUpdateStaff);
+            flowLayoutPanel9.Controls.Add(btnSaveStaff);
             flowLayoutPanel9.Dock = DockStyle.Fill;
             flowLayoutPanel9.Location = new Point(3, 23);
             flowLayoutPanel9.Name = "flowLayoutPanel9";
             flowLayoutPanel9.Size = new Size(398, 108);
             flowLayoutPanel9.TabIndex = 3;
             // 
-            // button23
+            // btnAddStaff
             // 
-            button23.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button23.ForeColor = Color.Brown;
-            button23.ImageAlign = ContentAlignment.MiddleLeft;
-            button23.ImageKey = "icons8-add-file-64.png";
-            button23.ImageList = imageList1;
-            button23.Location = new Point(3, 3);
-            button23.Name = "button23";
-            button23.Size = new Size(93, 43);
-            button23.TabIndex = 4;
-            button23.Text = "Thêm";
-            button23.TextAlign = ContentAlignment.MiddleRight;
-            button23.UseVisualStyleBackColor = true;
+            btnAddStaff.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnAddStaff.ForeColor = Color.Brown;
+            btnAddStaff.Image = Properties.Resources.icons8_add_32__1_;
+            btnAddStaff.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAddStaff.Location = new Point(3, 3);
+            btnAddStaff.Name = "btnAddStaff";
+            btnAddStaff.Size = new Size(93, 43);
+            btnAddStaff.TabIndex = 4;
+            btnAddStaff.Text = "Thêm";
+            btnAddStaff.TextAlign = ContentAlignment.MiddleRight;
+            btnAddStaff.UseVisualStyleBackColor = true;
+            btnAddStaff.Click += btnAddStaff_Click;
             // 
-            // button24
+            // btnUpdateStaff
             // 
-            button24.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button24.ForeColor = Color.Brown;
-            button24.ImageAlign = ContentAlignment.MiddleLeft;
-            button24.ImageKey = "icons8-update-file-64.png";
-            button24.ImageList = imageList1;
-            button24.Location = new Point(102, 3);
-            button24.Name = "button24";
-            button24.Size = new Size(93, 43);
-            button24.TabIndex = 5;
-            button24.Text = "Sửa";
-            button24.TextAlign = ContentAlignment.MiddleRight;
-            button24.UseVisualStyleBackColor = true;
+            btnUpdateStaff.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnUpdateStaff.ForeColor = Color.Brown;
+            btnUpdateStaff.Image = Properties.Resources.icons8_change_32;
+            btnUpdateStaff.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUpdateStaff.Location = new Point(102, 3);
+            btnUpdateStaff.Name = "btnUpdateStaff";
+            btnUpdateStaff.Size = new Size(93, 43);
+            btnUpdateStaff.TabIndex = 5;
+            btnUpdateStaff.Text = "Sửa";
+            btnUpdateStaff.TextAlign = ContentAlignment.MiddleRight;
+            btnUpdateStaff.UseVisualStyleBackColor = true;
+            btnUpdateStaff.Click += btnUpdateStaff_Click;
             // 
-            // button25
+            // btnSaveStaff
             // 
-            button25.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button25.ForeColor = Color.Brown;
-            button25.ImageAlign = ContentAlignment.MiddleLeft;
-            button25.ImageKey = "icons8-save-64.png";
-            button25.ImageList = imageList1;
-            button25.Location = new Point(201, 3);
-            button25.Name = "button25";
-            button25.Size = new Size(93, 43);
-            button25.TabIndex = 6;
-            button25.Text = "Lưu";
-            button25.TextAlign = ContentAlignment.MiddleRight;
-            button25.UseVisualStyleBackColor = true;
+            btnSaveStaff.Enabled = false;
+            btnSaveStaff.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnSaveStaff.ForeColor = Color.Brown;
+            btnSaveStaff.Image = Properties.Resources.icons8_save_32;
+            btnSaveStaff.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSaveStaff.Location = new Point(201, 3);
+            btnSaveStaff.Name = "btnSaveStaff";
+            btnSaveStaff.Size = new Size(93, 43);
+            btnSaveStaff.TabIndex = 6;
+            btnSaveStaff.Text = "Lưu";
+            btnSaveStaff.TextAlign = ContentAlignment.MiddleRight;
+            btnSaveStaff.UseVisualStyleBackColor = true;
+            btnSaveStaff.Click += btnSaveStaff_Click;
             // 
             // tpAccount
             // 
@@ -3273,6 +3489,7 @@
             dataGridView9.Dock = DockStyle.Fill;
             dataGridView9.Location = new Point(0, 0);
             dataGridView9.Name = "dataGridView9";
+            dataGridView9.RowHeadersWidth = 62;
             dataGridView9.Size = new Size(842, 623);
             dataGridView9.TabIndex = 0;
             // 
@@ -3333,9 +3550,8 @@
             // 
             button35.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button35.ForeColor = Color.Brown;
+            button35.Image = Properties.Resources.icons8_search_32;
             button35.ImageAlign = ContentAlignment.MiddleLeft;
-            button35.ImageKey = "icons8-search-32.png";
-            button35.ImageList = imageList1;
             button35.Location = new Point(94, 107);
             button35.Name = "button35";
             button35.Size = new Size(110, 44);
@@ -3580,9 +3796,8 @@
             // 
             button31.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button31.ForeColor = Color.Brown;
+            button31.Image = Properties.Resources.icons8_add_32__1_;
             button31.ImageAlign = ContentAlignment.MiddleLeft;
-            button31.ImageKey = "icons8-add-file-64.png";
-            button31.ImageList = imageList1;
             button31.Location = new Point(3, 3);
             button31.Name = "button31";
             button31.Size = new Size(93, 43);
@@ -3595,9 +3810,8 @@
             // 
             button32.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button32.ForeColor = Color.Brown;
+            button32.Image = Properties.Resources.icons8_change_32;
             button32.ImageAlign = ContentAlignment.MiddleLeft;
-            button32.ImageKey = "icons8-update-file-64.png";
-            button32.ImageList = imageList1;
             button32.Location = new Point(102, 3);
             button32.Name = "button32";
             button32.Size = new Size(93, 43);
@@ -3610,9 +3824,8 @@
             // 
             button33.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button33.ForeColor = Color.Brown;
+            button33.Image = Properties.Resources.icons8_save_32;
             button33.ImageAlign = ContentAlignment.MiddleLeft;
-            button33.ImageKey = "icons8-save-64.png";
-            button33.ImageList = imageList1;
             button33.Location = new Point(201, 3);
             button33.Name = "button33";
             button33.Size = new Size(93, 43);
@@ -3621,12 +3834,17 @@
             button33.TextAlign = ContentAlignment.MiddleRight;
             button33.UseVisualStyleBackColor = true;
             // 
+            // staffBindingSource
+            // 
+            staffBindingSource.DataSource = typeof(DTO.Staff);
+            // 
             // dataGridView3
             // 
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Dock = DockStyle.Fill;
             dataGridView3.Location = new Point(0, 0);
             dataGridView3.Name = "dataGridView3";
+            dataGridView3.RowHeadersWidth = 62;
             dataGridView3.Size = new Size(143, 100);
             dataGridView3.TabIndex = 0;
             // 
@@ -3854,6 +4072,7 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { đăngXuấtToolStripMenuItem, hướngDẫnToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
@@ -3899,6 +4118,7 @@
             dataGridView8.Dock = DockStyle.Fill;
             dataGridView8.Location = new Point(0, 0);
             dataGridView8.Name = "dataGridView8";
+            dataGridView8.RowHeadersWidth = 62;
             dataGridView8.Size = new Size(143, 100);
             dataGridView8.TabIndex = 0;
             // 
@@ -4188,7 +4408,7 @@
             splitContainer20.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer20).EndInit();
             splitContainer20.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvGRN).EndInit();
             splitContainer21.Panel1.ResumeLayout(false);
             splitContainer21.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer21).EndInit();
@@ -4196,6 +4416,7 @@
             groupBox18.ResumeLayout(false);
             tableLayoutPanel13.ResumeLayout(false);
             tableLayoutPanel13.PerformLayout();
+            panel1.ResumeLayout(false);
             splitContainer22.Panel1.ResumeLayout(false);
             splitContainer22.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer22).EndInit();
@@ -4210,7 +4431,7 @@
             splitContainer23.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer23).EndInit();
             splitContainer23.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvStaff).EndInit();
             splitContainer24.Panel1.ResumeLayout(false);
             splitContainer24.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer24).EndInit();
@@ -4249,6 +4470,7 @@
             tableLayoutPanel20.PerformLayout();
             groupBox28.ResumeLayout(false);
             flowLayoutPanel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)staffBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             splitContainer8.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer8).EndInit();
@@ -4292,7 +4514,6 @@
         private SplitContainer splitContainer1;
         private Label label2;
         private Label label1;
-        private DataGridView dtgvCustomer;
         private GroupBox groupBox2;
         private RichTextBox richTextBox1;
         private Label label3;
@@ -4350,9 +4571,8 @@
         private GroupBox groupBox9;
         private TableLayoutPanel tableLayoutPanel7;
         private Label label21;
-        private TextBox textBox14;
+        private TextBox txtSearchProductID;
         private Label label22;
-        private Button button12;
         private SplitContainer splitContainer12;
         private GroupBox groupBox10;
         private TableLayoutPanel tableLayoutPanel8;
@@ -4423,7 +4643,7 @@
         private TextBox txtProductPrice;
         private ComboBox cbProductCategory;
         private ComboBox cbProductManufacturer;
-        private TextBox textBox22;
+        private TextBox txtSearchProductName;
         private SplitContainer splitContainer17;
         private DataGridView dataGridView5;
         private SplitContainer splitContainer18;
@@ -4451,42 +4671,42 @@
         private Label label39;
         private ComboBox comboBox3;
         private SplitContainer splitContainer20;
-        private DataGridView dataGridView6;
+        private DataGridView dtgvGRN;
         private SplitContainer splitContainer21;
         private GroupBox groupBox18;
         private TableLayoutPanel tableLayoutPanel13;
         private Label label40;
-        private TextBox textBox27;
+        private TextBox txtSearchGRNID;
         private Label label41;
         private Label label42;
-        private Button button26;
+        private Button btnSearchGRN;
         private Label label43;
-        private DateTimePicker dateTimePicker5;
-        private TextBox textBox28;
-        private DateTimePicker dateTimePicker6;
+        private DateTimePicker dtpkSearchGRNTo;
+        private TextBox txtGRNTotal;
+        private DateTimePicker dtpkSearchGRNFrom;
         private SplitContainer splitContainer22;
         private GroupBox groupBox19;
         private TableLayoutPanel tableLayoutPanel14;
         private Label label45;
         private Label label46;
         private Label label47;
-        private TextBox textBox30;
-        private TextBox textBox31;
-        private ComboBox comboBox4;
+        private TextBox txtGRNUnit;
+        private TextBox txtGRNID;
+        private ComboBox cbGRNStaff;
         private GroupBox groupBox20;
         private FlowLayoutPanel flowLayoutPanel8;
-        private Button button27;
-        private Button button28;
+        private Button btnDetailAndUpdateGRN;
+        private Button btnAddGRN;
         private Button button30;
         private SplitContainer splitContainer23;
-        private DataGridView dataGridView7;
+        private DataGridView dtgvStaff;
         private SplitContainer splitContainer24;
         private GroupBox groupBox21;
         private TableLayoutPanel tableLayoutPanel15;
-        private Button button29;
+        private Button btnSearchStaff;
         private Label label44;
-        private TextBox textBox29;
-        private TextBox textBox32;
+        private TextBox txtSearchStaffName;
+        private TextBox txtSearchStaffID;
         private Label label48;
         private SplitContainer splitContainer25;
         private GroupBox groupBox22;
@@ -4494,16 +4714,15 @@
         private Label label49;
         private Label label50;
         private Label label51;
-        private TextBox textBox33;
-        private TextBox textBox34;
-        private RichTextBox richTextBox3;
+        private TextBox txtStaffName;
+        private TextBox txtStaffID;
         private GroupBox groupBox23;
         private Label label52;
         private Label label53;
         private Label label54;
-        private ComboBox comboBox5;
-        private ComboBox comboBox6;
-        private TextBox textBox35;
+        private ComboBox cbStaffGender;
+        private ComboBox cboStaffStatus;
+        private TextBox txtStaffPhone;
         private SplitContainer splitContainer29;
         private DataGridView dataGridView9;
         private SplitContainer splitContainer30;
@@ -4548,7 +4767,6 @@
         private ComboBox comboBox10;
         private ComboBox comboBox11;
         private ToolStripSeparator toolStripMenuItem1;
-        private ImageList imageList1;
         private Button button39;
         private Button button40;
         private Button button41;
@@ -4556,11 +4774,37 @@
         private Button button20;
         private Button button21;
         private FlowLayoutPanel flowLayoutPanel9;
-        private Button button23;
-        private Button button24;
-        private Button button25;
+        private Button btnAddStaff;
+        private Button btnUpdateStaff;
+        private Button btnSaveStaff;
         private Button button31;
         private Button button32;
         private Button button33;
+        private Button btnSearchProduct;
+        private ComboBox cbStaffRole;
+        private Label label66;
+        private RichTextBox rtbStaffAdress;
+        private Label label67;
+        private DateTimePicker dtpStaffBornDate;
+        private BindingSource staffBindingSource;
+        private DataGridView dtgvCustomer;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DateTimePicker dtpkGRNDate;
+        private Label label68;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Column12;
+        private DataGridViewTextBoxColumn Column11;
+        private DataGridViewTextBoxColumn Column13;
+        private DataGridViewTextBoxColumn Column14;
+        private Panel panel1;
+        private Button btnSearchGRNCancel;
     }
 }

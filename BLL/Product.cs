@@ -18,7 +18,7 @@ namespace DTO
         public double Price { get; set;} 
         public string Image { get; set;}
 
-        public Product (int productID, int categoryID, int manufacturer, string productName, string information, int quantity, double price, string image ) 
+        public Product (int productID, int categoryID, int manufacturer, string productName, string information, int quantity, double price, string image  = "Unknown") 
         { 
             this.ProductID = productID;
             this.CategoryID = categoryID;
@@ -41,6 +41,8 @@ namespace DTO
             this.Price = (double)row["Gia"];
             if (row["HinhAnhSanPham"] != System.DBNull.Value)
                 this.Image = (string)row["HinhAnhSanPham"];
+            else
+                this.Image = "Unknown";
         }
 
     }

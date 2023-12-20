@@ -36,6 +36,15 @@ namespace DAL
             return list;
         }
 
+        public Manufacturer GetManufacturer(int id)
+        {
+            string query = "select * from HangSX where MaHangSX = " + id + "";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            Manufacturer manufacturer = new(data.Rows[0]);
+
+            return manufacturer;
+        }
+
         public bool InsertManufacturer(string name)
         {
             string query = string.Format("Insert HangSX (TenHangSX) values (N'{0}')", name);

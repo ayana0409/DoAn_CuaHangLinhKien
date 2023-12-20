@@ -22,5 +22,9 @@ namespace DTO
             this.RoleID = (int)row["MaChucVu"];
             this.RoleName = (string)row["TenChucVu"];
         }
+        public override string ToString()
+        {
+            return this.RoleName;
+        }
     }
 }

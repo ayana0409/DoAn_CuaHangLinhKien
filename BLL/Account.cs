@@ -14,6 +14,11 @@ namespace DTO
         public int? StaffID { get; set; }
         public string Password { get; set; }
         public int TypeID { get; set; }
+        public Account() 
+        {
+            AccountID = string.Empty;
+            Password = string.Empty;
+        }
 
         public Account(string accountID, string password, int typeID, int? staffID = null)
         {

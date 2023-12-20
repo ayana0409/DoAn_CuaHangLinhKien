@@ -8,14 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
+using DTO;
 
 namespace GUI
 {
     public partial class frmLogin : Form
     {
+        private string productImagePath = Application.StartupPath.Split("\\DoAn_CuaHangLinhKien", StringSplitOptions.None)[0]
+                        + @"\DoAn_CuaHangLinhKien\BLL\product-images\";
+        private List<string> productImageDelete = new();
         public frmLogin()
         {
             InitializeComponent();
+        }
+        private void deleteProductImage(List<String> list)
+        {
+            foreach (string name in list)
+            {
+                File.Delete(productImagePath + name);
+            }
         }
 
         #region EVENT
@@ -32,6 +43,9 @@ namespace GUI
                 frm.loginAccount = AccountDAL.Instance.GetAccountByID(txtAccountID.Text);
                 this.Hide();
                 frm.ShowDialog();
+                frm.Close();
+                foreach (string name in frm.listDeleteProductImage)
+                    productImageDelete.Add(name);
                 this.Show();
             }
             else
@@ -40,6 +54,7 @@ namespace GUI
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            deleteProductImage(productImageDelete);
             Application.Exit();
         }
 

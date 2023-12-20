@@ -43,6 +43,7 @@
             // 
             pbImage.BorderStyle = BorderStyle.FixedSingle;
             pbImage.Dock = DockStyle.Fill;
+            pbImage.ErrorImage = Properties.Resources.icons8_product_90;
             pbImage.Image = Properties.Resources.icons8_product_90;
             pbImage.ImageLocation = "";
             pbImage.Location = new Point(0, 0);

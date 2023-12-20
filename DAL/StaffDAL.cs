@@ -1,39 +1,80 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL
 {
-    internal class StaffDAL
+    public class StaffDAL
     {
-        private static StaffDAL instance;
+        private static StaffDAL? instance;
 
-        internal static StaffDAL Instance
+        public static StaffDAL Instance
         {
             get { if (instance == null) instance = new StaffDAL(); return instance; }
             private set => instance = value;
         }
         private StaffDAL() { }
 
-
-
-
-
-        public bool InsertStaff(int accountID, int roleID, string name, DateOnly date, string sex, string address, string numberphone, string status)
+        public List<Staff> GetListStaff()
         {
-            string query = string.Format("Insert NhanVien ( MaTaiKhoan, MaChucVu, HoVaTen, NgaySinh, GioiTinh,DiaChi, SDT, TrangThai ) values ({0},{1},N'{2}',N'{3}',N'{4}',N'{5}',N'{6}',N'{7}')",
-               accountID, roleID,name, date, sex, address, numberphone, status);
+            List<Staff> list = new();
+            string query = "select * from NhanVien";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in data.Rows)
+            {
+                Staff pd = new(row);
+                list.Add(pd);
+            }
+            return list;
+        }
+
+        public List<Staff> SearchStaff(string id = "", string name = "")
+        {
+            string query = String.Format("select * from NhanVien where MaNhanVien like '%{0}%' " +
+                "and HoVaTen like N'%{1}%'", id, name);
+            List<Staff> list = new();
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach(DataRow row in data.Rows)
+            {
+                list.Add(new Staff(row));
+            }
+
+            return list;
+        }
+
+        public Staff GetStaff(int id)
+        {
+            string query = "select * from NhanVien where MaNhanVien = " + id;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return new Staff(data.Rows[0]);
+        }
+
+        public bool InsertStaff(int roleID, string name, string date, string sex, 
+            string address, string numberphone, string status)
+        {
+            string query = string.Format("Insert NhanVien ( MaChucVu, HoVaTen, NgaySinh, GioiTinh, " +
+                "DiaChi, SDT, TrangThai ) values ({0}, N'{1}', '{2}',N'{3}',N'{4}', '{5}',N'{6}')",
+                roleID, name, date, sex, address, numberphone, status);
+               
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
         }
 
-        public bool UpdateStaff(int accountID, int roleID, string name, DateOnly date, string sex, string address, string numberphone, string status, int staffID)
+        public bool UpdateStaff(int roleID, string name, string date, string sex, 
+            string address, string numberphone, string status, int staffID)
         {
-            string query = string.Format("Update NhanVien set MaTaiKhoan = {0}, MaChucVu = {1}, HoVaTen = N'{2}', NgaySinh = N'{3}', GioiTinh = N'{4}, DiaChi = N'{5}', SDT = N'{6}', TrangThai = N'{7}' where staffID = {8}",
-              accountID, roleID, name, date, sex, address, numberphone, status, staffID);
+            string query = string.Format("Update NhanVien set MaChucVu = {0}, HoVaTen = N'{1}', " +
+                "NgaySinh = N'{2}', GioiTinh = N'{3}', DiaChi = N'{4}', SDT = N'{5}', " +
+                "TrangThai = N'{6}' where MaNhanVien = {7}",
+                roleID, name, date, sex, address, numberphone, status, staffID);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
