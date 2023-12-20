@@ -31,193 +31,15 @@ namespace GUI
 
         private void frmManage_Load(object sender, EventArgs e)
         {
-            CheckRole();
             listCategory = CategoryDAL.Instance.GetListCategory();
             listManufacturer = ManufacturerDAL.Instance.GetListManufacturer();
             listCustomer = CustomerDAL.Instance.GetListCustomer();
-            LoadProduct();
             LoadCustomer();
             LoadManufacturer();
             LoadCategory();
-
         }
 
-
-        private void LoadCustomer()
-        {
-            dtgvCustomer.Rows.Clear();
-            foreach (Customer c in listCustomer)
-            {
-                DataGridViewRow row = (DataGridViewRow)dtgvCustomer.Rows[0].Clone();
-                row.Cells[0].Value = c.CustomerNumberPhone.ToString();
-                row.Cells[1].Value = c.CustomerName.ToString();
-                row.Cells[2].Value = c.CustomerAddress.ToString();
-                dtgvCustomer.Rows.Add(row);
-            }
-        }
-        private void LoadManufacturer()
-        {
-            dtgvManufacturer.Rows.Clear();
-            foreach (Manufacturer m in listManufacturer)
-            {
-                DataGridViewRow row = (DataGridViewRow)dtgvManufacturer.Rows[0].Clone();
-                row.Cells[0].Value = m.ManufacturerID.ToString();
-                row.Cells[1].Value = m.ManufacturerName.ToString();
-                dtgvManufacturer.Rows.Add(row);
-            }
-        }
-
-        private void LoadCategory()
-        {
-            dtgvCategory.Rows.Clear();
-            foreach (Category c in listCategory)
-            {
-                DataGridViewRow row = (DataGridViewRow)dtgvCategory.Rows[0].Clone();
-                row.Cells[0].Value = c.CategoryID.ToString();
-                row.Cells[1].Value = c.CategoryName.ToString();
-                dtgvCategory.Rows.Add(row);
-            }
-        }
-        private void LoadProduct()
-        {
-            listProduct = ProductDAL.Instance.GetListProduct();
-            flpProduct.Controls.Clear();
-            foreach (Product p in listProduct)
-            {
-                SPViewer ctrViewer = new(p);
-                ctrViewer.WasClicked += FlowLayOutPanel_Controls_WasClicked;
-                flpProduct.Controls.Add(ctrViewer);
-            }
-            cbProductCategory.DataSource = listCategory;
-            cbProductManufacturer.DataSource = listManufacturer;
-        }
-
-        private void CheckRole()
-        {
-            AccountType type = AccountTypeDAL.Instance.GetAccountType(loginAccount.TypeID);
-            if (type.TypeName == "Nhân viên")
-            {
-                TabControl.TabPages.Remove(tpProduct);
-                TabControl.TabPages.Remove(tpCategory);
-                TabControl.TabPages.Remove(tpManufacturer);
-                TabControl.TabPages.Remove(tpGRN);
-                TabControl.TabPages.Remove(tpStaff);
-                TabControl.TabPages.Remove(tpAccount);
-            }
-            else if (type.TypeName == "Quản lý")
-            {
-                TabControl.TabPages.Remove(tpAccount);
-            }
-        }
-
-        void FlowLayOutPanel_Controls_WasClicked(object sender, EventArgs e)
-        {
-            // Set IsSelected for all UCs in the FlowLayoutPanel to false. 
-            foreach (Control c in flpProduct.Controls)
-            {
-                if (c is SPViewer)
-                {
-                    ((SPViewer)c).IsSelected = false;
-                }
-            }
-            SPViewer v = sender as SPViewer;
-            txtProductID.Text = v.Product.ProductID.ToString();
-            txtProductName.Text = v.Product.ProductName;
-            txtProductPrice.Text = v.Product.Price.ToString();
-            rtbProductInfomation.Text = v.Product.Information;
-            nmudQuantity.Value = v.Product.Quantity;
-            cbProductCategory.Text = v.Product.CategoryID.ToString();
-            cbProductManufacturer.Text = v.Product.ManufacturerID.ToString();
-            if (v.Product.Image != String.Empty)
-            {
-                pbProductImage.Image = Image.FromFile(Application.StartupPath.Split("\\DoAn_CuaHangLinhKien", StringSplitOptions.None)[0] + @"\DoAn_CuaHangLinhKien\BLL\product-images\" + v.Product.Image);
-            }
-
-        }
-
-        private void btnSelectProductImage_Click(object sender, EventArgs e)
-        {
-            ofdSelectProductImage.ShowDialog();
-            string fileName = ofdSelectProductImage.FileName;
-
-            _tempImageName = fileName;
-            pbProductImage.Image = Image.FromFile(fileName);
-            //string newFileName = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
-
-            //File.Copy(fileName, Application.StartupPath.Split("\\DoAn_CuaHangLinhKien", StringSplitOptions.None)[0] + @"\DoAn_CuaHangLinhKien\BLL\product-images\"+ newFileName);
-            //string productPath = Path.Combine(wwwRootPath, @"images\product")
-        }
-
-        private void btnAddProduct_Click(object sender, EventArgs e)
-        {
-            if (btnSaveProduct.Enabled)
-            {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    );
-                if (result == DialogResult.Yes)
-                {
-                    ClearInputBox();
-                    btnUpdateProduct.Enabled = true;
-                    btnSaveProduct.Enabled = false;
-                    return;
-                }
-            }
-            else
-            {
-                btnAddProduct.Enabled = true;
-                btnUpdateProduct.Enabled = false;
-                btnSaveProduct.Enabled = true;
-
-                ClearInputBox();
-            }
-
-        }
-
-        private void btnSaveProduct_Click(object sender, EventArgs e)
-        {
-
-            if (btnSaveProduct.Enabled)
-            {
-                if (txtProductName.Text == String.Empty ||
-                    txtProductPrice.Text == String.Empty ||
-                    cbProductCategory.Text == String.Empty ||
-                    cbProductManufacturer.Text == String.Empty ||
-                    _tempImageName == String.Empty)
-                {
-                    MessageBox.Show("Vui lòng nhập đủ thông tin!");
-                    return;
-                }
-
-                string name = txtProductName.Text;
-                string info = rtbProductInfomation.Text;
-                double price = Double.Parse(txtProductPrice.Text);
-                int quantity = (int)nmudQuantity.Value;
-
-                string fileName = _tempImageName;
-                string newFileName = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
-                File.Copy(fileName,
-                    Application.StartupPath.Split("\\DoAn_CuaHangLinhKien", StringSplitOptions.None)[0]
-                    + @"\DoAn_CuaHangLinhKien\BLL\product-images\" + newFileName);
-                Category productCategory = cbProductCategory.SelectedItem as Category;
-                Manufacturer productManufacturer = cbProductManufacturer.SelectedItem as Manufacturer;
-
-
-                if (ProductDAL.Instance.InsertProduct(name, productCategory.CategoryID, productManufacturer.ManufacturerID, info, price, quantity, newFileName))
-                {
-                    MessageBox.Show("Thêm thành công rồi, vui vãi");
-                    LoadProduct();
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi rồi");
-                }
-            }
-        }
-
+        #region MANEGE CUSTOMER
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             if (btnSaveCustomer.Enabled)
@@ -343,7 +165,20 @@ namespace GUI
                 txtName.Text = row.Cells[1].Value.ToString();
                 rtbAddress.Text = row.Cells[2].Value.ToString();
             }
-
+        }
+        #endregion
+        #region CUSTOMER METHOD
+        private void LoadCustomer()
+        {
+            dtgvCustomer.Rows.Clear();
+            foreach (Customer c in listCustomer)
+            {
+                DataGridViewRow row = (DataGridViewRow)dtgvCustomer.Rows[0].Clone();
+                row.Cells[0].Value = c.CustomerNumberPhone.ToString();
+                row.Cells[1].Value = c.CustomerName.ToString();
+                row.Cells[2].Value = c.CustomerAddress.ToString();
+                dtgvCustomer.Rows.Add(row);
+            }
         }
 
         private void ClearCustomer()
@@ -352,19 +187,9 @@ namespace GUI
             txtName.Text = String.Empty;
             rtbAddress.Text = String.Empty;
         }
+        #endregion
 
-        private void ClearInputBox()
-        {
-            txtProductID.Text = String.Empty;
-            txtProductName.Text = String.Empty;
-            txtProductPrice.Text = String.Empty;
-            rtbProductInfomation.Text = String.Empty;
-            nmudQuantity.Value = 0;
-            cbProductCategory.Text = String.Empty;
-            cbProductManufacturer.Text = String.Empty;
-            pbProductImage.Image = null;
-        }
-
+        #region MANEGE MANUFACTURER
         private void dtgvManufacturer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dtgvManufacturer.SelectedCells[0].Value != null)
@@ -374,7 +199,6 @@ namespace GUI
                 txtManufacturerID.Text = row.Cells[0].Value.ToString();
                 txtManufacturerName.Text = row.Cells[1].Value.ToString();
             }
-
         }
 
         private void btnAddManufacturer_Click(object sender, EventArgs e)
@@ -486,6 +310,19 @@ namespace GUI
                 btnAddManufacturer.Enabled = false;
             }
         }
+        #endregion
+        #region MANUFACTURER METHOD
+        private void LoadManufacturer()
+        {
+            dtgvManufacturer.Rows.Clear();
+            foreach (Manufacturer m in listManufacturer)
+            {
+                DataGridViewRow row = (DataGridViewRow)dtgvManufacturer.Rows[0].Clone();
+                row.Cells[0].Value = m.ManufacturerID.ToString();
+                row.Cells[1].Value = m.ManufacturerName.ToString();
+                dtgvManufacturer.Rows.Add(row);
+            }
+        }
 
         private void ClearManufacturerInputBox()
         {
@@ -493,6 +330,9 @@ namespace GUI
             txtManufacturerName.Text = String.Empty;
         }
 
+        #endregion
+
+        #region MANEGE CATEGORY 
         private void dtgvCategory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dtgvCategory.SelectedCells[0].Value != null)
@@ -584,6 +424,7 @@ namespace GUI
             txtSearchCateName.Text = String.Empty;
             LoadCategory();
         }
+
         private void btnUpdateCate_Click(object sender, EventArgs e)
         {
             if (btnSaveCate.Enabled)
@@ -608,15 +449,30 @@ namespace GUI
                 btnAddCate.Enabled = false;
             }
         }
+        #endregion
+        #region CATEGORY METHOD
+        private void LoadCategory()
+        {
+            dtgvCategory.Rows.Clear();
+            foreach (Category c in listCategory)
+            {
+                DataGridViewRow row = (DataGridViewRow)dtgvCategory.Rows[0].Clone();
+                row.Cells[0].Value = c.CategoryID.ToString();
+                row.Cells[1].Value = c.CategoryName.ToString();
+                dtgvCategory.Rows.Add(row);
+            }
+        }
+
         private void ClearCategoryInputBox()
         {
             txtCateID.Text = String.Empty;
             txtCateName.Text = String.Empty;
         }
-
-
     }
 }
+#endregion
+
+
 
 
 
