@@ -36,6 +36,10 @@ namespace DAL
             return result.Rows.Count > 0;
         }
 
+        //SetStaff (StaffID)
+
+        //DeleteStaff (StaffID = null)
+
         #region CRUD
         public bool InsertAccount(string accountID, int typeID, string password = "0", int? staffID = null)
         {

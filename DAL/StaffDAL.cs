@@ -56,6 +56,12 @@ namespace DAL
             return new Staff(data.Rows[0]);
         }
 
+        //SetAccount
+        //query = "Update TaiKhoan Set StaffID = @id where MaTaiKhoan = @ma"
+
+
+        //DeleteAccount (AccountID = null)
+
         public bool InsertStaff(int roleID, string name, string date, string sex, 
             string address, string numberphone, string status)
         {

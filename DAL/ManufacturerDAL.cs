@@ -32,10 +32,23 @@ namespace DAL
                 Manufacturer mnu = new(row);
                 list.Add(mnu);
             }
-
             return list;
         }
-
+        public List<Manufacturer> SearchManufacturer(string id = " ", string name = " ")
+        {
+            List<Manufacturer> list = new();
+            if (id != null || name != null)
+            {
+                string query = string.Format("select * from HangSX where MaHangSX  like  '%{0}%' and TenHangSX like '%{1}%'", id, name);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                foreach (DataRow row in data.Rows)
+                {
+                    Manufacturer ct = new(row);
+                    list.Add(ct);
+                }
+            }
+            return list;
+        }
         public Manufacturer GetManufacturer(int id)
         {
             string query = "select * from HangSX where MaHangSX = " + id + "";

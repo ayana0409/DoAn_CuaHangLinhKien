@@ -22,6 +22,7 @@ namespace GUI
         private List<Staff> listStaff = [];
         private List<Role> listRole = [];
         private List<GRN> listGRN = [];
+        private List<Customer> listCustomer = [];
 
         public List<string> listDeleteProductImage = [];
 
@@ -45,11 +46,16 @@ namespace GUI
             listStaff = StaffDAL.Instance.GetListStaff();
             listRole = RoleDAL.Instance.GetListRole();
             listGRN = GRNDAL.Instance.GetListGRN();
+            listCustomer = CustomerDAL.Instance.GetListCustomer();
+            listCategory = CategoryDAL.Instance.GetListCategory();
 
             LoadProduct();
             LoadStaff();
             LoadListRole();
             LoadGRN();
+            LoadCustomer();
+            LoadManufacturer();
+            LoadCategory();
 
             SetSearchDate();
 
@@ -210,231 +216,294 @@ namespace GUI
         }
         #endregion
 
+        #region CUSTOMER METHOD
+        private void LoadCustomer()
+        {
+            dtgvCustomer.Rows.Clear();
+            foreach (Customer c in listCustomer)
+            {
+                DataGridViewRow row = (DataGridViewRow)dtgvCustomer.Rows[0].Clone();
+                row.Cells[0].Value = c.CustomerNumberPhone.ToString();
+                row.Cells[1].Value = c.CustomerName.ToString();
+                row.Cells[2].Value = c.CustomerAddress.ToString();
+                dtgvCustomer.Rows.Add(row);
+            }
+        }
+
+        private void ClearCustomer()
+        {
+            txtNumberPhone.Text = String.Empty;
+            txtName.Text = String.Empty;
+            rtbAddress.Text = String.Empty;
+        }
         #endregion
 
-        // EVENT
-        #region EVENT
+        #region MANUFACTURER METHOD
+        private void LoadManufacturer()
+        {
+            dtgvManufacturer.Rows.Clear();
+            foreach (Manufacturer m in listManufacturer)
+            {
+                DataGridViewRow row = (DataGridViewRow)dtgvManufacturer.Rows[0].Clone();
+                row.Cells[0].Value = m.ManufacturerID.ToString();
+                row.Cells[1].Value = m.ManufacturerName.ToString();
+                dtgvManufacturer.Rows.Add(row);
+            }
+        }
+
+        private void ClearManufacturerInputBox()
+        {
+            txtManufacturerID.Text = String.Empty;
+            txtManufacturerName.Text = String.Empty;
+        }
+
+        #endregion
+
+        #region CATEGORY METHOD
+        private void LoadCategory()
+        {
+            dtgvCategory.Rows.Clear();
+            foreach (Category c in listCategory)
+            {
+                DataGridViewRow row = (DataGridViewRow)dtgvCategory.Rows[0].Clone();
+                row.Cells[0].Value = c.CategoryID.ToString();
+                row.Cells[1].Value = c.CategoryName.ToString();
+                dtgvCategory.Rows.Add(row);
+            }
+        }
+
+        private void ClearCategoryInputBox()
+        {
+            txtCateID.Text = String.Empty;
+            txtCateName.Text = String.Empty;
+        }
+#endregion
+
+#endregion
+
+// EVENT
+#region EVENT
         #region PRODUCT MANAGE EVENT
         private void FlowLayOutPanel_Controls_WasClicked(object sender, EventArgs e)
-        {
-            foreach (Control c in flpProduct.Controls)
-            {
-                if (c is SPViewer)
                 {
-                    ((SPViewer)c).IsSelected = false;
-                }
-            }
-            SPViewer v = (SPViewer)sender;
-            txtProductID.Text = v.Product.ProductID.ToString();
-            txtProductName.Text = v.Product.ProductName;
-            txtProductPrice.Text = v.Product.Price.ToString();
-            rtbProductInfomation.Text = v.Product.Information;
-            nmudQuantity.Value = v.Product.Quantity;
-            cbProductCategory.Text = CategoryDAL.Instance.GetCategory(v.Product.CategoryID).CategoryName;
-            cbProductManufacturer.Text = ManufacturerDAL.Instance.GetManufacturer(v.Product.ManufacturerID).ManufacturerName;
+                    foreach (Control c in flpProduct.Controls)
+                    {
+                        if (c is SPViewer)
+                        {
+                            ((SPViewer)c).IsSelected = false;
+                        }
+                    }
+                    SPViewer v = (SPViewer)sender;
+                    txtProductID.Text = v.Product.ProductID.ToString();
+                    txtProductName.Text = v.Product.ProductName;
+                    txtProductPrice.Text = v.Product.Price.ToString();
+                    rtbProductInfomation.Text = v.Product.Information;
+                    nmudQuantity.Value = v.Product.Quantity;
+                    cbProductCategory.Text = CategoryDAL.Instance.GetCategory(v.Product.CategoryID).CategoryName;
+                    cbProductManufacturer.Text = ManufacturerDAL.Instance.GetManufacturer(v.Product.ManufacturerID).ManufacturerName;
 
-            if (v.Product.Image != "Unknown")
-            {
-                try
-                {
-                    pbProductImage.Image = Image.FromFile(productImagePath + v.Product.Image);
-                    _tempImageName = productImagePath + v.Product.Image;
-                }
-                catch
-                {
-                    pbProductImage.Image = null;
-                    _tempImageName = null;
-                }
-            }
-            else
-                pbProductImage.Image = null;
-            CheckImageButton();
-        }
-        private void btnSelectProductImage_Click(object sender, EventArgs e)
-        {
-            ofdSelectProductImage.ShowDialog();
-            string fileName = ofdSelectProductImage.FileName;
-
-            _tempImageName = fileName;
-            try
-            {
-                pbProductImage.Image = Image.FromFile(fileName);
-            }
-            catch
-            {
-                pbProductImage.Image = null;
-            }
-        }
-        private void btnDeleteProductImage_Click(object sender, EventArgs e)
-        {
-            if (pbProductImage.Image != null)
-            {
-                DialogResult result =
-                    MessageBox.Show("Bạn muốn xóa hình?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    pbProductImage.Image = null;
-                    _tempImageName = null;
-                }
-            }
-        }
-        private void btnAddProduct_Click(object sender, EventArgs e)
-        {
-            if (btnSaveProduct.Enabled)
-            {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    );
-                if (result == DialogResult.Yes)
-                {
-                    ClearProductInputBox();
-                    btnUpdateProduct.Enabled = true;
-                    btnSaveProduct.Enabled = false;
+                    if (v.Product.Image != "Unknown")
+                    {
+                        try
+                        {
+                            pbProductImage.Image = Image.FromFile(productImagePath + v.Product.Image);
+                            _tempImageName = productImagePath + v.Product.Image;
+                        }
+                        catch
+                        {
+                            pbProductImage.Image = null;
+                            _tempImageName = null;
+                        }
+                    }
+                    else
+                        pbProductImage.Image = null;
                     CheckImageButton();
-                    return;
                 }
-            }
-            else
-            {
-                btnAddProduct.Enabled = true;
-                btnUpdateProduct.Enabled = false;
-                btnSaveProduct.Enabled = true;
-
-                CheckImageButton();
-                ClearProductInputBox();
-            }
-        }
-        private void btnSaveProduct_Click(object sender, EventArgs e)
-        {
-
-            if (btnAddProduct.Enabled)
-            {
-                if (txtProductName.Text == String.Empty ||
-                    txtProductPrice.Text == String.Empty ||
-                    cbProductCategory.SelectedItem == null ||
-                    cbProductManufacturer.SelectedItem == null ||
-                    _tempImageName == null)
+                private void btnSelectProductImage_Click(object sender, EventArgs e)
                 {
-                    MessageBox.Show("Vui lòng nhập đủ thông tin!");
-                    return;
+                    ofdSelectProductImage.ShowDialog();
+                    string fileName = ofdSelectProductImage.FileName;
+
+                    _tempImageName = fileName;
+                    try
+                    {
+                        pbProductImage.Image = Image.FromFile(fileName);
+                    }
+                    catch
+                    {
+                        pbProductImage.Image = null;
+                    }
                 }
-
-                string name = txtProductName.Text;
-                string info = rtbProductInfomation.Text;
-                double price = Double.Parse(txtProductPrice.Text);
-                int quantity = (int)nmudQuantity.Value;
-
-                string fileName = _tempImageName;
-                string newFileName = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
-                if (fileName != null)
-                    File.Copy(fileName, productImagePath + newFileName);
-                Category productCategory = (Category)cbProductCategory.SelectedItem;
-                Manufacturer productManufacturer = (Manufacturer)cbProductManufacturer.SelectedItem;
-
-                if (ProductDAL.Instance.InsertProduct(name, productCategory.CategoryID, productManufacturer.ManufacturerID, info, price, quantity, newFileName))
+                private void btnDeleteProductImage_Click(object sender, EventArgs e)
                 {
-                    MessageBox.Show("Thêm thành công");
-                    listProduct = ProductDAL.Instance.GetListProduct();
+                    if (pbProductImage.Image != null)
+                    {
+                        DialogResult result =
+                            MessageBox.Show("Bạn muốn xóa hình?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            pbProductImage.Image = null;
+                            _tempImageName = null;
+                        }
+                    }
+                }
+                private void btnAddProduct_Click(object sender, EventArgs e)
+                {
+                    if (btnSaveProduct.Enabled)
+                    {
+                        DialogResult result = MessageBox.Show(
+                            "Bạn có muốn hủy thao tác?",
+                            "Xác nhận",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question
+                            );
+                        if (result == DialogResult.Yes)
+                        {
+                            ClearProductInputBox();
+                            btnUpdateProduct.Enabled = true;
+                            btnSaveProduct.Enabled = false;
+                            CheckImageButton();
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        btnAddProduct.Enabled = true;
+                        btnUpdateProduct.Enabled = false;
+                        btnSaveProduct.Enabled = true;
+
+                        CheckImageButton();
+                        ClearProductInputBox();
+                    }
+                }
+                private void btnSaveProduct_Click(object sender, EventArgs e)
+                {
+
+                    if (btnAddProduct.Enabled)
+                    {
+                        if (txtProductName.Text == String.Empty ||
+                            txtProductPrice.Text == String.Empty ||
+                            cbProductCategory.SelectedItem == null ||
+                            cbProductManufacturer.SelectedItem == null ||
+                            _tempImageName == null)
+                        {
+                            MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                            return;
+                        }
+
+                        string name = txtProductName.Text;
+                        string info = rtbProductInfomation.Text;
+                        double price = Double.Parse(txtProductPrice.Text);
+                        int quantity = (int)nmudQuantity.Value;
+
+                        string fileName = _tempImageName;
+                        string newFileName = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
+                        if (fileName != null)
+                            File.Copy(fileName, productImagePath + newFileName);
+                        Category productCategory = (Category)cbProductCategory.SelectedItem;
+                        Manufacturer productManufacturer = (Manufacturer)cbProductManufacturer.SelectedItem;
+
+                        if (ProductDAL.Instance.InsertProduct(name, productCategory.CategoryID, productManufacturer.ManufacturerID, info, price, quantity, newFileName))
+                        {
+                            MessageBox.Show("Thêm thành công");
+                            listProduct = ProductDAL.Instance.GetListProduct();
+                            LoadProduct();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi rồi");
+                        }
+                    }
+                    else if (btnUpdateProduct.Enabled)
+                    {
+                        if (txtProductName.Text == String.Empty ||
+                            txtProductPrice.Text == String.Empty ||
+                            cbProductCategory.SelectedItem == null ||
+                            cbProductManufacturer.SelectedItem == null ||
+                            _tempImageName == String.Empty)
+                        {
+                            MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                            return;
+                        }
+                        int id = System.Convert.ToInt32(txtProductID.Text);
+                        string name = txtProductName.Text;
+                        string info = rtbProductInfomation.Text;
+                        double price = Double.Parse(txtProductPrice.Text);
+                        int quantity = (int)nmudQuantity.Value;
+
+                        string oldImage = ProductDAL.Instance.GetProduct(id).Image;
+
+                        string fileName;
+                        if (_tempImageName != null)
+                            fileName = _tempImageName;
+                        else
+                            fileName = "Unknown";
+
+                        string newFileName;
+                        if (fileName != "Unknown")
+                        {
+                            newFileName = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
+                            File.Copy(fileName, productImagePath + newFileName);
+                        }
+                        else
+                            newFileName = fileName;
+
+                        Category productCategory = (Category)cbProductCategory.SelectedItem;
+                        Manufacturer productManufacturer = (Manufacturer)cbProductManufacturer.SelectedItem;
+
+                        if (ProductDAL.Instance.UpdateProduct(id, name, productCategory.CategoryID, productManufacturer.ManufacturerID, info, price, quantity, newFileName))
+                        {
+                            MessageBox.Show("Sửa thành công");
+                            listDeleteProductImage.Add(oldImage);
+                            listProduct = ProductDAL.Instance.GetListProduct();
+                            LoadProduct();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi rồi");
+                        }
+                    }
+                }
+                private void btnUpdateProduct_Click(object sender, EventArgs e)
+                {
+                    if (btnSaveProduct.Enabled)
+                    {
+                        DialogResult result = MessageBox.Show(
+                            "Bạn có muốn hủy thao tác?",
+                            "Xác nhận",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question
+                            );
+                        if (result == DialogResult.Yes)
+                        {
+                            ClearProductInputBox();
+                            btnAddProduct.Enabled = true;
+                            btnSaveProduct.Enabled = false;
+                            CheckImageButton();
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        btnAddProduct.Enabled = false;
+                        btnUpdateProduct.Enabled = true;
+                        btnSaveProduct.Enabled = true;
+
+                        CheckImageButton();
+                        ClearProductInputBox();
+                    }
+                }
+                private void btnSearchProduct_Click(object sender, EventArgs e)
+                {
+                    if (txtSearchProductID.Text != String.Empty || txtSearchProductName.Text != String.Empty)
+                        listProduct = ProductDAL.Instance.SearchProduct(txtSearchProductID.Text, txtSearchProductName.Text);
+                    else
+                        listProduct = ProductDAL.Instance.GetListProduct();
+                    txtSearchProductID.Text = String.Empty;
+                    txtSearchProductName.Text = String.Empty;
                     LoadProduct();
                 }
-                else
-                {
-                    MessageBox.Show("Lỗi rồi");
-                }
-            }
-            else if (btnUpdateProduct.Enabled)
-            {
-                if (txtProductName.Text == String.Empty ||
-                    txtProductPrice.Text == String.Empty ||
-                    cbProductCategory.SelectedItem == null ||
-                    cbProductManufacturer.SelectedItem == null ||
-                    _tempImageName == String.Empty)
-                {
-                    MessageBox.Show("Vui lòng nhập đủ thông tin!");
-                    return;
-                }
-                int id = System.Convert.ToInt32(txtProductID.Text);
-                string name = txtProductName.Text;
-                string info = rtbProductInfomation.Text;
-                double price = Double.Parse(txtProductPrice.Text);
-                int quantity = (int)nmudQuantity.Value;
-
-                string oldImage = ProductDAL.Instance.GetProduct(id).Image;
-
-                string fileName;
-                if (_tempImageName != null)
-                    fileName = _tempImageName;
-                else
-                    fileName = "Unknown";
-
-                string newFileName;
-                if (fileName != "Unknown")
-                {
-                    newFileName = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
-                    File.Copy(fileName, productImagePath + newFileName);
-                }
-                else
-                    newFileName = fileName;
-
-                Category productCategory = (Category)cbProductCategory.SelectedItem;
-                Manufacturer productManufacturer = (Manufacturer)cbProductManufacturer.SelectedItem;
-
-                if (ProductDAL.Instance.UpdateProduct(id, name, productCategory.CategoryID, productManufacturer.ManufacturerID, info, price, quantity, newFileName))
-                {
-                    MessageBox.Show("Sửa thành công");
-                    listDeleteProductImage.Add(oldImage);
-                    listProduct = ProductDAL.Instance.GetListProduct();
-                    LoadProduct();
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi rồi");
-                }
-            }
-        }
-        private void btnUpdateProduct_Click(object sender, EventArgs e)
-        {
-            if (btnSaveProduct.Enabled)
-            {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    );
-                if (result == DialogResult.Yes)
-                {
-                    ClearProductInputBox();
-                    btnAddProduct.Enabled = true;
-                    btnSaveProduct.Enabled = false;
-                    CheckImageButton();
-                    return;
-                }
-            }
-            else
-            {
-                btnAddProduct.Enabled = false;
-                btnUpdateProduct.Enabled = true;
-                btnSaveProduct.Enabled = true;
-
-                CheckImageButton();
-                ClearProductInputBox();
-            }
-        }
-        private void btnSearchProduct_Click(object sender, EventArgs e)
-        {
-            if (txtSearchProductID.Text != String.Empty || txtSearchProductName.Text != String.Empty)
-                listProduct = ProductDAL.Instance.SearchProduct(txtSearchProductID.Text, txtSearchProductName.Text);
-            else
-                listProduct = ProductDAL.Instance.GetListProduct();
-            txtSearchProductID.Text = String.Empty;
-            txtSearchProductName.Text = String.Empty;
-            LoadProduct();
-        }
-        #endregion
+                #endregion
 
         #region STAFF MANAGE EVENT
         private void btnUpdateStaff_Click(object sender, EventArgs e)
@@ -653,6 +722,382 @@ namespace GUI
             LoadGRN();
         }
 
+        #endregion
+
+        #region MANEGE CUSTOMER
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            if (btnSaveCustomer.Enabled)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Bạn có muốn hủy thao tác?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                    );
+                if (result == DialogResult.Yes)
+                {
+                    ClearCustomer();
+                    btnUpdateCustomer.Enabled = true;
+                    btnSaveCustomer.Enabled = false;
+                    return;
+                }
+            }
+            else
+            {
+                btnAddCustomer.Enabled = true;
+                btnUpdateCustomer.Enabled = false;
+                btnSaveCustomer.Enabled = true;
+
+                ClearCustomer();
+            }
+        }
+
+
+
+        private void btnSaveCustomer_Click(object sender, EventArgs e)
+        {
+            if (
+               txtNumberPhone.Text == String.Empty ||
+               txtName.Text == String.Empty ||
+               rtbAddress.Text == String.Empty
+               )
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin !");
+                return;
+            }
+            string phone = txtNumberPhone.Text;
+            string name = txtName.Text;
+            string address = rtbAddress.Text;
+
+            if (btnAddCustomer.Enabled)
+            {
+                if (CustomerDAL.Instance.InsertCustomer(phone, name, address))
+                {
+                    MessageBox.Show("Thêm thành công");
+                    listCustomer = CustomerDAL.Instance.GetListCustomer();
+                    LoadCustomer();
+                    ClearCustomer();
+                }
+
+                else
+                {
+                    MessageBox.Show("Thêm thất bại");
+                    ClearCustomer();
+                }
+            }
+            else if (btnUpdateCustomer.Enabled)
+            {
+                if (CustomerDAL.Instance.UpdateCustomer(phone, name, address))
+                {
+                    MessageBox.Show("Sửa thành công");
+                    listCustomer = CustomerDAL.Instance.GetListCustomer();
+                    LoadCustomer();
+                    ClearCustomer();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thất bại");
+                    ClearCustomer();
+                }
+
+            }
+        }
+
+        private void btnSearchCustomer_Click(object sender, EventArgs e)
+        {
+            if (txtSearchNumberPhone.Text != String.Empty || txtSearchName.Text != String.Empty)
+                listCustomer = CustomerDAL.Instance.SearchCustomer(txtSearchNumberPhone.Text, txtSearchName.Text);
+            else
+                listCustomer = CustomerDAL.Instance.GetListCustomer();
+            txtSearchNumberPhone.Text = String.Empty;
+            txtSearchName.Text = String.Empty;
+            LoadCustomer();
+        }
+
+        private void btnUpdateCustomer_Click(object sender, EventArgs e)
+        {
+            if (btnSaveCustomer.Enabled)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Bạn có muốn hủy thao tác?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                    );
+                if (result == DialogResult.Yes)
+                {
+
+                    btnSaveCustomer.Enabled = false;
+                    btnAddCustomer.Enabled = true;
+                    ClearCustomer();
+                }
+            }
+            else
+            {
+                btnSaveCustomer.Enabled = true;
+                btnAddCustomer.Enabled = false;
+            }
+        }
+
+        private void dtgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgvCustomer.SelectedCells[0].Value != null)
+            {
+                DataGridViewRow row = dtgvCustomer.SelectedRows[0];
+                txtNumberPhone.Text = row.Cells[0].Value.ToString();
+                txtName.Text = row.Cells[1].Value.ToString();
+                rtbAddress.Text = row.Cells[2].Value.ToString();
+            }
+        }
+        #endregion
+
+        #region MANEGE MANUFACTURER
+        private void dtgvManufacturer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgvManufacturer.SelectedCells[0].Value != null)
+            {
+                DataGridViewRow row = dtgvManufacturer.SelectedRows[0];
+                txtManufacturerID.Text = row.Cells[0].Value.ToString();
+                txtManufacturerName.Text = row.Cells[1].Value.ToString();
+            }
+        }
+
+        private void btnAddManufacturer_Click(object sender, EventArgs e)
+        {
+            if (btnSaveManufacturer.Enabled)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Bạn có muốn hủy thao tác?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                    );
+                if (result == DialogResult.Yes)
+                {
+                    ClearManufacturerInputBox();
+                    btnUpdateManufacturer.Enabled = true;
+                    btnSaveManufacturer.Enabled = false;
+                    return;
+                }
+            }
+            else
+            {
+                btnAddManufacturer.Enabled = true;
+                btnUpdateManufacturer.Enabled = false;
+                btnSaveManufacturer.Enabled = true;
+
+                ClearManufacturerInputBox();
+            }
+        }
+
+        private void btnSaveManufacturer_Click(object sender, EventArgs e)
+        {
+            if (
+               txtManufacturerName.Text == String.Empty
+               )
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin !");
+                return;
+            }
+            string name = txtManufacturerName.Text;
+
+            if (btnAddManufacturer.Enabled)
+            {
+                if (ManufacturerDAL.Instance.InsertManufacturer(name))
+                {
+                    MessageBox.Show("Thêm thành công");
+                    listManufacturer = ManufacturerDAL.Instance.GetListManufacturer();
+                    LoadManufacturer();
+                    ClearManufacturerInputBox();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại");
+                    ClearManufacturerInputBox();
+                }
+            }
+            else if (btnUpdateManufacturer.Enabled)
+            {
+                if (txtManufacturerID.Text == String.Empty)
+                {
+                    MessageBox.Show("Chọn hãng SX dùm cái");
+                    return;
+                }
+                int id = System.Convert.ToInt32(txtManufacturerID.Text);
+                if (ManufacturerDAL.Instance.UpdateManufacturer(id, name))
+                {
+                    MessageBox.Show("Sửa thành công");
+                    listManufacturer = ManufacturerDAL.Instance.GetListManufacturer();
+                    LoadManufacturer();
+                    ClearManufacturerInputBox();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thất bại");
+                    ClearManufacturerInputBox();
+                }
+
+            }
+        }
+
+        private void btnSearchManufactuer_Click(object sender, EventArgs e)
+        {
+            if (txtSearchManuID.Text != String.Empty || txtSearchManuName.Text != String.Empty)
+                listManufacturer = ManufacturerDAL.Instance.SearchManufacturer(txtSearchManuID.Text, txtSearchManuName.Text);
+            else
+                listManufacturer = ManufacturerDAL.Instance.GetListManufacturer();
+            txtSearchManuID.Text = String.Empty;
+            txtSearchManuName.Text = String.Empty;
+            LoadManufacturer();
+        }
+        private void btnUpdateManufacturer_Click(object sender, EventArgs e)
+        {
+            if (btnSaveManufacturer.Enabled)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Bạn có muốn hủy thao tác?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                    );
+                if (result == DialogResult.Yes)
+                {
+
+                    btnSaveManufacturer.Enabled = false;
+                    btnAddManufacturer.Enabled = true;
+                    ClearManufacturerInputBox();
+                }
+            }
+            else
+            {
+                btnSaveManufacturer.Enabled = true;
+                btnAddManufacturer.Enabled = false;
+            }
+        }
+        #endregion
+
+        #region MANEGE CATEGORY 
+        private void dtgvCategory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgvCategory.SelectedCells[0].Value != null)
+            {
+                DataGridViewRow row = dtgvCategory.SelectedRows[0];
+                txtCateID.Text = row.Cells[0].Value.ToString();
+                txtCateName.Text = row.Cells[1].Value.ToString();
+            }
+        }
+
+        private void btnAddCate_Click(object sender, EventArgs e)
+        {
+            if (btnSaveCate.Enabled)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Bạn có muốn hủy thao tác?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                    );
+                if (result == DialogResult.Yes)
+                {
+                    ClearCategoryInputBox();
+                    btnUpdateCate.Enabled = true;
+                    btnSaveCate.Enabled = false;
+                    return;
+                }
+            }
+            else
+            {
+                btnAddCate.Enabled = true;
+                btnUpdateCate.Enabled = false;
+                btnSaveCate.Enabled = true;
+                ClearCategoryInputBox();
+            }
+        }
+        private void btnSaveCate_Click(object sender, EventArgs e)
+        {
+            if (
+               txtCateName.Text == String.Empty
+               )
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin !");
+                return;
+            }
+            string name = txtCateName.Text;
+
+            if (btnAddCate.Enabled)
+            {
+                if (CategoryDAL.Instance.InsertCategory(name))
+                {
+                    MessageBox.Show("Thêm thành công");
+                    listCategory = CategoryDAL.Instance.GetListCategory();
+                    LoadCategory();
+                    ClearCategoryInputBox();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại");
+                    ClearCategoryInputBox();
+                }
+            }
+            else if (btnUpdateCate.Enabled)
+            {
+                if (txtCateID.Text == String.Empty )
+                {
+                    MessageBox.Show("Chọn danh mục dùm cái");
+                    return;
+                }
+                int id = System.Convert.ToInt32(txtCateID.Text);
+                if (CategoryDAL.Instance.UpdateCategory(id, name))
+                {
+                    MessageBox.Show("Sửa thành công");
+                    listCategory = CategoryDAL.Instance.GetListCategory();
+                    LoadCategory();
+                    ClearCategoryInputBox();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thất bại");
+                    ClearCategoryInputBox();
+                }
+
+            }
+        }
+        private void btnSearchCate_Click(object sender, EventArgs e)
+        {
+            if (txtSearchCateID.Text != String.Empty || txtSearchCateName.Text != String.Empty)
+                listCategory = CategoryDAL.Instance.SearchCategory(txtSearchCateID.Text, txtSearchCateName.Text);
+            else
+                listCategory = CategoryDAL.Instance.GetListCategory();
+            txtSearchCateID.Text = String.Empty;
+            txtSearchCateName.Text = String.Empty;
+            LoadCategory();
+        }
+
+        private void btnUpdateCate_Click(object sender, EventArgs e)
+        {
+            if (btnSaveCate.Enabled)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Bạn có muốn hủy thao tác?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                    );
+                if (result == DialogResult.Yes)
+                {
+
+                    btnSaveCate.Enabled = false;
+                    btnAddCate.Enabled = true;
+                    ClearCategoryInputBox();
+                }
+            }
+            else
+            {
+                btnSaveCate.Enabled = true;
+                btnAddCate.Enabled = false;
+            }
+        }
         #endregion
 
         #endregion

@@ -47,8 +47,9 @@
             pbImage.Image = Properties.Resources.icons8_product_90;
             pbImage.ImageLocation = "";
             pbImage.Location = new Point(0, 0);
+            pbImage.Margin = new Padding(4, 5, 4, 5);
             pbImage.Name = "pbImage";
-            pbImage.Size = new Size(192, 117);
+            pbImage.Size = new Size(247, 195);
             pbImage.SizeMode = PictureBoxSizeMode.Zoom;
             pbImage.TabIndex = 0;
             pbImage.TabStop = false;
@@ -57,9 +58,10 @@
             // lbID
             // 
             lbID.AutoSize = true;
-            lbID.Location = new Point(3, 123);
+            lbID.Location = new Point(4, 205);
+            lbID.Margin = new Padding(4, 0, 4, 0);
             lbID.Name = "lbID";
-            lbID.Size = new Size(17, 15);
+            lbID.Size = new Size(27, 25);
             lbID.TabIndex = 1;
             lbID.Text = "id";
             lbID.Click += SPViewer_Click;
@@ -68,9 +70,10 @@
             // 
             lbName.AllowDrop = true;
             lbName.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbName.Location = new Point(3, 139);
+            lbName.Location = new Point(4, 232);
+            lbName.Margin = new Padding(4, 0, 4, 0);
             lbName.Name = "lbName";
-            lbName.Size = new Size(194, 42);
+            lbName.Size = new Size(247, 33);
             lbName.TabIndex = 2;
             lbName.Text = "Name";
             lbName.Click += SPViewer_Click;
@@ -78,9 +81,10 @@
             // lbPrice
             // 
             lbPrice.AutoSize = true;
-            lbPrice.Location = new Point(3, 224);
+            lbPrice.Location = new Point(-1, 335);
+            lbPrice.Margin = new Padding(4, 0, 4, 0);
             lbPrice.Name = "lbPrice";
-            lbPrice.Size = new Size(33, 15);
+            lbPrice.Size = new Size(49, 25);
             lbPrice.TabIndex = 5;
             lbPrice.Text = "Price";
             lbPrice.Click += SPViewer_Click;
@@ -88,9 +92,10 @@
             // lbQuantity
             // 
             lbQuantity.AutoSize = true;
-            lbQuantity.Location = new Point(142, 123);
+            lbQuantity.Location = new Point(171, 205);
+            lbQuantity.Margin = new Padding(4, 0, 4, 0);
             lbQuantity.Name = "lbQuantity";
-            lbQuantity.Size = new Size(53, 15);
+            lbQuantity.Size = new Size(80, 25);
             lbQuantity.TabIndex = 7;
             lbQuantity.Text = "Quantity";
             lbQuantity.Click += SPViewer_Click;
@@ -98,9 +103,10 @@
             // panel1
             // 
             panel1.Controls.Add(pbImage);
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(4, 5);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(192, 117);
+            panel1.Size = new Size(247, 195);
             panel1.TabIndex = 8;
             // 
             // lbInfomation
@@ -108,16 +114,17 @@
             lbInfomation.AllowDrop = true;
             lbInfomation.BorderStyle = BorderStyle.FixedSingle;
             lbInfomation.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbInfomation.Location = new Point(3, 181);
+            lbInfomation.Location = new Point(4, 265);
+            lbInfomation.Margin = new Padding(4, 0, 4, 0);
             lbInfomation.Name = "lbInfomation";
-            lbInfomation.Size = new Size(192, 43);
+            lbInfomation.Size = new Size(247, 70);
             lbInfomation.TabIndex = 9;
             lbInfomation.Text = "Infomation";
             lbInfomation.Click += SPViewer_Click;
             // 
             // SPViewer
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
             BorderStyle = BorderStyle.FixedSingle;
@@ -127,8 +134,9 @@
             Controls.Add(lbPrice);
             Controls.Add(lbName);
             Controls.Add(lbID);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "SPViewer";
-            Size = new Size(198, 248);
+            Size = new Size(255, 360);
             Click += SPViewer_Click;
             ((System.ComponentModel.ISupportInitialize)pbImage).EndInit();
             panel1.ResumeLayout(false);
