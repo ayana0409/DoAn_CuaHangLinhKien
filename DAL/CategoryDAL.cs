@@ -37,6 +37,22 @@ namespace DAL
             return list;
         }
 
+        public List<Category>SearchCategory(string id = " ", string name = " ")
+        {
+            List<Category> list = new();
+            if (id != null || name != null)
+            {
+                string query = string.Format("select * from DanhMucSanPham where MaDanhMuc  like  '%{0}%' and TenDanhMuc like '%{1}%'", id, name);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                foreach (DataRow row in data.Rows)
+                {
+                    Category ct = new(row);
+                    list.Add(ct);
+                }
+            }
+            return list;
+        }
+
 
         public bool InsertCategory(string name)
         {
