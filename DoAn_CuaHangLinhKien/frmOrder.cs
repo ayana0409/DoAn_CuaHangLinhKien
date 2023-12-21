@@ -153,10 +153,6 @@ namespace GUI
             CheckTotal();
         }
 
-        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void txtPhone_Leave(object sender, EventArgs e)
         {

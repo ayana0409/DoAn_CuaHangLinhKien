@@ -97,7 +97,6 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(dtgvDetail);
-            splitContainer1.Panel2.Paint += splitContainer2_Panel2_Paint;
             splitContainer1.Size = new Size(1806, 1135);
             splitContainer1.SplitterDistance = 412;
             splitContainer1.SplitterWidth = 5;
@@ -120,7 +119,6 @@
             // 
             splitContainer2.Panel2.Controls.Add(tableLayoutPanel1);
             splitContainer2.Panel2.Controls.Add(label5);
-            splitContainer2.Panel2.Paint += splitContainer2_Panel2_Paint;
             splitContainer2.Size = new Size(1806, 412);
             splitContainer2.SplitterDistance = 908;
             splitContainer2.SplitterWidth = 6;
