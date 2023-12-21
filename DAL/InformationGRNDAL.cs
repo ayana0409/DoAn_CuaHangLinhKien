@@ -34,7 +34,6 @@ namespace DAL
 
             return list;
         }
-
         public bool InsertInformation(int GRNID, int productID, int quantity, double price)
         {
             string query = string.Format("Insert ThongTinPhieuNhap (MaPhieuNhap, MaSanPham, SoLuongNhap, GiaNhap ) values ({0}, {1}, {2}, {3})",

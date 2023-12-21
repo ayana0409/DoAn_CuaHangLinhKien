@@ -12,16 +12,19 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmInfomationGRN : Form
+    public partial class frmInfomation : Form
     {
-        public InformationGRN selectedProduct = null;
+        public Product selectedProduct = null;
+        public int quantity = 0;
+        public double price = 0;
+
+        private bool _isOrder = false;
 
         private List<Product> listProduct = new();
-        private GRN? GRN = null;
-        public frmInfomationGRN(GRN gRN)
+        public frmInfomation(bool isOrder = false)
         {
             InitializeComponent();
-            GRN = gRN;
+            _isOrder = isOrder;
         }
 
         private void frmInfomationGRN_Load(object sender, EventArgs e)
@@ -106,12 +109,18 @@ namespace GUI
                 return;
             }
 
-            selectedProduct = new(
-                GRN.GRNID,
-                System.Convert.ToInt32(txtID.Text),
-                System.Convert.ToInt32(nmQuantity.Value),
-                System.Convert.ToDouble(txtPrice.Text)
-                );
+            selectedProduct = ProductDAL.Instance.GetProduct(System.Convert.ToInt32(txtID.Text));
+            quantity = System.Convert.ToInt32(nmQuantity.Value);
+            price = System.Convert.ToDouble(txtPrice.Text);
+
+            if (_isOrder)
+            {
+                if (quantity > selectedProduct.Quantity)
+                {
+                    MessageBox.Show("Số lượng thêm vào vượt quá giới hạn");
+                    return;
+                }
+            }
 
             this.Hide();
         }

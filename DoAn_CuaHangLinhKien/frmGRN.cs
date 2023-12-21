@@ -179,7 +179,7 @@ namespace GUI
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            frmInfomationGRN frm = new(GRN);
+            frmInfomation frm = new();
             frm.ShowDialog();
 
             if (frm.selectedProduct != null)
@@ -189,7 +189,7 @@ namespace GUI
                     RemoveOldProduct(frm.selectedProduct.ProductID);
                 }
 
-                listInsertProduct.Add(frm.selectedProduct);
+                listInsertProduct.Add(new InformationGRN(GRNDAL.Instance.GetHighestGRN().GRNID + 1,frm.selectedProduct.ProductID, frm.quantity, frm.price));
             }
 
             frm.Close();
@@ -202,13 +202,13 @@ namespace GUI
             if (dtgvListInsertProduct.SelectedCells.Count != 0)
             {
                 DialogResult result = MessageBox.Show(
-                    "Bạn có chắc muốn xóa sản phẩm [" + dtgvListInsertProduct.Rows[0].Cells[1].Value + "]?",
+                    "Bạn có chắc muốn xóa sản phẩm [" + dtgvListInsertProduct.SelectedCells[1].Value + "]?",
                     "Xác nhận",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
                     );
                 if (result == DialogResult.Yes)
-                    RemoveOldProduct(System.Convert.ToInt32(dtgvListInsertProduct.Rows[0].Cells[0].Value));
+                    RemoveOldProduct(System.Convert.ToInt32(dtgvListInsertProduct.SelectedCells[0].Value));
             }
             LoadInstalProductList();
         }

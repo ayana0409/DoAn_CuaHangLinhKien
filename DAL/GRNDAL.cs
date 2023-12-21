@@ -49,7 +49,10 @@ namespace DAL
             string query = "select top 1 * from PhieuNhap order by MaPhieuNhap DESC";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-            return new GRN(data.Rows[0]);
+            if (data.Rows.Count > 0)
+                return new GRN(data.Rows[0]);
+            else
+                return new GRN();
         }
 
         public List<GRN> SearchGRN(string from, string to,string id = "")

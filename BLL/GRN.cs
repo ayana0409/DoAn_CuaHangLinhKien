@@ -17,7 +17,7 @@ namespace DTO
         public double Total { get; set; }
         public GRN()
         {
-            GRNID = 0;
+            GRNID = -1;
             StaffID = 0;
             Unit = "Unknown";
             Date = DateTime.Now;

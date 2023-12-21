@@ -32,7 +32,6 @@ namespace DAL
             }
             return list;
         }
-
         public List<Customer> SearchCustomer(string numberphone = "", string name = "")
         {
             List<Customer> list = new();
@@ -48,6 +47,26 @@ namespace DAL
             }
             return list;
         }
+        public Customer GetCustomer(string phone)
+        {
+            string query = "select * from KhachHang where SDTKhachHang = '" + phone + "'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return new Customer(data.Rows[0]);
+        }
+
+        public int GetCustomerIndex(string phone)
+        {
+            int index = -1;
+            string query = "select * from KhachHang where SDTKhachHang = '" + phone + "'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
+                index = data.Rows.Count;
+
+            return index;
+        }
+
 
         #region CRUD
         public bool InsertCustomer(string numberphone, string name, string address)

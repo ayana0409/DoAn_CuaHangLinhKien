@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmChiTietDonHang : Form
+    public partial class frmOrderDetail : Form
     {
-        public frmChiTietDonHang()
+        public frmOrderDetail()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmChiTietDonHang
+    partial class frmOrderDetail
     {
         /// <summary>
         /// Required designer variable.

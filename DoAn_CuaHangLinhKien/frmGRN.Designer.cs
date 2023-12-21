@@ -98,7 +98,7 @@
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer2);
             splitContainer1.Size = new Size(1806, 1135);
-            splitContainer1.SplitterDistance = 934;
+            splitContainer1.SplitterDistance = 928;
             splitContainer1.SplitterWidth = 6;
             splitContainer1.TabIndex = 0;
             // 
@@ -108,7 +108,7 @@
             pbGRNImage.Location = new Point(0, 0);
             pbGRNImage.Margin = new Padding(4, 3, 4, 3);
             pbGRNImage.Name = "pbGRNImage";
-            pbGRNImage.Size = new Size(934, 1135);
+            pbGRNImage.Size = new Size(928, 1135);
             pbGRNImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbGRNImage.TabIndex = 0;
             pbGRNImage.TabStop = false;
@@ -129,7 +129,7 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(groupBox2);
-            splitContainer2.Size = new Size(866, 1135);
+            splitContainer2.Size = new Size(872, 1135);
             splitContainer2.SplitterDistance = 400;
             splitContainer2.SplitterWidth = 5;
             splitContainer2.TabIndex = 0;
@@ -142,7 +142,7 @@
             groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4, 3, 4, 3);
-            groupBox1.Size = new Size(866, 400);
+            groupBox1.Size = new Size(872, 400);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin phiếu nhập ";
@@ -173,17 +173,17 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 58F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel1.Size = new Size(858, 370);
+            tableLayoutPanel1.Size = new Size(864, 370);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // txtGRNUnit
             // 
             txtGRNUnit.BackColor = Color.FromArgb(255, 253, 239);
             txtGRNUnit.Dock = DockStyle.Fill;
-            txtGRNUnit.Location = new Point(200, 51);
+            txtGRNUnit.Location = new Point(202, 51);
             txtGRNUnit.Margin = new Padding(4, 3, 4, 3);
             txtGRNUnit.Name = "txtGRNUnit";
-            txtGRNUnit.Size = new Size(654, 27);
+            txtGRNUnit.Size = new Size(658, 27);
             txtGRNUnit.TabIndex = 4;
             // 
             // label1
@@ -195,7 +195,7 @@
             label1.Location = new Point(4, 0);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(188, 48);
+            label1.Size = new Size(190, 48);
             label1.TabIndex = 0;
             label1.Text = "Mã phiếu nhập:";
             label1.TextAlign = ContentAlignment.MiddleLeft;
@@ -209,7 +209,7 @@
             label2.Location = new Point(4, 48);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(188, 48);
+            label2.Size = new Size(190, 48);
             label2.TabIndex = 1;
             label2.Text = "Đơn vị nhập:";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -223,7 +223,7 @@
             label3.Location = new Point(4, 96);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(188, 48);
+            label3.Size = new Size(190, 48);
             label3.TabIndex = 2;
             label3.Text = "Ngày nhập:";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -232,20 +232,20 @@
             // 
             txtGRNID.BackColor = Color.FromArgb(255, 253, 239);
             txtGRNID.Dock = DockStyle.Fill;
-            txtGRNID.Location = new Point(200, 3);
+            txtGRNID.Location = new Point(202, 3);
             txtGRNID.Margin = new Padding(4, 3, 4, 3);
             txtGRNID.Name = "txtGRNID";
             txtGRNID.ReadOnly = true;
-            txtGRNID.Size = new Size(654, 27);
+            txtGRNID.Size = new Size(658, 27);
             txtGRNID.TabIndex = 3;
             // 
             // dtpkGRNDate
             // 
             dtpkGRNDate.Dock = DockStyle.Fill;
-            dtpkGRNDate.Location = new Point(200, 101);
+            dtpkGRNDate.Location = new Point(202, 101);
             dtpkGRNDate.Margin = new Padding(4, 5, 4, 5);
             dtpkGRNDate.Name = "dtpkGRNDate";
-            dtpkGRNDate.Size = new Size(654, 27);
+            dtpkGRNDate.Size = new Size(658, 27);
             dtpkGRNDate.TabIndex = 5;
             // 
             // flowLayoutPanel3
@@ -253,7 +253,7 @@
             flowLayoutPanel3.Anchor = AnchorStyles.Bottom;
             flowLayoutPanel3.Controls.Add(btnAddProduct);
             flowLayoutPanel3.Controls.Add(btnDeleteProduct);
-            flowLayoutPanel3.Location = new Point(208, 278);
+            flowLayoutPanel3.Location = new Point(212, 278);
             flowLayoutPanel3.Margin = new Padding(4, 5, 4, 5);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             flowLayoutPanel3.Size = new Size(637, 87);
@@ -295,7 +295,7 @@
             flowLayoutPanel1.Location = new Point(4, 207);
             flowLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(188, 158);
+            flowLayoutPanel1.Size = new Size(190, 158);
             flowLayoutPanel1.TabIndex = 6;
             // 
             // btnAddGRNImage
@@ -332,10 +332,10 @@
             txtTotal.Dock = DockStyle.Fill;
             txtTotal.Enabled = false;
             txtTotal.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtTotal.Location = new Point(200, 149);
+            txtTotal.Location = new Point(202, 149);
             txtTotal.Margin = new Padding(4, 5, 4, 5);
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(654, 33);
+            txtTotal.Size = new Size(658, 33);
             txtTotal.TabIndex = 7;
             // 
             // label4
@@ -347,7 +347,7 @@
             label4.Location = new Point(4, 144);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(188, 58);
+            label4.Size = new Size(190, 58);
             label4.TabIndex = 2;
             label4.Text = "Tổng:";
             label4.TextAlign = ContentAlignment.MiddleLeft;
@@ -360,7 +360,7 @@
             groupBox2.Margin = new Padding(4, 5, 4, 5);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(4, 5, 4, 5);
-            groupBox2.Size = new Size(866, 730);
+            groupBox2.Size = new Size(872, 730);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh sách sản phẩm đã nhập ";
@@ -382,8 +382,8 @@
             // splitContainer3.Panel2
             // 
             splitContainer3.Panel2.Controls.Add(flowLayoutPanel2);
-            splitContainer3.Size = new Size(858, 696);
-            splitContainer3.SplitterDistance = 527;
+            splitContainer3.Size = new Size(864, 696);
+            splitContainer3.SplitterDistance = 518;
             splitContainer3.SplitterWidth = 7;
             splitContainer3.TabIndex = 3;
             // 
@@ -400,7 +400,7 @@
             dtgvListInsertProduct.Name = "dtgvListInsertProduct";
             dtgvListInsertProduct.ReadOnly = true;
             dtgvListInsertProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvListInsertProduct.Size = new Size(858, 527);
+            dtgvListInsertProduct.Size = new Size(864, 518);
             dtgvListInsertProduct.TabIndex = 0;
             dtgvListInsertProduct.CellClick += dtgvListInsertProduct_CellClick;
             // 
@@ -437,7 +437,7 @@
             flowLayoutPanel2.Location = new Point(0, 0);
             flowLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(858, 162);
+            flowLayoutPanel2.Size = new Size(864, 171);
             flowLayoutPanel2.TabIndex = 0;
             // 
             // cbCommit

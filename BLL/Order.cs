@@ -9,16 +9,26 @@ namespace DTO
 {
     public class Order
     {
-        public int ProductID { get; set; }
+        public int OrderID { get; set; }
         public int StaffID { get; set; }
         public string CustomerNumberPhone { get; set; }
-        public DateOnly Date { get; set; }
+        public DateTime Date { get; set; }
         public string Status { get; set; }
-        public float Total { get; set; }
-
-        public Order( int productID, int staffID, string customerNumberPhone, DateOnly date, string status, float total)
+        public double Total { get; set; }
+        public Order()
         {
-            this.ProductID = productID;
+            OrderID = -1;
+            StaffID = 0;
+            this.CustomerNumberPhone = string.Empty;
+            this.Date = DateTime.Now;
+            this.Status = "Chưa thanh toán";
+            this.Total = 0;
+        }
+
+
+        public Order( int orderID, int staffID, string customerNumberPhone, DateTime date, string status, double total)
+        {
+            this.OrderID = orderID;
             this.StaffID = staffID;
             this.CustomerNumberPhone = customerNumberPhone;
             this.Date = date;
@@ -28,12 +38,12 @@ namespace DTO
         }
         public Order(DataRow row) 
         {
-            this.ProductID = (int)row["MaSanPham"];
+            this.OrderID = (int)row["MaDonHang"];
             this.StaffID = (int)row["MaNhanVien"];
             this.CustomerNumberPhone = (string)row["SDTKhachHang"];
-            this.Date = (DateOnly)row["NgayNhap"];
+            this.Date = (DateTime)row["NgayNhap"];
             this.Status = (string)row["TrangThai"];
-            this.Total = (float)row["TongGiaTien"];
+            this.Total = (double)row["TongGiaTien"];
         }
     }
 }

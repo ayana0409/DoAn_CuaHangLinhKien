@@ -11,10 +11,10 @@ namespace DTO
     {
         public int ProductID { get; set; }
         public int OrderID { get; set; }
-        public float Price { get; set; }
+        public double Price { get; set; }
         public int Quantity { get; set; }
 
-        public OrderDetail(int productID, int orderID, float price, int quantity)
+        public OrderDetail(int productID, int orderID, double price, int quantity)
         {
             this.ProductID = productID;
             this. OrderID = orderID;
@@ -25,7 +25,7 @@ namespace DTO
         {
             this.ProductID = (int)row["MaSanPham"];
             this.OrderID = (int)row["MaDonHang"];
-            this.Price = (float)row["GiaBan"];
+            this.Price = (double)row["GiaBan"];
             this.Quantity = (int)row["SoLuongBan"];
         }
     }
