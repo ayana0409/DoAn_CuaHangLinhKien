@@ -22,7 +22,7 @@ namespace DAL
         public List<AccountType> GetListAccountType()
         {
             List<AccountType> list = new();
-            string query = "select * form LoaiTaiKhoan";
+            string query = "select * from LoaiTaiKhoan";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow row in data.Rows)

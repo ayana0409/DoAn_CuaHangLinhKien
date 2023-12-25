@@ -60,32 +60,29 @@ namespace DAL
             return new Order(data.Rows[0]);
         }
 
-        public bool InsertOrder(int staffid, int numberphone, DateOnly date, string status, float total)
+        public List<Order> SearchOrder(string from, string to, string id = "") 
         {
-            string query = string.Format("Insert DonHang (MaNhanVien, SDTKhachHang, NgayNhap, TrangThai, TongGiaTri) values ({0},{1},{2},N'{3}',{4})",
+            string query = String.Format("select * from DonHang where MaDonHang like '%{0}%' and NgayNhap between '{1}' and '{2}'", id, from, to);
+            List<Order> list = new();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in data.Rows)
+            {
+                Order mnu = new(row);
+                list.Add(mnu);
+            }
+
+            return list;
+        }
+
+        public bool InsertOrder(int staffid, string numberphone, string date, string status, double total)
+        {
+            string query = string.Format("Insert DonHang (MaNhanVien, SDTKhachHang, NgayNhap, TrangThai, TongGiaTien) values ({0},'{1}','{2}',N'{3}',{4})",
                 staffid, numberphone, date, status, total);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
-        }
-
-        public bool UpdateOrder(int staffid, string numberphone, DateOnly date, string status, float total, int id)
-        {
-            string query = string.Format("Update DonHang set MaNhanVien = {0}, SDTKhachHang = N'{1}',NgayNhap = {2}, TrangThai = N'{3}', TongGiaTri = {4} where MaDonHang = {5}",
-                staffid, numberphone, date, status, total, id);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
-
-            return result > 0;
-        }
-
-        public bool DeleteOrder (int idOrder)
-        {
-            //
-
-            string query = string.Format("DeleteOrder where id = {0}", idOrder);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
-
-        return result > 0;
         }
     }
 }

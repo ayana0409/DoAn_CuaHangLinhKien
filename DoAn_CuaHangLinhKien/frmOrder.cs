@@ -15,11 +15,13 @@ namespace GUI
 {
     public partial class frmOrder : Form
     {
-        private Order order = new();
-        private Customer customer;
-        private List<OrderDetail> listDetail = [];
+        public Order order = new();
+        private Customer customer = new();
+        public List<OrderDetail> listDetail = [];
+        public bool _isAdd = false;
 
         private bool _isReading = false;
+        
 
         /*
         public frmDonHang()
@@ -27,13 +29,13 @@ namespace GUI
             InitializeComponent();
         }
         */
-        public frmOrder(Order? readOder = null)
+        public frmOrder(Order? readOder = null, bool isRead = true)
         {
             InitializeComponent();
             if (readOder != null)
             {
                 order = readOder;
-                _isReading = true;
+                _isReading = isRead;
                 customer = CustomerDAL.Instance.GetCustomer(readOder.CustomerNumberPhone);
                 listDetail = OrderDetailDAL.Instance.GetListOrderDetailOrderID(order.OrderID);
             }
@@ -72,6 +74,11 @@ namespace GUI
                 txtCustomerName.Enabled = false;
                 txtPhone.Enabled = false;
                 rtbCustomerAdress.Enabled = false;
+
+                btnAddProduct.Enabled = false;
+                btnCancel.Enabled = false;
+                btnDeleteProduct.Enabled = false;
+                btnPayment.Enabled = false;
             }
         }
 
@@ -98,6 +105,8 @@ namespace GUI
             }
             else
             {
+                if (o.CustomerNumberPhone != String.Empty)
+                    txtPhone.Text = o.CustomerNumberPhone;
                 dtpkDate.Text = DateTime.Now.ToShortDateString();
                 cbStatus.Text = "Chưa thanh toán";
                 txtTotal.Text = "0";
@@ -230,7 +239,26 @@ namespace GUI
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
+            if (listDetail.Count <= 0)
+            {
+                MessageBox.Show("Vui lòng chọn ít nhất 1 sản phẩm");
+                return;
+            }
 
+            order.Date = dtpkDate.Value;
+            order.CustomerNumberPhone = txtPhone.Text;
+            order.Status = "Đã thanh toán";
+            order.Total = System.Convert.ToDouble(txtTotal.Text);
+
+            
+            if (!CheckCustomer(txtPhone.Text))
+            {
+                CustomerDAL.Instance.InsertCustomer(txtPhone.Text, txtCustomerName.Text, rtbCustomerAdress.Text);
+            }
+
+            _isAdd = true;
+
+            this.Hide();    
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -243,6 +271,7 @@ namespace GUI
                    );
             if (result == DialogResult.Yes)
             {
+                _isAdd = false;
                 this.Close();
             }
         }

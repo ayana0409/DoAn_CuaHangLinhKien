@@ -24,6 +24,8 @@ namespace GUI
         private List<GRN> listGRN = [];
         private List<Customer> listCustomer = [];
         private List<Order> listOrder = [];
+        private List<Account> listAccount = [];
+        private List<AccountType> listAccountTypes = [];
 
 
         public List<string> listDeleteProductImage = [];
@@ -37,8 +39,6 @@ namespace GUI
         {
             InitializeComponent();
         }
-        #region METHOD
-        #region OTHER METHOD
         private void frmManage_Load(object sender, EventArgs e)
         {
             CheckRole();
@@ -51,6 +51,8 @@ namespace GUI
             listCustomer = CustomerDAL.Instance.GetListCustomer();
             listCategory = CategoryDAL.Instance.GetListCategory();
             listOrder = OrderDAL.Instance.GetListOrder();
+            listAccount = AccountDAL.Instance.GetListAccount();
+            listAccountTypes = AccountTypeDAL.Instance.GetListAccountType();
 
             LoadProduct();
             LoadStaff();
@@ -60,10 +62,13 @@ namespace GUI
             LoadManufacturer();
             LoadCategory();
             LoadOrder();
+            LoadAccount();
 
             SetSearchDate();
 
         }
+        #region METHOD
+        #region OTHER METHOD
         private void CheckRole()
         {
             AccountType type = AccountTypeDAL.Instance.GetAccountType(loginAccount.TypeID);
@@ -217,6 +222,18 @@ namespace GUI
                 DateTime.Now.Month,
                 DateTime.Now.Year
                 ));
+            dtpkSearchOrderFrom.Value = DateTime.Parse(String.Format(
+                "{0}/{1}/{2}",
+                1,
+                DateTime.Now.Month,
+                DateTime.Now.Year
+                ));
+            dtpkSearchOrderTo.Value = DateTime.Parse(String.Format(
+                "{0}/{1}/{2}",
+                DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month),
+                DateTime.Now.Month,
+                DateTime.Now.Year
+                ));
         }
         #endregion
 
@@ -300,6 +317,42 @@ namespace GUI
                 dtgvOrder.Rows.Add(row);
             }
         }
+        #endregion
+
+        #region ACCOUNT METHOD
+
+        private void LoadAccount()
+        {
+            dtgvAccount.Rows.Clear();
+            foreach (Account s in listAccount)
+            {
+                DataGridViewRow row = (DataGridViewRow)dtgvAccount.Rows[0].Clone(); ;
+                row.Cells[0].Value = s.AccountID;
+                row.Cells[1].Value = s.Password;
+                row.Cells[2].Value = AccountTypeDAL.Instance.GetAccountType(s.TypeID).TypeName;
+
+                if (s.StaffID != null)
+                {
+                    row.Cells[3].Value = StaffDAL.Instance.GetStaff((int)s.StaffID);
+                }
+                else
+                {
+                    row.Cells[3].Value = "trống";
+                }
+                dtgvAccount.Rows.Add(row);
+            }
+            cbAccountStaff.DataSource = listStaff;
+            cbAccountType.DataSource = listAccountTypes;
+        }
+
+        private void ClearAccountInputBox()
+        {
+            txtLoginName.Text = String.Empty;
+            txtPassword.Text = String.Empty;
+            cbAccountType.Text = String.Empty;
+            cbAccountStaff.Text = String.Empty;
+        }
+
         #endregion
 
         #endregion
@@ -775,9 +828,6 @@ namespace GUI
                 ClearCustomer();
             }
         }
-
-
-
         private void btnSaveCustomer_Click(object sender, EventArgs e)
         {
             if (
@@ -789,6 +839,7 @@ namespace GUI
                 MessageBox.Show("Vui lòng nhập đủ thông tin !");
                 return;
             }
+
             string phone = txtNumberPhone.Text;
             string name = txtName.Text;
             string address = rtbAddress.Text;
@@ -872,6 +923,48 @@ namespace GUI
                 txtName.Text = row.Cells[1].Value.ToString();
                 rtbAddress.Text = row.Cells[2].Value.ToString();
             }
+        }
+        private void btnCustomerAddOrder_Click(object sender, EventArgs e)
+        {
+            if (dtgvCustomer.SelectedRows[0] == null)
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng");
+                return;
+            }
+
+            List<OrderDetail> listDetail = [];
+            Order order = new();
+            order.CustomerNumberPhone = txtNumberPhone.Text;
+
+            frmOrder frm = new(order, false);
+            frm.ShowDialog();
+
+            if (!frm._isAdd)
+                return;
+
+            listDetail = frm.listDetail;
+            order = frm.order;
+            if (loginAccount.StaffID != null)
+                order.StaffID = (int)loginAccount.StaffID;
+
+            OrderDAL.Instance.InsertOrder(order.StaffID, order.CustomerNumberPhone, order.Date.ToString("yyyy/MM/dd"), order.Status, order.Total);
+            foreach (OrderDetail detail in listDetail)
+            {
+                OrderDetailDAL.Instance.InsertOrderDetail(
+                    OrderDAL.Instance.GetHighestOrder().OrderID,
+                    detail.ProductID,
+                    detail.Price,
+                    detail.Quantity
+                    );
+            }
+            frm.Close();
+
+            listCustomer = CustomerDAL.Instance.GetListCustomer();
+            listProduct = ProductDAL.Instance.GetListProduct();
+            listOrder = OrderDAL.Instance.GetListOrder();
+            LoadCustomer();
+            LoadOrder();
+            LoadProduct();
         }
         #endregion
 
@@ -1123,7 +1216,7 @@ namespace GUI
         }
         #endregion
 
-        #endregion
+        #region MANAGE ORDER
 
         private void dtgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1149,8 +1242,206 @@ namespace GUI
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
+            List<OrderDetail> listDetail = [];
+            Order order = new();
+
             frmOrder frm = new();
             frm.ShowDialog();
+
+            if (!frm._isAdd)
+                return;
+
+            listDetail = frm.listDetail;
+            order = frm.order;
+            if (loginAccount.StaffID != null)
+                order.StaffID = (int)loginAccount.StaffID;
+
+            OrderDAL.Instance.InsertOrder(order.StaffID, order.CustomerNumberPhone, order.Date.ToString("yyyy/MM/dd"), order.Status, order.Total);
+            foreach (OrderDetail detail in listDetail)
+            {
+                OrderDetailDAL.Instance.InsertOrderDetail(
+                    OrderDAL.Instance.GetHighestOrder().OrderID,
+                    detail.ProductID,
+                    detail.Price,
+                    detail.Quantity
+                    );
+            }
+            frm.Close();
+
+            listCustomer = CustomerDAL.Instance.GetListCustomer();
+            listProduct = ProductDAL.Instance.GetListProduct();
+            listOrder = OrderDAL.Instance.GetListOrder();
+            LoadCustomer();
+            LoadOrder();
+            LoadProduct();
         }
+        private void btnSearchOrder_Click(object sender, EventArgs e)
+        {
+            string searchID = "";
+            if (txtSearchOrderID.Text != String.Empty)
+                searchID = txtSearchOrderID.Text;
+
+            listOrder = OrderDAL.Instance.SearchOrder(
+                dtpkSearchOrderFrom.Value.ToString("yyyy/MM/dd"),
+                dtpkSearchOrderTo.Value.ToString("yyyy/MM/dd"),
+                searchID);
+
+            LoadOrder();
+        }
+
+        private void btnSearchOrderCancel_Click(object sender, EventArgs e)
+        {
+            txtSearchOrderID.Text = String.Empty;
+            listOrder = OrderDAL.Instance.GetListOrder();
+            LoadOrder();
+            SetSearchDate();
+        }
+        #endregion
+        #region MANEGE ACCOUNT
+        private void dtgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgvAccount.SelectedCells[0].Value != null)
+            {
+                DataGridViewRow row = dtgvAccount.SelectedRows[0];
+                txtLoginName.Text = row.Cells[0].Value.ToString();
+                cbAccountType.Text = row.Cells[2].Value.ToString();
+                txtPassword.Text = row.Cells[1].Value.ToString();
+                cbAccountStaff.Text = row.Cells[3].Value.ToString();
+            }
+        }
+        private void btnAddAccount_Click(object sender, EventArgs e)
+        {
+            if (btnSaveAccount.Enabled)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Bạn có muốn hủy thao tác?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    btnSaveAccount.Enabled = false;
+                    btnUpdateAccount.Enabled = true;
+                    ClearAccountInputBox();
+                }
+            }
+            else
+            {
+                btnSaveAccount.Enabled = true;
+                btnUpdateAccount.Enabled = false;
+                ClearAccountInputBox();
+            }
+        }
+
+        private void btnSaveAccount_Click(object sender, EventArgs e)
+        {
+            if (
+                txtLoginName.Text == String.Empty ||
+                txtPassword.Text == String.Empty ||
+                cbAccountType.SelectedItem == null ||
+                cbAccountStaff.SelectedItem == null
+                )
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                return;
+            }
+            string loginName = txtLoginName.Text;
+            string pass = txtPassword.Text;
+            AccountType accType = (AccountType)cbAccountType.SelectedItem;
+            Staff staff = (Staff)cbAccountStaff.SelectedItem;
+
+            
+
+            if (btnAddAccount.Enabled)
+            {
+                try
+                {
+                    AccountDAL.Instance.InsertAccount(loginName, pass, accType.TypeID, staff.StaffID);
+                    MessageBox.Show("Thêm thành công");
+                    listAccount = AccountDAL.Instance.GetListAccount();
+                    LoadAccount();
+                    ClearAccountInputBox();
+                }
+                catch
+                {
+                    MessageBox.Show("Thêm thất bại");
+                    ClearAccountInputBox();
+                }
+            }
+            else if (btnUpdateAccount.Enabled)
+            {
+                try
+                {
+                    string oldLoginName = dtgvAccount.SelectedRows[0].Cells[0].Value.ToString();
+                    AccountDAL.Instance.DeleteAccountByStaffID(staff.StaffID);
+
+                    if (oldLoginName == loginName)
+                        AccountDAL.Instance.UpdateAccount(loginName, pass, accType.TypeID, staff.StaffID);
+                    else
+                        AccountDAL.Instance.UpdateAccountID(oldLoginName,loginName, pass, accType.TypeID, staff.StaffID);
+
+                    if (dtgvAccount.SelectedRows[0].Cells[3].Value != "trống")
+                        StaffDAL.Instance.SetAccountStaff(((Staff)dtgvAccount.SelectedRows[0].Cells[3].Value).StaffID, "null");
+                    StaffDAL.Instance.SetAccountStaff(staff.StaffID, loginName);
+                    
+                    listAccount = AccountDAL.Instance.GetListAccount();
+                    listStaff = StaffDAL.Instance.GetListStaff();
+                    LoadStaff();
+                    LoadAccount();
+                    ClearAccountInputBox();
+
+                    if (loginAccount.AccountID == loginName)
+                        loginAccount = new(loginName, pass, accType.TypeID, staff.StaffID);
+                    MessageBox.Show("Sửa thành công");
+                }
+                catch 
+                {
+                    MessageBox.Show("Sửa thất bại");
+                    ClearAccountInputBox();
+                }
+            }
+        }
+        private void btnUpdateAccount_Click(object sender, EventArgs e)
+        {
+            if (btnSaveAccount.Enabled)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Bạn có muốn hủy thao tác?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                    );
+                if (result == DialogResult.Yes)
+                {
+                    btnSaveAccount.Enabled = false;
+                    btnAddAccount.Enabled = true;
+                    ClearAccountInputBox();
+                }
+            }
+            else
+            {
+                btnSaveAccount.Enabled = true;
+                btnAddAccount.Enabled = false;
+            }
+        }
+        private void btnSearchAccount_Click(object sender, EventArgs e)
+        {
+            //  Staff staff = (Staff)cbSearchAccType.SelectedItem;
+            if
+
+                (txtSearchLoginName.Text != String.Empty ||
+                cbAccountType.SelectedItem != null)
+            {
+                listAccount = AccountDAL.Instance.SearchAccount(txtSearchLoginName.Text);
+            }
+            else
+                listAccount = AccountDAL.Instance.GetListAccount();
+            txtSearchLoginName.Text = String.Empty;
+
+            LoadAccount();
+        }
+        #endregion
+
+        #endregion
     }
 }

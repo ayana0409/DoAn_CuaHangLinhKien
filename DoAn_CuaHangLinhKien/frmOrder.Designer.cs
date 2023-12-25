@@ -97,7 +97,7 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(dtgvDetail);
-            splitContainer1.Size = new Size(1806, 1135);
+            splitContainer1.Size = new Size(1264, 676);
             splitContainer1.SplitterDistance = 412;
             splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 0;
@@ -119,8 +119,8 @@
             // 
             splitContainer2.Panel2.Controls.Add(tableLayoutPanel1);
             splitContainer2.Panel2.Controls.Add(label5);
-            splitContainer2.Size = new Size(1806, 412);
-            splitContainer2.SplitterDistance = 908;
+            splitContainer2.Size = new Size(1264, 412);
+            splitContainer2.SplitterDistance = 635;
             splitContainer2.SplitterWidth = 6;
             splitContainer2.TabIndex = 0;
             // 
@@ -144,7 +144,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 49.0909081F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 205F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
-            tableLayoutPanel3.Size = new Size(908, 412);
+            tableLayoutPanel3.Size = new Size(635, 412);
             tableLayoutPanel3.TabIndex = 1;
             // 
             // txtCustomerName
@@ -152,10 +152,10 @@
             txtCustomerName.BackColor = Color.FromArgb(255, 253, 239);
             txtCustomerName.Dock = DockStyle.Fill;
             txtCustomerName.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            txtCustomerName.Location = new Point(178, 70);
+            txtCustomerName.Location = new Point(126, 70);
             txtCustomerName.Margin = new Padding(4, 3, 4, 3);
             txtCustomerName.Name = "txtCustomerName";
-            txtCustomerName.Size = new Size(726, 27);
+            txtCustomerName.Size = new Size(505, 27);
             txtCustomerName.TabIndex = 4;
             // 
             // label2
@@ -167,7 +167,7 @@
             label2.Location = new Point(4, 0);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(125, 20);
+            label2.Size = new Size(86, 40);
             label2.TabIndex = 0;
             label2.Text = "SĐT khách hàng:";
             // 
@@ -202,10 +202,10 @@
             txtPhone.BackColor = Color.FromArgb(255, 253, 239);
             txtPhone.Dock = DockStyle.Fill;
             txtPhone.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            txtPhone.Location = new Point(178, 3);
+            txtPhone.Location = new Point(126, 3);
             txtPhone.Margin = new Padding(4, 3, 4, 3);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(726, 27);
+            txtPhone.Size = new Size(505, 27);
             txtPhone.TabIndex = 3;
             txtPhone.TextChanged += txtPhone_Leave;
             txtPhone.Leave += txtPhone_Leave;
@@ -215,10 +215,10 @@
             rtbCustomerAdress.BackColor = Color.FromArgb(255, 253, 239);
             rtbCustomerAdress.Dock = DockStyle.Fill;
             rtbCustomerAdress.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            rtbCustomerAdress.Location = new Point(178, 136);
+            rtbCustomerAdress.Location = new Point(126, 136);
             rtbCustomerAdress.Margin = new Padding(4, 5, 4, 5);
             rtbCustomerAdress.Name = "rtbCustomerAdress";
-            rtbCustomerAdress.Size = new Size(726, 195);
+            rtbCustomerAdress.Size = new Size(505, 195);
             rtbCustomerAdress.TabIndex = 5;
             rtbCustomerAdress.Text = "";
             // 
@@ -255,10 +255,10 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 49.0566025F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50.9433975F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 73F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 163F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 66F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 170F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
-            tableLayoutPanel1.Size = new Size(892, 412);
+            tableLayoutPanel1.Size = new Size(623, 412);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // label6
@@ -270,7 +270,7 @@
             label6.Location = new Point(4, 0);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(105, 20);
+            label6.Size = new Size(62, 40);
             label6.TabIndex = 1;
             label6.Text = "Mã đơn hàng:";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -308,10 +308,10 @@
             txtOrderID.Dock = DockStyle.Fill;
             txtOrderID.Enabled = false;
             txtOrderID.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            txtOrderID.Location = new Point(162, 3);
+            txtOrderID.Location = new Point(114, 3);
             txtOrderID.Margin = new Padding(4, 3, 4, 3);
             txtOrderID.Name = "txtOrderID";
-            txtOrderID.Size = new Size(726, 27);
+            txtOrderID.Size = new Size(505, 27);
             txtOrderID.TabIndex = 5;
             // 
             // label9
@@ -330,7 +330,8 @@
             // splitContainer3
             // 
             splitContainer3.Dock = DockStyle.Fill;
-            splitContainer3.Location = new Point(162, 251);
+            splitContainer3.IsSplitterFixed = true;
+            splitContainer3.Location = new Point(114, 244);
             splitContainer3.Margin = new Padding(4, 3, 4, 3);
             splitContainer3.Name = "splitContainer3";
             splitContainer3.Orientation = Orientation.Horizontal;
@@ -344,8 +345,8 @@
             // 
             splitContainer3.Panel2.Controls.Add(btnDeleteProduct);
             splitContainer3.Panel2.Controls.Add(btnAddProduct);
-            splitContainer3.Size = new Size(726, 158);
-            splitContainer3.SplitterDistance = 72;
+            splitContainer3.Size = new Size(505, 165);
+            splitContainer3.SplitterDistance = 81;
             splitContainer3.SplitterWidth = 5;
             splitContainer3.TabIndex = 12;
             // 
@@ -354,7 +355,7 @@
             btnCancel.BackColor = Color.Azure;
             btnCancel.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnCancel.ForeColor = Color.Brown;
-            btnCancel.Location = new Point(540, -2);
+            btnCancel.Location = new Point(323, 3);
             btnCancel.Margin = new Padding(4, 3, 4, 3);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(173, 72);
@@ -368,7 +369,7 @@
             btnPayment.BackColor = Color.Azure;
             btnPayment.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnPayment.ForeColor = Color.Brown;
-            btnPayment.Location = new Point(359, -2);
+            btnPayment.Location = new Point(142, 3);
             btnPayment.Margin = new Padding(4, 3, 4, 3);
             btnPayment.Name = "btnPayment";
             btnPayment.Size = new Size(173, 72);
@@ -382,7 +383,7 @@
             btnDeleteProduct.BackColor = Color.Azure;
             btnDeleteProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnDeleteProduct.ForeColor = Color.Brown;
-            btnDeleteProduct.Location = new Point(540, 3);
+            btnDeleteProduct.Location = new Point(323, 3);
             btnDeleteProduct.Margin = new Padding(4, 3, 4, 3);
             btnDeleteProduct.Name = "btnDeleteProduct";
             btnDeleteProduct.Size = new Size(173, 72);
@@ -396,7 +397,7 @@
             btnAddProduct.BackColor = Color.Azure;
             btnAddProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnAddProduct.ForeColor = Color.Brown;
-            btnAddProduct.Location = new Point(359, 3);
+            btnAddProduct.Location = new Point(142, 3);
             btnAddProduct.Margin = new Padding(4, 3, 4, 3);
             btnAddProduct.Name = "btnAddProduct";
             btnAddProduct.Size = new Size(173, 72);
@@ -411,10 +412,10 @@
             txtTotal.Dock = DockStyle.Fill;
             txtTotal.Enabled = false;
             txtTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            txtTotal.Location = new Point(162, 180);
+            txtTotal.Location = new Point(114, 180);
             txtTotal.Margin = new Padding(4, 5, 4, 5);
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(726, 27);
+            txtTotal.Size = new Size(505, 27);
             txtTotal.TabIndex = 14;
             // 
             // dtpkDate
@@ -422,10 +423,10 @@
             dtpkDate.Dock = DockStyle.Fill;
             dtpkDate.Enabled = false;
             dtpkDate.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpkDate.Location = new Point(162, 60);
+            dtpkDate.Location = new Point(114, 60);
             dtpkDate.Margin = new Padding(4, 5, 4, 5);
             dtpkDate.Name = "dtpkDate";
-            dtpkDate.Size = new Size(726, 27);
+            dtpkDate.Size = new Size(505, 27);
             dtpkDate.TabIndex = 15;
             // 
             // cbStatus
@@ -435,10 +436,10 @@
             cbStatus.Enabled = false;
             cbStatus.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbStatus.FormattingEnabled = true;
-            cbStatus.Location = new Point(162, 118);
+            cbStatus.Location = new Point(114, 118);
             cbStatus.Margin = new Padding(4, 5, 4, 5);
             cbStatus.Name = "cbStatus";
-            cbStatus.Size = new Size(726, 28);
+            cbStatus.Size = new Size(505, 28);
             cbStatus.TabIndex = 16;
             // 
             // lbNewCustomer
@@ -447,10 +448,10 @@
             lbNewCustomer.BackColor = Color.Azure;
             lbNewCustomer.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbNewCustomer.ForeColor = Color.RoyalBlue;
-            lbNewCustomer.Location = new Point(4, 248);
+            lbNewCustomer.Location = new Point(4, 241);
             lbNewCustomer.Margin = new Padding(4, 0, 4, 0);
             lbNewCustomer.Name = "lbNewCustomer";
-            lbNewCustomer.Size = new Size(147, 100);
+            lbNewCustomer.Size = new Size(101, 171);
             lbNewCustomer.TabIndex = 4;
             lbNewCustomer.Text = "Khách hàng mới sẽ tự động được lưu vào hệ thống";
             lbNewCustomer.Visible = false;
@@ -479,7 +480,7 @@
             dtgvDetail.ReadOnly = true;
             dtgvDetail.RowHeadersWidth = 51;
             dtgvDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvDetail.Size = new Size(1806, 718);
+            dtgvDetail.Size = new Size(1264, 259);
             dtgvDetail.TabIndex = 0;
             // 
             // ProductID
@@ -543,11 +544,12 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
-            ClientSize = new Size(1806, 1135);
+            ClientSize = new Size(1264, 676);
             Controls.Add(splitContainer1);
             Margin = new Padding(4, 3, 4, 3);
             Name = "frmOrder";
-            Text = "frmDonHang";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Đơn hàng";
             Load += frmDonHang_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);

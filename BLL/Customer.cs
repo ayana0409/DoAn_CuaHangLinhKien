@@ -13,6 +13,12 @@ namespace DTO
         public string CustomerName { get; set; }
         public string CustomerAddress { get; set; }
 
+        public Customer()
+        {
+            this.CustomerNumberPhone = string.Empty;
+            this.CustomerName = string.Empty;
+            this.CustomerAddress = string.Empty;
+        }
         public Customer(string customerNumberPhone, string customerName, string customerAddress)
         {
             this.CustomerNumberPhone = customerNumberPhone;

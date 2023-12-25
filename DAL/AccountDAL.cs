@@ -26,7 +26,6 @@ namespace DAL
             Account account = new(Data.Rows[0]);
             return account;
         }
-
         public bool Login(string username, string password)
         {
             string query = "proc_Login @accountID , @password";
@@ -35,22 +34,56 @@ namespace DAL
 
             return result.Rows.Count > 0;
         }
+        public List<Account> SearchAccount(string accountID)
+        {
+            List<Account> list = new();
+            if (accountID != null)
+            {
+                string query = string.Format("select * from TaiKhoan where MaTaiKhoan  like '%{0}%'"
+                    , accountID);
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                foreach (DataRow row in data.Rows)
+                {
+                    Account ac = new(row);
+                    list.Add(ac);
+                }
+            }
+            return list;
+        }
+        public List<Account> GetListAccount()
+        {
+            List<Account> list = new List<Account>();
+            string query = "select * from TaiKhoan";
 
-        //SetStaff (StaffID)
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-        //DeleteStaff (StaffID = null)
+            foreach (DataRow row in data.Rows)
+            {
+                Account account = new(row);
+                list.Add(account);
+            }
+
+            return list;
+        }
+
+        public void DeleteAccountByStaffID(int staffID)
+        {
+            string query = String.Format("update TaiKhoan set MaNhanVien = null " +
+                "where MaTaiKhoan in (select MaTaiKhoan from TaiKhoan where MaNhanVien = {0})",
+                staffID);
+            DataProvider.Instance.ExecuteQuery(query);
+        }
 
         #region CRUD
-        public bool InsertAccount(string accountID, int typeID, string password = "0", int? staffID = null)
+        public bool InsertAccount(string accountID, string password, int typeID, int? staffID = null)
         {
             string query = String.Format("Insert TaiKhoan (MaTaiKhoan, MatKhau, MaLoaiTK, MaNhanVien) " +
-                "values ('{0}', '{1}', {3}, {4})", accountID, password, typeID, staffID);
+                "values ('{0}', '{1}', '{2}', {3})", accountID, password, typeID, staffID);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
         }
-
-        public bool UpdateAccount(string accountID, int typeID, string password = "0", int? staffID = null)
+        public bool UpdateAccount(string accountID, string password, int typeID, int? staffID = null)
         {
             string query = String.Format("Update TaiKhoan set MatKhau = '{1}', MaLoaiTK = '{2}', MaNhanVien = {3} " +
                 "where MaTaiKhoan = '{0}'", accountID, password, typeID, staffID);
@@ -59,20 +92,13 @@ namespace DAL
             return result > 0;
         }
 
-        public bool DeleteAccount(string accountID)
+        public bool UpdateAccountID(string oldID ,string accountID, string password, int typeID, int? staffID = null)
         {
-            Account account = GetAccountByID(accountID);
-            if (account != null)
-            {
-                if (account.StaffID == null)
-                {
-                    string query = String.Format("Delete TaiKhoan where MaTaiKhoan = '{0}'", accountID);
-                    int result = DataProvider.Instance.ExecuteNonQuery(query);
-                    return result > 0;
+            string query = String.Format("Update TaiKhoan set MaTaiKhoan = '{0}', MatKhau = '{1}', MaLoaiTK = '{2}', MaNhanVien = {3} " +
+                "where MaTaiKhoan = '{4}'", accountID, password, typeID, staffID, oldID);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-                }
-            }
-            return false;
+            return result > 0;
         }
         #endregion
     }

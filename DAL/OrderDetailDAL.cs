@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -36,10 +37,10 @@ namespace DAL
         }
 
 
-        public bool InsertOrderDetail(int orderID, float price, int quantity)
+        public bool InsertOrderDetail(int orderID, int productID, double price, int quantity)
         {
-            string query = string.Format("Insert ChiTietDonHang ( MaDonHang, GiaBan, SoLuongBan ) values ({0},{1},{2})",
-               orderID, quantity, price);
+            string query = string.Format("Insert ChiTietDonHang ( MaDonHang, MaSanPham, GiaBan, SoLuongBan ) values ({0}, {1}, {2}, {3})",
+               orderID, productID, price, quantity);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;

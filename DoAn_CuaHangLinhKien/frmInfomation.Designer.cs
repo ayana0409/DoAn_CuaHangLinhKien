@@ -84,8 +84,8 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(1006, 735);
-            splitContainer1.SplitterDistance = 660;
+            splitContainer1.Size = new Size(1264, 676);
+            splitContainer1.SplitterDistance = 857;
             splitContainer1.SplitterWidth = 6;
             splitContainer1.TabIndex = 0;
             // 
@@ -96,7 +96,7 @@
             flpProduct.Location = new Point(0, 0);
             flpProduct.Margin = new Padding(4, 5, 4, 5);
             flpProduct.Name = "flpProduct";
-            flpProduct.Size = new Size(660, 735);
+            flpProduct.Size = new Size(857, 676);
             flpProduct.TabIndex = 0;
             // 
             // splitContainer2
@@ -114,8 +114,8 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(groupBox2);
-            splitContainer2.Size = new Size(340, 735);
-            splitContainer2.SplitterDistance = 248;
+            splitContainer2.Size = new Size(401, 676);
+            splitContainer2.SplitterDistance = 228;
             splitContainer2.SplitterWidth = 7;
             splitContainer2.TabIndex = 0;
             // 
@@ -128,7 +128,7 @@
             groupBox1.Margin = new Padding(4, 5, 4, 5);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4, 5, 4, 5);
-            groupBox1.Size = new Size(340, 248);
+            groupBox1.Size = new Size(401, 228);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Bộ lọc tìm kiếm ";
@@ -140,7 +140,7 @@
             panel1.Location = new Point(4, 25);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(332, 207);
+            panel1.Size = new Size(393, 200);
             panel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -161,7 +161,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 54.5454559F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 45.4545441F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 87F));
-            tableLayoutPanel2.Size = new Size(332, 207);
+            tableLayoutPanel2.Size = new Size(393, 200);
             tableLayoutPanel2.TabIndex = 3;
             // 
             // label1
@@ -180,10 +180,10 @@
             // 
             txtSearchProductID.BackColor = Color.FromArgb(255, 253, 239);
             txtSearchProductID.Dock = DockStyle.Fill;
-            txtSearchProductID.Location = new Point(76, 5);
+            txtSearchProductID.Location = new Point(89, 5);
             txtSearchProductID.Margin = new Padding(4, 5, 4, 5);
             txtSearchProductID.Name = "txtSearchProductID";
-            txtSearchProductID.Size = new Size(252, 27);
+            txtSearchProductID.Size = new Size(300, 27);
             txtSearchProductID.TabIndex = 1;
             // 
             // btnSearch
@@ -191,7 +191,7 @@
             btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSearch.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnSearch.ForeColor = Color.Brown;
-            btnSearch.Location = new Point(155, 124);
+            btnSearch.Location = new Point(216, 117);
             btnSearch.Margin = new Padding(4, 5, 4, 5);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(173, 72);
@@ -205,7 +205,7 @@
             labelx.AutoSize = true;
             labelx.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             labelx.ForeColor = Color.Brown;
-            labelx.Location = new Point(4, 65);
+            labelx.Location = new Point(4, 61);
             labelx.Margin = new Padding(4, 0, 4, 0);
             labelx.Name = "labelx";
             labelx.Size = new Size(59, 20);
@@ -216,10 +216,10 @@
             // 
             txtSearchProductName.BackColor = Color.FromArgb(255, 253, 239);
             txtSearchProductName.Dock = DockStyle.Fill;
-            txtSearchProductName.Location = new Point(76, 70);
+            txtSearchProductName.Location = new Point(89, 66);
             txtSearchProductName.Margin = new Padding(4, 5, 4, 5);
             txtSearchProductName.Name = "txtSearchProductName";
-            txtSearchProductName.Size = new Size(252, 27);
+            txtSearchProductName.Size = new Size(300, 27);
             txtSearchProductName.TabIndex = 1;
             // 
             // groupBox2
@@ -231,7 +231,7 @@
             groupBox2.Margin = new Padding(4, 5, 4, 5);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(4, 5, 4, 5);
-            groupBox2.Size = new Size(340, 480);
+            groupBox2.Size = new Size(401, 441);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin sản phẩm ";
@@ -263,7 +263,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 65F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 105F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
-            tableLayoutPanel1.Size = new Size(332, 453);
+            tableLayoutPanel1.Size = new Size(393, 416);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // txtPrice
@@ -274,7 +274,7 @@
             txtPrice.Location = new Point(97, 193);
             txtPrice.Margin = new Padding(4, 5, 4, 5);
             txtPrice.Name = "txtPrice";
-            txtPrice.Size = new Size(231, 27);
+            txtPrice.Size = new Size(292, 27);
             txtPrice.TabIndex = 8;
             // 
             // txtName
@@ -285,7 +285,7 @@
             txtName.Location = new Point(97, 65);
             txtName.Margin = new Padding(4, 5, 4, 5);
             txtName.Name = "txtName";
-            txtName.Size = new Size(231, 27);
+            txtName.Size = new Size(292, 27);
             txtName.TabIndex = 6;
             // 
             // label2
@@ -357,7 +357,7 @@
             txtID.Margin = new Padding(4, 5, 4, 5);
             txtID.Name = "txtID";
             txtID.ReadOnly = true;
-            txtID.Size = new Size(231, 27);
+            txtID.Size = new Size(292, 27);
             txtID.TabIndex = 5;
             // 
             // btnAdd
@@ -365,10 +365,10 @@
             btnAdd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnAdd.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnAdd.ForeColor = Color.Brown;
-            btnAdd.Location = new Point(155, 363);
+            btnAdd.Location = new Point(216, 363);
             btnAdd.Margin = new Padding(4, 5, 4, 5);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(173, 72);
+            btnAdd.Size = new Size(173, 43);
             btnAdd.TabIndex = 2;
             btnAdd.Text = "Thêm ";
             btnAdd.UseVisualStyleBackColor = true;
@@ -382,7 +382,7 @@
             nmQuantity.Location = new Point(97, 128);
             nmQuantity.Margin = new Padding(4, 5, 4, 5);
             nmQuantity.Name = "nmQuantity";
-            nmQuantity.Size = new Size(231, 27);
+            nmQuantity.Size = new Size(292, 27);
             nmQuantity.TabIndex = 9;
             // 
             // rtbDetail
@@ -393,7 +393,7 @@
             rtbDetail.Location = new Point(97, 258);
             rtbDetail.Margin = new Padding(4, 5, 4, 5);
             rtbDetail.Name = "rtbDetail";
-            rtbDetail.Size = new Size(231, 95);
+            rtbDetail.Size = new Size(292, 95);
             rtbDetail.TabIndex = 10;
             rtbDetail.Text = "";
             // 
@@ -402,10 +402,11 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
-            ClientSize = new Size(1006, 735);
+            ClientSize = new Size(1264, 676);
             Controls.Add(splitContainer1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "frmInfomation";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Thêm sản phẩm";
             Load += frmInfomationGRN_Load;
             splitContainer1.Panel1.ResumeLayout(false);

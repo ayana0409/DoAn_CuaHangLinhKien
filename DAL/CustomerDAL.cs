@@ -51,8 +51,10 @@ namespace DAL
         {
             string query = "select * from KhachHang where SDTKhachHang = '" + phone + "'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-
-            return new Customer(data.Rows[0]);
+            if (data.Rows.Count != 0) 
+                return new Customer(data.Rows[0]);
+            else
+                return new Customer();
         }
 
         public int GetCustomerIndex(string phone)

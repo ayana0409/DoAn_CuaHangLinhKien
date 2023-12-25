@@ -397,7 +397,7 @@
             button2.Text = "Thêm ";
             button2.UseVisualStyleBackColor = true;
             // 
-            // frmChiTietDonHang
+            // frmOrderDetail
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -407,7 +407,8 @@
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             Margin = new Padding(4);
-            Name = "frmChiTietDonHang";
+            Name = "frmOrderDetail";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmChiTietDonHang";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

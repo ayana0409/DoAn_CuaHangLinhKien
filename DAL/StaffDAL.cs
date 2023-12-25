@@ -3,8 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Xml.Linq;
 
 namespace DAL
 {
@@ -35,7 +38,7 @@ namespace DAL
 
         public List<Staff> SearchStaff(string id = "", string name = "")
         {
-            string query = String.Format("select * from NhanVien where MaNhanVien like '%{0}%' " +
+            string query = System.String.Format("select * from NhanVien where MaNhanVien like '%{0}%' " +
                 "and HoVaTen like N'%{1}%'", id, name);
             List<Staff> list = new();
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
@@ -82,6 +85,14 @@ namespace DAL
                 "TrangThai = N'{6}' where MaNhanVien = {7}",
                 roleID, name, date, sex, address, numberphone, status, staffID);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool SetAccountStaff(int staffID, string accountID = "")
+        {
+            string query = string.Format("proc_UpdateStaffAccount @manv , @matk ");
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { staffID, accountID});
 
             return result > 0;
         }
