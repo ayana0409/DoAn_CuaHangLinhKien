@@ -65,7 +65,7 @@ namespace GUI
             LoadAccount();
 
             SetSearchDate();
-
+            CheckStaff();
         }
         #region METHOD
         #region OTHER METHOD
@@ -80,6 +80,7 @@ namespace GUI
                 TabControl.TabPages.Remove(tpGRN);
                 TabControl.TabPages.Remove(tpStaff);
                 TabControl.TabPages.Remove(tpAccount);
+                tsbStatistics.Enabled = false;
             }
             else if (type.TypeName == "Quản lý")
             {
@@ -110,6 +111,17 @@ namespace GUI
                 }
             }
             return result;
+        }
+        private void CheckStaff()
+        {
+            if (loginAccount.StaffID != null)
+            {
+                Staff staff = StaffDAL.Instance.GetStaff((int)loginAccount.StaffID);
+                tslStaffName.Text = RoleDAL.Instance.GetRole(staff.RoleID) 
+                    + " " + staff.StaffName;
+            }
+            else
+                tslStaffName.Text = "Nhân viên";
         }
         #endregion
 
@@ -721,19 +733,17 @@ namespace GUI
         #region GRN MANAGE EVENT (Good Received Note)
         private void btnAddGRN_Click(object sender, EventArgs e)
         {
-            if (cbGRNStaff.SelectedItem == null)
+            if (loginAccount.StaffID == null)
             {
-                MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
+                MessageBox.Show("Không thể tạo phiếu nhập\nTài khoản chưa xác định nhân viên");
                 return;
             }
             frmGRN frm = new();
             frm.ShowDialog();
             GRN gRN = new();
             gRN = frm.GRN;
-            if (loginAccount.StaffID != null)
-                gRN.StaffID = (int)loginAccount.StaffID;
-            else
-                gRN.StaffID = ((Staff)cbGRNStaff.SelectedItem).StaffID;
+            gRN.StaffID = (int)loginAccount.StaffID;
+
             List<InformationGRN> listInstalProduct = frm.listInsertProduct;
             gRN.Total = frm.GRN.Total;
 
@@ -1242,6 +1252,11 @@ namespace GUI
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
+            if (loginAccount.StaffID == null)
+            {
+                MessageBox.Show("Không thể tạo đơn hàng\nTài khoản chưa xác định nhân viên");
+                return;
+            }
             List<OrderDetail> listDetail = [];
             Order order = new();
 
@@ -1297,6 +1312,7 @@ namespace GUI
             SetSearchDate();
         }
         #endregion
+
         #region MANEGE ACCOUNT
         private void dtgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1350,7 +1366,7 @@ namespace GUI
             AccountType accType = (AccountType)cbAccountType.SelectedItem;
             Staff staff = (Staff)cbAccountStaff.SelectedItem;
 
-            
+
 
             if (btnAddAccount.Enabled)
             {
@@ -1378,12 +1394,12 @@ namespace GUI
                     if (oldLoginName == loginName)
                         AccountDAL.Instance.UpdateAccount(loginName, pass, accType.TypeID, staff.StaffID);
                     else
-                        AccountDAL.Instance.UpdateAccountID(oldLoginName,loginName, pass, accType.TypeID, staff.StaffID);
+                        AccountDAL.Instance.UpdateAccountID(oldLoginName, loginName, pass, accType.TypeID, staff.StaffID);
 
                     if (dtgvAccount.SelectedRows[0].Cells[3].Value != "trống")
                         StaffDAL.Instance.SetAccountStaff(((Staff)dtgvAccount.SelectedRows[0].Cells[3].Value).StaffID, "null");
                     StaffDAL.Instance.SetAccountStaff(staff.StaffID, loginName);
-                    
+
                     listAccount = AccountDAL.Instance.GetListAccount();
                     listStaff = StaffDAL.Instance.GetListStaff();
                     LoadStaff();
@@ -1394,7 +1410,7 @@ namespace GUI
                         loginAccount = new(loginName, pass, accType.TypeID, staff.StaffID);
                     MessageBox.Show("Sửa thành công");
                 }
-                catch 
+                catch
                 {
                     MessageBox.Show("Sửa thất bại");
                     ClearAccountInputBox();
@@ -1443,5 +1459,22 @@ namespace GUI
         #endregion
 
         #endregion
+
+        private void tsbStatistics_Click(object sender, EventArgs e)
+        {
+            frmStatistic frm = new();
+            frm.ShowDialog();
+        }
+
+        private void tsbLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Bạn có muốn đăng xuất khỏi hệ thống?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+                this.Close();
+        }
     }
 }

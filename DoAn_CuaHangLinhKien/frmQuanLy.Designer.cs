@@ -322,10 +322,6 @@
             label20 = new Label();
             splitContainer7 = new SplitContainer();
             ofdSelectProductImage = new OpenFileDialog();
-            menuStrip1 = new MenuStrip();
-            đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem1 = new ToolStripSeparator();
-            hướngDẫnToolStripMenuItem = new ToolStripMenuItem();
             splitContainer26 = new SplitContainer();
             dataGridView8 = new DataGridView();
             splitContainer27 = new SplitContainer();
@@ -342,6 +338,13 @@
             label57 = new Label();
             label58 = new Label();
             tabPage1 = new TabPage();
+            toolStrip1 = new ToolStrip();
+            tslStaffName = new ToolStripLabel();
+            toolStripSeparator2 = new ToolStripSeparator();
+            tsbStatistics = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
+            tsbLogout = new ToolStripButton();
+            panel3 = new Panel();
             TabControl.SuspendLayout();
             tpCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -523,7 +526,6 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer7).BeginInit();
             splitContainer7.Panel1.SuspendLayout();
             splitContainer7.SuspendLayout();
-            menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer26).BeginInit();
             splitContainer26.Panel1.SuspendLayout();
             splitContainer26.SuspendLayout();
@@ -536,6 +538,8 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer28).BeginInit();
             splitContainer28.SuspendLayout();
             tableLayoutPanel18.SuspendLayout();
+            toolStrip1.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // TabControl
@@ -549,7 +553,7 @@
             TabControl.Controls.Add(tpStaff);
             TabControl.Controls.Add(tpAccount);
             TabControl.Dock = DockStyle.Fill;
-            TabControl.Location = new Point(0, 25);
+            TabControl.Location = new Point(0, 0);
             TabControl.Margin = new Padding(3, 4, 3, 4);
             TabControl.Name = "TabControl";
             TabControl.SelectedIndex = 0;
@@ -4184,35 +4188,6 @@
             // 
             ofdSelectProductImage.FileName = "openFileDialog1";
             // 
-            // menuStrip1
-            // 
-            menuStrip1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { đăngXuấtToolStripMenuItem, hướngDẫnToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1264, 25);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // đăngXuấtToolStripMenuItem
-            // 
-            đăngXuấtToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
-            đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            đăngXuấtToolStripMenuItem.Size = new Size(79, 21);
-            đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(57, 6);
-            // 
-            // hướngDẫnToolStripMenuItem
-            // 
-            hướngDẫnToolStripMenuItem.Name = "hướngDẫnToolStripMenuItem";
-            hướngDẫnToolStripMenuItem.Size = new Size(86, 21);
-            hướngDẫnToolStripMenuItem.Text = "Hướng dẫn";
-            // 
             // splitContainer26
             // 
             splitContainer26.Dock = DockStyle.Fill;
@@ -4386,17 +4361,70 @@
             tabPage1.Size = new Size(200, 100);
             tabPage1.TabIndex = 0;
             // 
+            // toolStrip1
+            // 
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tslStaffName, toolStripSeparator2, tsbStatistics, toolStripSeparator1, tsbLogout });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(1264, 25);
+            toolStrip1.TabIndex = 1;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // tslStaffName
+            // 
+            tslStaffName.Font = new Font("Segoe UI", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            tslStaffName.ForeColor = Color.Brown;
+            tslStaffName.Name = "tslStaffName";
+            tslStaffName.Size = new Size(82, 22);
+            tslStaffName.Text = "Nhân viên";
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 25);
+            // 
+            // tsbStatistics
+            // 
+            tsbStatistics.Image = (Image)resources.GetObject("tsbStatistics.Image");
+            tsbStatistics.ImageTransparentColor = Color.Magenta;
+            tsbStatistics.Name = "tsbStatistics";
+            tsbStatistics.Size = new Size(76, 22);
+            tsbStatistics.Text = "Thống kê";
+            tsbStatistics.Click += tsbStatistics_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 25);
+            // 
+            // tsbLogout
+            // 
+            tsbLogout.Image = (Image)resources.GetObject("tsbLogout.Image");
+            tsbLogout.ImageTransparentColor = Color.Magenta;
+            tsbLogout.Name = "tsbLogout";
+            tsbLogout.Size = new Size(81, 22);
+            tsbLogout.Text = "Đăng xuất";
+            tsbLogout.Click += tsbLogout_Click;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(TabControl);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 25);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1264, 656);
+            panel3.TabIndex = 2;
+            // 
             // frmManage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
             ClientSize = new Size(1264, 681);
-            Controls.Add(TabControl);
-            Controls.Add(menuStrip1);
+            Controls.Add(panel3);
+            Controls.Add(toolStrip1);
             Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmManage";
             StartPosition = FormStartPosition.CenterScreen;
@@ -4601,8 +4629,6 @@
             splitContainer7.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer7).EndInit();
             splitContainer7.ResumeLayout(false);
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             splitContainer26.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer26).EndInit();
             splitContainer26.ResumeLayout(false);
@@ -4617,6 +4643,9 @@
             splitContainer28.ResumeLayout(false);
             tableLayoutPanel18.ResumeLayout(false);
             tableLayoutPanel18.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -4774,9 +4803,6 @@
         private TextBox txtCateName;
         private TextBox txtCateID;
         private GroupBox groupBox17;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem đăngXuấtToolStripMenuItem;
-        private ToolStripMenuItem hướngDẫnToolStripMenuItem;
         private TabPage tpGRN;
         private TabPage tpStaff;
         private TabPage tpAccount;
@@ -4873,7 +4899,6 @@
         private ComboBox cbAccountType;
         private ComboBox cbAccountStaff;
         private ComboBox cbOrderStatus;
-        private ToolStripSeparator toolStripMenuItem1;
         private Button btnAddManufacturer;
         private Button btnUpdateManufacturer;
         private Button btnSaveManufacturer;
@@ -4935,5 +4960,12 @@
         private DataGridViewTextBoxColumn passWord;
         private DataGridViewTextBoxColumn accountType;
         private DataGridViewTextBoxColumn accountStaff;
+        private ToolStrip toolStrip1;
+        private ToolStripButton tsbLogout;
+        private ToolStripButton tsbStatistics;
+        private ToolStripSeparator toolStripSeparator1;
+        private Panel panel3;
+        private ToolStripLabel tslStaffName;
+        private ToolStripSeparator toolStripSeparator2;
     }
 }

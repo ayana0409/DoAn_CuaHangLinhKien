@@ -55,6 +55,7 @@ namespace GUI
         private void btnExit_Click(object sender, EventArgs e)
         {
             deleteProductImage(productImageDelete);
+            this.Close();
             Application.Exit();
         }
 
