@@ -23,7 +23,25 @@ namespace GUI.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        
+        public static string BillPath
+        {
+            get => CheckPath(@"C:\CuaHangLinhKien\HoaDon\");
+        }
+        public static string ProductImagePath
+        {
+            get => CheckPath(@"C:\CuaHangLinhKien\HinhAnhSanPham\");
+        }
+        public static string GRNPath
+        {
+            get => CheckPath(@"C:\CuaHangLinhKien\HinhAnhPhieuNhap\");
+        }
+
+        private static string CheckPath(string path)
+        {
+            System.IO.Directory.CreateDirectory(path);
+            return path;
+        }
+
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;

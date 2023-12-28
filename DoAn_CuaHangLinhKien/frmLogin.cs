@@ -14,9 +14,9 @@ namespace GUI
 {
     public partial class frmLogin : Form
     {
-        private string productImagePath = Application.StartupPath.Split("\\DoAn_CuaHangLinhKien", StringSplitOptions.None)[0]
-                        + @"\DoAn_CuaHangLinhKien\BLL\product-images\";
+        private string productImagePath = global::GUI.Properties.Resources.ProductImagePath;
         private List<string> productImageDelete = new();
+
         public frmLogin()
         {
             InitializeComponent();
@@ -72,6 +72,7 @@ namespace GUI
         {
             return AccountDAL.Instance.Login(username, password);
         }
+        
 
     }
 }

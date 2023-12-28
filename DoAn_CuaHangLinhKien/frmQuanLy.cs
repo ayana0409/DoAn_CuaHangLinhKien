@@ -8,33 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using System.Drawing;
+
 using DAL;
 using DTO;
+using Syncfusion.Pdf.Grid;
 namespace GUI
 {
     public partial class frmManage : Form
     {
+        #region VAR
         public Account loginAccount = new();
-
-        private List<Product> listProduct = [];
-        private List<Category> listCategory = [];
-        private List<Manufacturer> listManufacturer = [];
-        private List<Staff> listStaff = [];
-        private List<Role> listRole = [];
-        private List<GRN> listGRN = [];
-        private List<Customer> listCustomer = [];
-        private List<Order> listOrder = [];
-        private List<Account> listAccount = [];
-        private List<AccountType> listAccountTypes = [];
-
 
         public List<string> listDeleteProductImage = [];
 
         string? _tempImageName = null;
-
-        private readonly string productImagePath = Application.StartupPath.Split("\\DoAn_CuaHangLinhKien",
-            StringSplitOptions.None)[0] + @"\DoAn_CuaHangLinhKien\BLL\product-images\";
-
+        private string productImagePath = global::GUI.Properties.Resources.ProductImagePath;
+        // private readonly string productImagePath = Application.StartupPath.Split("\\DoAn_CuaHangLinhKien",
+        //    StringSplitOptions.None)[0] + @"\DoAn_CuaHangLinhKien\BLL\product-images\";
+        #endregion
         public frmManage()
         {
             InitializeComponent();
@@ -42,17 +36,6 @@ namespace GUI
         private void frmManage_Load(object sender, EventArgs e)
         {
             CheckRole();
-            listCategory = CategoryDAL.Instance.GetListCategory();
-            listManufacturer = ManufacturerDAL.Instance.GetListManufacturer();
-            listProduct = ProductDAL.Instance.GetListProduct();
-            listStaff = StaffDAL.Instance.GetListStaff();
-            listRole = RoleDAL.Instance.GetListRole();
-            listGRN = GRNDAL.Instance.GetListGRN();
-            listCustomer = CustomerDAL.Instance.GetListCustomer();
-            listCategory = CategoryDAL.Instance.GetListCategory();
-            listOrder = OrderDAL.Instance.GetListOrder();
-            listAccount = AccountDAL.Instance.GetListAccount();
-            listAccountTypes = AccountTypeDAL.Instance.GetListAccountType();
 
             LoadProduct();
             LoadStaff();
@@ -117,7 +100,7 @@ namespace GUI
             if (loginAccount.StaffID != null)
             {
                 Staff staff = StaffDAL.Instance.GetStaff((int)loginAccount.StaffID);
-                tslStaffName.Text = RoleDAL.Instance.GetRole(staff.RoleID) 
+                tslStaffName.Text = RoleDAL.Instance.GetRole(staff.RoleID)
                     + " " + staff.StaffName;
             }
             else
@@ -126,9 +109,10 @@ namespace GUI
         #endregion
 
         #region PRODUCT MANAGE METHOD
-        private void LoadProduct()
+        private void LoadProduct(List<Product>? listProduct = null)
         {
-            listProduct = ProductDAL.Instance.GetListProduct();
+            if (listProduct == null)
+                listProduct = ProductDAL.Instance.GetListProduct();
             flpProduct.Controls.Clear();
             foreach (Product p in listProduct)
             {
@@ -136,8 +120,8 @@ namespace GUI
                 ctrViewer.WasClicked += FlowLayOutPanel_Controls_WasClicked;
                 flpProduct.Controls.Add(ctrViewer);
             }
-            cbProductCategory.DataSource = listCategory;
-            cbProductManufacturer.DataSource = listManufacturer;
+            cbProductCategory.DataSource = CategoryDAL.Instance.GetListCategory();
+            cbProductManufacturer.DataSource = ManufacturerDAL.Instance.GetListManufacturer();
             ClearProductInputBox();
             CheckImageButton();
         }
@@ -168,11 +152,14 @@ namespace GUI
                 btnDeleteProductImage.Enabled = false;
             }
         }
+
         #endregion
 
         #region STAFF METHOD
-        private void LoadStaff()
+        private void LoadStaff(List<Staff>? listStaff = null)
         {
+            if (listStaff == null)
+                listStaff = StaffDAL.Instance.GetListStaff();
             dtgvStaff.Rows.Clear();
             foreach (Staff s in listStaff)
             {
@@ -200,13 +187,15 @@ namespace GUI
         }
         private void LoadListRole()
         {
-            cbStaffRole.DataSource = listRole;
+            cbStaffRole.DataSource = RoleDAL.Instance.GetListRole();
         }
         #endregion
 
         #region GRN MANAGE METHOD
-        private void LoadGRN()
+        private void LoadGRN(List<GRN>? listGRN = null)
         {
+            if (listGRN == null)
+                listGRN = GRNDAL.Instance.GetListGRN();
             dtgvGRN.Rows.Clear();
             foreach (GRN s in listGRN)
             {
@@ -218,7 +207,7 @@ namespace GUI
                 row.Cells[4].Value = s.Total;
                 dtgvGRN.Rows.Add(row);
             }
-            cbGRNStaff.DataSource = listStaff;
+            cbGRNStaff.DataSource = StaffDAL.Instance.GetListStaff();
         }
         private void SetSearchDate()
         {
@@ -250,8 +239,10 @@ namespace GUI
         #endregion
 
         #region CUSTOMER METHOD
-        private void LoadCustomer()
+        private void LoadCustomer(List<Customer>? listCustomer = null)
         {
+            if (listCustomer == null)
+                listCustomer = CustomerDAL.Instance.GetListCustomer();
             dtgvCustomer.Rows.Clear();
             foreach (Customer c in listCustomer)
             {
@@ -272,8 +263,11 @@ namespace GUI
         #endregion
 
         #region MANUFACTURER METHOD
-        private void LoadManufacturer()
+        private void LoadManufacturer(List<Manufacturer>? listManufacturer = null)
         {
+            if (listManufacturer == null)
+                listManufacturer = ManufacturerDAL.Instance.GetListManufacturer();
+
             dtgvManufacturer.Rows.Clear();
             foreach (Manufacturer m in listManufacturer)
             {
@@ -293,8 +287,11 @@ namespace GUI
         #endregion
 
         #region CATEGORY METHOD
-        private void LoadCategory()
+        private void LoadCategory(List<Category>? listCategory = null)
         {
+            if (listCategory == null)
+                listCategory = CategoryDAL.Instance.GetListCategory();
+
             dtgvCategory.Rows.Clear();
             foreach (Category c in listCategory)
             {
@@ -313,8 +310,10 @@ namespace GUI
         #endregion
 
         #region ORDER METHOD
-        private void LoadOrder()
+        private void LoadOrder(List<Order>? listOrder = null)
         {
+            if (listOrder == null)
+                listOrder = OrderDAL.Instance.GetListOrder();
             dtgvOrder.Rows.Clear();
             foreach (Order s in listOrder)
             {
@@ -332,9 +331,10 @@ namespace GUI
         #endregion
 
         #region ACCOUNT METHOD
-
-        private void LoadAccount()
+        private void LoadAccount(List<Account>? listAccount = null)
         {
+            if (listAccount == null)
+                listAccount = AccountDAL.Instance.GetListAccount();
             dtgvAccount.Rows.Clear();
             foreach (Account s in listAccount)
             {
@@ -349,12 +349,12 @@ namespace GUI
                 }
                 else
                 {
-                    row.Cells[3].Value = "trống";
+                    row.Cells[3].Value = "Trống";
                 }
                 dtgvAccount.Rows.Add(row);
             }
-            cbAccountStaff.DataSource = listStaff;
-            cbAccountType.DataSource = listAccountTypes;
+            cbAccountStaff.DataSource = StaffDAL.Instance.GetListStaff();
+            cbAccountType.DataSource = AccountTypeDAL.Instance.GetListAccountType();
         }
 
         private void ClearAccountInputBox()
@@ -394,8 +394,8 @@ namespace GUI
             {
                 try
                 {
-                    pbProductImage.Image = Image.FromFile(productImagePath + v.Product.Image);
                     _tempImageName = productImagePath + v.Product.Image;
+                    pbProductImage.Image = Image.FromFile(_tempImageName);
                 }
                 catch
                 {
@@ -494,8 +494,7 @@ namespace GUI
                 if (ProductDAL.Instance.InsertProduct(name, productCategory.CategoryID, productManufacturer.ManufacturerID, info, price, quantity, newFileName))
                 {
                     MessageBox.Show("Thêm thành công");
-                    listProduct = ProductDAL.Instance.GetListProduct();
-                    LoadProduct();
+                    LoadProduct(ProductDAL.Instance.GetListProduct());
                 }
                 else
                 {
@@ -543,7 +542,6 @@ namespace GUI
                 {
                     MessageBox.Show("Sửa thành công");
                     listDeleteProductImage.Add(oldImage);
-                    listProduct = ProductDAL.Instance.GetListProduct();
                     LoadProduct();
                 }
                 else
@@ -583,13 +581,14 @@ namespace GUI
         }
         private void btnSearchProduct_Click(object sender, EventArgs e)
         {
+            List<Product> listProduct = [];
             if (txtSearchProductID.Text != String.Empty || txtSearchProductName.Text != String.Empty)
                 listProduct = ProductDAL.Instance.SearchProduct(txtSearchProductID.Text, txtSearchProductName.Text);
             else
                 listProduct = ProductDAL.Instance.GetListProduct();
             txtSearchProductID.Text = String.Empty;
             txtSearchProductName.Text = String.Empty;
-            LoadProduct();
+            LoadProduct(listProduct);
         }
         #endregion
 
@@ -674,7 +673,6 @@ namespace GUI
                 if (StaffDAL.Instance.InsertStaff(role.RoleID, name, bornDate, gender, adress, phone, status))
                 {
                     MessageBox.Show("Thêm thành công");
-                    listStaff = StaffDAL.Instance.GetListStaff();
                     LoadStaff();
                     ClearStaffInputBox();
                 }
@@ -690,7 +688,6 @@ namespace GUI
                 if (StaffDAL.Instance.UpdateStaff(role.RoleID, name, bornDate, gender, adress, phone, status, id))
                 {
                     MessageBox.Show("Sửa thành công");
-                    listStaff = StaffDAL.Instance.GetListStaff();
                     LoadStaff();
                     ClearStaffInputBox();
                 }
@@ -704,6 +701,7 @@ namespace GUI
 
         private void btnSearchStaff_Click(object sender, EventArgs e)
         {
+            List<Staff> listStaff = [];
             if (txtSearchStaffID.Text != String.Empty || txtSearchStaffName.Text != String.Empty)
                 listStaff = StaffDAL.Instance.SearchStaff(txtSearchStaffID.Text, txtSearchStaffName.Text);
             else
@@ -711,7 +709,7 @@ namespace GUI
 
             txtSearchStaffID.Text = String.Empty;
             txtSearchStaffName.Text = String.Empty;
-            LoadStaff();
+            LoadStaff(listStaff);
         }
         private void dtgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -757,8 +755,6 @@ namespace GUI
                 InformationGRNDAL.Instance.InsertInformation(gRNID, i.ProductID, i.Quantity, i.Price);
             }
             frm.Close();
-            listGRN = GRNDAL.Instance.GetListGRN();
-            listProduct = ProductDAL.Instance.GetListProduct();
 
             LoadGRN();
             LoadProduct();
@@ -792,19 +788,18 @@ namespace GUI
 
         private void btnSearchGRN_Click(object sender, EventArgs e)
         {
-            listGRN = GRNDAL.Instance.SearchGRN(
+            List<GRN> listGRN = GRNDAL.Instance.SearchGRN(
                 dtpkSearchGRNFrom.Value.ToString("yyyy/MM/dd"),
                 dtpkSearchGRNTo.Value.ToString("yyyy/MM/dd"),
                 txtSearchGRNID.Text);
             txtSearchGRNID.Text = String.Empty;
-            LoadGRN();
+            LoadGRN(listGRN);
         }
 
         private void btnSearchGRNCancel_Click(object sender, EventArgs e)
         {
             SetSearchDate();
             txtSearchGRNID.Text = String.Empty;
-            listGRN = GRNDAL.Instance.GetListGRN();
             LoadGRN();
         }
 
@@ -859,7 +854,6 @@ namespace GUI
                 if (CustomerDAL.Instance.InsertCustomer(phone, name, address))
                 {
                     MessageBox.Show("Thêm thành công");
-                    listCustomer = CustomerDAL.Instance.GetListCustomer();
                     LoadCustomer();
                     ClearCustomer();
                 }
@@ -875,7 +869,6 @@ namespace GUI
                 if (CustomerDAL.Instance.UpdateCustomer(phone, name, address))
                 {
                     MessageBox.Show("Sửa thành công");
-                    listCustomer = CustomerDAL.Instance.GetListCustomer();
                     LoadCustomer();
                     ClearCustomer();
                 }
@@ -890,13 +883,14 @@ namespace GUI
 
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
+            List<Customer> listCustomer = [];
             if (txtSearchNumberPhone.Text != String.Empty || txtSearchName.Text != String.Empty)
                 listCustomer = CustomerDAL.Instance.SearchCustomer(txtSearchNumberPhone.Text, txtSearchName.Text);
             else
                 listCustomer = CustomerDAL.Instance.GetListCustomer();
             txtSearchNumberPhone.Text = String.Empty;
             txtSearchName.Text = String.Empty;
-            LoadCustomer();
+            LoadCustomer(listCustomer);
         }
 
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
@@ -969,9 +963,6 @@ namespace GUI
             }
             frm.Close();
 
-            listCustomer = CustomerDAL.Instance.GetListCustomer();
-            listProduct = ProductDAL.Instance.GetListProduct();
-            listOrder = OrderDAL.Instance.GetListOrder();
             LoadCustomer();
             LoadOrder();
             LoadProduct();
@@ -988,7 +979,6 @@ namespace GUI
                 txtManufacturerName.Text = row.Cells[1].Value.ToString();
             }
         }
-
         private void btnAddManufacturer_Click(object sender, EventArgs e)
         {
             if (btnSaveManufacturer.Enabled)
@@ -1016,7 +1006,6 @@ namespace GUI
                 ClearManufacturerInputBox();
             }
         }
-
         private void btnSaveManufacturer_Click(object sender, EventArgs e)
         {
             if (
@@ -1033,7 +1022,6 @@ namespace GUI
                 if (ManufacturerDAL.Instance.InsertManufacturer(name))
                 {
                     MessageBox.Show("Thêm thành công");
-                    listManufacturer = ManufacturerDAL.Instance.GetListManufacturer();
                     LoadManufacturer();
                     ClearManufacturerInputBox();
                 }
@@ -1054,7 +1042,6 @@ namespace GUI
                 if (ManufacturerDAL.Instance.UpdateManufacturer(id, name))
                 {
                     MessageBox.Show("Sửa thành công");
-                    listManufacturer = ManufacturerDAL.Instance.GetListManufacturer();
                     LoadManufacturer();
                     ClearManufacturerInputBox();
                 }
@@ -1066,16 +1053,16 @@ namespace GUI
 
             }
         }
-
         private void btnSearchManufactuer_Click(object sender, EventArgs e)
         {
+            List<Manufacturer> listManufacturer = [];
             if (txtSearchManuID.Text != String.Empty || txtSearchManuName.Text != String.Empty)
                 listManufacturer = ManufacturerDAL.Instance.SearchManufacturer(txtSearchManuID.Text, txtSearchManuName.Text);
             else
                 listManufacturer = ManufacturerDAL.Instance.GetListManufacturer();
             txtSearchManuID.Text = String.Empty;
             txtSearchManuName.Text = String.Empty;
-            LoadManufacturer();
+            LoadManufacturer(listManufacturer);
         }
         private void btnUpdateManufacturer_Click(object sender, EventArgs e)
         {
@@ -1156,7 +1143,6 @@ namespace GUI
                 if (CategoryDAL.Instance.InsertCategory(name))
                 {
                     MessageBox.Show("Thêm thành công");
-                    listCategory = CategoryDAL.Instance.GetListCategory();
                     LoadCategory();
                     ClearCategoryInputBox();
                 }
@@ -1177,7 +1163,6 @@ namespace GUI
                 if (CategoryDAL.Instance.UpdateCategory(id, name))
                 {
                     MessageBox.Show("Sửa thành công");
-                    listCategory = CategoryDAL.Instance.GetListCategory();
                     LoadCategory();
                     ClearCategoryInputBox();
                 }
@@ -1191,13 +1176,14 @@ namespace GUI
         }
         private void btnSearchCate_Click(object sender, EventArgs e)
         {
+            List<Category> listCategory = [];
             if (txtSearchCateID.Text != String.Empty || txtSearchCateName.Text != String.Empty)
                 listCategory = CategoryDAL.Instance.SearchCategory(txtSearchCateID.Text, txtSearchCateName.Text);
             else
                 listCategory = CategoryDAL.Instance.GetListCategory();
             txtSearchCateID.Text = String.Empty;
             txtSearchCateName.Text = String.Empty;
-            LoadCategory();
+            LoadCategory(listCategory);
         }
 
         private void btnUpdateCate_Click(object sender, EventArgs e)
@@ -1227,7 +1213,6 @@ namespace GUI
         #endregion
 
         #region MANAGE ORDER
-
         private void dtgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dtgvOrder.SelectedCells[0].Value != null)
@@ -1283,9 +1268,8 @@ namespace GUI
             }
             frm.Close();
 
-            listCustomer = CustomerDAL.Instance.GetListCustomer();
-            listProduct = ProductDAL.Instance.GetListProduct();
-            listOrder = OrderDAL.Instance.GetListOrder();
+            MessageBox.Show("Cảm đơn vì đã mua hàng\nHóa đơn được xuất với tên: " + ExportOrder(OrderDAL.Instance.GetHighestOrder().OrderID));
+
             LoadCustomer();
             LoadOrder();
             LoadProduct();
@@ -1296,20 +1280,142 @@ namespace GUI
             if (txtSearchOrderID.Text != String.Empty)
                 searchID = txtSearchOrderID.Text;
 
-            listOrder = OrderDAL.Instance.SearchOrder(
+            List<Order> listOrder = OrderDAL.Instance.SearchOrder(
                 dtpkSearchOrderFrom.Value.ToString("yyyy/MM/dd"),
                 dtpkSearchOrderTo.Value.ToString("yyyy/MM/dd"),
                 searchID);
 
-            LoadOrder();
+            LoadOrder(listOrder);
         }
 
         private void btnSearchOrderCancel_Click(object sender, EventArgs e)
         {
             txtSearchOrderID.Text = String.Empty;
-            listOrder = OrderDAL.Instance.GetListOrder();
             LoadOrder();
             SetSearchDate();
+        }
+        private string ExportOrder(int orderID)
+        {
+            string billPath = global::GUI.Properties.Resources.BillPath;
+            Order order = OrderDAL.Instance.GetOrder(orderID);
+
+            List<OrderDetail> list = OrderDetailDAL.Instance.GetListOrderDetailOrderID(orderID);
+            DataTable dt = new();
+            dt.Columns.Add("id");
+            dt.Columns.Add("name");
+            dt.Columns.Add("quantity");
+            dt.Columns.Add("price");
+
+            foreach (OrderDetail d in list)
+            {
+                dt.Rows.Add(new object[] { d.ProductID, ProductDAL.Instance.GetProduct(d.ProductID).ProductName, d.Quantity, d.Price });
+            }
+
+            PdfDocument document = new PdfDocument();
+            document.PageSettings.Orientation = PdfPageOrientation.Portrait;
+            document.PageSettings.Margins.All = 50;
+
+            //Add a page to the document.
+            PdfPage page = document.Pages.Add();
+
+            //Create PDF graphics for the page.
+            PdfGraphics graphics = page.Graphics;
+
+            PdfFont font14 = new PdfTrueTypeFont(new Font("Times New Roman", 13), true);
+            PdfFont font11 = new PdfTrueTypeFont(new Font("Times New Roman", 11), true);
+            PdfBrush blackBrush = new PdfSolidBrush(new PdfColor(0, 0, 0));
+
+            //Create a text element with the text and font.
+            PdfTextElement element = new PdfTextElement("Cửa hàng A", new PdfTrueTypeFont(new Font("Times New Roman", 18, FontStyle.Bold), true), blackBrush);
+            PdfLayoutResult result = element.Draw(page, new RectangleF(40, 0, page.Graphics.ClientSize.Width / 2, 200));
+
+            element = new PdfTextElement("Chuyên bán các loại linh kiện máy tính\nGiá rẻ lắm mua đi\nKhông mua chém chết giờ", font11, blackBrush);
+            result = element.Draw(page, new RectangleF(3, 30, page.Graphics.ClientSize.Width / 2, 200));
+
+            element = new PdfTextElement("Địa chỉ: 23 hẻm 199, đường 30 tháng 4, phường Hưng Lợi, quận Ninh Kiều, thành phố Cần Thơ\nHỗ trợ: 0123456789", font11, blackBrush);
+            element.Draw(page, new RectangleF(result.Bounds.Right + 3, result.Bounds.Top, page.Graphics.ClientSize.Width / 2, 150));
+
+            //Draw the rectangle on PDF document
+            PdfPen pen = new(PdfBrushes.Gray, 1f);
+            RectangleF bounds = new(0, 0, 495, 75);
+            page.Graphics.DrawRectangle(pen, bounds);
+
+            element = new PdfTextElement("HÓA ĐƠN BÁN HÀNG");
+            element.Font = new PdfTrueTypeFont(new Font("Times New Roman", 18, FontStyle.Bold), true);
+            element.Brush = new PdfSolidBrush(new PdfColor(0, 0, 0));
+            result = element.Draw(page, new RectangleF(result.Bounds.Width / 2 + 20, result.Bounds.Bottom + 15, page.Graphics.ClientSize.Width / 2, 200));
+
+            element = new PdfTextElement("Mã đơn: " + order.OrderID, font14, blackBrush);
+            element.Draw(page, new RectangleF(result.Bounds.Right - 140, result.Bounds.Bottom + 10, page.Graphics.ClientSize.Width / 2, 200));
+
+            element = new PdfTextElement("Khách hàng: " + CustomerDAL.Instance.GetCustomer(order.CustomerNumberPhone).CustomerName, font14, blackBrush);
+            result = element.Draw(page, new RectangleF(0, result.Bounds.Bottom + 10, page.Graphics.ClientSize.Width / 2, 200));
+
+            element = new PdfTextElement("Nhân viên: " + StaffDAL.Instance.GetStaff(order.StaffID).StaffName, font14, blackBrush);
+            element.Draw(page, new RectangleF(result.Bounds.Right + 3, result.Bounds.Bottom + 4, page.Graphics.ClientSize.Width / 2, 200));
+
+            element = new PdfTextElement("SDT: " + order.CustomerNumberPhone, font14, blackBrush);
+            result = element.Draw(page, new RectangleF(0, result.Bounds.Bottom + 3, page.Graphics.ClientSize.Width / 2, 200));
+
+            element = new PdfTextElement("Địa chỉ: " + CustomerDAL.Instance.GetCustomer(order.CustomerNumberPhone).CustomerAddress, font14, blackBrush);
+            result = element.Draw(page, new RectangleF(0, result.Bounds.Bottom + 3, page.Graphics.ClientSize.Width / 2, 200));
+
+            element = new PdfTextElement("Ngày xuất hóa đơn: " + DateTime.Now.ToShortDateString(), font14, blackBrush);
+            element.Draw(page, new RectangleF(result.Bounds.Right + 70, result.Bounds.Bottom + 10, page.Graphics.ClientSize.Width / 2, 200));
+
+            element = new PdfTextElement("Danh sách sản phẩm", font14, blackBrush);
+            result = element.Draw(page, new RectangleF(0, result.Bounds.Bottom + 10, page.Graphics.ClientSize.Width / 2, 200));
+
+            //Creates a PDF grid.
+            PdfGrid grid = new();
+            //Adds the data source.
+            grid.DataSource = dt;
+            //Creates the grid row styles.
+            PdfGridRowStyle pdfGridRowStyle = new();
+            pdfGridRowStyle.Font = font11;
+            PdfGridRow header = grid.Headers[0];
+
+            //Applies the grid row styles
+            grid.Rows.ApplyStyle(pdfGridRowStyle);
+            //Creates the header style.
+            PdfGridCellStyle headerStyle = new();
+            headerStyle.TextBrush = blackBrush;
+            headerStyle.Font = font14;
+
+            //Applies the header style.
+            header.Cells[0].StringFormat = new PdfStringFormat(PdfTextAlignment.Center, PdfVerticalAlignment.Middle);
+            header.Cells[0].Value = "Mã sản phẩm";
+            header.Cells[1].StringFormat = new PdfStringFormat(PdfTextAlignment.Center, PdfVerticalAlignment.Middle);
+            header.Cells[1].Value = "Tên sản phẩm";
+            header.Cells[2].StringFormat = new PdfStringFormat(PdfTextAlignment.Center, PdfVerticalAlignment.Middle);
+            header.Cells[2].Value = "Số lượng";
+            header.Cells[3].StringFormat = new PdfStringFormat(PdfTextAlignment.Center, PdfVerticalAlignment.Middle);
+            header.Cells[3].Value = "Giá bán";
+
+            header.ApplyStyle(headerStyle);
+
+            //Creates the layout format for grid.
+            PdfGridLayoutFormat layoutFormat = new();
+            //Creates layout format settings to allow the table pagination.
+            layoutFormat.Layout = PdfLayoutType.Paginate;
+            //Draws the grid to the PDF page.
+            result = grid.Draw(page, new RectangleF(new PointF(0, result.Bounds.Bottom + 5), new SizeF(graphics.ClientSize.Width, graphics.ClientSize.Height - 100)), layoutFormat);
+
+            element = new PdfTextElement("Tổng tiền thanh toán: " + order.Total.ToString("#,###") + " VNĐ", font14, blackBrush);
+            result = element.Draw(document.Pages[document.Pages.Count - 1], new PointF(10, result.Bounds.Bottom + 20));
+
+            element = new PdfTextElement("Người bán hàng\nChữ ký số (nếu có)", font14, blackBrush);
+            element.Draw(document.Pages[document.Pages.Count - 1], new RectangleF(result.Bounds.Right + 150, result.Bounds.Bottom + 20, page.Graphics.ClientSize.Width / 2, 200));
+
+            element = new PdfTextElement("Người mua hàng\nChữ ký số (nếu có)", font14, blackBrush);
+            element.Draw(document.Pages[document.Pages.Count - 1], new RectangleF(30, result.Bounds.Bottom + 20, page.Graphics.ClientSize.Width / 2, 200));
+
+            string name = orderID.ToString() + "-" +
+                CustomerDAL.Instance.GetCustomer(order.CustomerNumberPhone).CustomerName + "-" +
+                order.CustomerNumberPhone + ".pdf";
+            document.Save(billPath + name);
+
+            return name;
         }
         #endregion
 
@@ -1374,7 +1480,6 @@ namespace GUI
                 {
                     AccountDAL.Instance.InsertAccount(loginName, pass, accType.TypeID, staff.StaffID);
                     MessageBox.Show("Thêm thành công");
-                    listAccount = AccountDAL.Instance.GetListAccount();
                     LoadAccount();
                     ClearAccountInputBox();
                 }
@@ -1388,7 +1493,13 @@ namespace GUI
             {
                 try
                 {
-                    string oldLoginName = dtgvAccount.SelectedRows[0].Cells[0].Value.ToString();
+                    string? oldLoginName = dtgvAccount.SelectedRows[0].Cells[0].Value.ToString();
+                    if (oldLoginName == null)
+                    {
+                        MessageBox.Show("Vui lòng chọn tài khoản");
+                        return;
+                    }
+
                     AccountDAL.Instance.DeleteAccountByStaffID(staff.StaffID);
 
                     if (oldLoginName == loginName)
@@ -1396,12 +1507,10 @@ namespace GUI
                     else
                         AccountDAL.Instance.UpdateAccountID(oldLoginName, loginName, pass, accType.TypeID, staff.StaffID);
 
-                    if (dtgvAccount.SelectedRows[0].Cells[3].Value != "trống")
+                    if (dtgvAccount.SelectedRows[0].Cells[3].Value.ToString() != "Trống")
                         StaffDAL.Instance.SetAccountStaff(((Staff)dtgvAccount.SelectedRows[0].Cells[3].Value).StaffID, "null");
                     StaffDAL.Instance.SetAccountStaff(staff.StaffID, loginName);
 
-                    listAccount = AccountDAL.Instance.GetListAccount();
-                    listStaff = StaffDAL.Instance.GetListStaff();
                     LoadStaff();
                     LoadAccount();
                     ClearAccountInputBox();
@@ -1442,7 +1551,7 @@ namespace GUI
         }
         private void btnSearchAccount_Click(object sender, EventArgs e)
         {
-            //  Staff staff = (Staff)cbSearchAccType.SelectedItem;
+            List<Account> listAccount = [];
             if
 
                 (txtSearchLoginName.Text != String.Empty ||
@@ -1454,12 +1563,9 @@ namespace GUI
                 listAccount = AccountDAL.Instance.GetListAccount();
             txtSearchLoginName.Text = String.Empty;
 
-            LoadAccount();
+            LoadAccount(listAccount);
         }
         #endregion
-
-        #endregion
-
         private void tsbStatistics_Click(object sender, EventArgs e)
         {
             frmStatistic frm = new();
@@ -1476,5 +1582,8 @@ namespace GUI
             if (result == DialogResult.Yes)
                 this.Close();
         }
+        #endregion
+
+        
     }
 }

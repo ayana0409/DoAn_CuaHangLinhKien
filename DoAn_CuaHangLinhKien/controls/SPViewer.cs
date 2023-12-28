@@ -36,9 +36,7 @@ namespace GUI
                 lbQuantity.Text = product.Quantity.ToString();
                 lbPrice.Text = product.Price.ToString() + "đ";
                 lbInfomation.Text = product.Information;
-                string path = 
-                    Application.StartupPath.Split("\\DoAn_CuaHangLinhKien", StringSplitOptions.None)[0] 
-                        + @"\DoAn_CuaHangLinhKien\BLL\product-images\";
+                string path = global::GUI.Properties.Resources.ProductImagePath;;
                 if (product.Image == "Unknown" || product.Image == String.Empty)
                     pbImage.ImageLocation = path + "default-product.png";
                 else
@@ -58,13 +56,6 @@ namespace GUI
 
         private void SPViewer_Click(object sender, EventArgs e)
         {
-            /*
-            var wasClicked = WasClicked;
-            if (wasClicked != null)
-            {
-                WasClicked(this, EventArgs.Empty);
-            }
-            */
             WasClicked?.Invoke(this, e);
             IsSelected = true;
         }

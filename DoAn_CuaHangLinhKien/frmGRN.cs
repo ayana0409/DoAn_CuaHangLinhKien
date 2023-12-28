@@ -22,8 +22,7 @@ namespace GUI
 
         string _tempImageName = "Unknown";
 
-        private string GRNImagePath = Application.StartupPath.Split("\\DoAn_CuaHangLinhKien", 
-            StringSplitOptions.None)[0] + @"\DoAn_CuaHangLinhKien\BLL\GRN-images\";
+        private string GRNImagePath = global::GUI.Properties.Resources.GRNPath;
 
         public frmGRN(GRN? gRN = null)
         {

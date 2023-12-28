@@ -22,13 +22,6 @@ namespace GUI
 
         private bool _isReading = false;
         
-
-        /*
-        public frmDonHang()
-        {
-            InitializeComponent();
-        }
-        */
         public frmOrder(Order? readOder = null, bool isRead = true)
         {
             InitializeComponent();

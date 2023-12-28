@@ -99,7 +99,6 @@
             flowLayoutPanel2 = new FlowLayoutPanel();
             btnAddOrder = new Button();
             btnView = new Button();
-            button10 = new Button();
             tpProduct = new TabPage();
             splitContainer10 = new SplitContainer();
             flpProduct = new FlowLayoutPanel();
@@ -1375,7 +1374,6 @@
             // 
             flowLayoutPanel2.Controls.Add(btnAddOrder);
             flowLayoutPanel2.Controls.Add(btnView);
-            flowLayoutPanel2.Controls.Add(button10);
             flowLayoutPanel2.Dock = DockStyle.Fill;
             flowLayoutPanel2.Location = new Point(3, 23);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -1408,20 +1406,6 @@
             btnView.Text = "Xem chi tiết";
             btnView.UseVisualStyleBackColor = true;
             btnView.Click += btnView_Click;
-            // 
-            // button10
-            // 
-            button10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button10.ForeColor = Color.Brown;
-            button10.Image = Properties.Resources.icons8_export_pdf_32;
-            button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(3, 52);
-            button10.Name = "button10";
-            button10.Size = new Size(121, 43);
-            button10.TabIndex = 3;
-            button10.Text = "Xuất file";
-            button10.TextAlign = ContentAlignment.MiddleRight;
-            button10.UseVisualStyleBackColor = true;
             // 
             // tpProduct
             // 
@@ -4703,7 +4687,6 @@
         private Button btnView;
         private Button btnAddOrder;
         private DateTimePicker dtpkSearchOrderFrom;
-        private Button button10;
         private TabPage tpProduct;
         private TabPage tpManufacturer;
         private TabPage tpCategory;

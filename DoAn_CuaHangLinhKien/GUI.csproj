@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Syncfusion.Pdf.WinForms" Version="24.1.43" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BLL\DTO.csproj" />
     <ProjectReference Include="..\DAL\DAL.csproj" />
   </ItemGroup>
