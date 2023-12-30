@@ -775,7 +775,7 @@ namespace GUI
 
         private void btnDetailAndUpdateGRN_Click(object sender, EventArgs e)
         {
-            if (dtgvGRN.SelectedCells[0].Value != null)
+            if (dtgvGRN.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dtgvGRN.SelectedRows[0];
                 GRN gRN = GRNDAL.Instance.GetGRN(System.Convert.ToInt32(row.Cells[0].Value));
@@ -1052,6 +1052,7 @@ namespace GUI
                 }
 
             }
+            LoadProduct();
         }
         private void btnSearchManufactuer_Click(object sender, EventArgs e)
         {
@@ -1173,6 +1174,7 @@ namespace GUI
                 }
 
             }
+            LoadProduct();
         }
         private void btnSearchCate_Click(object sender, EventArgs e)
         {
@@ -1229,8 +1231,9 @@ namespace GUI
         private void btnView_Click(object sender, EventArgs e)
         {
             Order selectedOder = new();
-            if (dtgvOrder.SelectedCells[0].Value != null)
-                selectedOder = OrderDAL.Instance.GetOrder((int)dtgvOrder.SelectedRows[0].Cells[0].Value);
+            if (dtgvOrder.SelectedRows.Count > 0)
+                if (dtgvOrder.SelectedRows[0].Cells[0].Value != null)
+                    selectedOder = OrderDAL.Instance.GetOrder((int)dtgvOrder.SelectedRows[0].Cells[0].Value);
             frmOrder frm = new(selectedOder);
             frm.ShowDialog();
         }
@@ -1580,10 +1583,19 @@ namespace GUI
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
-                this.Close();
+                Application.Exit();
         }
         #endregion
 
-        
+        private void frmManage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Bạn có muốn đăng xuất khỏi hệ thống?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (result != DialogResult.Yes)
+                e.Cancel = true;
+        }
     }
 }

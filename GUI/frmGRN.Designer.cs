@@ -33,6 +33,9 @@
             splitContainer2 = new SplitContainer();
             groupBox1 = new GroupBox();
             tableLayoutPanel1 = new TableLayoutPanel();
+            flowLayoutPanel3 = new FlowLayoutPanel();
+            btnAddProduct = new Button();
+            btnDeleteProduct = new Button();
             txtGRNUnit = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -44,9 +47,6 @@
             btnDeleteGRNImage = new Button();
             label4 = new Label();
             txtTotal = new TextBox();
-            flowLayoutPanel3 = new FlowLayoutPanel();
-            btnAddProduct = new Button();
-            btnDeleteProduct = new Button();
             groupBox2 = new GroupBox();
             splitContainer3 = new SplitContainer();
             dtgvListInsertProduct = new DataGridView();
@@ -70,8 +70,8 @@
             splitContainer2.SuspendLayout();
             groupBox1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel3.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer3).BeginInit();
             splitContainer3.Panel1.SuspendLayout();
@@ -97,8 +97,8 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(885, 406);
-            splitContainer1.SplitterDistance = 439;
+            splitContainer1.Size = new Size(944, 601);
+            splitContainer1.SplitterDistance = 498;
             splitContainer1.TabIndex = 0;
             // 
             // pbGRNImage
@@ -107,7 +107,7 @@
             pbGRNImage.Location = new Point(0, 0);
             pbGRNImage.Margin = new Padding(3, 2, 3, 2);
             pbGRNImage.Name = "pbGRNImage";
-            pbGRNImage.Size = new Size(439, 406);
+            pbGRNImage.Size = new Size(498, 601);
             pbGRNImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbGRNImage.TabIndex = 0;
             pbGRNImage.TabStop = false;
@@ -128,8 +128,8 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(groupBox2);
-            splitContainer2.Size = new Size(442, 406);
-            splitContainer2.SplitterDistance = 180;
+            splitContainer2.Size = new Size(442, 601);
+            splitContainer2.SplitterDistance = 267;
             splitContainer2.SplitterWidth = 3;
             splitContainer2.TabIndex = 0;
             // 
@@ -142,7 +142,7 @@
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(442, 180);
+            groupBox1.Size = new Size(442, 267);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin phiếu nhập ";
@@ -152,6 +152,7 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.94118F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77.05882F));
+            tableLayoutPanel1.Controls.Add(flowLayoutPanel3, 1, 4);
             tableLayoutPanel1.Controls.Add(txtGRNUnit, 1, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 1);
@@ -161,26 +162,61 @@
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 0, 4);
             tableLayoutPanel1.Controls.Add(label4, 0, 3);
             tableLayoutPanel1.Controls.Add(txtTotal, 1, 3);
-            tableLayoutPanel1.Controls.Add(flowLayoutPanel3, 1, 4);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             tableLayoutPanel1.Location = new Point(3, 20);
             tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 53F));
-            tableLayoutPanel1.Size = new Size(436, 158);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 11F));
+            tableLayoutPanel1.Size = new Size(436, 245);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // flowLayoutPanel3
+            // 
+            flowLayoutPanel3.Anchor = AnchorStyles.Top;
+            flowLayoutPanel3.Controls.Add(btnAddProduct);
+            flowLayoutPanel3.Controls.Add(btnDeleteProduct);
+            flowLayoutPanel3.Location = new Point(106, 143);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Size = new Size(323, 54);
+            flowLayoutPanel3.TabIndex = 2;
+            // 
+            // btnAddProduct
+            // 
+            btnAddProduct.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAddProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnAddProduct.ForeColor = Color.Brown;
+            btnAddProduct.Location = new Point(3, 3);
+            btnAddProduct.Name = "btnAddProduct";
+            btnAddProduct.Size = new Size(148, 43);
+            btnAddProduct.TabIndex = 7;
+            btnAddProduct.Text = "Thêm SP";
+            btnAddProduct.UseVisualStyleBackColor = true;
+            btnAddProduct.Click += btnAddProduct_Click;
+            // 
+            // btnDeleteProduct
+            // 
+            btnDeleteProduct.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnDeleteProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnDeleteProduct.ForeColor = Color.Brown;
+            btnDeleteProduct.Location = new Point(157, 3);
+            btnDeleteProduct.Name = "btnDeleteProduct";
+            btnDeleteProduct.Size = new Size(148, 43);
+            btnDeleteProduct.TabIndex = 7;
+            btnDeleteProduct.Text = "Xóa SP";
+            btnDeleteProduct.UseVisualStyleBackColor = true;
+            btnDeleteProduct.Click += btnDeleteProduct_Click;
             // 
             // txtGRNUnit
             // 
             txtGRNUnit.BackColor = Color.FromArgb(255, 253, 239);
             txtGRNUnit.Dock = DockStyle.Fill;
-            txtGRNUnit.Location = new Point(103, 25);
+            txtGRNUnit.Location = new Point(103, 36);
             txtGRNUnit.Margin = new Padding(3, 2, 3, 2);
             txtGRNUnit.Name = "txtGRNUnit";
             txtGRNUnit.Size = new Size(330, 27);
@@ -194,7 +230,7 @@
             label1.ForeColor = Color.Brown;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(94, 23);
+            label1.Size = new Size(94, 34);
             label1.TabIndex = 0;
             label1.Text = "Mã phiếu nhập:";
             label1.TextAlign = ContentAlignment.MiddleLeft;
@@ -205,9 +241,9 @@
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label2.ForeColor = Color.Brown;
-            label2.Location = new Point(3, 23);
+            label2.Location = new Point(3, 34);
             label2.Name = "label2";
-            label2.Size = new Size(94, 23);
+            label2.Size = new Size(94, 32);
             label2.TabIndex = 1;
             label2.Text = "Đơn vị nhập:";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -218,9 +254,9 @@
             label3.Dock = DockStyle.Fill;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label3.ForeColor = Color.Brown;
-            label3.Location = new Point(3, 46);
+            label3.Location = new Point(3, 66);
             label3.Name = "label3";
-            label3.Size = new Size(94, 23);
+            label3.Size = new Size(94, 35);
             label3.TabIndex = 2;
             label3.Text = "Ngày nhập:";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -239,7 +275,7 @@
             // dtpkGRNDate
             // 
             dtpkGRNDate.Dock = DockStyle.Fill;
-            dtpkGRNDate.Location = new Point(103, 49);
+            dtpkGRNDate.Location = new Point(103, 69);
             dtpkGRNDate.Name = "dtpkGRNDate";
             dtpkGRNDate.Size = new Size(330, 27);
             dtpkGRNDate.TabIndex = 5;
@@ -249,9 +285,9 @@
             flowLayoutPanel1.Controls.Add(btnAddGRNImage);
             flowLayoutPanel1.Controls.Add(btnDeleteGRNImage);
             flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(3, 101);
+            flowLayoutPanel1.Location = new Point(3, 143);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(94, 54);
+            flowLayoutPanel1.Size = new Size(94, 99);
             flowLayoutPanel1.TabIndex = 6;
             // 
             // btnAddGRNImage
@@ -261,7 +297,7 @@
             btnAddGRNImage.ForeColor = Color.Brown;
             btnAddGRNImage.Location = new Point(3, 3);
             btnAddGRNImage.Name = "btnAddGRNImage";
-            btnAddGRNImage.Size = new Size(90, 26);
+            btnAddGRNImage.Size = new Size(90, 43);
             btnAddGRNImage.TabIndex = 0;
             btnAddGRNImage.Text = "Chọn hình";
             btnAddGRNImage.UseVisualStyleBackColor = true;
@@ -272,9 +308,9 @@
             btnDeleteGRNImage.Anchor = AnchorStyles.None;
             btnDeleteGRNImage.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnDeleteGRNImage.ForeColor = Color.Brown;
-            btnDeleteGRNImage.Location = new Point(3, 35);
+            btnDeleteGRNImage.Location = new Point(3, 52);
             btnDeleteGRNImage.Name = "btnDeleteGRNImage";
-            btnDeleteGRNImage.Size = new Size(90, 26);
+            btnDeleteGRNImage.Size = new Size(90, 43);
             btnDeleteGRNImage.TabIndex = 1;
             btnDeleteGRNImage.Text = "Xóa hình";
             btnDeleteGRNImage.UseVisualStyleBackColor = true;
@@ -286,9 +322,9 @@
             label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label4.ForeColor = Color.Brown;
-            label4.Location = new Point(3, 69);
+            label4.Location = new Point(3, 101);
             label4.Name = "label4";
-            label4.Size = new Size(94, 29);
+            label4.Size = new Size(94, 39);
             label4.TabIndex = 2;
             label4.Text = "Tổng:";
             label4.TextAlign = ContentAlignment.MiddleLeft;
@@ -299,46 +335,10 @@
             txtTotal.Dock = DockStyle.Fill;
             txtTotal.Enabled = false;
             txtTotal.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtTotal.Location = new Point(103, 72);
+            txtTotal.Location = new Point(103, 104);
             txtTotal.Name = "txtTotal";
             txtTotal.Size = new Size(330, 33);
             txtTotal.TabIndex = 7;
-            // 
-            // flowLayoutPanel3
-            // 
-            flowLayoutPanel3.Anchor = AnchorStyles.Top;
-            flowLayoutPanel3.Controls.Add(btnAddProduct);
-            flowLayoutPanel3.Controls.Add(btnDeleteProduct);
-            flowLayoutPanel3.Location = new Point(106, 101);
-            flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(323, 54);
-            flowLayoutPanel3.TabIndex = 2;
-            // 
-            // btnAddProduct
-            // 
-            btnAddProduct.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnAddProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnAddProduct.ForeColor = Color.Brown;
-            btnAddProduct.Location = new Point(3, 3);
-            btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(148, 26);
-            btnAddProduct.TabIndex = 7;
-            btnAddProduct.Text = "Thêm SP";
-            btnAddProduct.UseVisualStyleBackColor = true;
-            btnAddProduct.Click += btnAddProduct_Click;
-            // 
-            // btnDeleteProduct
-            // 
-            btnDeleteProduct.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnDeleteProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnDeleteProduct.ForeColor = Color.Brown;
-            btnDeleteProduct.Location = new Point(157, 3);
-            btnDeleteProduct.Name = "btnDeleteProduct";
-            btnDeleteProduct.Size = new Size(148, 26);
-            btnDeleteProduct.TabIndex = 7;
-            btnDeleteProduct.Text = "Xóa SP";
-            btnDeleteProduct.UseVisualStyleBackColor = true;
-            btnDeleteProduct.Click += btnDeleteProduct_Click;
             // 
             // groupBox2
             // 
@@ -347,7 +347,7 @@
             groupBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox2.Location = new Point(0, 0);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(442, 223);
+            groupBox2.Size = new Size(442, 331);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh sách sản phẩm đã nhập ";
@@ -368,8 +368,8 @@
             // splitContainer3.Panel2
             // 
             splitContainer3.Panel2.Controls.Add(flowLayoutPanel2);
-            splitContainer3.Size = new Size(436, 199);
-            splitContainer3.SplitterDistance = 127;
+            splitContainer3.Size = new Size(436, 307);
+            splitContainer3.SplitterDistance = 222;
             splitContainer3.TabIndex = 3;
             // 
             // dtgvListInsertProduct
@@ -384,7 +384,7 @@
             dtgvListInsertProduct.Name = "dtgvListInsertProduct";
             dtgvListInsertProduct.ReadOnly = true;
             dtgvListInsertProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvListInsertProduct.Size = new Size(436, 127);
+            dtgvListInsertProduct.Size = new Size(436, 222);
             dtgvListInsertProduct.TabIndex = 0;
             dtgvListInsertProduct.CellClick += dtgvListInsertProduct_CellClick;
             // 
@@ -420,7 +420,7 @@
             flowLayoutPanel2.Dock = DockStyle.Fill;
             flowLayoutPanel2.Location = new Point(0, 0);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(436, 68);
+            flowLayoutPanel2.Size = new Size(436, 81);
             flowLayoutPanel2.TabIndex = 0;
             // 
             // cbCommit
@@ -443,7 +443,7 @@
             btnCancel.ForeColor = Color.Brown;
             btnCancel.Location = new Point(3, 33);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(149, 26);
+            btnCancel.Size = new Size(149, 43);
             btnCancel.TabIndex = 2;
             btnCancel.Text = "Hủy thao tác ";
             btnCancel.UseVisualStyleBackColor = true;
@@ -456,7 +456,7 @@
             btnInsertProduct.ForeColor = Color.Brown;
             btnInsertProduct.Location = new Point(158, 33);
             btnInsertProduct.Name = "btnInsertProduct";
-            btnInsertProduct.Size = new Size(149, 26);
+            btnInsertProduct.Size = new Size(149, 43);
             btnInsertProduct.TabIndex = 1;
             btnInsertProduct.Text = "Nhập hàng ";
             btnInsertProduct.UseVisualStyleBackColor = true;
@@ -471,7 +471,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
-            ClientSize = new Size(885, 406);
+            ClientSize = new Size(944, 601);
             Controls.Add(splitContainer1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmGRN";
@@ -490,8 +490,8 @@
             groupBox1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel3.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             splitContainer3.Panel1.ResumeLayout(false);
             splitContainer3.Panel2.ResumeLayout(false);

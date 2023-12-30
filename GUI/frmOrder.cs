@@ -237,13 +237,21 @@ namespace GUI
                 MessageBox.Show("Vui lòng chọn ít nhất 1 sản phẩm");
                 return;
             }
+            DialogResult result = MessageBox.Show(
+                "Bạn có muốn thanh toán và in hóa đơn?",
+                "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
 
             order.Date = dtpkDate.Value;
             order.CustomerNumberPhone = txtPhone.Text;
             order.Status = "Đã thanh toán";
             order.Total = System.Convert.ToDouble(txtTotal.Text);
 
-            
             if (!CheckCustomer(txtPhone.Text))
             {
                 CustomerDAL.Instance.InsertCustomer(txtPhone.Text, txtCustomerName.Text, rtbCustomerAdress.Text);

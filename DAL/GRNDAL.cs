@@ -41,7 +41,10 @@ namespace DAL
             string query = "select * from PhieuNhap where MaPhieuNhap = " + id;
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-            return new GRN(data.Rows[0]);
+            if (data.Rows.Count > 0)
+                return new GRN(data.Rows[0]);
+            else
+                return new GRN();
         }
 
         public GRN GetHighestGRN()

@@ -4413,6 +4413,7 @@
             Name = "frmManage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản lý cửa hàng";
+            FormClosing += frmManage_FormClosing;
             Load += frmManage_Load;
             TabControl.ResumeLayout(false);
             tpCustomer.ResumeLayout(false);
