@@ -138,19 +138,10 @@ namespace GUI
         }
         private void CheckImageButton()
         {
-            if (btnSaveProduct.Enabled)
-            {
-                btnSelectProductImage.Enabled = true;
-                if (pbProductImage.Image == null)
-                    btnDeleteProductImage.Enabled = false;
-                else
-                    btnDeleteProductImage.Enabled = true;
-            }
-            else
-            {
-                btnSelectProductImage.Enabled = false;
+            if (pbProductImage.Image == null)
                 btnDeleteProductImage.Enabled = false;
-            }
+            else
+                btnDeleteProductImage.Enabled = true;
         }
 
         #endregion
@@ -399,7 +390,6 @@ namespace GUI
                     {
                         pbProductImage.Image = Image.FromStream(stream);
                     };
-                    //pbProductImage.Image = Image.FromFile(_tempImageName);
                 }
                 catch
                 {
@@ -444,146 +434,107 @@ namespace GUI
         }
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            if (btnSaveProduct.Enabled)
-            {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    );
-                if (result == DialogResult.Yes)
-                {
-                    ClearProductInputBox();
-                    btnUpdateProduct.Enabled = true;
-                    btnSaveProduct.Enabled = false;
-                    CheckImageButton();
-                    return;
-                }
-            }
-            else
-            {
-                btnAddProduct.Enabled = true;
-                btnUpdateProduct.Enabled = false;
-                btnSaveProduct.Enabled = true;
-
-                CheckImageButton();
-                ClearProductInputBox();
-            }
-        }
-        private void btnSaveProduct_Click(object sender, EventArgs e)
-        {
-
-            if (btnAddProduct.Enabled)
-            {
-                if (txtProductName.Text == String.Empty ||
+            if (txtProductName.Text == String.Empty ||
                     txtProductPrice.Text == String.Empty ||
                     cbProductCategory.SelectedItem == null ||
                     cbProductManufacturer.SelectedItem == null ||
                     _tempImageName == null)
-                {
-                    MessageBox.Show("Vui lòng nhập đủ thông tin!");
-                    return;
-                }
-
-                string name = txtProductName.Text;
-                string info = rtbProductInfomation.Text;
-                double price = Double.Parse(txtProductPrice.Text);
-                int quantity = (int)nmudQuantity.Value;
-
-                string fileName = _tempImageName;
-                string newFileName = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
-                if (fileName != null)
-                    File.Copy(fileName, productImagePath + newFileName);
-                Category productCategory = (Category)cbProductCategory.SelectedItem;
-                Manufacturer productManufacturer = (Manufacturer)cbProductManufacturer.SelectedItem;
-
-                if (ProductDAL.Instance.InsertProduct(name, productCategory.CategoryID, productManufacturer.ManufacturerID, info, price, quantity, newFileName))
-                {
-                    MessageBox.Show("Thêm thành công");
-                    LoadProduct(ProductDAL.Instance.GetListProduct());
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi rồi");
-                }
-            }
-            else if (btnUpdateProduct.Enabled)
             {
-                if (txtProductName.Text == String.Empty ||
-                    txtProductPrice.Text == String.Empty ||
-                    cbProductCategory.SelectedItem == null ||
-                    cbProductManufacturer.SelectedItem == null ||
-                    _tempImageName == String.Empty)
-                {
-                    MessageBox.Show("Vui lòng nhập đủ thông tin!");
-                    return;
-                }
-                int id = System.Convert.ToInt32(txtProductID.Text);
-                string name = txtProductName.Text;
-                string info = rtbProductInfomation.Text;
-                double price = Double.Parse(txtProductPrice.Text);
-                int quantity = (int)nmudQuantity.Value;
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                return;
+            }
 
-                string oldImage = ProductDAL.Instance.GetProduct(id).Image;
+            DialogResult result = MessageBox.Show(
+                "Sau khi thêm sẽ không thể xóa, bạn chắc chứ?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (result == DialogResult.No )
+            {
+                return;
+            }
 
-                string fileName;
-                if (_tempImageName != null)
-                    fileName = _tempImageName;
-                else
-                    fileName = "Unknown";
+            string name = txtProductName.Text;
+            string info = rtbProductInfomation.Text;
+            double price = Double.Parse(txtProductPrice.Text);
+            int quantity = (int)nmudQuantity.Value;
 
-                string newFileName;
-                if (fileName != "Unknown")
-                {
-                    newFileName = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
-                    File.Copy(fileName, productImagePath + newFileName);
-                }
-                else
-                    newFileName = fileName;
+            string fileName = _tempImageName;
+            string newFileName = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
+            if (fileName != null)
+                File.Copy(fileName, productImagePath + newFileName);
+            Category productCategory = (Category)cbProductCategory.SelectedItem;
+            Manufacturer productManufacturer = (Manufacturer)cbProductManufacturer.SelectedItem;
 
-                Category productCategory = (Category)cbProductCategory.SelectedItem;
-                Manufacturer productManufacturer = (Manufacturer)cbProductManufacturer.SelectedItem;
-
-                if (ProductDAL.Instance.UpdateProduct(id, name, productCategory.CategoryID, productManufacturer.ManufacturerID, info, price, quantity, newFileName))
-                {
-                    MessageBox.Show("Sửa thành công");
-                    listDeleteProductImage.Add(oldImage);
-                    LoadProduct();
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi rồi");
-                }
+            if (ProductDAL.Instance.InsertProduct(name, productCategory.CategoryID, productManufacturer.ManufacturerID, info, price, quantity, newFileName))
+            {
+                MessageBox.Show("Thêm thành công");
+                LoadProduct(ProductDAL.Instance.GetListProduct());
+                ClearProductInputBox();
+            }
+            else
+            {
+                MessageBox.Show("Lỗi rồi");
             }
         }
         private void btnUpdateProduct_Click(object sender, EventArgs e)
         {
-            if (btnSaveProduct.Enabled)
+            if (txtProductName.Text == String.Empty ||
+                    txtProductPrice.Text == String.Empty ||
+                    cbProductCategory.SelectedItem == null ||
+                    cbProductManufacturer.SelectedItem == null ||
+                    _tempImageName == String.Empty)
             {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    );
-                if (result == DialogResult.Yes)
-                {
-                    ClearProductInputBox();
-                    btnAddProduct.Enabled = true;
-                    btnSaveProduct.Enabled = false;
-                    CheckImageButton();
-                    return;
-                }
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Bạn có muốn sửa thông tin của sản phẩm?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            int id = System.Convert.ToInt32(txtProductID.Text);
+            string name = txtProductName.Text;
+            string info = rtbProductInfomation.Text;
+            double price = Double.Parse(txtProductPrice.Text);
+            int quantity = (int)nmudQuantity.Value;
+
+            string oldImage = ProductDAL.Instance.GetProduct(id).Image;
+
+            string fileName;
+            if (_tempImageName != null)
+                fileName = _tempImageName;
+            else
+                fileName = "Unknown";
+
+            string newFileName;
+            if (fileName != "Unknown")
+            {
+                newFileName = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
+                File.Copy(fileName, productImagePath + newFileName);
+            }
+            else
+                newFileName = fileName;
+
+            Category productCategory = (Category)cbProductCategory.SelectedItem;
+            Manufacturer productManufacturer = (Manufacturer)cbProductManufacturer.SelectedItem;
+
+            if (ProductDAL.Instance.UpdateProduct(id, name, productCategory.CategoryID, productManufacturer.ManufacturerID, info, price, quantity, newFileName))
+            {
+                MessageBox.Show("Sửa thành công");
+                listDeleteProductImage.Add(oldImage);
+                ClearProductInputBox();
+                LoadProduct();
             }
             else
             {
-                btnAddProduct.Enabled = false;
-                btnUpdateProduct.Enabled = true;
-                btnSaveProduct.Enabled = true;
-
-                CheckImageButton();
-                ClearProductInputBox();
+                MessageBox.Show("Lỗi rồi");
             }
         }
         private void btnSearchProduct_Click(object sender, EventArgs e)

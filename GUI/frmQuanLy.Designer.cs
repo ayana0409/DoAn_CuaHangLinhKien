@@ -136,7 +136,6 @@
             flowLayoutPanel3 = new FlowLayoutPanel();
             btnAddProduct = new Button();
             btnUpdateProduct = new Button();
-            btnSaveProduct = new Button();
             tpManufacturer = new TabPage();
             splitContainer14 = new SplitContainer();
             dtgvManufacturer = new DataGridView();
@@ -1854,7 +1853,6 @@
             // 
             flowLayoutPanel3.Controls.Add(btnAddProduct);
             flowLayoutPanel3.Controls.Add(btnUpdateProduct);
-            flowLayoutPanel3.Controls.Add(btnSaveProduct);
             flowLayoutPanel3.Dock = DockStyle.Fill;
             flowLayoutPanel3.Location = new Point(3, 23);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -1890,22 +1888,6 @@
             btnUpdateProduct.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateProduct.UseVisualStyleBackColor = true;
             btnUpdateProduct.Click += btnUpdateProduct_Click;
-            // 
-            // btnSaveProduct
-            // 
-            btnSaveProduct.Enabled = false;
-            btnSaveProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnSaveProduct.ForeColor = Color.Brown;
-            btnSaveProduct.Image = Properties.Resources.icons8_save_32;
-            btnSaveProduct.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSaveProduct.Location = new Point(201, 3);
-            btnSaveProduct.Name = "btnSaveProduct";
-            btnSaveProduct.Size = new Size(93, 43);
-            btnSaveProduct.TabIndex = 3;
-            btnSaveProduct.Text = "Lưu";
-            btnSaveProduct.TextAlign = ContentAlignment.MiddleRight;
-            btnSaveProduct.UseVisualStyleBackColor = true;
-            btnSaveProduct.Click += btnSaveProduct_Click;
             // 
             // tpManufacturer
             // 
@@ -4684,7 +4666,6 @@
         private FlowLayoutPanel flowLayoutPanel3;
         private Button btnAddProduct;
         private Button btnUpdateProduct;
-        private Button btnSaveProduct;
         private DataGridView dataGridView3;
         private SplitContainer splitContainer8;
         private GroupBox groupBox7;
