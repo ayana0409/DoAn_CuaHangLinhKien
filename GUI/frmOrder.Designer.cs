@@ -46,8 +46,8 @@
             txtOrderID = new TextBox();
             label9 = new Label();
             splitContainer3 = new SplitContainer();
-            btnCancel = new Button();
             btnPayment = new Button();
+            btnCancel = new Button();
             btnDeleteProduct = new Button();
             btnAddProduct = new Button();
             txtTotal = new TextBox();
@@ -341,11 +341,11 @@
             // 
             // splitContainer3.Panel1
             // 
-            splitContainer3.Panel1.Controls.Add(btnCancel);
             splitContainer3.Panel1.Controls.Add(btnPayment);
             // 
             // splitContainer3.Panel2
             // 
+            splitContainer3.Panel2.Controls.Add(btnCancel);
             splitContainer3.Panel2.Controls.Add(btnDeleteProduct);
             splitContainer3.Panel2.Controls.Add(btnAddProduct);
             splitContainer3.Size = new Size(371, 108);
@@ -353,43 +353,44 @@
             splitContainer3.SplitterWidth = 3;
             splitContainer3.TabIndex = 12;
             // 
+            // btnPayment
+            // 
+            btnPayment.BackColor = Color.FromArgb(194, 231, 255);
+            btnPayment.Dock = DockStyle.Fill;
+            btnPayment.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnPayment.ForeColor = Color.Brown;
+            btnPayment.Location = new Point(0, 0);
+            btnPayment.Margin = new Padding(3, 2, 3, 2);
+            btnPayment.Name = "btnPayment";
+            btnPayment.Size = new Size(371, 51);
+            btnPayment.TabIndex = 0;
+            btnPayment.Text = "Thanh toán và xuất hóa đơn";
+            btnPayment.UseVisualStyleBackColor = false;
+            btnPayment.Click += btnPayment_Click;
+            // 
             // btnCancel
             // 
             btnCancel.BackColor = Color.Azure;
             btnCancel.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnCancel.ForeColor = Color.Brown;
-            btnCancel.Location = new Point(226, 2);
+            btnCancel.Location = new Point(258, 2);
             btnCancel.Margin = new Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(121, 43);
+            btnCancel.Size = new Size(110, 43);
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Hủy đơn";
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
-            // 
-            // btnPayment
-            // 
-            btnPayment.BackColor = Color.FromArgb(194, 231, 255);
-            btnPayment.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnPayment.ForeColor = Color.Brown;
-            btnPayment.Location = new Point(3, 2);
-            btnPayment.Margin = new Padding(3, 2, 3, 2);
-            btnPayment.Name = "btnPayment";
-            btnPayment.Size = new Size(217, 43);
-            btnPayment.TabIndex = 0;
-            btnPayment.Text = "Thanh toán và xuất hóa đơn";
-            btnPayment.UseVisualStyleBackColor = false;
-            btnPayment.Click += btnPayment_Click;
             // 
             // btnDeleteProduct
             // 
             btnDeleteProduct.BackColor = Color.Azure;
             btnDeleteProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnDeleteProduct.ForeColor = Color.Brown;
-            btnDeleteProduct.Location = new Point(226, 2);
+            btnDeleteProduct.Location = new Point(133, 2);
             btnDeleteProduct.Margin = new Padding(3, 2, 3, 2);
             btnDeleteProduct.Name = "btnDeleteProduct";
-            btnDeleteProduct.Size = new Size(121, 43);
+            btnDeleteProduct.Size = new Size(110, 43);
             btnDeleteProduct.TabIndex = 3;
             btnDeleteProduct.Text = "Xóa SP";
             btnDeleteProduct.UseVisualStyleBackColor = false;
@@ -400,10 +401,10 @@
             btnAddProduct.BackColor = Color.Azure;
             btnAddProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnAddProduct.ForeColor = Color.Brown;
-            btnAddProduct.Location = new Point(99, 2);
+            btnAddProduct.Location = new Point(3, 2);
             btnAddProduct.Margin = new Padding(3, 2, 3, 2);
             btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(121, 43);
+            btnAddProduct.Size = new Size(110, 43);
             btnAddProduct.TabIndex = 2;
             btnAddProduct.Text = "Thêm SP";
             btnAddProduct.UseVisualStyleBackColor = false;

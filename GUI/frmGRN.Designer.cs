@@ -56,8 +56,8 @@
             Column4 = new DataGridViewTextBoxColumn();
             flowLayoutPanel2 = new FlowLayoutPanel();
             cbCommit = new CheckBox();
-            btnCancel = new Button();
             btnInsertProduct = new Button();
+            btnCancel = new Button();
             ofdSelectImage = new OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -415,8 +415,8 @@
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.Controls.Add(cbCommit);
-            flowLayoutPanel2.Controls.Add(btnCancel);
             flowLayoutPanel2.Controls.Add(btnInsertProduct);
+            flowLayoutPanel2.Controls.Add(btnCancel);
             flowLayoutPanel2.Dock = DockStyle.Fill;
             flowLayoutPanel2.Location = new Point(0, 0);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -436,31 +436,31 @@
             cbCommit.UseVisualStyleBackColor = true;
             cbCommit.CheckedChanged += cbCommit_CheckedChanged;
             // 
-            // btnCancel
-            // 
-            btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnCancel.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnCancel.ForeColor = Color.Brown;
-            btnCancel.Location = new Point(3, 33);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(149, 43);
-            btnCancel.TabIndex = 2;
-            btnCancel.Text = "Hủy thao tác ";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
-            // 
             // btnInsertProduct
             // 
             btnInsertProduct.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnInsertProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnInsertProduct.ForeColor = Color.Brown;
-            btnInsertProduct.Location = new Point(158, 33);
+            btnInsertProduct.Location = new Point(3, 33);
             btnInsertProduct.Name = "btnInsertProduct";
             btnInsertProduct.Size = new Size(149, 43);
             btnInsertProduct.TabIndex = 1;
             btnInsertProduct.Text = "Nhập hàng ";
             btnInsertProduct.UseVisualStyleBackColor = true;
             btnInsertProduct.Click += btnInsertProduct_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnCancel.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnCancel.ForeColor = Color.Brown;
+            btnCancel.Location = new Point(158, 33);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(149, 43);
+            btnCancel.TabIndex = 2;
+            btnCancel.Text = "Hủy thao tác ";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // ofdSelectImage
             // 

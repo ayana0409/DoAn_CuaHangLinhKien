@@ -395,7 +395,11 @@ namespace GUI
                 try
                 {
                     _tempImageName = productImagePath + v.Product.Image;
-                    pbProductImage.Image = Image.FromFile(_tempImageName);
+                    using (Stream stream = File.OpenRead(_tempImageName))
+                    {
+                        pbProductImage.Image = Image.FromStream(stream);
+                    };
+                    //pbProductImage.Image = Image.FromFile(_tempImageName);
                 }
                 catch
                 {
@@ -415,7 +419,10 @@ namespace GUI
             _tempImageName = fileName;
             try
             {
-                pbProductImage.Image = Image.FromFile(fileName);
+                using (Stream stream = File.OpenRead(_tempImageName))
+                {
+                    pbProductImage.Image = Image.FromStream(stream);
+                };
             }
             catch
             {
@@ -1577,13 +1584,7 @@ namespace GUI
 
         private void tsbLogout_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-                "Bạn có muốn đăng xuất khỏi hệ thống?",
-                "Xác nhận",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-                Application.Exit();
+            this.Close();
         }
         #endregion
 
@@ -1594,6 +1595,11 @@ namespace GUI
                 "Xác nhận",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                pbProductImage.Image = null;
+                ofdSelectProductImage.Dispose();
+            }
             if (result != DialogResult.Yes)
                 e.Cancel = true;
         }

@@ -147,6 +147,7 @@
             Margin = new Padding(5, 3, 5, 3);
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosed += frmLogin_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

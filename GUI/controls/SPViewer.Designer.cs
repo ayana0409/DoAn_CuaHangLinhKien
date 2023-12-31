@@ -48,7 +48,7 @@
             pbImage.ImageLocation = "";
             pbImage.Location = new Point(0, 0);
             pbImage.Name = "pbImage";
-            pbImage.Size = new Size(173, 117);
+            pbImage.Size = new Size(194, 135);
             pbImage.SizeMode = PictureBoxSizeMode.Zoom;
             pbImage.TabIndex = 0;
             pbImage.TabStop = false;
@@ -57,7 +57,8 @@
             // lbID
             // 
             lbID.AutoSize = true;
-            lbID.Location = new Point(3, 123);
+            lbID.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbID.Location = new Point(3, 141);
             lbID.Name = "lbID";
             lbID.Size = new Size(17, 15);
             lbID.TabIndex = 1;
@@ -68,9 +69,9 @@
             // 
             lbName.AllowDrop = true;
             lbName.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbName.Location = new Point(3, 139);
+            lbName.Location = new Point(3, 166);
             lbName.Name = "lbName";
-            lbName.Size = new Size(173, 20);
+            lbName.Size = new Size(194, 52);
             lbName.TabIndex = 2;
             lbName.Text = "Name";
             lbName.Click += SPViewer_Click;
@@ -78,9 +79,11 @@
             // lbPrice
             // 
             lbPrice.AutoSize = true;
-            lbPrice.Location = new Point(3, 202);
+            lbPrice.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbPrice.ForeColor = Color.Brown;
+            lbPrice.Location = new Point(3, 270);
             lbPrice.Name = "lbPrice";
-            lbPrice.Size = new Size(33, 15);
+            lbPrice.Size = new Size(43, 20);
             lbPrice.TabIndex = 5;
             lbPrice.Text = "Price";
             lbPrice.Click += SPViewer_Click;
@@ -88,7 +91,8 @@
             // lbQuantity
             // 
             lbQuantity.AutoSize = true;
-            lbQuantity.Location = new Point(120, 123);
+            lbQuantity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbQuantity.Location = new Point(144, 141);
             lbQuantity.Name = "lbQuantity";
             lbQuantity.Size = new Size(53, 15);
             lbQuantity.TabIndex = 7;
@@ -100,7 +104,7 @@
             panel1.Controls.Add(pbImage);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(173, 117);
+            panel1.Size = new Size(194, 135);
             panel1.TabIndex = 8;
             // 
             // lbInfomation
@@ -108,9 +112,9 @@
             lbInfomation.AllowDrop = true;
             lbInfomation.BorderStyle = BorderStyle.FixedSingle;
             lbInfomation.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbInfomation.Location = new Point(3, 159);
+            lbInfomation.Location = new Point(3, 218);
             lbInfomation.Name = "lbInfomation";
-            lbInfomation.Size = new Size(174, 43);
+            lbInfomation.Size = new Size(194, 43);
             lbInfomation.TabIndex = 9;
             lbInfomation.Text = "Infomation";
             lbInfomation.Click += SPViewer_Click;
@@ -128,7 +132,7 @@
             Controls.Add(lbName);
             Controls.Add(lbID);
             Name = "SPViewer";
-            Size = new Size(178, 222);
+            Size = new Size(200, 300);
             Click += SPViewer_Click;
             ((System.ComponentModel.ISupportInitialize)pbImage).EndInit();
             panel1.ResumeLayout(false);

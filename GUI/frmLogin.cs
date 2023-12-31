@@ -15,7 +15,7 @@ namespace GUI
     public partial class frmLogin : Form
     {
         private string productImagePath = global::GUI.Properties.Resources.ProductImagePath;
-        private List<string> productImageDelete = new();
+        private List<string> productImageDelete = [];
 
         public frmLogin()
         {
@@ -25,7 +25,10 @@ namespace GUI
         {
             foreach (string name in list)
             {
-                File.Delete(productImagePath + name);
+                if (name != "Unknown")
+                {
+                    File.Delete(productImagePath + name);
+                }
             }
         }
 
@@ -35,7 +38,7 @@ namespace GUI
             if (txtAccountID.Text == String.Empty || txtPassword.Text == String.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-                return; 
+                return;
             }
             if (Login(txtAccountID.Text.ToLower(), txtPassword.Text))
             {
@@ -44,8 +47,8 @@ namespace GUI
                 this.Hide();
                 frm.ShowDialog();
                 frm.Close();
-                foreach (string name in frm.listDeleteProductImage)
-                    productImageDelete.Add(name);
+                frm.Dispose();
+                productImageDelete = frm.listDeleteProductImage;
                 this.Show();
             }
             else
@@ -54,19 +57,21 @@ namespace GUI
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            deleteProductImage(productImageDelete);
             if (MessageBox.Show("Bạn có muốn thoát chương trình? ", "Thông báo ", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                Application.Exit();
+                this.Close();
             }
         }
-        #endregion
 
         private bool Login(string username, string password)
         {
             return AccountDAL.Instance.Login(username, password);
         }
-        
 
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deleteProductImage(productImageDelete);
+        }
+        #endregion
     }
 }
