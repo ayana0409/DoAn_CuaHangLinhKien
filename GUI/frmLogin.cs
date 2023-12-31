@@ -14,12 +14,13 @@ namespace GUI
 {
     public partial class frmLogin : Form
     {
-        private string productImagePath = global::GUI.Properties.Resources.ProductImagePath;
+        private string productImagePath = "C:\\CuaHangLinhKien\\HinhAnhSanPham\\";
         private List<string> productImageDelete = [];
 
         public frmLogin()
         {
             InitializeComponent();
+            Directory.CreateDirectory("C:\\CuaHangLinhKien\\HinhAnhSanPham\\");
         }
         private void deleteProductImage(List<String> list)
         {

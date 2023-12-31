@@ -19,7 +19,7 @@ namespace DTO
         {
             GRNID = -1;
             StaffID = 0;
-            Unit = "Unknown";
+            Unit = "";
             Date = DateTime.Now;
             Image = "Unknown";
             Total = 0;

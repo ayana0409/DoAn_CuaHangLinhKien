@@ -22,11 +22,12 @@ namespace GUI
 
         string _tempImageName = "Unknown";
 
-        private string GRNImagePath = global::GUI.Properties.Resources.GRNPath;
+        private string GRNImagePath = "C:\\CuaHangLinhKien\\HinhAnhPhieuNhap\\";
 
         public frmGRN(GRN? gRN = null)
         {
             InitializeComponent();
+            Directory.CreateDirectory("C:\\CuaHangLinhKien\\HinhAnhPhieuNhap\\");
             if (gRN == null)
             {
                 GRN = new();
@@ -188,7 +189,12 @@ namespace GUI
                     RemoveOldProduct(frm.selectedProduct.ProductID);
                 }
 
-                listInsertProduct.Add(new InformationGRN(GRNDAL.Instance.GetHighestGRN().GRNID + 1,frm.selectedProduct.ProductID, frm.quantity, frm.price));
+                listInsertProduct.Add(
+                    new InformationGRN(
+                        GRNDAL.Instance.GetHighestGRN().GRNID + 1,
+                        frm.selectedProduct.ProductID, 
+                        frm.quantity, 
+                        frm.price));
             }
 
             frm.Close();
@@ -226,6 +232,11 @@ namespace GUI
 
         private void btnInsertProduct_Click(object sender, EventArgs e)
         {
+            if (txtGRNUnit.Text == String.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin");
+                return;
+            }
             if (!cbCommit.Checked)
             {
                 MessageBox.Show(

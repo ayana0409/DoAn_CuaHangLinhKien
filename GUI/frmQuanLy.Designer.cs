@@ -58,7 +58,6 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnAddCustomer = new Button();
             btnUpdateCustomer = new Button();
-            btnSaveCustomer = new Button();
             btnCustomerAddOrder = new Button();
             tpOrder = new TabPage();
             splitContainer4 = new SplitContainer();
@@ -85,6 +84,9 @@
             splitContainer6 = new SplitContainer();
             groupBox5 = new GroupBox();
             tableLayoutPanel4 = new TableLayoutPanel();
+            panel5 = new Panel();
+            label13 = new Label();
+            txtOrderTotal = new TextBox();
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
@@ -94,7 +96,6 @@
             cbOrderStaff = new ComboBox();
             cbOrderStatus = new ComboBox();
             label69 = new Label();
-            txtOrderTotal = new TextBox();
             groupBox6 = new GroupBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
             btnAddOrder = new Button();
@@ -115,6 +116,9 @@
             tableLayoutPanel8 = new TableLayoutPanel();
             label26 = new Label();
             label27 = new Label();
+            panel = new Panel();
+            label60 = new Label();
+            txtProductPrice = new TextBox();
             label28 = new Label();
             txtProductName = new TextBox();
             txtProductID = new TextBox();
@@ -129,7 +133,6 @@
             label25 = new Label();
             label34 = new Label();
             label35 = new Label();
-            txtProductPrice = new TextBox();
             cbProductCategory = new ComboBox();
             cbProductManufacturer = new ComboBox();
             groupBox11 = new GroupBox();
@@ -160,7 +163,6 @@
             flowLayoutPanel6 = new FlowLayoutPanel();
             btnAddManufacturer = new Button();
             btnUpdateManufacturer = new Button();
-            btnSaveManufacturer = new Button();
             tpCategory = new TabPage();
             splitContainer17 = new SplitContainer();
             dtgvCategory = new DataGridView();
@@ -184,7 +186,6 @@
             groupBox17 = new GroupBox();
             btnAddCate = new Button();
             btnUpdateCate = new Button();
-            btnSaveCate = new Button();
             tpGRN = new TabPage();
             splitContainer20 = new SplitContainer();
             dtgvGRN = new DataGridView();
@@ -215,6 +216,8 @@
             label43 = new Label();
             txtGRNID = new TextBox();
             cbGRNStaff = new ComboBox();
+            panel4 = new Panel();
+            label12 = new Label();
             txtGRNTotal = new TextBox();
             dtpkGRNDate = new DateTimePicker();
             label68 = new Label();
@@ -265,7 +268,6 @@
             flowLayoutPanel9 = new FlowLayoutPanel();
             btnAddStaff = new Button();
             btnUpdateStaff = new Button();
-            btnSaveStaff = new Button();
             tpAccount = new TabPage();
             splitContainer29 = new SplitContainer();
             dtgvAccount = new DataGridView();
@@ -294,7 +296,6 @@
             flowLayoutPanel10 = new FlowLayoutPanel();
             btnAddAccount = new Button();
             btnUpdateAccount = new Button();
-            btnSaveAccount = new Button();
             staffBindingSource = new BindingSource(components);
             dataGridView3 = new DataGridView();
             splitContainer8 = new SplitContainer();
@@ -381,6 +382,7 @@
             splitContainer6.SuspendLayout();
             groupBox5.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
+            panel5.SuspendLayout();
             groupBox6.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             tpProduct.SuspendLayout();
@@ -400,6 +402,7 @@
             splitContainer12.SuspendLayout();
             groupBox10.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
+            panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nmudQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer13).BeginInit();
             splitContainer13.Panel1.SuspendLayout();
@@ -466,6 +469,7 @@
             splitContainer22.SuspendLayout();
             groupBox19.SuspendLayout();
             tableLayoutPanel14.SuspendLayout();
+            panel4.SuspendLayout();
             groupBox20.SuspendLayout();
             flowLayoutPanel8.SuspendLayout();
             tpStaff.SuspendLayout();
@@ -869,7 +873,6 @@
             // 
             flowLayoutPanel1.Controls.Add(btnAddCustomer);
             flowLayoutPanel1.Controls.Add(btnUpdateCustomer);
-            flowLayoutPanel1.Controls.Add(btnSaveCustomer);
             flowLayoutPanel1.Controls.Add(btnCustomerAddOrder);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 25);
@@ -885,9 +888,9 @@
             btnAddCustomer.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddCustomer.Location = new Point(3, 3);
             btnAddCustomer.Name = "btnAddCustomer";
-            btnAddCustomer.Size = new Size(93, 43);
+            btnAddCustomer.Size = new Size(121, 43);
             btnAddCustomer.TabIndex = 2;
-            btnAddCustomer.Text = "Thêm";
+            btnAddCustomer.Text = "Thêm KH";
             btnAddCustomer.TextAlign = ContentAlignment.MiddleRight;
             btnAddCustomer.UseVisualStyleBackColor = true;
             btnAddCustomer.Click += btnAddCustomer_Click;
@@ -898,30 +901,14 @@
             btnUpdateCustomer.ForeColor = Color.Brown;
             btnUpdateCustomer.Image = Properties.Resources.icons8_change_32;
             btnUpdateCustomer.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUpdateCustomer.Location = new Point(102, 3);
+            btnUpdateCustomer.Location = new Point(130, 3);
             btnUpdateCustomer.Name = "btnUpdateCustomer";
-            btnUpdateCustomer.Size = new Size(93, 43);
+            btnUpdateCustomer.Size = new Size(121, 43);
             btnUpdateCustomer.TabIndex = 2;
-            btnUpdateCustomer.Text = "Sửa";
+            btnUpdateCustomer.Text = "Sửa KH";
             btnUpdateCustomer.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateCustomer.UseVisualStyleBackColor = true;
             btnUpdateCustomer.Click += btnUpdateCustomer_Click;
-            // 
-            // btnSaveCustomer
-            // 
-            btnSaveCustomer.Enabled = false;
-            btnSaveCustomer.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnSaveCustomer.ForeColor = Color.Brown;
-            btnSaveCustomer.Image = Properties.Resources.icons8_save_321;
-            btnSaveCustomer.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSaveCustomer.Location = new Point(201, 3);
-            btnSaveCustomer.Name = "btnSaveCustomer";
-            btnSaveCustomer.Size = new Size(93, 43);
-            btnSaveCustomer.TabIndex = 2;
-            btnSaveCustomer.Text = "Lưu";
-            btnSaveCustomer.TextAlign = ContentAlignment.MiddleRight;
-            btnSaveCustomer.UseVisualStyleBackColor = true;
-            btnSaveCustomer.Click += btnSaveCustomer_Click;
             // 
             // btnCustomerAddOrder
             // 
@@ -932,7 +919,7 @@
             btnCustomerAddOrder.ImageKey = "(none)";
             btnCustomerAddOrder.Location = new Point(3, 52);
             btnCustomerAddOrder.Name = "btnCustomerAddOrder";
-            btnCustomerAddOrder.Size = new Size(291, 43);
+            btnCustomerAddOrder.Size = new Size(248, 43);
             btnCustomerAddOrder.TabIndex = 2;
             btnCustomerAddOrder.Text = "Thêm đơn hàng";
             btnCustomerAddOrder.UseVisualStyleBackColor = false;
@@ -976,6 +963,7 @@
             dtgvOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvOrder.Columns.AddRange(new DataGridViewColumn[] { OrderID, OrderCustomer, OrderCustomerPhone, OrderStatus, OrderTotal, OrderDate, OrderStaff });
             dtgvOrder.Dock = DockStyle.Fill;
+            dtgvOrder.GridColor = Color.FromArgb(194, 231, 255);
             dtgvOrder.Location = new Point(0, 0);
             dtgvOrder.MultiSelect = false;
             dtgvOrder.Name = "dtgvOrder";
@@ -1221,6 +1209,7 @@
             tableLayoutPanel4.ColumnCount = 2;
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.75F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77.25F));
+            tableLayoutPanel4.Controls.Add(panel5, 0, 4);
             tableLayoutPanel4.Controls.Add(label8, 0, 0);
             tableLayoutPanel4.Controls.Add(label9, 0, 1);
             tableLayoutPanel4.Controls.Add(label10, 0, 2);
@@ -1230,7 +1219,6 @@
             tableLayoutPanel4.Controls.Add(cbOrderStaff, 1, 2);
             tableLayoutPanel4.Controls.Add(cbOrderStatus, 1, 3);
             tableLayoutPanel4.Controls.Add(label69, 0, 4);
-            tableLayoutPanel4.Controls.Add(txtOrderTotal, 1, 4);
             tableLayoutPanel4.Dock = DockStyle.Fill;
             tableLayoutPanel4.Location = new Point(3, 23);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -1242,6 +1230,39 @@
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 59F));
             tableLayoutPanel4.Size = new Size(398, 222);
             tableLayoutPanel4.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            panel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel5.Controls.Add(label13);
+            panel5.Controls.Add(txtOrderTotal);
+            panel5.Location = new Point(93, 165);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(302, 44);
+            panel5.TabIndex = 12;
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label13.ForeColor = Color.Brown;
+            label13.Location = new Point(257, 6);
+            label13.Name = "label13";
+            label13.Size = new Size(42, 20);
+            label13.TabIndex = 7;
+            label13.Text = "VNĐ";
+            // 
+            // txtOrderTotal
+            // 
+            txtOrderTotal.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtOrderTotal.BackColor = Color.FromArgb(255, 253, 239);
+            txtOrderTotal.Enabled = false;
+            txtOrderTotal.Location = new Point(0, 3);
+            txtOrderTotal.Name = "txtOrderTotal";
+            txtOrderTotal.ReadOnly = true;
+            txtOrderTotal.Size = new Size(251, 27);
+            txtOrderTotal.TabIndex = 6;
             // 
             // label8
             // 
@@ -1344,16 +1365,6 @@
             label69.Size = new Size(84, 60);
             label69.TabIndex = 3;
             label69.Text = "Tổng tiền:";
-            // 
-            // txtOrderTotal
-            // 
-            txtOrderTotal.BackColor = Color.FromArgb(255, 253, 239);
-            txtOrderTotal.Dock = DockStyle.Fill;
-            txtOrderTotal.Enabled = false;
-            txtOrderTotal.Location = new Point(93, 165);
-            txtOrderTotal.Name = "txtOrderTotal";
-            txtOrderTotal.Size = new Size(302, 27);
-            txtOrderTotal.TabIndex = 1;
             // 
             // groupBox6
             // 
@@ -1590,6 +1601,7 @@
             tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76.96203F));
             tableLayoutPanel8.Controls.Add(label26, 0, 0);
             tableLayoutPanel8.Controls.Add(label27, 0, 1);
+            tableLayoutPanel8.Controls.Add(panel, 1, 7);
             tableLayoutPanel8.Controls.Add(label28, 0, 2);
             tableLayoutPanel8.Controls.Add(txtProductName, 1, 1);
             tableLayoutPanel8.Controls.Add(txtProductID, 1, 0);
@@ -1601,7 +1613,6 @@
             tableLayoutPanel8.Controls.Add(label25, 0, 5);
             tableLayoutPanel8.Controls.Add(label34, 0, 6);
             tableLayoutPanel8.Controls.Add(label35, 0, 7);
-            tableLayoutPanel8.Controls.Add(txtProductPrice, 1, 7);
             tableLayoutPanel8.Controls.Add(cbProductCategory, 1, 5);
             tableLayoutPanel8.Controls.Add(cbProductManufacturer, 1, 6);
             tableLayoutPanel8.Dock = DockStyle.Fill;
@@ -1642,6 +1653,37 @@
             label27.Size = new Size(84, 33);
             label27.TabIndex = 0;
             label27.Text = "Tên SP:";
+            // 
+            // panel
+            // 
+            panel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel.Controls.Add(label60);
+            panel.Controls.Add(txtProductPrice);
+            panel.Location = new Point(93, 328);
+            panel.Name = "panel";
+            panel.Size = new Size(298, 30);
+            panel.TabIndex = 14;
+            // 
+            // label60
+            // 
+            label60.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label60.AutoSize = true;
+            label60.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label60.ForeColor = Color.Brown;
+            label60.Location = new Point(253, 6);
+            label60.Name = "label60";
+            label60.Size = new Size(42, 20);
+            label60.TabIndex = 7;
+            label60.Text = "VNĐ";
+            // 
+            // txtProductPrice
+            // 
+            txtProductPrice.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtProductPrice.BackColor = Color.FromArgb(255, 253, 239);
+            txtProductPrice.Location = new Point(-1, 3);
+            txtProductPrice.Name = "txtProductPrice";
+            txtProductPrice.Size = new Size(248, 27);
+            txtProductPrice.TabIndex = 6;
             // 
             // label28
             // 
@@ -1809,15 +1851,6 @@
             label35.TabIndex = 10;
             label35.Text = "Giá:";
             // 
-            // txtProductPrice
-            // 
-            txtProductPrice.BackColor = Color.FromArgb(255, 253, 239);
-            txtProductPrice.Dock = DockStyle.Fill;
-            txtProductPrice.Location = new Point(93, 328);
-            txtProductPrice.Name = "txtProductPrice";
-            txtProductPrice.Size = new Size(298, 27);
-            txtProductPrice.TabIndex = 11;
-            // 
             // cbProductCategory
             // 
             cbProductCategory.BackColor = Color.FromArgb(255, 253, 239);
@@ -1867,9 +1900,9 @@
             btnAddProduct.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddProduct.Location = new Point(3, 3);
             btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(93, 43);
+            btnAddProduct.Size = new Size(121, 43);
             btnAddProduct.TabIndex = 2;
-            btnAddProduct.Text = "Thêm";
+            btnAddProduct.Text = "Thêm SP";
             btnAddProduct.TextAlign = ContentAlignment.MiddleRight;
             btnAddProduct.UseVisualStyleBackColor = true;
             btnAddProduct.Click += btnAddProduct_Click;
@@ -1880,11 +1913,11 @@
             btnUpdateProduct.ForeColor = Color.Brown;
             btnUpdateProduct.Image = Properties.Resources.icons8_add_32__1_;
             btnUpdateProduct.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUpdateProduct.Location = new Point(102, 3);
+            btnUpdateProduct.Location = new Point(130, 3);
             btnUpdateProduct.Name = "btnUpdateProduct";
-            btnUpdateProduct.Size = new Size(93, 43);
+            btnUpdateProduct.Size = new Size(121, 43);
             btnUpdateProduct.TabIndex = 2;
-            btnUpdateProduct.Text = "Sửa";
+            btnUpdateProduct.Text = "Sửa SP";
             btnUpdateProduct.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateProduct.UseVisualStyleBackColor = true;
             btnUpdateProduct.Click += btnUpdateProduct_Click;
@@ -2166,7 +2199,6 @@
             // 
             flowLayoutPanel6.Controls.Add(btnAddManufacturer);
             flowLayoutPanel6.Controls.Add(btnUpdateManufacturer);
-            flowLayoutPanel6.Controls.Add(btnSaveManufacturer);
             flowLayoutPanel6.Dock = DockStyle.Fill;
             flowLayoutPanel6.Location = new Point(3, 23);
             flowLayoutPanel6.Name = "flowLayoutPanel6";
@@ -2181,9 +2213,9 @@
             btnAddManufacturer.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddManufacturer.Location = new Point(3, 3);
             btnAddManufacturer.Name = "btnAddManufacturer";
-            btnAddManufacturer.Size = new Size(93, 43);
+            btnAddManufacturer.Size = new Size(121, 43);
             btnAddManufacturer.TabIndex = 4;
-            btnAddManufacturer.Text = "Thêm";
+            btnAddManufacturer.Text = "Thêm hãng";
             btnAddManufacturer.TextAlign = ContentAlignment.MiddleRight;
             btnAddManufacturer.UseVisualStyleBackColor = true;
             btnAddManufacturer.Click += btnAddManufacturer_Click;
@@ -2194,30 +2226,14 @@
             btnUpdateManufacturer.ForeColor = Color.Brown;
             btnUpdateManufacturer.Image = Properties.Resources.icons8_change_32;
             btnUpdateManufacturer.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUpdateManufacturer.Location = new Point(102, 3);
+            btnUpdateManufacturer.Location = new Point(130, 3);
             btnUpdateManufacturer.Name = "btnUpdateManufacturer";
-            btnUpdateManufacturer.Size = new Size(93, 43);
+            btnUpdateManufacturer.Size = new Size(121, 43);
             btnUpdateManufacturer.TabIndex = 5;
-            btnUpdateManufacturer.Text = "Sửa";
+            btnUpdateManufacturer.Text = "Sửa hãng";
             btnUpdateManufacturer.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateManufacturer.UseVisualStyleBackColor = true;
             btnUpdateManufacturer.Click += btnUpdateManufacturer_Click;
-            // 
-            // btnSaveManufacturer
-            // 
-            btnSaveManufacturer.Enabled = false;
-            btnSaveManufacturer.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnSaveManufacturer.ForeColor = Color.Brown;
-            btnSaveManufacturer.Image = Properties.Resources.icons8_save_32;
-            btnSaveManufacturer.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSaveManufacturer.Location = new Point(201, 3);
-            btnSaveManufacturer.Name = "btnSaveManufacturer";
-            btnSaveManufacturer.Size = new Size(93, 43);
-            btnSaveManufacturer.TabIndex = 6;
-            btnSaveManufacturer.Text = "Lưu";
-            btnSaveManufacturer.TextAlign = ContentAlignment.MiddleRight;
-            btnSaveManufacturer.UseVisualStyleBackColor = true;
-            btnSaveManufacturer.Click += btnSaveManufacturer_Click;
             // 
             // tpCategory
             // 
@@ -2485,7 +2501,6 @@
             // 
             groupBox17.Controls.Add(btnAddCate);
             groupBox17.Controls.Add(btnUpdateCate);
-            groupBox17.Controls.Add(btnSaveCate);
             groupBox17.Dock = DockStyle.Fill;
             groupBox17.Location = new Point(0, 0);
             groupBox17.Name = "groupBox17";
@@ -2502,9 +2517,9 @@
             btnAddCate.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddCate.Location = new Point(6, 26);
             btnAddCate.Name = "btnAddCate";
-            btnAddCate.Size = new Size(93, 43);
+            btnAddCate.Size = new Size(121, 43);
             btnAddCate.TabIndex = 4;
-            btnAddCate.Text = "Thêm";
+            btnAddCate.Text = "Thêm DM";
             btnAddCate.TextAlign = ContentAlignment.MiddleRight;
             btnAddCate.UseVisualStyleBackColor = true;
             btnAddCate.Click += btnAddCate_Click;
@@ -2515,30 +2530,14 @@
             btnUpdateCate.ForeColor = Color.Brown;
             btnUpdateCate.Image = Properties.Resources.icons8_change_32;
             btnUpdateCate.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUpdateCate.Location = new Point(105, 26);
+            btnUpdateCate.Location = new Point(133, 26);
             btnUpdateCate.Name = "btnUpdateCate";
-            btnUpdateCate.Size = new Size(93, 43);
+            btnUpdateCate.Size = new Size(121, 43);
             btnUpdateCate.TabIndex = 5;
-            btnUpdateCate.Text = "Sửa";
+            btnUpdateCate.Text = "Sửa DM";
             btnUpdateCate.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateCate.UseVisualStyleBackColor = true;
             btnUpdateCate.Click += btnUpdateCate_Click;
-            // 
-            // btnSaveCate
-            // 
-            btnSaveCate.Enabled = false;
-            btnSaveCate.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnSaveCate.ForeColor = Color.Brown;
-            btnSaveCate.Image = Properties.Resources.icons8_save_32;
-            btnSaveCate.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSaveCate.Location = new Point(204, 26);
-            btnSaveCate.Name = "btnSaveCate";
-            btnSaveCate.Size = new Size(93, 43);
-            btnSaveCate.TabIndex = 6;
-            btnSaveCate.Text = "Lưu";
-            btnSaveCate.TextAlign = ContentAlignment.MiddleRight;
-            btnSaveCate.UseVisualStyleBackColor = true;
-            btnSaveCate.Click += btnSaveCate_Click;
             // 
             // tpGRN
             // 
@@ -2818,7 +2817,7 @@
             tableLayoutPanel14.Controls.Add(label43, 0, 4);
             tableLayoutPanel14.Controls.Add(txtGRNID, 1, 0);
             tableLayoutPanel14.Controls.Add(cbGRNStaff, 1, 2);
-            tableLayoutPanel14.Controls.Add(txtGRNTotal, 1, 4);
+            tableLayoutPanel14.Controls.Add(panel4, 1, 4);
             tableLayoutPanel14.Controls.Add(dtpkGRNDate, 1, 3);
             tableLayoutPanel14.Controls.Add(label68, 0, 3);
             tableLayoutPanel14.Dock = DockStyle.Fill;
@@ -2872,9 +2871,9 @@
             // 
             txtGRNUnit.BackColor = Color.FromArgb(255, 253, 239);
             txtGRNUnit.Dock = DockStyle.Fill;
-            txtGRNUnit.Enabled = false;
             txtGRNUnit.Location = new Point(93, 37);
             txtGRNUnit.Name = "txtGRNUnit";
+            txtGRNUnit.ReadOnly = true;
             txtGRNUnit.Size = new Size(302, 27);
             txtGRNUnit.TabIndex = 1;
             // 
@@ -2893,7 +2892,6 @@
             // 
             txtGRNID.BackColor = Color.FromArgb(255, 253, 239);
             txtGRNID.Dock = DockStyle.Fill;
-            txtGRNID.Enabled = false;
             txtGRNID.Location = new Point(93, 3);
             txtGRNID.Name = "txtGRNID";
             txtGRNID.ReadOnly = true;
@@ -2911,14 +2909,36 @@
             cbGRNStaff.Size = new Size(302, 28);
             cbGRNStaff.TabIndex = 4;
             // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel4.Controls.Add(label12);
+            panel4.Controls.Add(txtGRNTotal);
+            panel4.Location = new Point(93, 146);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(302, 44);
+            panel4.TabIndex = 11;
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label12.ForeColor = Color.Brown;
+            label12.Location = new Point(249, 6);
+            label12.Name = "label12";
+            label12.Size = new Size(42, 20);
+            label12.TabIndex = 7;
+            label12.Text = "VNĐ";
+            // 
             // txtGRNTotal
             // 
+            txtGRNTotal.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtGRNTotal.BackColor = Color.FromArgb(255, 253, 239);
-            txtGRNTotal.Enabled = false;
-            txtGRNTotal.Location = new Point(93, 146);
+            txtGRNTotal.Location = new Point(0, 3);
             txtGRNTotal.Name = "txtGRNTotal";
             txtGRNTotal.ReadOnly = true;
-            txtGRNTotal.Size = new Size(302, 27);
+            txtGRNTotal.Size = new Size(243, 27);
             txtGRNTotal.TabIndex = 6;
             // 
             // dtpkGRNDate
@@ -3471,7 +3491,6 @@
             // 
             flowLayoutPanel9.Controls.Add(btnAddStaff);
             flowLayoutPanel9.Controls.Add(btnUpdateStaff);
-            flowLayoutPanel9.Controls.Add(btnSaveStaff);
             flowLayoutPanel9.Dock = DockStyle.Fill;
             flowLayoutPanel9.Location = new Point(3, 23);
             flowLayoutPanel9.Name = "flowLayoutPanel9";
@@ -3486,9 +3505,9 @@
             btnAddStaff.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddStaff.Location = new Point(3, 3);
             btnAddStaff.Name = "btnAddStaff";
-            btnAddStaff.Size = new Size(93, 43);
+            btnAddStaff.Size = new Size(121, 43);
             btnAddStaff.TabIndex = 4;
-            btnAddStaff.Text = "Thêm";
+            btnAddStaff.Text = "Thêm NV";
             btnAddStaff.TextAlign = ContentAlignment.MiddleRight;
             btnAddStaff.UseVisualStyleBackColor = true;
             btnAddStaff.Click += btnAddStaff_Click;
@@ -3499,30 +3518,14 @@
             btnUpdateStaff.ForeColor = Color.Brown;
             btnUpdateStaff.Image = Properties.Resources.icons8_change_32;
             btnUpdateStaff.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUpdateStaff.Location = new Point(102, 3);
+            btnUpdateStaff.Location = new Point(130, 3);
             btnUpdateStaff.Name = "btnUpdateStaff";
-            btnUpdateStaff.Size = new Size(93, 43);
+            btnUpdateStaff.Size = new Size(121, 43);
             btnUpdateStaff.TabIndex = 5;
-            btnUpdateStaff.Text = "Sửa";
+            btnUpdateStaff.Text = "Sửa NV";
             btnUpdateStaff.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateStaff.UseVisualStyleBackColor = true;
             btnUpdateStaff.Click += btnUpdateStaff_Click;
-            // 
-            // btnSaveStaff
-            // 
-            btnSaveStaff.Enabled = false;
-            btnSaveStaff.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnSaveStaff.ForeColor = Color.Brown;
-            btnSaveStaff.Image = Properties.Resources.icons8_save_32;
-            btnSaveStaff.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSaveStaff.Location = new Point(201, 3);
-            btnSaveStaff.Name = "btnSaveStaff";
-            btnSaveStaff.Size = new Size(93, 43);
-            btnSaveStaff.TabIndex = 6;
-            btnSaveStaff.Text = "Lưu";
-            btnSaveStaff.TextAlign = ContentAlignment.MiddleRight;
-            btnSaveStaff.UseVisualStyleBackColor = true;
-            btnSaveStaff.Click += btnSaveStaff_Click;
             // 
             // tpAccount
             // 
@@ -3840,7 +3843,6 @@
             // 
             flowLayoutPanel10.Controls.Add(btnAddAccount);
             flowLayoutPanel10.Controls.Add(btnUpdateAccount);
-            flowLayoutPanel10.Controls.Add(btnSaveAccount);
             flowLayoutPanel10.Dock = DockStyle.Fill;
             flowLayoutPanel10.Location = new Point(3, 23);
             flowLayoutPanel10.Name = "flowLayoutPanel10";
@@ -3855,9 +3857,9 @@
             btnAddAccount.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddAccount.Location = new Point(3, 3);
             btnAddAccount.Name = "btnAddAccount";
-            btnAddAccount.Size = new Size(93, 43);
+            btnAddAccount.Size = new Size(121, 43);
             btnAddAccount.TabIndex = 4;
-            btnAddAccount.Text = "Thêm";
+            btnAddAccount.Text = "Thêm TK";
             btnAddAccount.TextAlign = ContentAlignment.MiddleRight;
             btnAddAccount.UseVisualStyleBackColor = true;
             btnAddAccount.Click += btnAddAccount_Click;
@@ -3868,30 +3870,14 @@
             btnUpdateAccount.ForeColor = Color.Brown;
             btnUpdateAccount.Image = Properties.Resources.icons8_change_32;
             btnUpdateAccount.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUpdateAccount.Location = new Point(102, 3);
+            btnUpdateAccount.Location = new Point(130, 3);
             btnUpdateAccount.Name = "btnUpdateAccount";
-            btnUpdateAccount.Size = new Size(93, 43);
+            btnUpdateAccount.Size = new Size(121, 43);
             btnUpdateAccount.TabIndex = 5;
-            btnUpdateAccount.Text = "Sửa";
+            btnUpdateAccount.Text = "Sửa TK";
             btnUpdateAccount.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateAccount.UseVisualStyleBackColor = true;
             btnUpdateAccount.Click += btnUpdateAccount_Click;
-            // 
-            // btnSaveAccount
-            // 
-            btnSaveAccount.Enabled = false;
-            btnSaveAccount.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnSaveAccount.ForeColor = Color.Brown;
-            btnSaveAccount.Image = Properties.Resources.icons8_save_32;
-            btnSaveAccount.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSaveAccount.Location = new Point(201, 3);
-            btnSaveAccount.Name = "btnSaveAccount";
-            btnSaveAccount.Size = new Size(93, 43);
-            btnSaveAccount.TabIndex = 6;
-            btnSaveAccount.Text = "Lưu";
-            btnSaveAccount.TextAlign = ContentAlignment.MiddleRight;
-            btnSaveAccount.UseVisualStyleBackColor = true;
-            btnSaveAccount.Click += btnSaveAccount_Click;
             // 
             // staffBindingSource
             // 
@@ -4315,8 +4301,9 @@
             // 
             tslStaffName.Font = new Font("Segoe UI", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             tslStaffName.ForeColor = Color.Brown;
+            tslStaffName.Image = Properties.Resources.icons8_user_account_30;
             tslStaffName.Name = "tslStaffName";
-            tslStaffName.Size = new Size(82, 22);
+            tslStaffName.Size = new Size(98, 22);
             tslStaffName.Text = "Nhân viên";
             // 
             // toolStripSeparator2
@@ -4326,7 +4313,7 @@
             // 
             // tsbStatistics
             // 
-            tsbStatistics.Image = (Image)resources.GetObject("tsbStatistics.Image");
+            tsbStatistics.Image = Properties.Resources.icons8_statistics_30;
             tsbStatistics.ImageTransparentColor = Color.Magenta;
             tsbStatistics.Name = "tsbStatistics";
             tsbStatistics.Size = new Size(76, 22);
@@ -4340,7 +4327,7 @@
             // 
             // tsbLogout
             // 
-            tsbLogout.Image = (Image)resources.GetObject("tsbLogout.Image");
+            tsbLogout.Image = Properties.Resources.icons8_logout_30;
             tsbLogout.ImageTransparentColor = Color.Magenta;
             tsbLogout.Name = "tsbLogout";
             tsbLogout.Size = new Size(81, 22);
@@ -4416,6 +4403,8 @@
             groupBox5.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             groupBox6.ResumeLayout(false);
             flowLayoutPanel2.ResumeLayout(false);
             tpProduct.ResumeLayout(false);
@@ -4437,6 +4426,8 @@
             groupBox10.ResumeLayout(false);
             tableLayoutPanel8.ResumeLayout(false);
             tableLayoutPanel8.PerformLayout();
+            panel.ResumeLayout(false);
+            panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nmudQuantity).EndInit();
             splitContainer13.Panel1.ResumeLayout(false);
             splitContainer13.Panel2.ResumeLayout(false);
@@ -4509,6 +4500,8 @@
             groupBox19.ResumeLayout(false);
             tableLayoutPanel14.ResumeLayout(false);
             tableLayoutPanel14.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             groupBox20.ResumeLayout(false);
             flowLayoutPanel8.ResumeLayout(false);
             tpStaff.ResumeLayout(false);
@@ -4607,7 +4600,6 @@
         private Button btnSearchCustomer;
         private TextBox txtSearchNumberPhone;
         private TextBox txtSearchName;
-        private Button btnSaveCustomer;
         private Button btnAddCustomer;
         private Button btnUpdateCustomer;
         private TextBox txtNumberPhone;
@@ -4719,7 +4711,6 @@
         private TextBox txtManufacturerID;
         private GroupBox groupBox14;
         private FlowLayoutPanel flowLayoutPanel6;
-        private TextBox txtProductPrice;
         private ComboBox cbProductCategory;
         private ComboBox cbProductManufacturer;
         private TextBox txtSearchProductName;
@@ -4838,17 +4829,13 @@
         private ComboBox cbOrderStatus;
         private Button btnAddManufacturer;
         private Button btnUpdateManufacturer;
-        private Button btnSaveManufacturer;
         private Button btnAddCate;
         private Button btnUpdateCate;
-        private Button btnSaveCate;
         private FlowLayoutPanel flowLayoutPanel9;
         private Button btnAddStaff;
         private Button btnUpdateStaff;
-        private Button btnSaveStaff;
         private Button btnAddAccount;
         private Button btnUpdateAccount;
-        private Button btnSaveAccount;
         private Button btnSearchProduct;
         private ComboBox cbStaffRole;
         private Label label66;
@@ -4890,7 +4877,6 @@
         private DataGridViewTextBoxColumn OrderDate;
         private DataGridViewTextBoxColumn OrderStaff;
         private Label label69;
-        private TextBox txtOrderTotal;
         private Panel panel2;
         private Button btnSearchOrderCancel;
         private DataGridViewTextBoxColumn AccountID;
@@ -4904,5 +4890,13 @@
         private Panel panel3;
         private ToolStripLabel tslStaffName;
         private ToolStripSeparator toolStripSeparator2;
+        private Panel panel4;
+        private Label label12;
+        private Panel panel5;
+        private Label label13;
+        private TextBox txtOrderTotal;
+        private Panel panel;
+        private Label label60;
+        private TextBox txtProductPrice;
     }
 }

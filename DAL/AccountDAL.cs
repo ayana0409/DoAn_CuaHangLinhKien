@@ -65,7 +65,6 @@ namespace DAL
 
             return list;
         }
-
         public void DeleteAccountByStaffID(int staffID)
         {
             string query = String.Format("update TaiKhoan set MaNhanVien = null " +

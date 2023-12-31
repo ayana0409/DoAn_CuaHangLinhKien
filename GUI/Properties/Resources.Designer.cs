@@ -23,25 +23,7 @@ namespace GUI.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        public static string BillPath
-        {
-            get => CheckPath(@"C:\CuaHangLinhKien\HoaDon\");
-        }
-        public static string ProductImagePath
-        {
-            get => CheckPath(@"C:\CuaHangLinhKien\HinhAnhSanPham\");
-        }
-        public static string GRNPath
-        {
-            get => CheckPath(@"C:\CuaHangLinhKien\HinhAnhPhieuNhap\");
-        }
-
-        private static string CheckPath(string path)
-        {
-            System.IO.Directory.CreateDirectory(path);
-            return path;
-        }
-
+        
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
@@ -171,6 +153,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_logout_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-logout-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_name_tag_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-name-tag-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_product_90 {
             get {
                 object obj = ResourceManager.GetObject("icons8-product-90", resourceCulture);
@@ -244,6 +246,26 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap icons8_shutdown_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-shutdown-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_statistics_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-statistics-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_account_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-account-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

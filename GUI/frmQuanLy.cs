@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
@@ -15,6 +16,7 @@ using System.Drawing;
 using DAL;
 using DTO;
 using Syncfusion.Pdf.Grid;
+using System.Security.AccessControl;
 namespace GUI
 {
     public partial class frmManage : Form
@@ -25,7 +27,7 @@ namespace GUI
         public List<string> listDeleteProductImage = [];
 
         string? _tempImageName = null;
-        private string productImagePath = global::GUI.Properties.Resources.ProductImagePath;
+        private string productImagePath = "C:\\CuaHangLinhKien\\HinhAnhSanPham\\";
         // private readonly string productImagePath = Application.StartupPath.Split("\\DoAn_CuaHangLinhKien",
         //    StringSplitOptions.None)[0] + @"\DoAn_CuaHangLinhKien\BLL\product-images\";
         #endregion
@@ -35,6 +37,7 @@ namespace GUI
         }
         private void frmManage_Load(object sender, EventArgs e)
         {
+            Directory.CreateDirectory("C:\\CuaHangLinhKien\\HinhAnhSanPham\\");
             CheckRole();
 
             LoadProduct();
@@ -129,12 +132,12 @@ namespace GUI
         {
             txtProductID.Text = String.Empty;
             txtProductName.Text = String.Empty;
-            txtProductPrice.Text = String.Empty;
             rtbProductInfomation.Text = String.Empty;
             nmudQuantity.Value = 0;
             cbProductCategory.Text = String.Empty;
             cbProductManufacturer.Text = String.Empty;
             pbProductImage.Image = null;
+            txtProductPrice.Text = String.Empty;
         }
         private void CheckImageButton()
         {
@@ -195,7 +198,7 @@ namespace GUI
                 row.Cells[1].Value = s.Unit.ToString();
                 row.Cells[2].Value = StaffDAL.Instance.GetStaff(s.StaffID).StaffName;
                 row.Cells[3].Value = s.Date.ToString("dd/MM/yyyy");
-                row.Cells[4].Value = s.Total;
+                row.Cells[4].Value = s.Total.ToString("#,###");
                 dtgvGRN.Rows.Add(row);
             }
             cbGRNStaff.DataSource = StaffDAL.Instance.GetListStaff();
@@ -313,7 +316,7 @@ namespace GUI
                 row.Cells[1].Value = CustomerDAL.Instance.GetCustomer(s.CustomerNumberPhone).CustomerName;
                 row.Cells[2].Value = s.CustomerNumberPhone;
                 row.Cells[3].Value = s.Status;
-                row.Cells[4].Value = s.Total;
+                row.Cells[4].Value = s.Total.ToString("#,###");
                 row.Cells[5].Value = s.Date.ToString("dd/MM/yyyy");
                 row.Cells[6].Value = StaffDAL.Instance.GetStaff(s.StaffID).StaffName;
                 dtgvOrder.Rows.Add(row);
@@ -375,7 +378,7 @@ namespace GUI
             SPViewer v = (SPViewer)sender;
             txtProductID.Text = v.Product.ProductID.ToString();
             txtProductName.Text = v.Product.ProductName;
-            txtProductPrice.Text = v.Product.Price.ToString();
+            txtProductPrice.Text = v.Product.Price.ToString("#,###");
             rtbProductInfomation.Text = v.Product.Information;
             nmudQuantity.Value = v.Product.Quantity;
             cbProductCategory.Text = CategoryDAL.Instance.GetCategory(v.Product.CategoryID).CategoryName;
@@ -449,15 +452,16 @@ namespace GUI
                 "Xác nhận",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
-            if (result == DialogResult.No )
+            if (result == DialogResult.No)
             {
                 return;
             }
 
             string name = txtProductName.Text;
             string info = rtbProductInfomation.Text;
-            double price = Double.Parse(txtProductPrice.Text);
+            double price = System.Convert.ToDouble(txtProductPrice.Text);
             int quantity = (int)nmudQuantity.Value;
+            
 
             string fileName = _tempImageName;
             string newFileName = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
@@ -479,11 +483,12 @@ namespace GUI
         }
         private void btnUpdateProduct_Click(object sender, EventArgs e)
         {
-            if (txtProductName.Text == String.Empty ||
-                    txtProductPrice.Text == String.Empty ||
-                    cbProductCategory.SelectedItem == null ||
-                    cbProductManufacturer.SelectedItem == null ||
-                    _tempImageName == String.Empty)
+            if (txtProductID.Text == String.Empty ||
+                txtProductName.Text == String.Empty ||
+                txtProductPrice.Text == String.Empty ||
+                cbProductCategory.SelectedItem == null ||
+                cbProductManufacturer.SelectedItem == null ||
+                _tempImageName == String.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin!");
                 return;
@@ -553,52 +558,54 @@ namespace GUI
         #region STAFF MANAGE EVENT
         private void btnUpdateStaff_Click(object sender, EventArgs e)
         {
-            if (btnSaveStaff.Enabled)
+            if (txtStaffID.Text == String.Empty ||
+                txtStaffName.Text == String.Empty ||
+                rtbStaffAdress.Text == String.Empty ||
+                cbStaffGender.Text == String.Empty ||
+                cboStaffStatus.SelectedItem == null ||
+                cbStaffRole.SelectedItem == null ||
+                txtStaffPhone.Text == String.Empty
+                )
             {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    btnSaveStaff.Enabled = false;
-                    btnAddStaff.Enabled = true;
-                    ClearStaffInputBox();
-                }
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                return;
             }
-            else
-            {
-                btnSaveStaff.Enabled = true;
-                btnAddStaff.Enabled = false;
-                ClearStaffInputBox();
-            }
-        }
+            int id = System.Convert.ToInt32(txtStaffID.Text);
+            string name = txtStaffName.Text;
+            string adress = rtbStaffAdress.Text;
+            string gender = cbStaffGender.Text;
+            string status = cboStaffStatus.Text;
+            string bornDate = dtpStaffBornDate.Value.ToString("yyyy/MM/dd");
+            Role role = (Role)cbStaffRole.SelectedItem;
+            string phone = txtStaffPhone.Text;
 
-        private void btnAddStaff_Click(object sender, EventArgs e)
-        {
-            if (btnSaveStaff.Enabled)
+            if (!CheckNumberPhone(phone))
             {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    btnSaveStaff.Enabled = false;
-                    btnUpdateStaff.Enabled = true;
-                    ClearStaffInputBox();
-                }
+                MessageBox.Show("Sai định dạng số điện thoại!");
+                return;
             }
-            else
+
+            DialogResult result = MessageBox.Show("Bạn có muốn thêm thông tin của\nnhân viên [" + name + "]?",
+                "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.No) return;
+
+            try
             {
-                btnSaveStaff.Enabled = true;
-                btnUpdateStaff.Enabled = false;
-                ClearStaffInputBox();
+                StaffDAL.Instance.UpdateStaff(role.RoleID, name, bornDate, gender, adress, phone, status, id);
+                MessageBox.Show("Sửa thành công");
             }
+            catch
+            {
+                MessageBox.Show("Sửa thất bại");
+            }
+            LoadStaff();
+            LoadAccount();
+            ClearStaffInputBox();
         }
-        private void btnSaveStaff_Click(object sender, EventArgs e)
+        private void btnAddStaff_Click(object sender, EventArgs e)
         {
             if (
                 txtStaffName.Text == String.Empty ||
@@ -626,37 +633,27 @@ namespace GUI
                 return;
             }
 
-            if (btnAddStaff.Enabled)
-            {
-                if (StaffDAL.Instance.InsertStaff(role.RoleID, name, bornDate, gender, adress, phone, status))
-                {
-                    MessageBox.Show("Thêm thành công");
-                    LoadStaff();
-                    ClearStaffInputBox();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm thất bại");
-                    ClearStaffInputBox();
-                }
-            }
-            else if (btnUpdateStaff.Enabled)
-            {
-                int id = System.Convert.ToInt32(txtStaffID.Text);
-                if (StaffDAL.Instance.UpdateStaff(role.RoleID, name, bornDate, gender, adress, phone, status, id))
-                {
-                    MessageBox.Show("Sửa thành công");
-                    LoadStaff();
-                    ClearStaffInputBox();
-                }
-                else
-                {
-                    MessageBox.Show("Sửa thất bại");
-                    ClearStaffInputBox();
-                }
-            }
-        }
+            DialogResult result = MessageBox.Show("Bạn có muốn thêm thông tin của\nnhân viên [" + name + "]?",
+                "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
+            if (result == DialogResult.No) return;
+
+            try
+            {
+                StaffDAL.Instance.InsertStaff(role.RoleID, name, bornDate, gender, adress, phone, status);
+                MessageBox.Show("Thêm thành công");
+                ClearStaffInputBox();
+            }
+            catch
+            {
+                MessageBox.Show("Thêm thất bại");
+            }
+            LoadStaff();
+            LoadAccount();
+            ClearStaffInputBox();
+        }
         private void btnSearchStaff_Click(object sender, EventArgs e)
         {
             List<Staff> listStaff = [];
@@ -766,35 +763,7 @@ namespace GUI
         #region MANEGE CUSTOMER
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            if (btnSaveCustomer.Enabled)
-            {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    );
-                if (result == DialogResult.Yes)
-                {
-                    ClearCustomer();
-                    btnUpdateCustomer.Enabled = true;
-                    btnSaveCustomer.Enabled = false;
-                    return;
-                }
-            }
-            else
-            {
-                btnAddCustomer.Enabled = true;
-                btnUpdateCustomer.Enabled = false;
-                btnSaveCustomer.Enabled = true;
-
-                ClearCustomer();
-            }
-        }
-        private void btnSaveCustomer_Click(object sender, EventArgs e)
-        {
-            if (
-               txtNumberPhone.Text == String.Empty ||
+            if (txtNumberPhone.Text == String.Empty ||
                txtName.Text == String.Empty ||
                rtbAddress.Text == String.Empty
                )
@@ -807,38 +776,19 @@ namespace GUI
             string name = txtName.Text;
             string address = rtbAddress.Text;
 
-            if (btnAddCustomer.Enabled)
+            try
             {
-                if (CustomerDAL.Instance.InsertCustomer(phone, name, address))
-                {
-                    MessageBox.Show("Thêm thành công");
-                    LoadCustomer();
-                    ClearCustomer();
-                }
-
-                else
-                {
-                    MessageBox.Show("Thêm thất bại");
-                    ClearCustomer();
-                }
+                CustomerDAL.Instance.InsertCustomer(phone, name, address);
+                LoadCustomer();
+                ClearCustomer();
+                MessageBox.Show("Thêm thành công");
             }
-            else if (btnUpdateCustomer.Enabled)
+            catch
             {
-                if (CustomerDAL.Instance.UpdateCustomer(phone, name, address))
-                {
-                    MessageBox.Show("Sửa thành công");
-                    LoadCustomer();
-                    ClearCustomer();
-                }
-                else
-                {
-                    MessageBox.Show("Sửa thất bại");
-                    ClearCustomer();
-                }
-
+                ClearCustomer();
+                MessageBox.Show("Thêm thất bại");
             }
         }
-
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
             List<Customer> listCustomer = [];
@@ -850,32 +800,44 @@ namespace GUI
             txtSearchName.Text = String.Empty;
             LoadCustomer(listCustomer);
         }
-
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
-            if (btnSaveCustomer.Enabled)
+            if (txtNumberPhone.Text == String.Empty ||
+               txtName.Text == String.Empty ||
+               rtbAddress.Text == String.Empty
+               )
             {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    );
-                if (result == DialogResult.Yes)
-                {
-
-                    btnSaveCustomer.Enabled = false;
-                    btnAddCustomer.Enabled = true;
-                    ClearCustomer();
-                }
+                MessageBox.Show("Vui lòng nhập đủ thông tin !");
+                return;
             }
-            else
+
+            string phone = txtNumberPhone.Text;
+            string name = txtName.Text;
+            string address = rtbAddress.Text;
+
+            DialogResult result = MessageBox.Show("Bạn có muốn sửa thông tin của\nkhách hàng [" + name + "]?",
+                "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
             {
-                btnSaveCustomer.Enabled = true;
-                btnAddCustomer.Enabled = false;
+                return;
+            }
+
+            try
+            {
+                CustomerDAL.Instance.UpdateCustomer(phone, name, address);
+                LoadCustomer();
+                ClearCustomer();
+                MessageBox.Show("Sửa thành công");
+            }
+            catch
+            {
+                ClearCustomer();
+                MessageBox.Show("Sửa thất bại");
             }
         }
-
         private void dtgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dtgvCustomer.SelectedCells[0].Value != null)
@@ -909,7 +871,11 @@ namespace GUI
             if (loginAccount.StaffID != null)
                 order.StaffID = (int)loginAccount.StaffID;
 
-            OrderDAL.Instance.InsertOrder(order.StaffID, order.CustomerNumberPhone, order.Date.ToString("yyyy/MM/dd"), order.Status, order.Total);
+            OrderDAL.Instance.InsertOrder(order.StaffID,
+                order.CustomerNumberPhone,
+                order.Date.ToString("yyyy/MM/dd"),
+                order.Status, order.Total);
+
             foreach (OrderDetail detail in listDetail)
             {
                 OrderDetailDAL.Instance.InsertOrderDetail(
@@ -920,6 +886,8 @@ namespace GUI
                     );
             }
             frm.Close();
+
+            MessageBox.Show("Cảm đơn vì đã mua hàng\nHóa đơn được xuất với tên: " + ExportOrder(OrderDAL.Instance.GetHighestOrder().OrderID));
 
             LoadCustomer();
             LoadOrder();
@@ -939,77 +907,31 @@ namespace GUI
         }
         private void btnAddManufacturer_Click(object sender, EventArgs e)
         {
-            if (btnSaveManufacturer.Enabled)
-            {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    );
-                if (result == DialogResult.Yes)
-                {
-                    ClearManufacturerInputBox();
-                    btnUpdateManufacturer.Enabled = true;
-                    btnSaveManufacturer.Enabled = false;
-                    return;
-                }
-            }
-            else
-            {
-                btnAddManufacturer.Enabled = true;
-                btnUpdateManufacturer.Enabled = false;
-                btnSaveManufacturer.Enabled = true;
-
-                ClearManufacturerInputBox();
-            }
-        }
-        private void btnSaveManufacturer_Click(object sender, EventArgs e)
-        {
-            if (
-               txtManufacturerName.Text == String.Empty
-               )
+            if (txtManufacturerName.Text == String.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin !");
                 return;
             }
             string name = txtManufacturerName.Text;
 
-            if (btnAddManufacturer.Enabled)
-            {
-                if (ManufacturerDAL.Instance.InsertManufacturer(name))
-                {
-                    MessageBox.Show("Thêm thành công");
-                    LoadManufacturer();
-                    ClearManufacturerInputBox();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm thất bại");
-                    ClearManufacturerInputBox();
-                }
-            }
-            else if (btnUpdateManufacturer.Enabled)
-            {
-                if (txtManufacturerID.Text == String.Empty)
-                {
-                    MessageBox.Show("Chọn hãng SX dùm cái");
-                    return;
-                }
-                int id = System.Convert.ToInt32(txtManufacturerID.Text);
-                if (ManufacturerDAL.Instance.UpdateManufacturer(id, name))
-                {
-                    MessageBox.Show("Sửa thành công");
-                    LoadManufacturer();
-                    ClearManufacturerInputBox();
-                }
-                else
-                {
-                    MessageBox.Show("Sửa thất bại");
-                    ClearManufacturerInputBox();
-                }
+            DialogResult result = MessageBox.Show("Bạn có muốn thêm thông tin của\nnhà sản xuất [" + name + "]?",
+                "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
+            if (result == DialogResult.No) return;
+
+            try
+            {
+                ManufacturerDAL.Instance.InsertManufacturer(name);
+                LoadManufacturer();
+                MessageBox.Show("Thêm thành công");
             }
+            catch
+            {
+                MessageBox.Show("Thêm thất bại");
+            }
+            ClearManufacturerInputBox();
             LoadProduct();
         }
         private void btnSearchManufactuer_Click(object sender, EventArgs e)
@@ -1025,27 +947,36 @@ namespace GUI
         }
         private void btnUpdateManufacturer_Click(object sender, EventArgs e)
         {
-            if (btnSaveManufacturer.Enabled)
+            if (txtManufacturerName.Text == String.Empty ||
+               txtManufacturerID.Text == String.Empty)
             {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    );
-                if (result == DialogResult.Yes)
-                {
+                MessageBox.Show("Vui lòng nhập đủ thông tin !");
+                return;
+            }
 
-                    btnSaveManufacturer.Enabled = false;
-                    btnAddManufacturer.Enabled = true;
-                    ClearManufacturerInputBox();
-                }
-            }
-            else
+            int id = System.Convert.ToInt32(txtManufacturerID.Text);
+            string name = txtManufacturerName.Text;
+
+            DialogResult result = MessageBox.Show("Bạn có muốn sửa thông tin của\nnhà sản xuất [" + name + "]?",
+                "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.No) return;
+
+            try
             {
-                btnSaveManufacturer.Enabled = true;
-                btnAddManufacturer.Enabled = false;
+                ManufacturerDAL.Instance.UpdateManufacturer(id, name);
+                MessageBox.Show("Sửa thành công");
             }
+            catch
+            {
+                MessageBox.Show("Sửa thất bại");
+            }
+
+            LoadManufacturer();
+            ClearManufacturerInputBox();
+            LoadProduct();
         }
         #endregion
 
@@ -1062,76 +993,34 @@ namespace GUI
 
         private void btnAddCate_Click(object sender, EventArgs e)
         {
-            if (btnSaveCate.Enabled)
-            {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    );
-                if (result == DialogResult.Yes)
-                {
-                    ClearCategoryInputBox();
-                    btnUpdateCate.Enabled = true;
-                    btnSaveCate.Enabled = false;
-                    return;
-                }
-            }
-            else
-            {
-                btnAddCate.Enabled = true;
-                btnUpdateCate.Enabled = false;
-                btnSaveCate.Enabled = true;
-                ClearCategoryInputBox();
-            }
-        }
-        private void btnSaveCate_Click(object sender, EventArgs e)
-        {
-            if (
-               txtCateName.Text == String.Empty
-               )
+            if (txtCateName.Text == String.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin !");
                 return;
             }
+
             string name = txtCateName.Text;
 
-            if (btnAddCate.Enabled)
-            {
-                if (CategoryDAL.Instance.InsertCategory(name))
-                {
-                    MessageBox.Show("Thêm thành công");
-                    LoadCategory();
-                    ClearCategoryInputBox();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm thất bại");
-                    ClearCategoryInputBox();
-                }
-            }
-            else if (btnUpdateCate.Enabled)
-            {
-                if (txtCateID.Text == String.Empty)
-                {
-                    MessageBox.Show("Chọn danh mục dùm cái");
-                    return;
-                }
-                int id = System.Convert.ToInt32(txtCateID.Text);
-                if (CategoryDAL.Instance.UpdateCategory(id, name))
-                {
-                    MessageBox.Show("Sửa thành công");
-                    LoadCategory();
-                    ClearCategoryInputBox();
-                }
-                else
-                {
-                    MessageBox.Show("Sửa thất bại");
-                    ClearCategoryInputBox();
-                }
+            DialogResult result = MessageBox.Show("Bạn có muốn thêm thông tin của\ndanh mục [" + name + "]?",
+                "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
+            if (result == DialogResult.No) return;
+
+            try
+            {
+                CategoryDAL.Instance.InsertCategory(name);
+                MessageBox.Show("Thêm thành công");
+                LoadCategory();
+                ClearCategoryInputBox();
             }
+            catch
+            {
+                MessageBox.Show("Thêm thất bại");
+            }
+            LoadCategory();
+            ClearCategoryInputBox();
             LoadProduct();
         }
         private void btnSearchCate_Click(object sender, EventArgs e)
@@ -1145,30 +1034,37 @@ namespace GUI
             txtSearchCateName.Text = String.Empty;
             LoadCategory(listCategory);
         }
-
         private void btnUpdateCate_Click(object sender, EventArgs e)
         {
-            if (btnSaveCate.Enabled)
+            if (txtCateName.Text == String.Empty ||
+                txtCateID.Text == String.Empty)
             {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    );
-                if (result == DialogResult.Yes)
-                {
+                MessageBox.Show("Vui lòng nhập đủ thông tin !");
+                return;
+            }
+            int id = System.Convert.ToInt32(txtCateID.Text);
+            string name = txtCateName.Text;
 
-                    btnSaveCate.Enabled = false;
-                    btnAddCate.Enabled = true;
-                    ClearCategoryInputBox();
-                }
-            }
-            else
+            DialogResult result = MessageBox.Show("Bạn có muốn sửa thông tin của\ndanh mục [" + name + "]?",
+               "Thông báo",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question);
+
+            if (result == DialogResult.No) return;
+
+            try
             {
-                btnSaveCate.Enabled = true;
-                btnAddCate.Enabled = false;
+                CategoryDAL.Instance.UpdateCategory(id, name);
+                MessageBox.Show("Sửa thành công");
             }
+            catch
+            {
+                MessageBox.Show("Sửa thất bại");
+            }
+
+            LoadCategory();
+            ClearCategoryInputBox();
+            LoadProduct();
         }
         #endregion
 
@@ -1181,8 +1077,8 @@ namespace GUI
                 txtOrderID.Text = row.Cells[0].Value.ToString();
                 txtOrderCustomerName.Text = row.Cells[2].Value.ToString();
                 cbOrderStatus.Text = row.Cells[3].Value.ToString();
-                cbOrderStaff.Text = row.Cells[4].Value.ToString();
-                txtOrderTotal.Text = row.Cells[6].Value.ToString();
+                txtOrderTotal.Text = row.Cells[4].Value.ToString();
+                cbOrderStaff.Text = row.Cells[6].Value.ToString();
             }
         }
 
@@ -1257,7 +1153,8 @@ namespace GUI
         }
         private string ExportOrder(int orderID)
         {
-            string billPath = global::GUI.Properties.Resources.BillPath;
+            Directory.CreateDirectory("C:\\CuaHangLinhKien\\HoaDon\\");
+            string billPath = "C:\\CuaHangLinhKien\\HoaDon\\";
             Order order = OrderDAL.Instance.GetOrder(orderID);
 
             List<OrderDetail> list = OrderDetailDAL.Instance.GetListOrderDetailOrderID(orderID);
@@ -1394,30 +1291,6 @@ namespace GUI
         }
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
-            if (btnSaveAccount.Enabled)
-            {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    btnSaveAccount.Enabled = false;
-                    btnUpdateAccount.Enabled = true;
-                    ClearAccountInputBox();
-                }
-            }
-            else
-            {
-                btnSaveAccount.Enabled = true;
-                btnUpdateAccount.Enabled = false;
-                ClearAccountInputBox();
-            }
-        }
-
-        private void btnSaveAccount_Click(object sender, EventArgs e)
-        {
             if (
                 txtLoginName.Text == String.Empty ||
                 txtPassword.Text == String.Empty ||
@@ -1433,81 +1306,73 @@ namespace GUI
             AccountType accType = (AccountType)cbAccountType.SelectedItem;
             Staff staff = (Staff)cbAccountStaff.SelectedItem;
 
-
-
-            if (btnAddAccount.Enabled)
+            try
             {
-                try
-                {
-                    AccountDAL.Instance.InsertAccount(loginName, pass, accType.TypeID, staff.StaffID);
-                    MessageBox.Show("Thêm thành công");
-                    LoadAccount();
-                    ClearAccountInputBox();
-                }
-                catch
-                {
-                    MessageBox.Show("Thêm thất bại");
-                    ClearAccountInputBox();
-                }
+                AccountDAL.Instance.DeleteAccountByStaffID(staff.StaffID);
+
+                AccountDAL.Instance.InsertAccount(loginName, pass, accType.TypeID, staff.StaffID);
+                StaffDAL.Instance.SetAccountStaff(staff.StaffID, loginName);
+                MessageBox.Show("Thêm thành công");
+
+                LoadStaff();
+                LoadAccount();
             }
-            else if (btnUpdateAccount.Enabled)
+            catch
             {
-                try
-                {
-                    string? oldLoginName = dtgvAccount.SelectedRows[0].Cells[0].Value.ToString();
-                    if (oldLoginName == null)
-                    {
-                        MessageBox.Show("Vui lòng chọn tài khoản");
-                        return;
-                    }
-
-                    AccountDAL.Instance.DeleteAccountByStaffID(staff.StaffID);
-
-                    if (oldLoginName == loginName)
-                        AccountDAL.Instance.UpdateAccount(loginName, pass, accType.TypeID, staff.StaffID);
-                    else
-                        AccountDAL.Instance.UpdateAccountID(oldLoginName, loginName, pass, accType.TypeID, staff.StaffID);
-
-                    if (dtgvAccount.SelectedRows[0].Cells[3].Value.ToString() != "Trống")
-                        StaffDAL.Instance.SetAccountStaff(((Staff)dtgvAccount.SelectedRows[0].Cells[3].Value).StaffID, "null");
-                    StaffDAL.Instance.SetAccountStaff(staff.StaffID, loginName);
-
-                    LoadStaff();
-                    LoadAccount();
-                    ClearAccountInputBox();
-
-                    if (loginAccount.AccountID == loginName)
-                        loginAccount = new(loginName, pass, accType.TypeID, staff.StaffID);
-                    MessageBox.Show("Sửa thành công");
-                }
-                catch
-                {
-                    MessageBox.Show("Sửa thất bại");
-                    ClearAccountInputBox();
-                }
+                StaffDAL.Instance.SetAccountStaff(staff.StaffID, loginName);
+                MessageBox.Show("Thêm thất bại");
             }
+            ClearAccountInputBox();
         }
         private void btnUpdateAccount_Click(object sender, EventArgs e)
         {
-            if (btnSaveAccount.Enabled)
+            if (
+               txtLoginName.Text == String.Empty ||
+               txtPassword.Text == String.Empty ||
+               cbAccountType.SelectedItem == null ||
+               cbAccountStaff.SelectedItem == null
+               )
             {
-                DialogResult result = MessageBox.Show(
-                    "Bạn có muốn hủy thao tác?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                    );
-                if (result == DialogResult.Yes)
-                {
-                    btnSaveAccount.Enabled = false;
-                    btnAddAccount.Enabled = true;
-                    ClearAccountInputBox();
-                }
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                return;
             }
-            else
+            string loginName = txtLoginName.Text;
+            string pass = txtPassword.Text;
+            AccountType accType = (AccountType)cbAccountType.SelectedItem;
+            Staff staff = (Staff)cbAccountStaff.SelectedItem;
+
+            try
             {
-                btnSaveAccount.Enabled = true;
-                btnAddAccount.Enabled = false;
+                string? oldLoginName = dtgvAccount.SelectedRows[0].Cells[0].Value.ToString();
+                if (oldLoginName == null)
+                {
+                    MessageBox.Show("Vui lòng chọn tài khoản");
+                    return;
+                }
+
+                AccountDAL.Instance.DeleteAccountByStaffID(staff.StaffID);
+
+                if (oldLoginName == loginName)
+                    AccountDAL.Instance.UpdateAccount(loginName, pass, accType.TypeID, staff.StaffID);
+                else
+                    AccountDAL.Instance.UpdateAccountID(oldLoginName, loginName, pass, accType.TypeID, staff.StaffID);
+
+                if (dtgvAccount.SelectedRows[0].Cells[3].Value.ToString() != "Trống")
+                    StaffDAL.Instance.SetAccountStaff(((Staff)dtgvAccount.SelectedRows[0].Cells[3].Value).StaffID, "null");
+                StaffDAL.Instance.SetAccountStaff(staff.StaffID, loginName);
+
+                LoadStaff();
+                LoadAccount();
+                ClearAccountInputBox();
+
+                if (loginAccount.AccountID == loginName)
+                    loginAccount = new(loginName, pass, accType.TypeID, staff.StaffID);
+                MessageBox.Show("Sửa thành công");
+            }
+            catch
+            {
+                ClearAccountInputBox();
+                MessageBox.Show("Sửa thất bại");
             }
         }
         private void btnSearchAccount_Click(object sender, EventArgs e)
@@ -1532,13 +1397,10 @@ namespace GUI
             frmStatistic frm = new();
             frm.ShowDialog();
         }
-
         private void tsbLogout_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        #endregion
-
         private void frmManage_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -1554,5 +1416,7 @@ namespace GUI
             if (result != DialogResult.Yes)
                 e.Cancel = true;
         }
+
+        #endregion
     }
 }

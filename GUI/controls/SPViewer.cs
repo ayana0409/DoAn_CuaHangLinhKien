@@ -21,6 +21,7 @@ namespace GUI
         public SPViewer(Product product)
         {
             InitializeComponent();
+            Directory.CreateDirectory("C:\\CuaHangLinhKien\\HinhAnhSanPham\\");
             this.Product = product;
             this.BackgroundImageLayout = ImageLayout.Zoom;
         }
@@ -34,16 +35,15 @@ namespace GUI
                 lbID.Text = "MSP: " + product.ProductID.ToString();
                 lbName.Text = product.ProductName;
                 lbQuantity.Text = "Kho: " + product.Quantity.ToString();
-                lbPrice.Text = product.Price.ToString("#,###") + "VNĐ";
+                lbPrice.Text = product.Price.ToString("#,###") + " VNĐ";
                 lbInfomation.Text = product.Information;
-                string path = global::GUI.Properties.Resources.ProductImagePath;;
+                string path = "C:\\CuaHangLinhKien\\HinhAnhSanPham\\";
                 if (product.Image == "Unknown" || product.Image == String.Empty)
                     pbImage.ImageLocation = path + "default-product.png";
                 else
                     pbImage.ImageLocation = path + product.Image;
             }
         }
-
         public bool IsSelected
         {
             get { return isSelected; }
@@ -58,6 +58,5 @@ namespace GUI
             WasClicked?.Invoke(this, e);
             IsSelected = true;
         }
-
     }
 }
