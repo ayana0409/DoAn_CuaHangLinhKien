@@ -421,6 +421,7 @@ namespace GUI
             {
                 pbProductImage.Image = null;
             }
+            ofdSelectProductImage.FileName = null;
         }
         private void btnDeleteProductImage_Click(object sender, EventArgs e)
         {
@@ -461,7 +462,7 @@ namespace GUI
             string info = rtbProductInfomation.Text;
             double price = System.Convert.ToDouble(txtProductPrice.Text);
             int quantity = (int)nmudQuantity.Value;
-            
+
 
             string fileName = _tempImageName;
             string newFileName = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
@@ -1417,6 +1418,6 @@ namespace GUI
                 e.Cancel = true;
         }
 
-        #endregion
+#endregion
     }
 }
