@@ -1701,8 +1701,8 @@
             // 
             // nmudQuantity
             // 
+            nmudQuantity.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             nmudQuantity.BackColor = Color.FromArgb(255, 253, 239);
-            nmudQuantity.Dock = DockStyle.Fill;
             nmudQuantity.Location = new Point(95, 75);
             nmudQuantity.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
             nmudQuantity.Name = "nmudQuantity";
