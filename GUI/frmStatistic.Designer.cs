@@ -32,10 +32,6 @@
             label1 = new Label();
             splitContainer1 = new SplitContainer();
             dtgvStatistic = new DataGridView();
-            colID = new DataGridViewTextBoxColumn();
-            colStaff = new DataGridViewTextBoxColumn();
-            colCustomer = new DataGridViewTextBoxColumn();
-            colDate = new DataGridViewTextBoxColumn();
             splitContainer2 = new SplitContainer();
             groupBox2 = new GroupBox();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -48,12 +44,15 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
             label2 = new Label();
             label3 = new Label();
             dtpkFrom = new DateTimePicker();
             dtpkTo = new DateTimePicker();
             panel2 = new Panel();
+            colID = new DataGridViewTextBoxColumn();
+            colStaff = new DataGridViewTextBoxColumn();
+            colCustomer = new DataGridViewTextBoxColumn();
+            colDate = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -113,6 +112,7 @@
             // 
             // dtgvStatistic
             // 
+            dtgvStatistic.AllowUserToDeleteRows = false;
             dtgvStatistic.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvStatistic.BackgroundColor = Color.FromArgb(194, 231, 255);
             dtgvStatistic.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -125,30 +125,6 @@
             dtgvStatistic.ReadOnly = true;
             dtgvStatistic.Size = new Size(850, 615);
             dtgvStatistic.TabIndex = 0;
-            // 
-            // colID
-            // 
-            colID.HeaderText = "Mã";
-            colID.Name = "colID";
-            colID.ReadOnly = true;
-            // 
-            // colStaff
-            // 
-            colStaff.HeaderText = "Tên sản phẩm";
-            colStaff.Name = "colStaff";
-            colStaff.ReadOnly = true;
-            // 
-            // colCustomer
-            // 
-            colCustomer.HeaderText = "Số lượng";
-            colCustomer.Name = "colCustomer";
-            colCustomer.ReadOnly = true;
-            // 
-            // colDate
-            // 
-            colDate.HeaderText = "Giá";
-            colDate.Name = "colDate";
-            colDate.ReadOnly = true;
             // 
             // splitContainer2
             // 
@@ -277,7 +253,6 @@
             // 
             flowLayoutPanel1.Controls.Add(button1);
             flowLayoutPanel1.Controls.Add(button2);
-            flowLayoutPanel1.Controls.Add(button3);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(91, 98);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -309,18 +284,6 @@
             button2.Text = "Đơn hàng";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(255, 253, 239);
-            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button3.ForeColor = Color.Brown;
-            button3.Location = new Point(209, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(97, 43);
-            button3.TabIndex = 0;
-            button3.Text = "Xuất file";
-            button3.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -371,6 +334,30 @@
             panel2.Size = new Size(1264, 615);
             panel2.TabIndex = 2;
             // 
+            // colID
+            // 
+            colID.HeaderText = "Mã";
+            colID.Name = "colID";
+            colID.ReadOnly = true;
+            // 
+            // colStaff
+            // 
+            colStaff.HeaderText = "Tên sản phẩm";
+            colStaff.Name = "colStaff";
+            colStaff.ReadOnly = true;
+            // 
+            // colCustomer
+            // 
+            colCustomer.HeaderText = "Số lượng";
+            colCustomer.Name = "colCustomer";
+            colCustomer.ReadOnly = true;
+            // 
+            // colDate
+            // 
+            colDate.HeaderText = "Giá";
+            colDate.Name = "colDate";
+            colDate.ReadOnly = true;
+            // 
             // frmStatistic
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -416,7 +403,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Button button1;
         private Button button2;
-        private Button button3;
         private Label label2;
         private Label label3;
         private DateTimePicker dtpkFrom;
@@ -426,11 +412,11 @@
         private Label label4;
         private Label label5;
         private Panel panel2;
+        private Label txtTotal;
+        private Label txtQuantity;
         private DataGridViewTextBoxColumn colID;
         private DataGridViewTextBoxColumn colStaff;
         private DataGridViewTextBoxColumn colCustomer;
         private DataGridViewTextBoxColumn colDate;
-        private Label txtTotal;
-        private Label txtQuantity;
     }
 }

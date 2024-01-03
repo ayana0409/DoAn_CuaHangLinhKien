@@ -72,6 +72,9 @@ namespace GUI
                 btnCancel.Enabled = false;
                 btnDeleteProduct.Enabled = false;
                 btnPayment.Enabled = false;
+
+                dtgvDetail.Enabled = false;
+                dtgvDetail.ClearSelection();
             }
         }
 
@@ -135,6 +138,7 @@ namespace GUI
                     case '8':
                     case '9':
                         result = true; break;
+                    default: result = false; break;
                 }
             }
             return result;

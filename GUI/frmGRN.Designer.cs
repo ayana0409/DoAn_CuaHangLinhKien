@@ -439,6 +439,7 @@
             // btnInsertProduct
             // 
             btnInsertProduct.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnInsertProduct.Enabled = false;
             btnInsertProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnInsertProduct.ForeColor = Color.Brown;
             btnInsertProduct.Location = new Point(3, 33);

@@ -85,8 +85,8 @@
             groupBox5 = new GroupBox();
             tableLayoutPanel4 = new TableLayoutPanel();
             panel5 = new Panel();
+            txtOrderTotal = new Label();
             label13 = new Label();
-            txtOrderTotal = new TextBox();
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
@@ -931,11 +931,11 @@
             // 
             tpOrder.BackColor = Color.Azure;
             tpOrder.Controls.Add(splitContainer4);
-            tpOrder.Location = new Point(4, 24);
+            tpOrder.Location = new Point(4, 29);
             tpOrder.Margin = new Padding(3, 4, 3, 4);
             tpOrder.Name = "tpOrder";
             tpOrder.Padding = new Padding(3, 4, 3, 4);
-            tpOrder.Size = new Size(1256, 628);
+            tpOrder.Size = new Size(1256, 623);
             tpOrder.TabIndex = 1;
             tpOrder.Text = "Đơn hàng";
             // 
@@ -954,7 +954,7 @@
             // 
             splitContainer4.Panel2.Controls.Add(splitContainer5);
             splitContainer4.Panel2MinSize = 400;
-            splitContainer4.Size = new Size(1250, 620);
+            splitContainer4.Size = new Size(1250, 615);
             splitContainer4.SplitterDistance = 842;
             splitContainer4.TabIndex = 3;
             // 
@@ -972,7 +972,7 @@
             dtgvOrder.ReadOnly = true;
             dtgvOrder.RowHeadersWidth = 62;
             dtgvOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvOrder.Size = new Size(842, 620);
+            dtgvOrder.Size = new Size(842, 615);
             dtgvOrder.TabIndex = 0;
             dtgvOrder.CellClick += dtgvOrder_CellClick;
             // 
@@ -1036,7 +1036,7 @@
             // 
             splitContainer5.Panel2.Controls.Add(splitContainer6);
             splitContainer5.Panel2MinSize = 250;
-            splitContainer5.Size = new Size(404, 620);
+            splitContainer5.Size = new Size(404, 615);
             splitContainer5.SplitterDistance = 234;
             splitContainer5.TabIndex = 4;
             // 
@@ -1191,7 +1191,7 @@
             // splitContainer6.Panel2
             // 
             splitContainer6.Panel2.Controls.Add(groupBox6);
-            splitContainer6.Size = new Size(404, 382);
+            splitContainer6.Size = new Size(404, 377);
             splitContainer6.SplitterDistance = 248;
             splitContainer6.TabIndex = 1;
             // 
@@ -1221,7 +1221,6 @@
             tableLayoutPanel4.Controls.Add(cbOrderStaff, 1, 2);
             tableLayoutPanel4.Controls.Add(cbOrderStatus, 1, 3);
             tableLayoutPanel4.Controls.Add(label69, 0, 4);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
             tableLayoutPanel4.Location = new Point(3, 23);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 5;
@@ -1235,17 +1234,28 @@
             // 
             // panel5
             // 
-            panel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel5.Controls.Add(label13);
             panel5.Controls.Add(txtOrderTotal);
+            panel5.Controls.Add(label13);
+            panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(93, 165);
             panel5.Name = "panel5";
-            panel5.Size = new Size(302, 44);
+            panel5.Size = new Size(302, 54);
             panel5.TabIndex = 12;
+            // 
+            // txtOrderTotal
+            // 
+            txtOrderTotal.Anchor = AnchorStyles.Top;
+            txtOrderTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtOrderTotal.ForeColor = Color.Black;
+            txtOrderTotal.Location = new Point(3, 6);
+            txtOrderTotal.Name = "txtOrderTotal";
+            txtOrderTotal.Size = new Size(248, 20);
+            txtOrderTotal.TabIndex = 7;
+            txtOrderTotal.Text = "0";
             // 
             // label13
             // 
-            label13.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label13.Anchor = AnchorStyles.Top;
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label13.ForeColor = Color.Brown;
@@ -1254,17 +1264,6 @@
             label13.Size = new Size(42, 20);
             label13.TabIndex = 7;
             label13.Text = "VNĐ";
-            // 
-            // txtOrderTotal
-            // 
-            txtOrderTotal.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtOrderTotal.BackColor = Color.FromArgb(255, 253, 239);
-            txtOrderTotal.Enabled = false;
-            txtOrderTotal.Location = new Point(0, 3);
-            txtOrderTotal.Name = "txtOrderTotal";
-            txtOrderTotal.ReadOnly = true;
-            txtOrderTotal.Size = new Size(251, 27);
-            txtOrderTotal.TabIndex = 6;
             // 
             // label8
             // 
@@ -1325,11 +1324,12 @@
             // label39
             // 
             label39.AutoSize = true;
+            label39.Dock = DockStyle.Fill;
             label39.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label39.ForeColor = Color.Brown;
             label39.Location = new Point(3, 122);
             label39.Name = "label39";
-            label39.Size = new Size(84, 20);
+            label39.Size = new Size(84, 40);
             label39.TabIndex = 3;
             label39.Text = "Trạng thái:";
             // 
@@ -1374,7 +1374,7 @@
             groupBox6.Dock = DockStyle.Fill;
             groupBox6.Location = new Point(0, 0);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(404, 130);
+            groupBox6.Size = new Size(404, 125);
             groupBox6.TabIndex = 2;
             groupBox6.TabStop = false;
             groupBox6.Text = "Chức năng";
@@ -1386,7 +1386,7 @@
             flowLayoutPanel2.Dock = DockStyle.Fill;
             flowLayoutPanel2.Location = new Point(3, 23);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(398, 104);
+            flowLayoutPanel2.Size = new Size(398, 99);
             flowLayoutPanel2.TabIndex = 3;
             // 
             // btnAddOrder
@@ -1420,10 +1420,10 @@
             // 
             tpProduct.BackColor = Color.Azure;
             tpProduct.Controls.Add(splitContainer10);
-            tpProduct.Location = new Point(4, 29);
+            tpProduct.Location = new Point(4, 24);
             tpProduct.Name = "tpProduct";
             tpProduct.Padding = new Padding(3);
-            tpProduct.Size = new Size(1256, 623);
+            tpProduct.Size = new Size(1256, 628);
             tpProduct.TabIndex = 2;
             tpProduct.Text = "Sản phẩm";
             // 
@@ -1442,7 +1442,7 @@
             // 
             splitContainer10.Panel2.Controls.Add(splitContainer11);
             splitContainer10.Panel2MinSize = 80;
-            splitContainer10.Size = new Size(1250, 617);
+            splitContainer10.Size = new Size(1250, 622);
             splitContainer10.SplitterDistance = 846;
             splitContainer10.TabIndex = 4;
             // 
@@ -1453,7 +1453,7 @@
             flpProduct.Dock = DockStyle.Fill;
             flpProduct.Location = new Point(0, 0);
             flpProduct.Name = "flpProduct";
-            flpProduct.Size = new Size(846, 617);
+            flpProduct.Size = new Size(846, 622);
             flpProduct.TabIndex = 0;
             // 
             // splitContainer11
@@ -1473,7 +1473,7 @@
             // 
             splitContainer11.Panel2.Controls.Add(splitContainer12);
             splitContainer11.Panel2MinSize = 80;
-            splitContainer11.Size = new Size(400, 617);
+            splitContainer11.Size = new Size(400, 622);
             splitContainer11.SplitterDistance = 92;
             splitContainer11.TabIndex = 4;
             // 
@@ -1596,7 +1596,7 @@
             // splitContainer12.Panel2
             // 
             splitContainer12.Panel2.Controls.Add(splitContainer32);
-            splitContainer12.Size = new Size(400, 521);
+            splitContainer12.Size = new Size(400, 526);
             splitContainer12.SplitterDistance = 310;
             splitContainer12.TabIndex = 1;
             // 
@@ -1830,8 +1830,8 @@
             // splitContainer32.Panel2
             // 
             splitContainer32.Panel2.Controls.Add(groupBox11);
-            splitContainer32.Size = new Size(400, 207);
-            splitContainer32.SplitterDistance = 128;
+            splitContainer32.Size = new Size(400, 212);
+            splitContainer32.SplitterDistance = 133;
             splitContainer32.TabIndex = 3;
             // 
             // pbProductImage
@@ -1841,7 +1841,7 @@
             pbProductImage.Dock = DockStyle.Fill;
             pbProductImage.Location = new Point(0, 0);
             pbProductImage.Name = "pbProductImage";
-            pbProductImage.Size = new Size(400, 128);
+            pbProductImage.Size = new Size(400, 133);
             pbProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbProductImage.TabIndex = 0;
             pbProductImage.TabStop = false;
@@ -4885,11 +4885,11 @@
         private Label label12;
         private Panel panel5;
         private Label label13;
-        private TextBox txtOrderTotal;
         private Panel panel;
         private Label label60;
-        private TextBox txtProductPrice;
         private SplitContainer splitContainer32;
         private SplitContainer splitContainer33;
+        private Label txtOrderTotal;
+        private TextBox txtProductPrice;
     }
 }

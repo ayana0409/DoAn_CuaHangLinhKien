@@ -47,6 +47,7 @@ namespace GUI
             CheckImageButton();
             LoadInstalProductList();
             CheckReadOnly();
+
         }
         #region METHOD
 
@@ -65,6 +66,8 @@ namespace GUI
                 txtGRNUnit.Enabled = false;
                 dtgvListInsertProduct.Enabled = false;
                 cbCommit.Enabled = false;
+
+                dtgvListInsertProduct.ClearSelection();
             }
             else
             {
@@ -281,6 +284,7 @@ namespace GUI
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                     );
+           btnInsertProduct.Enabled = cbCommit.Checked;
         }
         #endregion
     }

@@ -64,7 +64,8 @@ namespace GUI
 
             txtQuantity.Text = quantity.ToString();
             txtTotal.Text = total.ToString();
-            
+
+            dtgvStatistic.ClearSelection();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -97,6 +98,8 @@ namespace GUI
 
             txtQuantity.Text = quantity.ToString();
             txtTotal.Text = total.ToString();
+
+            dtgvStatistic.ClearSelection();
         }
 
         private DataTable StatisticOrder(string from, string to)

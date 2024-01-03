@@ -137,7 +137,7 @@ namespace GUI
             cbProductCategory.Text = String.Empty;
             cbProductManufacturer.Text = String.Empty;
             pbProductImage.Image = null;
-            txtProductPrice.Text = String.Empty;
+            txtOrderTotal.Text = String.Empty;
         }
         private void CheckImageButton()
         {
@@ -378,7 +378,7 @@ namespace GUI
             SPViewer v = (SPViewer)sender;
             txtProductID.Text = v.Product.ProductID.ToString();
             txtProductName.Text = v.Product.ProductName;
-            txtProductPrice.Text = v.Product.Price.ToString("#,###");
+            txtOrderTotal.Text = v.Product.Price.ToString("#,###");
             rtbProductInfomation.Text = v.Product.Information;
             nmudQuantity.Value = v.Product.Quantity;
             cbProductCategory.Text = CategoryDAL.Instance.GetCategory(v.Product.CategoryID).CategoryName;
@@ -439,7 +439,7 @@ namespace GUI
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             if (txtProductName.Text == String.Empty ||
-                    txtProductPrice.Text == String.Empty ||
+                    txtOrderTotal.Text == String.Empty ||
                     cbProductCategory.SelectedItem == null ||
                     cbProductManufacturer.SelectedItem == null ||
                     _tempImageName == null)
@@ -460,7 +460,7 @@ namespace GUI
 
             string name = txtProductName.Text;
             string info = rtbProductInfomation.Text;
-            double price = System.Convert.ToDouble(txtProductPrice.Text);
+            double price = System.Convert.ToDouble(txtOrderTotal.Text);
             int quantity = (int)nmudQuantity.Value;
 
 
@@ -486,7 +486,7 @@ namespace GUI
         {
             if (txtProductID.Text == String.Empty ||
                 txtProductName.Text == String.Empty ||
-                txtProductPrice.Text == String.Empty ||
+                txtOrderTotal.Text == String.Empty ||
                 cbProductCategory.SelectedItem == null ||
                 cbProductManufacturer.SelectedItem == null ||
                 _tempImageName == String.Empty)
@@ -508,7 +508,7 @@ namespace GUI
             int id = System.Convert.ToInt32(txtProductID.Text);
             string name = txtProductName.Text;
             string info = rtbProductInfomation.Text;
-            double price = Double.Parse(txtProductPrice.Text);
+            double price = Double.Parse(txtOrderTotal.Text);
             int quantity = (int)nmudQuantity.Value;
 
             string oldImage = ProductDAL.Instance.GetProduct(id).Image;
@@ -1076,7 +1076,7 @@ namespace GUI
             {
                 DataGridViewRow row = dtgvOrder.SelectedRows[0];
                 txtOrderID.Text = row.Cells[0].Value.ToString();
-                txtOrderCustomerName.Text = row.Cells[2].Value.ToString();
+                txtOrderCustomerName.Text = row.Cells[1].Value.ToString();
                 cbOrderStatus.Text = row.Cells[3].Value.ToString();
                 txtOrderTotal.Text = row.Cells[4].Value.ToString();
                 cbOrderStaff.Text = row.Cells[6].Value.ToString();
