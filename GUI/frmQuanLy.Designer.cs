@@ -931,11 +931,11 @@
             // 
             tpOrder.BackColor = Color.Azure;
             tpOrder.Controls.Add(splitContainer4);
-            tpOrder.Location = new Point(4, 29);
+            tpOrder.Location = new Point(4, 24);
             tpOrder.Margin = new Padding(3, 4, 3, 4);
             tpOrder.Name = "tpOrder";
             tpOrder.Padding = new Padding(3, 4, 3, 4);
-            tpOrder.Size = new Size(1256, 623);
+            tpOrder.Size = new Size(1256, 628);
             tpOrder.TabIndex = 1;
             tpOrder.Text = "Đơn hàng";
             // 
@@ -954,7 +954,7 @@
             // 
             splitContainer4.Panel2.Controls.Add(splitContainer5);
             splitContainer4.Panel2MinSize = 400;
-            splitContainer4.Size = new Size(1250, 615);
+            splitContainer4.Size = new Size(1250, 620);
             splitContainer4.SplitterDistance = 842;
             splitContainer4.TabIndex = 3;
             // 
@@ -972,7 +972,7 @@
             dtgvOrder.ReadOnly = true;
             dtgvOrder.RowHeadersWidth = 62;
             dtgvOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvOrder.Size = new Size(842, 615);
+            dtgvOrder.Size = new Size(842, 620);
             dtgvOrder.TabIndex = 0;
             dtgvOrder.CellClick += dtgvOrder_CellClick;
             // 
@@ -1036,7 +1036,7 @@
             // 
             splitContainer5.Panel2.Controls.Add(splitContainer6);
             splitContainer5.Panel2MinSize = 250;
-            splitContainer5.Size = new Size(404, 615);
+            splitContainer5.Size = new Size(404, 620);
             splitContainer5.SplitterDistance = 234;
             splitContainer5.TabIndex = 4;
             // 
@@ -1191,7 +1191,7 @@
             // splitContainer6.Panel2
             // 
             splitContainer6.Panel2.Controls.Add(groupBox6);
-            splitContainer6.Size = new Size(404, 377);
+            splitContainer6.Size = new Size(404, 382);
             splitContainer6.SplitterDistance = 248;
             splitContainer6.TabIndex = 1;
             // 
@@ -1374,7 +1374,7 @@
             groupBox6.Dock = DockStyle.Fill;
             groupBox6.Location = new Point(0, 0);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(404, 125);
+            groupBox6.Size = new Size(404, 130);
             groupBox6.TabIndex = 2;
             groupBox6.TabStop = false;
             groupBox6.Text = "Chức năng";
@@ -1386,7 +1386,7 @@
             flowLayoutPanel2.Dock = DockStyle.Fill;
             flowLayoutPanel2.Location = new Point(3, 23);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(398, 99);
+            flowLayoutPanel2.Size = new Size(398, 104);
             flowLayoutPanel2.TabIndex = 3;
             // 
             // btnAddOrder
@@ -1420,10 +1420,10 @@
             // 
             tpProduct.BackColor = Color.Azure;
             tpProduct.Controls.Add(splitContainer10);
-            tpProduct.Location = new Point(4, 29);
+            tpProduct.Location = new Point(4, 24);
             tpProduct.Name = "tpProduct";
             tpProduct.Padding = new Padding(3);
-            tpProduct.Size = new Size(1256, 623);
+            tpProduct.Size = new Size(1256, 628);
             tpProduct.TabIndex = 2;
             tpProduct.Text = "Sản phẩm";
             // 
@@ -1442,7 +1442,7 @@
             // 
             splitContainer10.Panel2.Controls.Add(splitContainer11);
             splitContainer10.Panel2MinSize = 80;
-            splitContainer10.Size = new Size(1250, 617);
+            splitContainer10.Size = new Size(1250, 622);
             splitContainer10.SplitterDistance = 846;
             splitContainer10.TabIndex = 4;
             // 
@@ -1453,7 +1453,7 @@
             flpProduct.Dock = DockStyle.Fill;
             flpProduct.Location = new Point(0, 0);
             flpProduct.Name = "flpProduct";
-            flpProduct.Size = new Size(846, 617);
+            flpProduct.Size = new Size(846, 622);
             flpProduct.TabIndex = 0;
             // 
             // splitContainer11
@@ -1473,7 +1473,7 @@
             // 
             splitContainer11.Panel2.Controls.Add(splitContainer12);
             splitContainer11.Panel2MinSize = 80;
-            splitContainer11.Size = new Size(400, 617);
+            splitContainer11.Size = new Size(400, 622);
             splitContainer11.SplitterDistance = 92;
             splitContainer11.TabIndex = 4;
             // 
@@ -1597,7 +1597,7 @@
             // splitContainer12.Panel2
             // 
             splitContainer12.Panel2.Controls.Add(splitContainer32);
-            splitContainer12.Size = new Size(400, 521);
+            splitContainer12.Size = new Size(400, 526);
             splitContainer12.SplitterDistance = 295;
             splitContainer12.TabIndex = 1;
             // 
@@ -1831,8 +1831,8 @@
             // splitContainer32.Panel2
             // 
             splitContainer32.Panel2.Controls.Add(groupBox11);
-            splitContainer32.Size = new Size(400, 222);
-            splitContainer32.SplitterDistance = 143;
+            splitContainer32.Size = new Size(400, 227);
+            splitContainer32.SplitterDistance = 148;
             splitContainer32.TabIndex = 3;
             // 
             // pbProductImage
@@ -1842,7 +1842,7 @@
             pbProductImage.Dock = DockStyle.Fill;
             pbProductImage.Location = new Point(0, 0);
             pbProductImage.Name = "pbProductImage";
-            pbProductImage.Size = new Size(400, 143);
+            pbProductImage.Size = new Size(400, 148);
             pbProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbProductImage.TabIndex = 0;
             pbProductImage.TabStop = false;
@@ -1917,10 +1917,10 @@
             // 
             tpManufacturer.BackColor = Color.Azure;
             tpManufacturer.Controls.Add(splitContainer14);
-            tpManufacturer.Location = new Point(4, 29);
+            tpManufacturer.Location = new Point(4, 24);
             tpManufacturer.Name = "tpManufacturer";
             tpManufacturer.Padding = new Padding(3);
-            tpManufacturer.Size = new Size(1256, 623);
+            tpManufacturer.Size = new Size(1256, 628);
             tpManufacturer.TabIndex = 3;
             tpManufacturer.Text = "Hãng SX";
             // 
@@ -1939,7 +1939,7 @@
             // 
             splitContainer14.Panel2.Controls.Add(splitContainer15);
             splitContainer14.Panel2MinSize = 400;
-            splitContainer14.Size = new Size(1250, 617);
+            splitContainer14.Size = new Size(1250, 622);
             splitContainer14.SplitterDistance = 842;
             splitContainer14.TabIndex = 3;
             // 
@@ -1956,7 +1956,7 @@
             dtgvManufacturer.ReadOnly = true;
             dtgvManufacturer.RowHeadersWidth = 62;
             dtgvManufacturer.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvManufacturer.Size = new Size(842, 617);
+            dtgvManufacturer.Size = new Size(842, 622);
             dtgvManufacturer.TabIndex = 0;
             dtgvManufacturer.CellClick += dtgvManufacturer_CellClick;
             // 
@@ -1990,7 +1990,7 @@
             // 
             splitContainer15.Panel2.Controls.Add(splitContainer16);
             splitContainer15.Panel2MinSize = 250;
-            splitContainer15.Size = new Size(404, 617);
+            splitContainer15.Size = new Size(404, 622);
             splitContainer15.SplitterDistance = 211;
             splitContainer15.TabIndex = 4;
             // 
@@ -2098,7 +2098,7 @@
             // splitContainer16.Panel2
             // 
             splitContainer16.Panel2.Controls.Add(groupBox14);
-            splitContainer16.Size = new Size(404, 402);
+            splitContainer16.Size = new Size(404, 407);
             splitContainer16.SplitterDistance = 248;
             splitContainer16.TabIndex = 1;
             // 
@@ -2181,7 +2181,7 @@
             groupBox14.Dock = DockStyle.Fill;
             groupBox14.Location = new Point(0, 0);
             groupBox14.Name = "groupBox14";
-            groupBox14.Size = new Size(404, 150);
+            groupBox14.Size = new Size(404, 155);
             groupBox14.TabIndex = 2;
             groupBox14.TabStop = false;
             groupBox14.Text = "Chức năng";
@@ -2193,7 +2193,7 @@
             flowLayoutPanel6.Dock = DockStyle.Fill;
             flowLayoutPanel6.Location = new Point(3, 23);
             flowLayoutPanel6.Name = "flowLayoutPanel6";
-            flowLayoutPanel6.Size = new Size(398, 124);
+            flowLayoutPanel6.Size = new Size(398, 129);
             flowLayoutPanel6.TabIndex = 3;
             // 
             // btnAddManufacturer
@@ -2230,10 +2230,10 @@
             // 
             tpCategory.BackColor = Color.Azure;
             tpCategory.Controls.Add(splitContainer17);
-            tpCategory.Location = new Point(4, 29);
+            tpCategory.Location = new Point(4, 24);
             tpCategory.Name = "tpCategory";
             tpCategory.Padding = new Padding(3);
-            tpCategory.Size = new Size(1256, 623);
+            tpCategory.Size = new Size(1256, 628);
             tpCategory.TabIndex = 4;
             tpCategory.Text = "Danh mục";
             // 
@@ -2252,7 +2252,7 @@
             // 
             splitContainer17.Panel2.Controls.Add(splitContainer18);
             splitContainer17.Panel2MinSize = 400;
-            splitContainer17.Size = new Size(1250, 617);
+            splitContainer17.Size = new Size(1250, 622);
             splitContainer17.SplitterDistance = 842;
             splitContainer17.TabIndex = 4;
             // 
@@ -2269,7 +2269,7 @@
             dtgvCategory.ReadOnly = true;
             dtgvCategory.RowHeadersWidth = 62;
             dtgvCategory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvCategory.Size = new Size(842, 617);
+            dtgvCategory.Size = new Size(842, 622);
             dtgvCategory.TabIndex = 0;
             dtgvCategory.CellClick += dtgvCategory_CellClick;
             // 
@@ -2303,7 +2303,7 @@
             // 
             splitContainer18.Panel2.Controls.Add(splitContainer19);
             splitContainer18.Panel2MinSize = 250;
-            splitContainer18.Size = new Size(404, 617);
+            splitContainer18.Size = new Size(404, 622);
             splitContainer18.SplitterDistance = 211;
             splitContainer18.TabIndex = 4;
             // 
@@ -2411,7 +2411,7 @@
             // splitContainer19.Panel2
             // 
             splitContainer19.Panel2.Controls.Add(groupBox17);
-            splitContainer19.Size = new Size(404, 402);
+            splitContainer19.Size = new Size(404, 407);
             splitContainer19.SplitterDistance = 248;
             splitContainer19.TabIndex = 1;
             // 
@@ -2495,7 +2495,7 @@
             groupBox17.Dock = DockStyle.Fill;
             groupBox17.Location = new Point(0, 0);
             groupBox17.Name = "groupBox17";
-            groupBox17.Size = new Size(404, 150);
+            groupBox17.Size = new Size(404, 155);
             groupBox17.TabIndex = 2;
             groupBox17.TabStop = false;
             groupBox17.Text = "Chức năng";
@@ -2534,10 +2534,10 @@
             // 
             tpGRN.BackColor = Color.Azure;
             tpGRN.Controls.Add(splitContainer20);
-            tpGRN.Location = new Point(4, 29);
+            tpGRN.Location = new Point(4, 24);
             tpGRN.Name = "tpGRN";
             tpGRN.Padding = new Padding(3);
-            tpGRN.Size = new Size(1256, 623);
+            tpGRN.Size = new Size(1256, 628);
             tpGRN.TabIndex = 5;
             tpGRN.Text = "Phiếu nhập";
             // 
@@ -2556,7 +2556,7 @@
             // 
             splitContainer20.Panel2.Controls.Add(splitContainer21);
             splitContainer20.Panel2MinSize = 400;
-            splitContainer20.Size = new Size(1250, 617);
+            splitContainer20.Size = new Size(1250, 622);
             splitContainer20.SplitterDistance = 842;
             splitContainer20.TabIndex = 4;
             // 
@@ -2573,7 +2573,7 @@
             dtgvGRN.ReadOnly = true;
             dtgvGRN.RowHeadersWidth = 62;
             dtgvGRN.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvGRN.Size = new Size(842, 617);
+            dtgvGRN.Size = new Size(842, 622);
             dtgvGRN.TabIndex = 0;
             dtgvGRN.CellClick += dtgvGRN_CellClick;
             // 
@@ -2629,7 +2629,7 @@
             // 
             splitContainer21.Panel2.Controls.Add(splitContainer22);
             splitContainer21.Panel2MinSize = 250;
-            splitContainer21.Size = new Size(404, 617);
+            splitContainer21.Size = new Size(404, 622);
             splitContainer21.SplitterDistance = 211;
             splitContainer21.TabIndex = 4;
             // 
@@ -2781,7 +2781,7 @@
             // splitContainer22.Panel2
             // 
             splitContainer22.Panel2.Controls.Add(groupBox20);
-            splitContainer22.Size = new Size(404, 402);
+            splitContainer22.Size = new Size(404, 407);
             splitContainer22.SplitterDistance = 248;
             splitContainer22.TabIndex = 1;
             // 
@@ -2958,7 +2958,7 @@
             groupBox20.Dock = DockStyle.Fill;
             groupBox20.Location = new Point(0, 0);
             groupBox20.Name = "groupBox20";
-            groupBox20.Size = new Size(404, 150);
+            groupBox20.Size = new Size(404, 155);
             groupBox20.TabIndex = 2;
             groupBox20.TabStop = false;
             groupBox20.Text = "Chức năng";
@@ -2970,7 +2970,7 @@
             flowLayoutPanel8.Dock = DockStyle.Fill;
             flowLayoutPanel8.Location = new Point(3, 23);
             flowLayoutPanel8.Name = "flowLayoutPanel8";
-            flowLayoutPanel8.Size = new Size(398, 124);
+            flowLayoutPanel8.Size = new Size(398, 129);
             flowLayoutPanel8.TabIndex = 3;
             // 
             // btnDetailAndUpdateGRN
@@ -4293,6 +4293,7 @@
             tslStaffName.Font = new Font("Segoe UI", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             tslStaffName.ForeColor = Color.Brown;
             tslStaffName.Image = Properties.Resources.icons8_user_account_30;
+            tslStaffName.ImageAlign = ContentAlignment.MiddleRight;
             tslStaffName.Name = "tslStaffName";
             tslStaffName.Size = new Size(98, 22);
             tslStaffName.Text = "Nhân viên";
