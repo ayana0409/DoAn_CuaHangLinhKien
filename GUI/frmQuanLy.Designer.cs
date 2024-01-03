@@ -687,7 +687,7 @@
             // 
             btnSearchCustomer.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnSearchCustomer.ForeColor = Color.Brown;
-            btnSearchCustomer.Image = Properties.Resources.icons8_search_32;
+            btnSearchCustomer.Image = (Image)resources.GetObject("btnSearchCustomer.Image");
             btnSearchCustomer.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchCustomer.Location = new Point(94, 113);
             btnSearchCustomer.Name = "btnSearchCustomer";
@@ -886,7 +886,7 @@
             // 
             btnAddCustomer.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnAddCustomer.ForeColor = Color.Brown;
-            btnAddCustomer.Image = Properties.Resources.icons8_add_32__1_;
+            btnAddCustomer.Image = (Image)resources.GetObject("btnAddCustomer.Image");
             btnAddCustomer.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddCustomer.Location = new Point(3, 3);
             btnAddCustomer.Name = "btnAddCustomer";
@@ -901,7 +901,7 @@
             // 
             btnUpdateCustomer.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnUpdateCustomer.ForeColor = Color.Brown;
-            btnUpdateCustomer.Image = Properties.Resources.icons8_change_32;
+            btnUpdateCustomer.Image = (Image)resources.GetObject("btnUpdateCustomer.Image");
             btnUpdateCustomer.ImageAlign = ContentAlignment.MiddleLeft;
             btnUpdateCustomer.Location = new Point(130, 3);
             btnUpdateCustomer.Name = "btnUpdateCustomer";
@@ -1152,7 +1152,7 @@
             // 
             btnSearchOrderCancel.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnSearchOrderCancel.ForeColor = Color.Brown;
-            btnSearchOrderCancel.Image = Properties.Resources.icons8_cancel_32;
+            btnSearchOrderCancel.Image = (Image)resources.GetObject("btnSearchOrderCancel.Image");
             btnSearchOrderCancel.Location = new Point(184, 3);
             btnSearchOrderCancel.Name = "btnSearchOrderCancel";
             btnSearchOrderCancel.Size = new Size(43, 43);
@@ -1164,7 +1164,7 @@
             // 
             btnSearchOrder.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnSearchOrder.ForeColor = Color.Brown;
-            btnSearchOrder.Image = Properties.Resources.icons8_search_32;
+            btnSearchOrder.Image = (Image)resources.GetObject("btnSearchOrder.Image");
             btnSearchOrder.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchOrder.Location = new Point(3, 3);
             btnSearchOrder.Name = "btnSearchOrder";
@@ -1393,7 +1393,7 @@
             // 
             btnAddOrder.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnAddOrder.ForeColor = Color.Brown;
-            btnAddOrder.Image = Properties.Resources.icons8_add_32__1_;
+            btnAddOrder.Image = (Image)resources.GetObject("btnAddOrder.Image");
             btnAddOrder.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddOrder.Location = new Point(3, 3);
             btnAddOrder.Name = "btnAddOrder";
@@ -1420,10 +1420,10 @@
             // 
             tpProduct.BackColor = Color.Azure;
             tpProduct.Controls.Add(splitContainer10);
-            tpProduct.Location = new Point(4, 29);
+            tpProduct.Location = new Point(4, 24);
             tpProduct.Name = "tpProduct";
             tpProduct.Padding = new Padding(3);
-            tpProduct.Size = new Size(1256, 623);
+            tpProduct.Size = new Size(1256, 628);
             tpProduct.TabIndex = 2;
             tpProduct.Text = "Sản phẩm";
             // 
@@ -1442,7 +1442,7 @@
             // 
             splitContainer10.Panel2.Controls.Add(splitContainer11);
             splitContainer10.Panel2MinSize = 80;
-            splitContainer10.Size = new Size(1250, 617);
+            splitContainer10.Size = new Size(1250, 622);
             splitContainer10.SplitterDistance = 846;
             splitContainer10.TabIndex = 4;
             // 
@@ -1453,7 +1453,7 @@
             flpProduct.Dock = DockStyle.Fill;
             flpProduct.Location = new Point(0, 0);
             flpProduct.Name = "flpProduct";
-            flpProduct.Size = new Size(846, 617);
+            flpProduct.Size = new Size(846, 622);
             flpProduct.TabIndex = 0;
             // 
             // splitContainer11
@@ -1473,7 +1473,7 @@
             // 
             splitContainer11.Panel2.Controls.Add(splitContainer12);
             splitContainer11.Panel2MinSize = 80;
-            splitContainer11.Size = new Size(400, 617);
+            splitContainer11.Size = new Size(400, 622);
             splitContainer11.SplitterDistance = 92;
             splitContainer11.TabIndex = 4;
             // 
@@ -1570,7 +1570,7 @@
             // 
             btnSearchProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnSearchProduct.ForeColor = Color.Brown;
-            btnSearchProduct.Image = Properties.Resources.icons8_search_32;
+            btnSearchProduct.Image = (Image)resources.GetObject("btnSearchProduct.Image");
             btnSearchProduct.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchProduct.Location = new Point(2, 3);
             btnSearchProduct.Name = "btnSearchProduct";
@@ -1597,7 +1597,7 @@
             // splitContainer12.Panel2
             // 
             splitContainer12.Panel2.Controls.Add(splitContainer32);
-            splitContainer12.Size = new Size(400, 521);
+            splitContainer12.Size = new Size(400, 526);
             splitContainer12.SplitterDistance = 295;
             splitContainer12.TabIndex = 1;
             // 
@@ -1831,8 +1831,8 @@
             // splitContainer32.Panel2
             // 
             splitContainer32.Panel2.Controls.Add(groupBox11);
-            splitContainer32.Size = new Size(400, 222);
-            splitContainer32.SplitterDistance = 143;
+            splitContainer32.Size = new Size(400, 227);
+            splitContainer32.SplitterDistance = 148;
             splitContainer32.TabIndex = 3;
             // 
             // pbProductImage
@@ -1842,7 +1842,7 @@
             pbProductImage.Dock = DockStyle.Fill;
             pbProductImage.Location = new Point(0, 0);
             pbProductImage.Name = "pbProductImage";
-            pbProductImage.Size = new Size(400, 143);
+            pbProductImage.Size = new Size(400, 148);
             pbProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbProductImage.TabIndex = 0;
             pbProductImage.TabStop = false;
@@ -2029,7 +2029,7 @@
             // 
             btnSearchManufacturer.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnSearchManufacturer.ForeColor = Color.Brown;
-            btnSearchManufacturer.Image = Properties.Resources.icons8_search_32;
+            btnSearchManufacturer.Image = (Image)resources.GetObject("btnSearchManufacturer.Image");
             btnSearchManufacturer.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchManufacturer.Location = new Point(94, 107);
             btnSearchManufacturer.Name = "btnSearchManufacturer";
@@ -2200,7 +2200,7 @@
             // 
             btnAddManufacturer.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnAddManufacturer.ForeColor = Color.Brown;
-            btnAddManufacturer.Image = Properties.Resources.icons8_add_32__1_;
+            btnAddManufacturer.Image = (Image)resources.GetObject("btnAddManufacturer.Image");
             btnAddManufacturer.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddManufacturer.Location = new Point(3, 3);
             btnAddManufacturer.Name = "btnAddManufacturer";
@@ -2215,7 +2215,7 @@
             // 
             btnUpdateManufacturer.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnUpdateManufacturer.ForeColor = Color.Brown;
-            btnUpdateManufacturer.Image = Properties.Resources.icons8_change_32;
+            btnUpdateManufacturer.Image = (Image)resources.GetObject("btnUpdateManufacturer.Image");
             btnUpdateManufacturer.ImageAlign = ContentAlignment.MiddleLeft;
             btnUpdateManufacturer.Location = new Point(130, 3);
             btnUpdateManufacturer.Name = "btnUpdateManufacturer";
@@ -2342,7 +2342,7 @@
             // 
             btnSearchCate.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnSearchCate.ForeColor = Color.Brown;
-            btnSearchCate.Image = Properties.Resources.icons8_search_32;
+            btnSearchCate.Image = (Image)resources.GetObject("btnSearchCate.Image");
             btnSearchCate.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchCate.Location = new Point(94, 107);
             btnSearchCate.Name = "btnSearchCate";
@@ -2504,7 +2504,7 @@
             // 
             btnAddCate.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnAddCate.ForeColor = Color.Brown;
-            btnAddCate.Image = Properties.Resources.icons8_add_32__1_;
+            btnAddCate.Image = (Image)resources.GetObject("btnAddCate.Image");
             btnAddCate.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddCate.Location = new Point(6, 26);
             btnAddCate.Name = "btnAddCate";
@@ -2519,7 +2519,7 @@
             // 
             btnUpdateCate.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnUpdateCate.ForeColor = Color.Brown;
-            btnUpdateCate.Image = Properties.Resources.icons8_change_32;
+            btnUpdateCate.Image = (Image)resources.GetObject("btnUpdateCate.Image");
             btnUpdateCate.ImageAlign = ContentAlignment.MiddleLeft;
             btnUpdateCate.Location = new Point(133, 26);
             btnUpdateCate.Name = "btnUpdateCate";
@@ -2742,7 +2742,7 @@
             // 
             btnSearchGRNCancel.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnSearchGRNCancel.ForeColor = Color.Brown;
-            btnSearchGRNCancel.Image = Properties.Resources.icons8_cancel_32;
+            btnSearchGRNCancel.Image = (Image)resources.GetObject("btnSearchGRNCancel.Image");
             btnSearchGRNCancel.Location = new Point(200, 1);
             btnSearchGRNCancel.Name = "btnSearchGRNCancel";
             btnSearchGRNCancel.Size = new Size(43, 43);
@@ -2754,7 +2754,7 @@
             // 
             btnSearchGRN.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnSearchGRN.ForeColor = Color.Brown;
-            btnSearchGRN.Image = Properties.Resources.icons8_search_32;
+            btnSearchGRN.Image = (Image)resources.GetObject("btnSearchGRN.Image");
             btnSearchGRN.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchGRN.Location = new Point(3, 0);
             btnSearchGRN.Name = "btnSearchGRN";
@@ -3174,7 +3174,7 @@
             // 
             btnSearchStaff.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearchStaff.ForeColor = Color.Brown;
-            btnSearchStaff.Image = Properties.Resources.icons8_search_32;
+            btnSearchStaff.Image = (Image)resources.GetObject("btnSearchStaff.Image");
             btnSearchStaff.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchStaff.Location = new Point(94, 76);
             btnSearchStaff.Name = "btnSearchStaff";
@@ -3492,7 +3492,7 @@
             // 
             btnAddStaff.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnAddStaff.ForeColor = Color.Brown;
-            btnAddStaff.Image = Properties.Resources.icons8_add_32__1_;
+            btnAddStaff.Image = (Image)resources.GetObject("btnAddStaff.Image");
             btnAddStaff.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddStaff.Location = new Point(3, 3);
             btnAddStaff.Name = "btnAddStaff";
@@ -3507,7 +3507,7 @@
             // 
             btnUpdateStaff.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnUpdateStaff.ForeColor = Color.Brown;
-            btnUpdateStaff.Image = Properties.Resources.icons8_change_32;
+            btnUpdateStaff.Image = (Image)resources.GetObject("btnUpdateStaff.Image");
             btnUpdateStaff.ImageAlign = ContentAlignment.MiddleLeft;
             btnUpdateStaff.Location = new Point(130, 3);
             btnUpdateStaff.Name = "btnUpdateStaff";
@@ -3665,7 +3665,7 @@
             // 
             btnSearchAccount.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnSearchAccount.ForeColor = Color.Brown;
-            btnSearchAccount.Image = Properties.Resources.icons8_search_32;
+            btnSearchAccount.Image = (Image)resources.GetObject("btnSearchAccount.Image");
             btnSearchAccount.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchAccount.Location = new Point(94, 55);
             btnSearchAccount.Name = "btnSearchAccount";
@@ -3844,7 +3844,7 @@
             // 
             btnAddAccount.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnAddAccount.ForeColor = Color.Brown;
-            btnAddAccount.Image = Properties.Resources.icons8_add_32__1_;
+            btnAddAccount.Image = (Image)resources.GetObject("btnAddAccount.Image");
             btnAddAccount.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddAccount.Location = new Point(3, 3);
             btnAddAccount.Name = "btnAddAccount";
@@ -3859,7 +3859,7 @@
             // 
             btnUpdateAccount.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnUpdateAccount.ForeColor = Color.Brown;
-            btnUpdateAccount.Image = Properties.Resources.icons8_change_32;
+            btnUpdateAccount.Image = (Image)resources.GetObject("btnUpdateAccount.Image");
             btnUpdateAccount.ImageAlign = ContentAlignment.MiddleLeft;
             btnUpdateAccount.Location = new Point(130, 3);
             btnUpdateAccount.Name = "btnUpdateAccount";
@@ -4292,7 +4292,7 @@
             // 
             tslStaffName.Font = new Font("Segoe UI", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             tslStaffName.ForeColor = Color.Brown;
-            tslStaffName.Image = Properties.Resources.icons8_user_account_30;
+            tslStaffName.Image = (Image)resources.GetObject("tslStaffName.Image");
             tslStaffName.ImageAlign = ContentAlignment.MiddleRight;
             tslStaffName.Name = "tslStaffName";
             tslStaffName.Size = new Size(98, 22);
@@ -4305,7 +4305,7 @@
             // 
             // tsbStatistics
             // 
-            tsbStatistics.Image = Properties.Resources.icons8_statistics_30;
+            tsbStatistics.Image = (Image)resources.GetObject("tsbStatistics.Image");
             tsbStatistics.ImageTransparentColor = Color.Magenta;
             tsbStatistics.Name = "tsbStatistics";
             tsbStatistics.Size = new Size(76, 22);
@@ -4319,7 +4319,7 @@
             // 
             // tsbLogout
             // 
-            tsbLogout.Image = Properties.Resources.icons8_logout_30;
+            tsbLogout.Image = (Image)resources.GetObject("tsbLogout.Image");
             tsbLogout.ImageTransparentColor = Color.Magenta;
             tsbLogout.Name = "tsbLogout";
             tsbLogout.Size = new Size(81, 22);
