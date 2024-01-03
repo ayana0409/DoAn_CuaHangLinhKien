@@ -1247,7 +1247,7 @@
             txtOrderTotal.Anchor = AnchorStyles.Top;
             txtOrderTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             txtOrderTotal.ForeColor = Color.Black;
-            txtOrderTotal.Location = new Point(3, 6);
+            txtOrderTotal.Location = new Point(3, -3);
             txtOrderTotal.Name = "txtOrderTotal";
             txtOrderTotal.Size = new Size(248, 20);
             txtOrderTotal.TabIndex = 7;
@@ -1259,7 +1259,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label13.ForeColor = Color.Brown;
-            label13.Location = new Point(257, 6);
+            label13.Location = new Point(260, -3);
             label13.Name = "label13";
             label13.Size = new Size(42, 20);
             label13.TabIndex = 7;
@@ -1358,7 +1358,6 @@
             // 
             // label69
             // 
-            label69.AutoSize = true;
             label69.Dock = DockStyle.Fill;
             label69.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label69.ForeColor = Color.Brown;
