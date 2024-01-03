@@ -32,8 +32,8 @@ namespace GUI
                 ));
         }
 
-        private List<GRN> listGRN = [];
-        private List<Order> listOrder = [];
+        private DataTable listGR;
+        private DataTable listOrder;
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace GUI
             dtgvStatistic.Columns[2].HeaderCell.Value = "Đơn vị nhập";
             dtgvStatistic.Columns[3].HeaderCell.Value = "Ngày nhập";
 
-            listGRN = StatisticGRN(dtpkFrom.Value.ToString("yyyy/MM/dd"),
+            /*listGRN = StatisticGRN(dtpkFrom.Value.ToString("yyyy/MM/dd"),
                 dtpkTo.Value.ToString("yyyy/MM/dd"));
 
             dtgvStatistic.Rows.Clear();
@@ -59,42 +59,43 @@ namespace GUI
 
             txtQuantity.Text = listGRN.Count.ToString();
             txtTotal.Text = SumGRNTotal(listGRN).ToString("#,###");
+            */
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dtgvStatistic.Columns[0].HeaderCell.Value = "Mã đơn hàng";
-            dtgvStatistic.Columns[2].HeaderCell.Value = "SDT khách hàng";
-            dtgvStatistic.Columns[3].HeaderCell.Value = "Ngày thanh toán";
+            dtgvStatistic.Columns[0].HeaderCell.Value = "Mã sản phẩm";
+            dtgvStatistic.Columns[2].HeaderCell.Value = "Số lượng bán";
+            dtgvStatistic.Columns[3].HeaderCell.Value = "Giá bán";
 
             listOrder = StatisticOrder(
                 dtpkFrom.Value.ToString("yyyy/MM/dd"),
                 dtpkTo.Value.ToString("yyyy/MM/dd"));
 
             dtgvStatistic.Rows.Clear();
-            foreach (Order s in listOrder)
+
+            foreach (DataRow s in listOrder.Rows)
             {
                 DataGridViewRow row = (DataGridViewRow)dtgvStatistic.Rows[0].Clone(); ;
-                row.Cells[0].Value = s.OrderID;
-                row.Cells[2].Value = s.CustomerNumberPhone;
-                row.Cells[3].Value = s.Date.ToString("dd/MM/yyyy");
-                row.Cells[4].Value = s.Total.ToString("#,###");
+                row.Cells[0].Value = s["MaSanPham"];
+                row.Cells[1].Value = s["TenSanPham"];
+                row.Cells[2].Value = s["SoLuongBan"];
+                row.Cells[3].Value = s["GiaBan"];
 
-                row.Cells[1].Value = StaffDAL.Instance.GetStaff(s.StaffID).StaffName;
+               // row.Cells[1].Value = StaffDAL.Instance.GetStaff(s.StaffID).StaffName;
                 
                 dtgvStatistic.Rows.Add(row);
             }
 
-            txtQuantity.Text = listOrder.Count.ToString();
-            txtTotal.Text = SumOrderTotal(listOrder).ToString("#,###");
+            //.Text = listOrder.Count.ToString();
+            //txtTotal.Text = SumOrderTotal(listOrder).ToString("#,###");
         }
 
-        private List<Order> StatisticOrder(string from, string to)
+        private DataTable StatisticOrder(string from, string to)
         {
-            if (OrderDAL.Instance.SearchOrder(from, to).Count > 0)
-                return OrderDAL.Instance.SearchOrder(from, to);
-            else
-                return [];
+            string query = "exec proc_Statistic_Order @from , @to";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] {from, to});
+            return data;
         }
 
         private List<GRN> StatisticGRN(string from, string to)

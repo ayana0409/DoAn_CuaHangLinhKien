@@ -36,7 +36,6 @@
             colStaff = new DataGridViewTextBoxColumn();
             colCustomer = new DataGridViewTextBoxColumn();
             colDate = new DataGridViewTextBoxColumn();
-            colTotal = new DataGridViewTextBoxColumn();
             splitContainer2 = new SplitContainer();
             groupBox2 = new GroupBox();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -117,7 +116,7 @@
             dtgvStatistic.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvStatistic.BackgroundColor = Color.FromArgb(194, 231, 255);
             dtgvStatistic.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvStatistic.Columns.AddRange(new DataGridViewColumn[] { colID, colStaff, colCustomer, colDate, colTotal });
+            dtgvStatistic.Columns.AddRange(new DataGridViewColumn[] { colID, colStaff, colCustomer, colDate });
             dtgvStatistic.Dock = DockStyle.Fill;
             dtgvStatistic.Enabled = false;
             dtgvStatistic.Location = new Point(0, 0);
@@ -135,27 +134,21 @@
             // 
             // colStaff
             // 
-            colStaff.HeaderText = "Nhân viên";
+            colStaff.HeaderText = "Tên sản phẩm";
             colStaff.Name = "colStaff";
             colStaff.ReadOnly = true;
             // 
             // colCustomer
             // 
-            colCustomer.HeaderText = "Khách hàng";
+            colCustomer.HeaderText = "Số lượng";
             colCustomer.Name = "colCustomer";
             colCustomer.ReadOnly = true;
             // 
             // colDate
             // 
-            colDate.HeaderText = "Ngày";
+            colDate.HeaderText = "Giá";
             colDate.Name = "colDate";
             colDate.ReadOnly = true;
-            // 
-            // colTotal
-            // 
-            colTotal.HeaderText = "Tổng tiền";
-            colTotal.Name = "colTotal";
-            colTotal.ReadOnly = true;
             // 
             // splitContainer2
             // 
@@ -438,6 +431,5 @@
         private DataGridViewTextBoxColumn colStaff;
         private DataGridViewTextBoxColumn colCustomer;
         private DataGridViewTextBoxColumn colDate;
-        private DataGridViewTextBoxColumn colTotal;
     }
 }

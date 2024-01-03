@@ -1420,10 +1420,10 @@
             // 
             tpProduct.BackColor = Color.Azure;
             tpProduct.Controls.Add(splitContainer10);
-            tpProduct.Location = new Point(4, 24);
+            tpProduct.Location = new Point(4, 29);
             tpProduct.Name = "tpProduct";
             tpProduct.Padding = new Padding(3);
-            tpProduct.Size = new Size(1256, 628);
+            tpProduct.Size = new Size(1256, 623);
             tpProduct.TabIndex = 2;
             tpProduct.Text = "Sản phẩm";
             // 
@@ -1442,7 +1442,7 @@
             // 
             splitContainer10.Panel2.Controls.Add(splitContainer11);
             splitContainer10.Panel2MinSize = 80;
-            splitContainer10.Size = new Size(1250, 622);
+            splitContainer10.Size = new Size(1250, 617);
             splitContainer10.SplitterDistance = 846;
             splitContainer10.TabIndex = 4;
             // 
@@ -1453,7 +1453,7 @@
             flpProduct.Dock = DockStyle.Fill;
             flpProduct.Location = new Point(0, 0);
             flpProduct.Name = "flpProduct";
-            flpProduct.Size = new Size(846, 622);
+            flpProduct.Size = new Size(846, 617);
             flpProduct.TabIndex = 0;
             // 
             // splitContainer11
@@ -1473,7 +1473,7 @@
             // 
             splitContainer11.Panel2.Controls.Add(splitContainer12);
             splitContainer11.Panel2MinSize = 80;
-            splitContainer11.Size = new Size(400, 622);
+            splitContainer11.Size = new Size(400, 617);
             splitContainer11.SplitterDistance = 92;
             splitContainer11.TabIndex = 4;
             // 
@@ -1597,7 +1597,7 @@
             // splitContainer12.Panel2
             // 
             splitContainer12.Panel2.Controls.Add(splitContainer32);
-            splitContainer12.Size = new Size(400, 526);
+            splitContainer12.Size = new Size(400, 521);
             splitContainer12.SplitterDistance = 295;
             splitContainer12.TabIndex = 1;
             // 
@@ -1831,8 +1831,8 @@
             // splitContainer32.Panel2
             // 
             splitContainer32.Panel2.Controls.Add(groupBox11);
-            splitContainer32.Size = new Size(400, 227);
-            splitContainer32.SplitterDistance = 148;
+            splitContainer32.Size = new Size(400, 222);
+            splitContainer32.SplitterDistance = 143;
             splitContainer32.TabIndex = 3;
             // 
             // pbProductImage
@@ -1842,7 +1842,7 @@
             pbProductImage.Dock = DockStyle.Fill;
             pbProductImage.Location = new Point(0, 0);
             pbProductImage.Name = "pbProductImage";
-            pbProductImage.Size = new Size(400, 148);
+            pbProductImage.Size = new Size(400, 143);
             pbProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbProductImage.TabIndex = 0;
             pbProductImage.TabStop = false;
