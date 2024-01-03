@@ -6,8 +6,9 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-
-	  <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+	  
+	<ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+    <ForceDesignerDpiUnaware>false</ForceDesignerDpiUnaware>
   </PropertyGroup>
 
   <ItemGroup>
