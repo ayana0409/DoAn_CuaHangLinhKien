@@ -1420,10 +1420,10 @@
             // 
             tpProduct.BackColor = Color.Azure;
             tpProduct.Controls.Add(splitContainer10);
-            tpProduct.Location = new Point(4, 24);
+            tpProduct.Location = new Point(4, 29);
             tpProduct.Name = "tpProduct";
             tpProduct.Padding = new Padding(3);
-            tpProduct.Size = new Size(1256, 628);
+            tpProduct.Size = new Size(1256, 623);
             tpProduct.TabIndex = 2;
             tpProduct.Text = "Sản phẩm";
             // 
@@ -1442,7 +1442,7 @@
             // 
             splitContainer10.Panel2.Controls.Add(splitContainer11);
             splitContainer10.Panel2MinSize = 80;
-            splitContainer10.Size = new Size(1250, 622);
+            splitContainer10.Size = new Size(1250, 617);
             splitContainer10.SplitterDistance = 846;
             splitContainer10.TabIndex = 4;
             // 
@@ -1453,7 +1453,7 @@
             flpProduct.Dock = DockStyle.Fill;
             flpProduct.Location = new Point(0, 0);
             flpProduct.Name = "flpProduct";
-            flpProduct.Size = new Size(846, 622);
+            flpProduct.Size = new Size(846, 617);
             flpProduct.TabIndex = 0;
             // 
             // splitContainer11
@@ -1473,7 +1473,7 @@
             // 
             splitContainer11.Panel2.Controls.Add(splitContainer12);
             splitContainer11.Panel2MinSize = 80;
-            splitContainer11.Size = new Size(400, 622);
+            splitContainer11.Size = new Size(400, 617);
             splitContainer11.SplitterDistance = 92;
             splitContainer11.TabIndex = 4;
             // 
@@ -1585,7 +1585,6 @@
             // 
             splitContainer12.Dock = DockStyle.Fill;
             splitContainer12.FixedPanel = FixedPanel.Panel1;
-            splitContainer12.IsSplitterFixed = true;
             splitContainer12.Location = new Point(0, 0);
             splitContainer12.Name = "splitContainer12";
             splitContainer12.Orientation = Orientation.Horizontal;
@@ -1597,8 +1596,8 @@
             // splitContainer12.Panel2
             // 
             splitContainer12.Panel2.Controls.Add(splitContainer32);
-            splitContainer12.Size = new Size(400, 526);
-            splitContainer12.SplitterDistance = 295;
+            splitContainer12.Size = new Size(400, 521);
+            splitContainer12.SplitterDistance = 310;
             splitContainer12.TabIndex = 1;
             // 
             // groupBox10
@@ -1607,7 +1606,7 @@
             groupBox10.Dock = DockStyle.Fill;
             groupBox10.Location = new Point(0, 0);
             groupBox10.Name = "groupBox10";
-            groupBox10.Size = new Size(400, 295);
+            groupBox10.Size = new Size(400, 310);
             groupBox10.TabIndex = 0;
             groupBox10.TabStop = false;
             groupBox10.Text = "Thông tin";
@@ -1635,14 +1634,14 @@
             tableLayoutPanel8.Location = new Point(3, 23);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
             tableLayoutPanel8.RowCount = 7;
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 33.66337F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 31.6831684F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 34.6534653F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 33.0188675F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 34.90566F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 32.07547F));
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 68F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tableLayoutPanel8.Size = new Size(394, 269);
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
+            tableLayoutPanel8.Size = new Size(394, 284);
             tableLayoutPanel8.TabIndex = 0;
             // 
             // label26
@@ -1653,7 +1652,7 @@
             label26.ForeColor = Color.Brown;
             label26.Location = new Point(3, 0);
             label26.Name = "label26";
-            label26.Size = new Size(86, 33);
+            label26.Size = new Size(86, 35);
             label26.TabIndex = 0;
             label26.Text = "Mã SP:";
             // 
@@ -1663,9 +1662,9 @@
             label27.Dock = DockStyle.Fill;
             label27.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label27.ForeColor = Color.Brown;
-            label27.Location = new Point(3, 33);
+            label27.Location = new Point(3, 35);
             label27.Name = "label27";
-            label27.Size = new Size(86, 31);
+            label27.Size = new Size(86, 37);
             label27.TabIndex = 0;
             label27.Text = "Tên SP:";
             // 
@@ -1675,7 +1674,7 @@
             label28.Dock = DockStyle.Fill;
             label28.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label28.ForeColor = Color.Brown;
-            label28.Location = new Point(3, 64);
+            label28.Location = new Point(3, 72);
             label28.Name = "label28";
             label28.Size = new Size(86, 34);
             label28.TabIndex = 0;
@@ -1685,7 +1684,7 @@
             // 
             txtProductName.BackColor = Color.FromArgb(255, 253, 239);
             txtProductName.Dock = DockStyle.Fill;
-            txtProductName.Location = new Point(95, 36);
+            txtProductName.Location = new Point(95, 38);
             txtProductName.Name = "txtProductName";
             txtProductName.Size = new Size(296, 27);
             txtProductName.TabIndex = 1;
@@ -1704,7 +1703,7 @@
             // 
             nmudQuantity.BackColor = Color.FromArgb(255, 253, 239);
             nmudQuantity.Dock = DockStyle.Fill;
-            nmudQuantity.Location = new Point(95, 67);
+            nmudQuantity.Location = new Point(95, 75);
             nmudQuantity.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
             nmudQuantity.Name = "nmudQuantity";
             nmudQuantity.Size = new Size(296, 27);
@@ -1714,7 +1713,7 @@
             // 
             rtbProductInfomation.BackColor = Color.FromArgb(255, 253, 239);
             rtbProductInfomation.Dock = DockStyle.Fill;
-            rtbProductInfomation.Location = new Point(95, 101);
+            rtbProductInfomation.Location = new Point(95, 109);
             rtbProductInfomation.Name = "rtbProductInfomation";
             rtbProductInfomation.Size = new Size(296, 62);
             rtbProductInfomation.TabIndex = 5;
@@ -1725,7 +1724,7 @@
             label25.AutoSize = true;
             label25.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label25.ForeColor = Color.Brown;
-            label25.Location = new Point(3, 166);
+            label25.Location = new Point(3, 174);
             label25.Name = "label25";
             label25.Size = new Size(84, 20);
             label25.TabIndex = 7;
@@ -1736,7 +1735,7 @@
             cbProductCategory.BackColor = Color.FromArgb(255, 253, 239);
             cbProductCategory.Dock = DockStyle.Fill;
             cbProductCategory.FormattingEnabled = true;
-            cbProductCategory.Location = new Point(95, 169);
+            cbProductCategory.Location = new Point(95, 177);
             cbProductCategory.Name = "cbProductCategory";
             cbProductCategory.Size = new Size(296, 28);
             cbProductCategory.TabIndex = 12;
@@ -1746,7 +1745,7 @@
             label34.AutoSize = true;
             label34.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label34.ForeColor = Color.Brown;
-            label34.Location = new Point(3, 200);
+            label34.Location = new Point(3, 210);
             label34.Name = "label34";
             label34.Size = new Size(72, 20);
             label34.TabIndex = 9;
@@ -1757,7 +1756,7 @@
             cbProductManufacturer.BackColor = Color.FromArgb(255, 253, 239);
             cbProductManufacturer.Dock = DockStyle.Fill;
             cbProductManufacturer.FormattingEnabled = true;
-            cbProductManufacturer.Location = new Point(95, 203);
+            cbProductManufacturer.Location = new Point(95, 213);
             cbProductManufacturer.Name = "cbProductManufacturer";
             cbProductManufacturer.Size = new Size(296, 28);
             cbProductManufacturer.TabIndex = 13;
@@ -1767,7 +1766,7 @@
             label35.AutoSize = true;
             label35.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label35.ForeColor = Color.Brown;
-            label35.Location = new Point(3, 232);
+            label35.Location = new Point(3, 244);
             label35.Name = "label35";
             label35.Size = new Size(36, 20);
             label35.TabIndex = 10;
@@ -1778,7 +1777,7 @@
             panel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel.Controls.Add(label60);
             panel.Controls.Add(txtProductPrice);
-            panel.Location = new Point(95, 235);
+            panel.Location = new Point(95, 247);
             panel.Name = "panel";
             panel.Size = new Size(296, 30);
             panel.TabIndex = 14;
@@ -1809,7 +1808,7 @@
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label23.ForeColor = Color.Brown;
-            label23.Location = new Point(3, 98);
+            label23.Location = new Point(3, 106);
             label23.Name = "label23";
             label23.Size = new Size(63, 20);
             label23.TabIndex = 3;
@@ -1831,8 +1830,8 @@
             // splitContainer32.Panel2
             // 
             splitContainer32.Panel2.Controls.Add(groupBox11);
-            splitContainer32.Size = new Size(400, 227);
-            splitContainer32.SplitterDistance = 148;
+            splitContainer32.Size = new Size(400, 207);
+            splitContainer32.SplitterDistance = 128;
             splitContainer32.TabIndex = 3;
             // 
             // pbProductImage
@@ -1842,7 +1841,7 @@
             pbProductImage.Dock = DockStyle.Fill;
             pbProductImage.Location = new Point(0, 0);
             pbProductImage.Name = "pbProductImage";
-            pbProductImage.Size = new Size(400, 148);
+            pbProductImage.Size = new Size(400, 128);
             pbProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbProductImage.TabIndex = 0;
             pbProductImage.TabStop = false;

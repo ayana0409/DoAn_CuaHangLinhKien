@@ -32,38 +32,46 @@ namespace GUI
                 ));
         }
 
-        private DataTable listGR;
+        private DataTable listGRN;
         private DataTable listOrder;
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dtgvStatistic.Columns[0].HeaderCell.Value = "Mã phiếu nhập";
-            dtgvStatistic.Columns[2].HeaderCell.Value = "Đơn vị nhập";
-            dtgvStatistic.Columns[3].HeaderCell.Value = "Ngày nhập";
+            double total = 0;
+            int quantity = 0;
 
-            /*listGRN = StatisticGRN(dtpkFrom.Value.ToString("yyyy/MM/dd"),
+            dtgvStatistic.Columns[0].HeaderCell.Value = "Mã sản phẩm";
+            dtgvStatistic.Columns[2].HeaderCell.Value = "Số lượng nhập";
+            dtgvStatistic.Columns[3].HeaderCell.Value = "Giá nhập";
+
+            listGRN = StatisticGRN(dtpkFrom.Value.ToString("yyyy/MM/dd"),
                 dtpkTo.Value.ToString("yyyy/MM/dd"));
 
             dtgvStatistic.Rows.Clear();
-            foreach (GRN s in listGRN)
+            foreach (DataRow s in listGRN.Rows)
             {
                 DataGridViewRow row = (DataGridViewRow)dtgvStatistic.Rows[0].Clone(); ;
-                row.Cells[0].Value = s.GRNID;
-                row.Cells[2].Value = s.Unit;
-                row.Cells[3].Value = s.Date.ToString("dd/MM/yyyy");
-                row.Cells[4].Value = s.Total.ToString("#,###");
-                row.Cells[1].Value = StaffDAL.Instance.GetStaff(s.StaffID).StaffName;
+                row.Cells[0].Value = s["MaSanPham"];
+                row.Cells[1].Value = s["TenSanPham"];
+                row.Cells[2].Value = s["SoLuongNhap"];
+                row.Cells[3].Value = s["GiaNhap"];
                 dtgvStatistic.Rows.Add(row);
+
+                total += (double)s["GiaNhap"];
+                quantity += (int)s["SoLuongNhap"];
             }
 
-            txtQuantity.Text = listGRN.Count.ToString();
-            txtTotal.Text = SumGRNTotal(listGRN).ToString("#,###");
-            */
+            txtQuantity.Text = quantity.ToString();
+            txtTotal.Text = total.ToString();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            double total = 0;
+            int quantity = 0;
+
             dtgvStatistic.Columns[0].HeaderCell.Value = "Mã sản phẩm";
             dtgvStatistic.Columns[2].HeaderCell.Value = "Số lượng bán";
             dtgvStatistic.Columns[3].HeaderCell.Value = "Giá bán";
@@ -81,14 +89,14 @@ namespace GUI
                 row.Cells[1].Value = s["TenSanPham"];
                 row.Cells[2].Value = s["SoLuongBan"];
                 row.Cells[3].Value = s["GiaBan"];
-
-               // row.Cells[1].Value = StaffDAL.Instance.GetStaff(s.StaffID).StaffName;
-                
                 dtgvStatistic.Rows.Add(row);
+
+                total += (double)s["GiaBan"];
+                quantity += (int)s["SoLuongBan"];
             }
 
-            //.Text = listOrder.Count.ToString();
-            //txtTotal.Text = SumOrderTotal(listOrder).ToString("#,###");
+            txtQuantity.Text = quantity.ToString();
+            txtTotal.Text = total.ToString();
         }
 
         private DataTable StatisticOrder(string from, string to)
@@ -98,12 +106,11 @@ namespace GUI
             return data;
         }
 
-        private List<GRN> StatisticGRN(string from, string to)
+        private DataTable StatisticGRN(string from, string to)
         {
-            if (GRNDAL.Instance.SearchGRN(from, to).Count > 0)
-                return GRNDAL.Instance.SearchGRN(from, to);
-            else
-                return [];
+            string query = "exec proc_Statistic_GRN @from , @to";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { from, to });
+            return data;
         }
 
         private Double SumOrderTotal(List<Order> list)
