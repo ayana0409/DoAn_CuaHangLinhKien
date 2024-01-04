@@ -27,8 +27,6 @@ namespace GUI
 
         string? _tempImageName = null;
         private string productImagePath = "C:\\CuaHangLinhKien\\HinhAnhSanPham\\";
-        // private readonly string productImagePath = Application.StartupPath.Split("\\DoAn_CuaHangLinhKien",
-        //    StringSplitOptions.None)[0] + @"\DoAn_CuaHangLinhKien\BLL\product-images\";
         #endregion
         public frmManage()
         {
