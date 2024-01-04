@@ -378,7 +378,7 @@ namespace GUI
             SPViewer v = (SPViewer)sender;
             txtProductID.Text = v.Product.ProductID.ToString();
             txtProductName.Text = v.Product.ProductName;
-            txtOrderTotal.Text = v.Product.Price.ToString("#,###");
+            txtProductPrice.Text = v.Product.Price.ToString("#,###");
             rtbProductInfomation.Text = v.Product.Information;
             nmudQuantity.Value = v.Product.Quantity;
             cbProductCategory.Text = CategoryDAL.Instance.GetCategory(v.Product.CategoryID).CategoryName;
