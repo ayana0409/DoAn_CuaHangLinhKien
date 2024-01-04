@@ -84,18 +84,19 @@
             splitContainer6 = new SplitContainer();
             groupBox5 = new GroupBox();
             tableLayoutPanel4 = new TableLayoutPanel();
-            panel5 = new Panel();
-            txtOrderTotal = new Label();
-            label13 = new Label();
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
-            txtOrderCustomerName = new TextBox();
-            txtOrderID = new TextBox();
             label39 = new Label();
-            cbOrderStaff = new ComboBox();
-            cbOrderStatus = new ComboBox();
+            panel6 = new Panel();
             label69 = new Label();
+            panel5 = new Panel();
+            txtOrderTotal = new Label();
+            label13 = new Label();
+            txtOrderCustomerName = new Label();
+            txtOrderStaff = new Label();
+            txtOrderStatus = new Label();
+            txtOrderID = new Label();
             groupBox6 = new GroupBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
             btnAddOrder = new Button();
@@ -381,6 +382,7 @@
             splitContainer6.SuspendLayout();
             groupBox5.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
+            panel6.SuspendLayout();
             panel5.SuspendLayout();
             groupBox6.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
@@ -1211,16 +1213,17 @@
             tableLayoutPanel4.ColumnCount = 2;
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.75F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77.25F));
-            tableLayoutPanel4.Controls.Add(panel5, 0, 4);
             tableLayoutPanel4.Controls.Add(label8, 0, 0);
             tableLayoutPanel4.Controls.Add(label9, 0, 1);
             tableLayoutPanel4.Controls.Add(label10, 0, 2);
-            tableLayoutPanel4.Controls.Add(txtOrderCustomerName, 1, 1);
-            tableLayoutPanel4.Controls.Add(txtOrderID, 1, 0);
             tableLayoutPanel4.Controls.Add(label39, 0, 3);
-            tableLayoutPanel4.Controls.Add(cbOrderStaff, 1, 2);
-            tableLayoutPanel4.Controls.Add(cbOrderStatus, 1, 3);
-            tableLayoutPanel4.Controls.Add(label69, 0, 4);
+            tableLayoutPanel4.Controls.Add(panel6, 0, 4);
+            tableLayoutPanel4.Controls.Add(panel5, 1, 4);
+            tableLayoutPanel4.Controls.Add(txtOrderCustomerName, 1, 1);
+            tableLayoutPanel4.Controls.Add(txtOrderStaff, 1, 2);
+            tableLayoutPanel4.Controls.Add(txtOrderStatus, 1, 3);
+            tableLayoutPanel4.Controls.Add(txtOrderID, 1, 0);
+            tableLayoutPanel4.Dock = DockStyle.Fill;
             tableLayoutPanel4.Location = new Point(3, 23);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 5;
@@ -1231,39 +1234,6 @@
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 59F));
             tableLayoutPanel4.Size = new Size(398, 222);
             tableLayoutPanel4.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(txtOrderTotal);
-            panel5.Controls.Add(label13);
-            panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(93, 165);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(302, 54);
-            panel5.TabIndex = 12;
-            // 
-            // txtOrderTotal
-            // 
-            txtOrderTotal.Anchor = AnchorStyles.Top;
-            txtOrderTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            txtOrderTotal.ForeColor = Color.Black;
-            txtOrderTotal.Location = new Point(3, -3);
-            txtOrderTotal.Name = "txtOrderTotal";
-            txtOrderTotal.Size = new Size(248, 20);
-            txtOrderTotal.TabIndex = 7;
-            txtOrderTotal.Text = "0";
-            // 
-            // label13
-            // 
-            label13.Anchor = AnchorStyles.Top;
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            label13.ForeColor = Color.Brown;
-            label13.Location = new Point(260, -3);
-            label13.Name = "label13";
-            label13.Size = new Size(42, 20);
-            label13.TabIndex = 7;
-            label13.Text = "VNĐ";
             // 
             // label8
             // 
@@ -1301,26 +1271,6 @@
             label10.TabIndex = 0;
             label10.Text = "Nhân viên:";
             // 
-            // txtOrderCustomerName
-            // 
-            txtOrderCustomerName.BackColor = Color.FromArgb(255, 253, 239);
-            txtOrderCustomerName.Dock = DockStyle.Fill;
-            txtOrderCustomerName.Enabled = false;
-            txtOrderCustomerName.Location = new Point(93, 44);
-            txtOrderCustomerName.Name = "txtOrderCustomerName";
-            txtOrderCustomerName.Size = new Size(302, 27);
-            txtOrderCustomerName.TabIndex = 1;
-            // 
-            // txtOrderID
-            // 
-            txtOrderID.BackColor = Color.FromArgb(255, 253, 239);
-            txtOrderID.Dock = DockStyle.Fill;
-            txtOrderID.Enabled = false;
-            txtOrderID.Location = new Point(93, 3);
-            txtOrderID.Name = "txtOrderID";
-            txtOrderID.Size = new Size(302, 27);
-            txtOrderID.TabIndex = 1;
-            // 
             // label39
             // 
             label39.AutoSize = true;
@@ -1333,39 +1283,105 @@
             label39.TabIndex = 3;
             label39.Text = "Trạng thái:";
             // 
-            // cbOrderStaff
+            // panel6
             // 
-            cbOrderStaff.BackColor = Color.FromArgb(255, 253, 239);
-            cbOrderStaff.Dock = DockStyle.Fill;
-            cbOrderStaff.Enabled = false;
-            cbOrderStaff.FormattingEnabled = true;
-            cbOrderStaff.Location = new Point(93, 86);
-            cbOrderStaff.Name = "cbOrderStaff";
-            cbOrderStaff.Size = new Size(302, 28);
-            cbOrderStaff.TabIndex = 4;
-            // 
-            // cbOrderStatus
-            // 
-            cbOrderStatus.BackColor = Color.FromArgb(255, 253, 239);
-            cbOrderStatus.Dock = DockStyle.Fill;
-            cbOrderStatus.Enabled = false;
-            cbOrderStatus.FormattingEnabled = true;
-            cbOrderStatus.Items.AddRange(new object[] { "Chưa thanh toán", "Đã thanh toán" });
-            cbOrderStatus.Location = new Point(93, 125);
-            cbOrderStatus.Name = "cbOrderStatus";
-            cbOrderStatus.Size = new Size(302, 28);
-            cbOrderStatus.TabIndex = 5;
+            panel6.Controls.Add(label69);
+            panel6.Location = new Point(3, 165);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(84, 54);
+            panel6.TabIndex = 10;
             // 
             // label69
             // 
-            label69.Dock = DockStyle.Fill;
+            label69.AutoSize = true;
             label69.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label69.ForeColor = Color.Brown;
-            label69.Location = new Point(3, 162);
+            label69.Location = new Point(0, 3);
             label69.Name = "label69";
-            label69.Size = new Size(84, 60);
+            label69.Size = new Size(80, 20);
             label69.TabIndex = 3;
             label69.Text = "Tổng tiền:";
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(txtOrderTotal);
+            panel5.Controls.Add(label13);
+            panel5.Location = new Point(93, 165);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(302, 54);
+            panel5.TabIndex = 12;
+            // 
+            // txtOrderTotal
+            // 
+            txtOrderTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            txtOrderTotal.BackColor = Color.FromArgb(255, 253, 239);
+            txtOrderTotal.BorderStyle = BorderStyle.Fixed3D;
+            txtOrderTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtOrderTotal.ForeColor = Color.Black;
+            txtOrderTotal.Location = new Point(3, 6);
+            txtOrderTotal.Name = "txtOrderTotal";
+            txtOrderTotal.Size = new Size(248, 26);
+            txtOrderTotal.TabIndex = 7;
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.Top;
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label13.ForeColor = Color.Brown;
+            label13.Location = new Point(257, 6);
+            label13.Name = "label13";
+            label13.Size = new Size(42, 20);
+            label13.TabIndex = 7;
+            label13.Text = "VNĐ";
+            // 
+            // txtOrderCustomerName
+            // 
+            txtOrderCustomerName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtOrderCustomerName.BackColor = Color.FromArgb(255, 253, 239);
+            txtOrderCustomerName.BorderStyle = BorderStyle.Fixed3D;
+            txtOrderCustomerName.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtOrderCustomerName.ForeColor = Color.Black;
+            txtOrderCustomerName.Location = new Point(93, 41);
+            txtOrderCustomerName.Name = "txtOrderCustomerName";
+            txtOrderCustomerName.Size = new Size(302, 28);
+            txtOrderCustomerName.TabIndex = 7;
+            // 
+            // txtOrderStaff
+            // 
+            txtOrderStaff.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtOrderStaff.BackColor = Color.FromArgb(255, 253, 239);
+            txtOrderStaff.BorderStyle = BorderStyle.Fixed3D;
+            txtOrderStaff.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtOrderStaff.ForeColor = Color.Black;
+            txtOrderStaff.Location = new Point(93, 83);
+            txtOrderStaff.Name = "txtOrderStaff";
+            txtOrderStaff.Size = new Size(302, 28);
+            txtOrderStaff.TabIndex = 7;
+            // 
+            // txtOrderStatus
+            // 
+            txtOrderStatus.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtOrderStatus.BackColor = Color.FromArgb(255, 253, 239);
+            txtOrderStatus.BorderStyle = BorderStyle.Fixed3D;
+            txtOrderStatus.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtOrderStatus.ForeColor = Color.Black;
+            txtOrderStatus.Location = new Point(93, 122);
+            txtOrderStatus.Name = "txtOrderStatus";
+            txtOrderStatus.Size = new Size(302, 28);
+            txtOrderStatus.TabIndex = 7;
+            // 
+            // txtOrderID
+            // 
+            txtOrderID.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtOrderID.BackColor = Color.FromArgb(255, 253, 239);
+            txtOrderID.BorderStyle = BorderStyle.Fixed3D;
+            txtOrderID.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtOrderID.ForeColor = Color.Black;
+            txtOrderID.Location = new Point(93, 0);
+            txtOrderID.Name = "txtOrderID";
+            txtOrderID.Size = new Size(302, 28);
+            txtOrderID.TabIndex = 7;
             // 
             // groupBox6
             // 
@@ -4393,6 +4409,8 @@
             groupBox5.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             groupBox6.ResumeLayout(false);
@@ -4622,8 +4640,6 @@
         private Label label8;
         private Label label9;
         private Label label10;
-        private TextBox txtOrderCustomerName;
-        private TextBox txtOrderID;
         private GroupBox groupBox6;
         private FlowLayoutPanel flowLayoutPanel2;
         private Button btnView;
@@ -4726,7 +4742,6 @@
         private TabPage tpStaff;
         private TabPage tpAccount;
         private Label label39;
-        private ComboBox cbOrderStaff;
         private SplitContainer splitContainer20;
         private DataGridView dtgvGRN;
         private SplitContainer splitContainer21;
@@ -4816,7 +4831,6 @@
         private Label label65;
         private ComboBox cbAccountType;
         private ComboBox cbAccountStaff;
-        private ComboBox cbOrderStatus;
         private Button btnAddManufacturer;
         private Button btnUpdateManufacturer;
         private Button btnAddCate;
@@ -4890,5 +4904,10 @@
         private SplitContainer splitContainer33;
         private Label txtOrderTotal;
         private TextBox txtProductPrice;
+        private Panel panel6;
+        private Label txtOrderCustomerName;
+        private Label txtOrderStaff;
+        private Label txtOrderStatus;
+        private Label txtOrderID;
     }
 }

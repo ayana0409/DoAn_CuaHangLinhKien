@@ -32,6 +32,10 @@
             label1 = new Label();
             splitContainer1 = new SplitContainer();
             dtgvStatistic = new DataGridView();
+            colID = new DataGridViewTextBoxColumn();
+            colStaff = new DataGridViewTextBoxColumn();
+            colCustomer = new DataGridViewTextBoxColumn();
+            colDate = new DataGridViewTextBoxColumn();
             splitContainer2 = new SplitContainer();
             groupBox2 = new GroupBox();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -49,10 +53,6 @@
             dtpkFrom = new DateTimePicker();
             dtpkTo = new DateTimePicker();
             panel2 = new Panel();
-            colID = new DataGridViewTextBoxColumn();
-            colStaff = new DataGridViewTextBoxColumn();
-            colCustomer = new DataGridViewTextBoxColumn();
-            colDate = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -125,6 +125,30 @@
             dtgvStatistic.ReadOnly = true;
             dtgvStatistic.Size = new Size(850, 615);
             dtgvStatistic.TabIndex = 0;
+            // 
+            // colID
+            // 
+            colID.HeaderText = "Mã";
+            colID.Name = "colID";
+            colID.ReadOnly = true;
+            // 
+            // colStaff
+            // 
+            colStaff.HeaderText = "Tên sản phẩm";
+            colStaff.Name = "colStaff";
+            colStaff.ReadOnly = true;
+            // 
+            // colCustomer
+            // 
+            colCustomer.HeaderText = "Số lượng";
+            colCustomer.Name = "colCustomer";
+            colCustomer.ReadOnly = true;
+            // 
+            // colDate
+            // 
+            colDate.HeaderText = "Giá";
+            colDate.Name = "colDate";
+            colDate.ReadOnly = true;
             // 
             // splitContainer2
             // 
@@ -333,30 +357,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1264, 615);
             panel2.TabIndex = 2;
-            // 
-            // colID
-            // 
-            colID.HeaderText = "Mã";
-            colID.Name = "colID";
-            colID.ReadOnly = true;
-            // 
-            // colStaff
-            // 
-            colStaff.HeaderText = "Tên sản phẩm";
-            colStaff.Name = "colStaff";
-            colStaff.ReadOnly = true;
-            // 
-            // colCustomer
-            // 
-            colCustomer.HeaderText = "Số lượng";
-            colCustomer.Name = "colCustomer";
-            colCustomer.ReadOnly = true;
-            // 
-            // colDate
-            // 
-            colDate.HeaderText = "Giá";
-            colDate.Name = "colDate";
-            colDate.ReadOnly = true;
             // 
             // frmStatistic
             // 

@@ -63,7 +63,7 @@ namespace GUI
             }
 
             txtQuantity.Text = quantity.ToString();
-            txtTotal.Text = total.ToString();
+            txtTotal.Text = total.ToString("0,###") + " VNĐ";
 
             dtgvStatistic.ClearSelection();
         }
@@ -97,7 +97,7 @@ namespace GUI
             }
 
             txtQuantity.Text = quantity.ToString();
-            txtTotal.Text = total.ToString();
+            txtTotal.Text = total.ToString("0,###") + " VNĐ";
 
             dtgvStatistic.ClearSelection();
         }

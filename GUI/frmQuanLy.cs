@@ -1077,9 +1077,9 @@ namespace GUI
                 DataGridViewRow row = dtgvOrder.SelectedRows[0];
                 txtOrderID.Text = row.Cells[0].Value.ToString();
                 txtOrderCustomerName.Text = row.Cells[1].Value.ToString();
-                cbOrderStatus.Text = row.Cells[3].Value.ToString();
+                txtOrderStatus.Text = row.Cells[3].Value.ToString();
                 txtOrderTotal.Text = row.Cells[4].Value.ToString();
-                cbOrderStaff.Text = row.Cells[6].Value.ToString();
+                txtOrderStaff.Text = row.Cells[6].Value.ToString();
             }
         }
 
