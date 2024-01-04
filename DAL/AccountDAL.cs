@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,9 +29,17 @@ namespace DAL
         }
         public bool Login(string username, string password)
         {
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(password);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+            string hasPass = "";
+
+            foreach(byte b in hasData) 
+                hasPass += b;
+
+
             string query = "proc_Login @accountID , @password";
 
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {username, password});
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {username, hasPass});
 
             return result.Rows.Count > 0;
         }
@@ -76,16 +85,30 @@ namespace DAL
         #region CRUD
         public bool InsertAccount(string accountID, string password, int typeID, int? staffID = null)
         {
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(password);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+            string hasPass = "";
+
+            foreach (byte b in hasData)
+                hasPass += b;
+
             string query = String.Format("Insert TaiKhoan (MaTaiKhoan, MatKhau, MaLoaiTK, MaNhanVien) " +
-                "values ('{0}', '{1}', '{2}', {3})", accountID, password, typeID, staffID);
+                "values ('{0}', '{1}', '{2}', {3})", accountID, hasPass, typeID, staffID);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
         }
         public bool UpdateAccount(string accountID, string password, int typeID, int? staffID = null)
         {
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(password);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+            string hasPass = "";
+
+            foreach (byte b in hasData)
+                hasPass += b;
+
             string query = String.Format("Update TaiKhoan set MatKhau = '{1}', MaLoaiTK = '{2}', MaNhanVien = {3} " +
-                "where MaTaiKhoan = '{0}'", accountID, password, typeID, staffID);
+                "where MaTaiKhoan = '{0}'", accountID, hasPass, typeID, staffID);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
@@ -93,8 +116,15 @@ namespace DAL
 
         public bool UpdateAccountID(string oldID ,string accountID, string password, int typeID, int? staffID = null)
         {
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(password);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+            string hasPass = "";
+
+            foreach (byte b in hasData)
+                hasPass += b;
+
             string query = String.Format("Update TaiKhoan set MaTaiKhoan = '{0}', MatKhau = '{1}', MaLoaiTK = '{2}', MaNhanVien = {3} " +
-                "where MaTaiKhoan = '{4}'", accountID, password, typeID, staffID, oldID);
+                "where MaTaiKhoan = '{4}'", accountID, hasPass, typeID, staffID, oldID);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;

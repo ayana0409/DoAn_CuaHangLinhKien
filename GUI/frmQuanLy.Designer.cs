@@ -158,7 +158,7 @@
             label31 = new Label();
             label32 = new Label();
             txtManufacturerName = new TextBox();
-            txtManufacturerID = new TextBox();
+            txtManufacturerID = new Label();
             groupBox14 = new GroupBox();
             flowLayoutPanel6 = new FlowLayoutPanel();
             btnAddManufacturer = new Button();
@@ -182,7 +182,7 @@
             label37 = new Label();
             label38 = new Label();
             txtCateName = new TextBox();
-            txtCateID = new TextBox();
+            txtCategoryID = new Label();
             groupBox17 = new GroupBox();
             btnAddCate = new Button();
             btnUpdateCate = new Button();
@@ -209,18 +209,18 @@
             splitContainer22 = new SplitContainer();
             groupBox19 = new GroupBox();
             tableLayoutPanel14 = new TableLayoutPanel();
+            txtGRNStaff = new Label();
             label45 = new Label();
             label46 = new Label();
             label47 = new Label();
-            txtGRNUnit = new TextBox();
             label43 = new Label();
-            txtGRNID = new TextBox();
-            cbGRNStaff = new ComboBox();
             panel4 = new Panel();
+            txtGRNTotal = new Label();
             label12 = new Label();
-            txtGRNTotal = new TextBox();
-            dtpkGRNDate = new DateTimePicker();
             label68 = new Label();
+            txtGRNUnit = new Label();
+            txtGRNID = new Label();
+            txtGRNDate = new Label();
             groupBox20 = new GroupBox();
             flowLayoutPanel8 = new FlowLayoutPanel();
             btnDetailAndUpdateGRN = new Button();
@@ -248,10 +248,10 @@
             splitContainer25 = new SplitContainer();
             groupBox22 = new GroupBox();
             tableLayoutPanel16 = new TableLayoutPanel();
+            txtStaffID = new Label();
             label49 = new Label();
             label50 = new Label();
             txtStaffName = new TextBox();
-            txtStaffID = new TextBox();
             label52 = new Label();
             label53 = new Label();
             label54 = new Label();
@@ -1304,6 +1304,7 @@
             // 
             // panel5
             // 
+            panel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel5.Controls.Add(txtOrderTotal);
             panel5.Controls.Add(label13);
             panel5.Location = new Point(93, 165);
@@ -1313,7 +1314,7 @@
             // 
             // txtOrderTotal
             // 
-            txtOrderTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            txtOrderTotal.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtOrderTotal.BackColor = Color.FromArgb(255, 253, 239);
             txtOrderTotal.BorderStyle = BorderStyle.Fixed3D;
             txtOrderTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
@@ -1435,10 +1436,10 @@
             // 
             tpProduct.BackColor = Color.Azure;
             tpProduct.Controls.Add(splitContainer10);
-            tpProduct.Location = new Point(4, 29);
+            tpProduct.Location = new Point(4, 24);
             tpProduct.Name = "tpProduct";
             tpProduct.Padding = new Padding(3);
-            tpProduct.Size = new Size(1256, 623);
+            tpProduct.Size = new Size(1256, 628);
             tpProduct.TabIndex = 2;
             tpProduct.Text = "Sản phẩm";
             // 
@@ -1457,7 +1458,7 @@
             // 
             splitContainer10.Panel2.Controls.Add(splitContainer11);
             splitContainer10.Panel2MinSize = 80;
-            splitContainer10.Size = new Size(1250, 617);
+            splitContainer10.Size = new Size(1250, 622);
             splitContainer10.SplitterDistance = 846;
             splitContainer10.TabIndex = 4;
             // 
@@ -1468,7 +1469,7 @@
             flpProduct.Dock = DockStyle.Fill;
             flpProduct.Location = new Point(0, 0);
             flpProduct.Name = "flpProduct";
-            flpProduct.Size = new Size(846, 617);
+            flpProduct.Size = new Size(846, 622);
             flpProduct.TabIndex = 0;
             // 
             // splitContainer11
@@ -1488,7 +1489,7 @@
             // 
             splitContainer11.Panel2.Controls.Add(splitContainer12);
             splitContainer11.Panel2MinSize = 80;
-            splitContainer11.Size = new Size(400, 617);
+            splitContainer11.Size = new Size(400, 622);
             splitContainer11.SplitterDistance = 92;
             splitContainer11.TabIndex = 4;
             // 
@@ -1611,7 +1612,7 @@
             // splitContainer12.Panel2
             // 
             splitContainer12.Panel2.Controls.Add(splitContainer32);
-            splitContainer12.Size = new Size(400, 521);
+            splitContainer12.Size = new Size(400, 526);
             splitContainer12.SplitterDistance = 310;
             splitContainer12.TabIndex = 1;
             // 
@@ -1847,8 +1848,8 @@
             // splitContainer32.Panel2
             // 
             splitContainer32.Panel2.Controls.Add(groupBox11);
-            splitContainer32.Size = new Size(400, 207);
-            splitContainer32.SplitterDistance = 128;
+            splitContainer32.Size = new Size(400, 212);
+            splitContainer32.SplitterDistance = 133;
             splitContainer32.TabIndex = 3;
             // 
             // pbProductImage
@@ -1858,7 +1859,7 @@
             pbProductImage.Dock = DockStyle.Fill;
             pbProductImage.Location = new Point(0, 0);
             pbProductImage.Name = "pbProductImage";
-            pbProductImage.Size = new Size(400, 128);
+            pbProductImage.Size = new Size(400, 133);
             pbProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbProductImage.TabIndex = 0;
             pbProductImage.TabStop = false;
@@ -2183,13 +2184,15 @@
             // 
             // txtManufacturerID
             // 
+            txtManufacturerID.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtManufacturerID.BackColor = Color.FromArgb(255, 253, 239);
-            txtManufacturerID.Dock = DockStyle.Fill;
-            txtManufacturerID.Enabled = false;
-            txtManufacturerID.Location = new Point(93, 3);
+            txtManufacturerID.BorderStyle = BorderStyle.Fixed3D;
+            txtManufacturerID.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtManufacturerID.ForeColor = Color.Black;
+            txtManufacturerID.Location = new Point(93, 0);
             txtManufacturerID.Name = "txtManufacturerID";
-            txtManufacturerID.Size = new Size(302, 27);
-            txtManufacturerID.TabIndex = 1;
+            txtManufacturerID.Size = new Size(302, 28);
+            txtManufacturerID.TabIndex = 9;
             // 
             // groupBox14
             // 
@@ -2450,7 +2453,7 @@
             tableLayoutPanel12.Controls.Add(label37, 0, 0);
             tableLayoutPanel12.Controls.Add(label38, 0, 1);
             tableLayoutPanel12.Controls.Add(txtCateName, 1, 1);
-            tableLayoutPanel12.Controls.Add(txtCateID, 1, 0);
+            tableLayoutPanel12.Controls.Add(txtCategoryID, 1, 0);
             tableLayoutPanel12.Dock = DockStyle.Fill;
             tableLayoutPanel12.Location = new Point(3, 23);
             tableLayoutPanel12.Name = "tableLayoutPanel12";
@@ -2494,15 +2497,17 @@
             txtCateName.Size = new Size(302, 27);
             txtCateName.TabIndex = 1;
             // 
-            // txtCateID
+            // txtCategoryID
             // 
-            txtCateID.BackColor = Color.FromArgb(255, 253, 239);
-            txtCateID.Dock = DockStyle.Fill;
-            txtCateID.Enabled = false;
-            txtCateID.Location = new Point(93, 3);
-            txtCateID.Name = "txtCateID";
-            txtCateID.Size = new Size(302, 27);
-            txtCateID.TabIndex = 1;
+            txtCategoryID.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtCategoryID.BackColor = Color.FromArgb(255, 253, 239);
+            txtCategoryID.BorderStyle = BorderStyle.Fixed3D;
+            txtCategoryID.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtCategoryID.ForeColor = Color.Black;
+            txtCategoryID.Location = new Point(93, 0);
+            txtCategoryID.Name = "txtCategoryID";
+            txtCategoryID.Size = new Size(302, 28);
+            txtCategoryID.TabIndex = 10;
             // 
             // groupBox17
             // 
@@ -2817,16 +2822,16 @@
             tableLayoutPanel14.ColumnCount = 2;
             tableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.75F));
             tableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77.25F));
+            tableLayoutPanel14.Controls.Add(txtGRNStaff, 1, 2);
             tableLayoutPanel14.Controls.Add(label45, 0, 0);
             tableLayoutPanel14.Controls.Add(label46, 0, 1);
             tableLayoutPanel14.Controls.Add(label47, 0, 2);
-            tableLayoutPanel14.Controls.Add(txtGRNUnit, 1, 1);
             tableLayoutPanel14.Controls.Add(label43, 0, 4);
-            tableLayoutPanel14.Controls.Add(txtGRNID, 1, 0);
-            tableLayoutPanel14.Controls.Add(cbGRNStaff, 1, 2);
             tableLayoutPanel14.Controls.Add(panel4, 1, 4);
-            tableLayoutPanel14.Controls.Add(dtpkGRNDate, 1, 3);
             tableLayoutPanel14.Controls.Add(label68, 0, 3);
+            tableLayoutPanel14.Controls.Add(txtGRNUnit, 1, 1);
+            tableLayoutPanel14.Controls.Add(txtGRNID, 1, 0);
+            tableLayoutPanel14.Controls.Add(txtGRNDate, 1, 3);
             tableLayoutPanel14.Dock = DockStyle.Fill;
             tableLayoutPanel14.Location = new Point(3, 23);
             tableLayoutPanel14.Name = "tableLayoutPanel14";
@@ -2839,6 +2844,18 @@
             tableLayoutPanel14.Size = new Size(398, 222);
             tableLayoutPanel14.TabIndex = 0;
             // 
+            // txtGRNStaff
+            // 
+            txtGRNStaff.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtGRNStaff.BackColor = Color.FromArgb(255, 253, 239);
+            txtGRNStaff.BorderStyle = BorderStyle.Fixed3D;
+            txtGRNStaff.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtGRNStaff.ForeColor = Color.Black;
+            txtGRNStaff.Location = new Point(93, 69);
+            txtGRNStaff.Name = "txtGRNStaff";
+            txtGRNStaff.Size = new Size(302, 28);
+            txtGRNStaff.TabIndex = 11;
+            // 
             // label45
             // 
             label45.AutoSize = true;
@@ -2849,7 +2866,7 @@
             label45.Name = "label45";
             label45.Size = new Size(84, 34);
             label45.TabIndex = 0;
-            label45.Text = "Mã đơn:";
+            label45.Text = "Mã phiếu:";
             // 
             // label46
             // 
@@ -2874,16 +2891,6 @@
             label47.TabIndex = 0;
             label47.Text = "Nhân viên:";
             // 
-            // txtGRNUnit
-            // 
-            txtGRNUnit.BackColor = Color.FromArgb(255, 253, 239);
-            txtGRNUnit.Dock = DockStyle.Fill;
-            txtGRNUnit.Location = new Point(93, 37);
-            txtGRNUnit.Name = "txtGRNUnit";
-            txtGRNUnit.ReadOnly = true;
-            txtGRNUnit.Size = new Size(302, 27);
-            txtGRNUnit.TabIndex = 1;
-            // 
             // label43
             // 
             label43.AutoSize = true;
@@ -2895,36 +2902,27 @@
             label43.TabIndex = 4;
             label43.Text = "Tổng giá:";
             // 
-            // txtGRNID
-            // 
-            txtGRNID.BackColor = Color.FromArgb(255, 253, 239);
-            txtGRNID.Dock = DockStyle.Fill;
-            txtGRNID.Location = new Point(93, 3);
-            txtGRNID.Name = "txtGRNID";
-            txtGRNID.ReadOnly = true;
-            txtGRNID.Size = new Size(302, 27);
-            txtGRNID.TabIndex = 1;
-            // 
-            // cbGRNStaff
-            // 
-            cbGRNStaff.BackColor = Color.FromArgb(255, 253, 239);
-            cbGRNStaff.Dock = DockStyle.Fill;
-            cbGRNStaff.Enabled = false;
-            cbGRNStaff.FormattingEnabled = true;
-            cbGRNStaff.Location = new Point(93, 72);
-            cbGRNStaff.Name = "cbGRNStaff";
-            cbGRNStaff.Size = new Size(302, 28);
-            cbGRNStaff.TabIndex = 4;
-            // 
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel4.Controls.Add(label12);
             panel4.Controls.Add(txtGRNTotal);
+            panel4.Controls.Add(label12);
             panel4.Location = new Point(93, 146);
             panel4.Name = "panel4";
             panel4.Size = new Size(302, 44);
             panel4.TabIndex = 11;
+            // 
+            // txtGRNTotal
+            // 
+            txtGRNTotal.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtGRNTotal.BackColor = Color.FromArgb(255, 253, 239);
+            txtGRNTotal.BorderStyle = BorderStyle.Fixed3D;
+            txtGRNTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtGRNTotal.ForeColor = Color.Black;
+            txtGRNTotal.Location = new Point(3, 0);
+            txtGRNTotal.Name = "txtGRNTotal";
+            txtGRNTotal.Size = new Size(240, 28);
+            txtGRNTotal.TabIndex = 11;
             // 
             // label12
             // 
@@ -2938,25 +2936,6 @@
             label12.TabIndex = 7;
             label12.Text = "VNĐ";
             // 
-            // txtGRNTotal
-            // 
-            txtGRNTotal.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtGRNTotal.BackColor = Color.FromArgb(255, 253, 239);
-            txtGRNTotal.Location = new Point(0, 3);
-            txtGRNTotal.Name = "txtGRNTotal";
-            txtGRNTotal.ReadOnly = true;
-            txtGRNTotal.Size = new Size(243, 27);
-            txtGRNTotal.TabIndex = 6;
-            // 
-            // dtpkGRNDate
-            // 
-            dtpkGRNDate.Dock = DockStyle.Fill;
-            dtpkGRNDate.Enabled = false;
-            dtpkGRNDate.Location = new Point(93, 108);
-            dtpkGRNDate.Name = "dtpkGRNDate";
-            dtpkGRNDate.Size = new Size(302, 27);
-            dtpkGRNDate.TabIndex = 6;
-            // 
             // label68
             // 
             label68.AutoSize = true;
@@ -2967,6 +2946,42 @@
             label68.Size = new Size(50, 38);
             label68.TabIndex = 0;
             label68.Text = "Ngày nhập:";
+            // 
+            // txtGRNUnit
+            // 
+            txtGRNUnit.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtGRNUnit.BackColor = Color.FromArgb(255, 253, 239);
+            txtGRNUnit.BorderStyle = BorderStyle.Fixed3D;
+            txtGRNUnit.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtGRNUnit.ForeColor = Color.Black;
+            txtGRNUnit.Location = new Point(93, 34);
+            txtGRNUnit.Name = "txtGRNUnit";
+            txtGRNUnit.Size = new Size(302, 28);
+            txtGRNUnit.TabIndex = 11;
+            // 
+            // txtGRNID
+            // 
+            txtGRNID.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtGRNID.BackColor = Color.FromArgb(255, 253, 239);
+            txtGRNID.BorderStyle = BorderStyle.Fixed3D;
+            txtGRNID.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtGRNID.ForeColor = Color.Black;
+            txtGRNID.Location = new Point(93, 0);
+            txtGRNID.Name = "txtGRNID";
+            txtGRNID.Size = new Size(302, 28);
+            txtGRNID.TabIndex = 11;
+            // 
+            // txtGRNDate
+            // 
+            txtGRNDate.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtGRNDate.BackColor = Color.FromArgb(255, 253, 239);
+            txtGRNDate.BorderStyle = BorderStyle.Fixed3D;
+            txtGRNDate.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtGRNDate.ForeColor = Color.Black;
+            txtGRNDate.Location = new Point(93, 105);
+            txtGRNDate.Name = "txtGRNDate";
+            txtGRNDate.Size = new Size(302, 28);
+            txtGRNDate.TabIndex = 11;
             // 
             // groupBox20
             // 
@@ -3279,10 +3294,10 @@
             tableLayoutPanel16.ColumnCount = 2;
             tableLayoutPanel16.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.86935F));
             tableLayoutPanel16.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76.13065F));
+            tableLayoutPanel16.Controls.Add(txtStaffID, 1, 0);
             tableLayoutPanel16.Controls.Add(label49, 0, 0);
             tableLayoutPanel16.Controls.Add(label50, 0, 1);
             tableLayoutPanel16.Controls.Add(txtStaffName, 1, 1);
-            tableLayoutPanel16.Controls.Add(txtStaffID, 1, 0);
             tableLayoutPanel16.Controls.Add(label52, 0, 2);
             tableLayoutPanel16.Controls.Add(label53, 0, 3);
             tableLayoutPanel16.Controls.Add(label54, 0, 4);
@@ -3307,8 +3322,21 @@
             tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
             tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 58F));
+            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel16.Size = new Size(398, 305);
             tableLayoutPanel16.TabIndex = 0;
+            // 
+            // txtStaffID
+            // 
+            txtStaffID.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtStaffID.BackColor = Color.FromArgb(255, 253, 239);
+            txtStaffID.BorderStyle = BorderStyle.Fixed3D;
+            txtStaffID.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            txtStaffID.ForeColor = Color.Black;
+            txtStaffID.Location = new Point(98, 0);
+            txtStaffID.Name = "txtStaffID";
+            txtStaffID.Size = new Size(297, 28);
+            txtStaffID.TabIndex = 12;
             // 
             // label49
             // 
@@ -3342,16 +3370,6 @@
             txtStaffName.Name = "txtStaffName";
             txtStaffName.Size = new Size(297, 27);
             txtStaffName.TabIndex = 1;
-            // 
-            // txtStaffID
-            // 
-            txtStaffID.BackColor = Color.FromArgb(255, 253, 239);
-            txtStaffID.Dock = DockStyle.Fill;
-            txtStaffID.Location = new Point(98, 3);
-            txtStaffID.Name = "txtStaffID";
-            txtStaffID.ReadOnly = true;
-            txtStaffID.Size = new Size(297, 27);
-            txtStaffID.TabIndex = 1;
             // 
             // label52
             // 
@@ -3538,10 +3556,10 @@
             // 
             tpAccount.BackColor = Color.Azure;
             tpAccount.Controls.Add(splitContainer29);
-            tpAccount.Location = new Point(4, 24);
+            tpAccount.Location = new Point(4, 29);
             tpAccount.Name = "tpAccount";
             tpAccount.Padding = new Padding(3);
-            tpAccount.Size = new Size(1256, 628);
+            tpAccount.Size = new Size(1256, 623);
             tpAccount.TabIndex = 7;
             tpAccount.Text = "Tài khoản";
             // 
@@ -3560,7 +3578,7 @@
             // 
             splitContainer29.Panel2.Controls.Add(splitContainer30);
             splitContainer29.Panel2MinSize = 400;
-            splitContainer29.Size = new Size(1250, 622);
+            splitContainer29.Size = new Size(1250, 617);
             splitContainer29.SplitterDistance = 842;
             splitContainer29.TabIndex = 5;
             // 
@@ -3577,7 +3595,7 @@
             dtgvAccount.ReadOnly = true;
             dtgvAccount.RowHeadersWidth = 62;
             dtgvAccount.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvAccount.Size = new Size(842, 622);
+            dtgvAccount.Size = new Size(842, 617);
             dtgvAccount.TabIndex = 0;
             dtgvAccount.CellClick += dtgvAccount_CellClick;
             // 
@@ -3623,7 +3641,7 @@
             // 
             splitContainer30.Panel2.Controls.Add(splitContainer31);
             splitContainer30.Panel2MinSize = 250;
-            splitContainer30.Size = new Size(404, 622);
+            splitContainer30.Size = new Size(404, 617);
             splitContainer30.SplitterDistance = 211;
             splitContainer30.TabIndex = 4;
             // 
@@ -3708,7 +3726,7 @@
             // splitContainer31.Panel2
             // 
             splitContainer31.Panel2.Controls.Add(groupBox28);
-            splitContainer31.Size = new Size(404, 407);
+            splitContainer31.Size = new Size(404, 402);
             splitContainer31.SplitterDistance = 295;
             splitContainer31.TabIndex = 1;
             // 
@@ -3841,7 +3859,7 @@
             groupBox28.Dock = DockStyle.Fill;
             groupBox28.Location = new Point(0, 0);
             groupBox28.Name = "groupBox28";
-            groupBox28.Size = new Size(404, 108);
+            groupBox28.Size = new Size(404, 103);
             groupBox28.TabIndex = 2;
             groupBox28.TabStop = false;
             groupBox28.Text = "Chức năng";
@@ -3853,7 +3871,7 @@
             flowLayoutPanel10.Dock = DockStyle.Fill;
             flowLayoutPanel10.Location = new Point(3, 23);
             flowLayoutPanel10.Name = "flowLayoutPanel10";
-            flowLayoutPanel10.Size = new Size(398, 82);
+            flowLayoutPanel10.Size = new Size(398, 77);
             flowLayoutPanel10.TabIndex = 3;
             // 
             // btnAddAccount
@@ -4715,7 +4733,6 @@
         private Label label31;
         private Label label32;
         private TextBox txtManufacturerName;
-        private TextBox txtManufacturerID;
         private GroupBox groupBox14;
         private FlowLayoutPanel flowLayoutPanel6;
         private ComboBox cbProductCategory;
@@ -4755,7 +4772,6 @@
         private Button btnSearchGRN;
         private Label label43;
         private DateTimePicker dtpkSearchGRNTo;
-        private TextBox txtGRNTotal;
         private DateTimePicker dtpkSearchGRNFrom;
         private SplitContainer splitContainer22;
         private GroupBox groupBox19;
@@ -4763,9 +4779,6 @@
         private Label label45;
         private Label label46;
         private Label label47;
-        private TextBox txtGRNUnit;
-        private TextBox txtGRNID;
-        private ComboBox cbGRNStaff;
         private GroupBox groupBox20;
         private FlowLayoutPanel flowLayoutPanel8;
         private Button btnDetailAndUpdateGRN;
@@ -4787,7 +4800,6 @@
         private Label label50;
         private Label label51;
         private TextBox txtStaffName;
-        private TextBox txtStaffID;
         private GroupBox groupBox23;
         private Label label52;
         private Label label53;
@@ -4809,7 +4821,6 @@
         private Label label61;
         private Label label62;
         private TextBox txtPassword;
-        private TextBox txtLoginName;
         private GroupBox groupBox28;
         private FlowLayoutPanel flowLayoutPanel10;
         private SplitContainer splitContainer26;
@@ -4858,7 +4869,6 @@
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
-        private DateTimePicker dtpkGRNDate;
         private Label label68;
         private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column12;
@@ -4911,5 +4921,14 @@
         private Label txtOrderStatus;
         private Label txtOrderID;
         private Label txtProductID;
+        private Label txtManufacturerID;
+        private Label txtCategoryID;
+        private Label txtGRNStaff;
+        private Label txtGRNUnit;
+        private Label txtGRNTotal;
+        private Label txtGRNID;
+        private Label txtGRNDate;
+        private Label txtStaffID;
+        private TextBox txtLoginName;
     }
 }

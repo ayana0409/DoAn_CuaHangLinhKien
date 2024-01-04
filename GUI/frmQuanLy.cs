@@ -16,7 +16,6 @@ using System.Drawing;
 using DAL;
 using DTO;
 using Syncfusion.Pdf.Grid;
-using System.Security.AccessControl;
 namespace GUI
 {
     public partial class frmManage : Form
@@ -201,7 +200,6 @@ namespace GUI
                 row.Cells[4].Value = s.Total.ToString("#,###");
                 dtgvGRN.Rows.Add(row);
             }
-            cbGRNStaff.DataSource = StaffDAL.Instance.GetListStaff();
         }
         private void SetSearchDate()
         {
@@ -723,8 +721,8 @@ namespace GUI
                 DataGridViewRow row = dtgvGRN.SelectedRows[0];
                 txtGRNID.Text = row.Cells[0].Value.ToString();
                 txtGRNUnit.Text = row.Cells[1].Value.ToString();
-                cbGRNStaff.Text = row.Cells[2].Value.ToString();
-                dtpkGRNDate.Text = row.Cells[3].Value.ToString();
+                txtGRNStaff.Text = row.Cells[2].Value.ToString();
+                txtGRNDate.Text = row.Cells[3].Value.ToString();
                 txtGRNTotal.Text = row.Cells[4].Value.ToString();
             }
         }
@@ -987,7 +985,7 @@ namespace GUI
             if (dtgvCategory.SelectedCells[0].Value != null)
             {
                 DataGridViewRow row = dtgvCategory.SelectedRows[0];
-                txtCateID.Text = row.Cells[0].Value.ToString();
+                txtCategoryID.Text = row.Cells[0].Value.ToString();
                 txtCateName.Text = row.Cells[1].Value.ToString();
             }
         }
@@ -1286,7 +1284,6 @@ namespace GUI
                 DataGridViewRow row = dtgvAccount.SelectedRows[0];
                 txtLoginName.Text = row.Cells[0].Value.ToString();
                 cbAccountType.Text = row.Cells[2].Value.ToString();
-                txtPassword.Text = row.Cells[1].Value.ToString();
                 cbAccountStaff.Text = row.Cells[3].Value.ToString();
             }
         }
