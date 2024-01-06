@@ -120,8 +120,8 @@ namespace GUI
             else
             {
                 if (o.CustomerNumberPhone != String.Empty)
-                    txtPhone.Text = o.CustomerNumberPhone;
-                customer = CustomerDAL.Instance.GetCustomer(o.CustomerNumberPhone);
+                    txtPhone.Text = o.CustomerNumberPhone.Trim();
+                customer = CustomerDAL.Instance.GetCustomer(txtPhone.Text);
                 dtpkDate.Text = DateTime.Now.ToShortDateString();
                 cbStatus.Text = "Chưa thanh toán";
                 txtTotal.Text = "0";
