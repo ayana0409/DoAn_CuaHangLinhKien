@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInfomation));
             splitContainer1 = new SplitContainer();
             flpProduct = new FlowLayoutPanel();
             splitContainer2 = new SplitContainer();
@@ -173,7 +174,7 @@
             txtSearchProductID.Location = new Point(63, 3);
             txtSearchProductID.Name = "txtSearchProductID";
             txtSearchProductID.Size = new Size(210, 27);
-            txtSearchProductID.TabIndex = 1;
+            txtSearchProductID.TabIndex = 0;
             // 
             // btnSearch
             // 
@@ -257,7 +258,7 @@
             txtPrice.Location = new Point(68, 116);
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(205, 27);
-            txtPrice.TabIndex = 8;
+            txtPrice.TabIndex = 3;
             // 
             // txtName
             // 
@@ -267,7 +268,7 @@
             txtName.Location = new Point(68, 39);
             txtName.Name = "txtName";
             txtName.Size = new Size(205, 27);
-            txtName.TabIndex = 6;
+            txtName.TabIndex = 1;
             // 
             // label2
             // 
@@ -333,7 +334,7 @@
             txtID.Name = "txtID";
             txtID.ReadOnly = true;
             txtID.Size = new Size(205, 27);
-            txtID.TabIndex = 5;
+            txtID.TabIndex = 0;
             // 
             // btnAdd
             // 
@@ -343,7 +344,7 @@
             btnAdd.Location = new Point(152, 218);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(121, 41);
-            btnAdd.TabIndex = 2;
+            btnAdd.TabIndex = 5;
             btnAdd.Text = "Thêm ";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
@@ -356,7 +357,7 @@
             nmQuantity.Location = new Point(68, 77);
             nmQuantity.Name = "nmQuantity";
             nmQuantity.Size = new Size(205, 27);
-            nmQuantity.TabIndex = 9;
+            nmQuantity.TabIndex = 2;
             // 
             // rtbDetail
             // 
@@ -366,16 +367,18 @@
             rtbDetail.Location = new Point(68, 155);
             rtbDetail.Name = "rtbDetail";
             rtbDetail.Size = new Size(205, 57);
-            rtbDetail.TabIndex = 10;
+            rtbDetail.TabIndex = 4;
             rtbDetail.Text = "";
             // 
             // frmInfomation
             // 
+            AcceptButton = btnAdd;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
             ClientSize = new Size(944, 601);
             Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmInfomation";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Thêm sản phẩm";

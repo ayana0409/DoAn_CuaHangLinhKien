@@ -108,7 +108,7 @@ namespace GUI
         }
         #endregion
 
-        #region PRODUCT MANAGE METHOD
+        #region PRODUCT METHOD
         private void LoadProduct(List<Product>? listProduct = null)
         {
             if (listProduct == null)
@@ -182,7 +182,7 @@ namespace GUI
         }
         #endregion
 
-        #region GRN MANAGE METHOD
+        #region GRN METHOD
         private void LoadGRN(List<GRN>? listGRN = null)
         {
             if (listGRN == null)
@@ -330,16 +330,15 @@ namespace GUI
             {
                 DataGridViewRow row = (DataGridViewRow)dtgvAccount.Rows[0].Clone(); ;
                 row.Cells[0].Value = s.AccountID;
-                row.Cells[1].Value = s.Password;
-                row.Cells[2].Value = AccountTypeDAL.Instance.GetAccountType(s.TypeID).TypeName;
+                row.Cells[1].Value = AccountTypeDAL.Instance.GetAccountType(s.TypeID).TypeName;
 
                 if (s.StaffID != null)
                 {
-                    row.Cells[3].Value = StaffDAL.Instance.GetStaff((int)s.StaffID);
+                    row.Cells[2].Value = StaffDAL.Instance.GetStaff((int)s.StaffID);
                 }
                 else
                 {
-                    row.Cells[3].Value = "Trống";
+                    row.Cells[2].Value = "Trống";
                 }
                 dtgvAccount.Rows.Add(row);
             }
@@ -361,7 +360,7 @@ namespace GUI
 
         // EVENT
         #region EVENT
-        #region PRODUCT MANAGE EVENT
+        #region PRODUCT EVENT
         private void FlowLayOutPanel_Controls_WasClicked(object sender, EventArgs e)
         {
             foreach (Control c in flpProduct.Controls)
@@ -552,7 +551,7 @@ namespace GUI
         }
         #endregion
 
-        #region STAFF MANAGE EVENT
+        #region STAFF EVENT
         private void btnUpdateStaff_Click(object sender, EventArgs e)
         {
             if (txtStaffID.Text == String.Empty ||
@@ -582,7 +581,7 @@ namespace GUI
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Bạn có muốn thêm thông tin của\nnhân viên [" + name + "]?",
+            DialogResult result = MessageBox.Show("Bạn có muốn sửa thông tin của\nnhân viên [" + name + "]?",
                 "Thông báo",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
@@ -680,7 +679,7 @@ namespace GUI
         }
         #endregion
 
-        #region GRN MANAGE EVENT (Good Received Note)
+        #region GRN EVENT (Good Received Note)
         private void btnAddGRN_Click(object sender, EventArgs e)
         {
             if (loginAccount.StaffID == null)
@@ -757,7 +756,7 @@ namespace GUI
 
         #endregion
 
-        #region MANEGE CUSTOMER
+        #region CUSTOMER EVENT
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             if (txtNumberPhone.Text == String.Empty ||
@@ -892,7 +891,7 @@ namespace GUI
         }
         #endregion
 
-        #region MANEGE MANUFACTURER
+        #region MANUFACTURER EVENT
         private void dtgvManufacturer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dtgvManufacturer.SelectedCells[0].Value != null)
@@ -977,7 +976,7 @@ namespace GUI
         }
         #endregion
 
-        #region MANEGE CATEGORY 
+        #region CATEGORY EVENT
         private void dtgvCategory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dtgvCategory.SelectedCells[0].Value != null)
@@ -1065,7 +1064,7 @@ namespace GUI
         }
         #endregion
 
-        #region MANAGE ORDER
+        #region ORDER EVENT
         private void dtgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dtgvOrder.SelectedCells[0].Value != null)
@@ -1184,7 +1183,7 @@ namespace GUI
             PdfTextElement element = new PdfTextElement("Cửa hàng A", new PdfTrueTypeFont(new Font("Times New Roman", 18, FontStyle.Bold), true), blackBrush);
             PdfLayoutResult result = element.Draw(page, new RectangleF(40, 0, page.Graphics.ClientSize.Width / 2, 200));
 
-            element = new PdfTextElement("Chuyên bán các loại linh kiện máy tính\nGiá rẻ lắm mua đi\nKhông mua chém chết giờ", font11, blackBrush);
+            element = new PdfTextElement("Chuyên bán các loại linh kiện máy tính\nBao rẻ nhất Việt Nam\n100% chính hãng", font11, blackBrush);
             result = element.Draw(page, new RectangleF(3, 30, page.Graphics.ClientSize.Width / 2, 200));
 
             element = new PdfTextElement("Địa chỉ: 23 hẻm 199, đường 30 tháng 4, phường Hưng Lợi, quận Ninh Kiều, thành phố Cần Thơ\nHỗ trợ: 0123456789", font11, blackBrush);
@@ -1274,7 +1273,7 @@ namespace GUI
         }
         #endregion
 
-        #region MANEGE ACCOUNT
+        #region ACCOUNT EVENT
         private void dtgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dtgvAccount.SelectedCells[0].Value != null)
@@ -1388,6 +1387,8 @@ namespace GUI
             LoadAccount(listAccount);
         }
         #endregion
+
+        #region OTHER EVENT
         private void tsbStatistics_Click(object sender, EventArgs e)
         {
             frmStatistic frm = new();
@@ -1412,7 +1413,7 @@ namespace GUI
             if (result != DialogResult.Yes)
                 e.Cancel = true;
         }
-
-#endregion
+        #endregion
+        #endregion
     }
 }

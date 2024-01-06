@@ -50,7 +50,7 @@ namespace GUI
             set
             {
                 isSelected = value;
-                this.BackColor = IsSelected ? Color.FromArgb(255, 253, 239) : Color.Azure;
+                this.BackColor = IsSelected ? Color.FromArgb(255, 242, 212) : Color.Azure;
             }
         }
         private void SPViewer_Click(object sender, EventArgs e)

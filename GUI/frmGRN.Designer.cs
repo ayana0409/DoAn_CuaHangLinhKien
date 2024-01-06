@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGRN));
             splitContainer1 = new SplitContainer();
             pbGRNImage = new PictureBox();
             splitContainer2 = new SplitContainer();
@@ -194,7 +195,7 @@
             btnAddProduct.Location = new Point(3, 3);
             btnAddProduct.Name = "btnAddProduct";
             btnAddProduct.Size = new Size(148, 43);
-            btnAddProduct.TabIndex = 7;
+            btnAddProduct.TabIndex = 0;
             btnAddProduct.Text = "Thêm SP";
             btnAddProduct.UseVisualStyleBackColor = true;
             btnAddProduct.Click += btnAddProduct_Click;
@@ -207,7 +208,7 @@
             btnDeleteProduct.Location = new Point(157, 3);
             btnDeleteProduct.Name = "btnDeleteProduct";
             btnDeleteProduct.Size = new Size(148, 43);
-            btnDeleteProduct.TabIndex = 7;
+            btnDeleteProduct.TabIndex = 1;
             btnDeleteProduct.Text = "Xóa SP";
             btnDeleteProduct.UseVisualStyleBackColor = true;
             btnDeleteProduct.Click += btnDeleteProduct_Click;
@@ -220,7 +221,7 @@
             txtGRNUnit.Margin = new Padding(3, 2, 3, 2);
             txtGRNUnit.Name = "txtGRNUnit";
             txtGRNUnit.Size = new Size(330, 27);
-            txtGRNUnit.TabIndex = 4;
+            txtGRNUnit.TabIndex = 1;
             // 
             // label1
             // 
@@ -270,7 +271,7 @@
             txtGRNID.Name = "txtGRNID";
             txtGRNID.ReadOnly = true;
             txtGRNID.Size = new Size(330, 27);
-            txtGRNID.TabIndex = 3;
+            txtGRNID.TabIndex = 0;
             // 
             // dtpkGRNDate
             // 
@@ -278,7 +279,7 @@
             dtpkGRNDate.Location = new Point(103, 69);
             dtpkGRNDate.Name = "dtpkGRNDate";
             dtpkGRNDate.Size = new Size(330, 27);
-            dtpkGRNDate.TabIndex = 5;
+            dtpkGRNDate.TabIndex = 2;
             // 
             // flowLayoutPanel1
             // 
@@ -338,7 +339,7 @@
             txtTotal.Location = new Point(103, 104);
             txtTotal.Name = "txtTotal";
             txtTotal.Size = new Size(330, 33);
-            txtTotal.TabIndex = 7;
+            txtTotal.TabIndex = 3;
             // 
             // groupBox2
             // 
@@ -431,7 +432,7 @@
             cbCommit.Location = new Point(3, 3);
             cbCommit.Name = "cbCommit";
             cbCommit.Size = new Size(419, 24);
-            cbCommit.TabIndex = 3;
+            cbCommit.TabIndex = 0;
             cbCommit.Text = "Tôi xác nhận thông tin trên khớp với hình ảnh trong phiếu";
             cbCommit.UseVisualStyleBackColor = true;
             cbCommit.CheckedChanged += cbCommit_CheckedChanged;
@@ -474,6 +475,7 @@
             BackColor = Color.Azure;
             ClientSize = new Size(944, 601);
             Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmGRN";
             StartPosition = FormStartPosition.CenterScreen;

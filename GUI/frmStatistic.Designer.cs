@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStatistic));
             panel1 = new Panel();
             label1 = new Label();
             splitContainer1 = new SplitContainer();
@@ -118,7 +119,6 @@
             dtgvStatistic.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvStatistic.Columns.AddRange(new DataGridViewColumn[] { colID, colStaff, colCustomer, colDate });
             dtgvStatistic.Dock = DockStyle.Fill;
-            dtgvStatistic.Enabled = false;
             dtgvStatistic.Location = new Point(0, 0);
             dtgvStatistic.MultiSelect = false;
             dtgvStatistic.Name = "dtgvStatistic";
@@ -128,27 +128,42 @@
             // 
             // colID
             // 
+            colID.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            colID.FillWeight = 101.52285F;
             colID.HeaderText = "Mã";
+            colID.MinimumWidth = 60;
             colID.Name = "colID";
             colID.ReadOnly = true;
+            colID.Width = 60;
             // 
             // colStaff
             // 
+            colStaff.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colStaff.FillWeight = 281.211426F;
             colStaff.HeaderText = "Tên sản phẩm";
+            colStaff.MinimumWidth = 500;
             colStaff.Name = "colStaff";
             colStaff.ReadOnly = true;
             // 
             // colCustomer
             // 
+            colCustomer.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            colCustomer.FillWeight = 4.49915457F;
             colCustomer.HeaderText = "Số lượng";
+            colCustomer.MinimumWidth = 50;
             colCustomer.Name = "colCustomer";
             colCustomer.ReadOnly = true;
+            colCustomer.Width = 50;
             // 
             // colDate
             // 
+            colDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            colDate.FillWeight = 12.7665958F;
             colDate.HeaderText = "Giá";
+            colDate.MinimumWidth = 80;
             colDate.Name = "colDate";
             colDate.ReadOnly = true;
+            colDate.Width = 80;
             // 
             // splitContainer2
             // 
@@ -290,9 +305,9 @@
             button1.ForeColor = Color.Brown;
             button1.Location = new Point(3, 3);
             button1.Name = "button1";
-            button1.Size = new Size(97, 43);
+            button1.Size = new Size(148, 43);
             button1.TabIndex = 0;
-            button1.Text = "Phiếu nhập";
+            button1.Text = "Theo SP nhập";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -301,11 +316,11 @@
             button2.BackColor = Color.FromArgb(255, 253, 239);
             button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button2.ForeColor = Color.Brown;
-            button2.Location = new Point(106, 3);
+            button2.Location = new Point(157, 3);
             button2.Name = "button2";
-            button2.Size = new Size(97, 43);
+            button2.Size = new Size(148, 43);
             button2.TabIndex = 0;
-            button2.Text = "Đơn hàng";
+            button2.Text = "Theo SP bán";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -367,6 +382,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmStatistic";
             StartPosition = FormStartPosition.CenterScreen;

@@ -272,7 +272,6 @@
             splitContainer29 = new SplitContainer();
             dtgvAccount = new DataGridView();
             AccountID = new DataGridViewTextBoxColumn();
-            passWord = new DataGridViewTextBoxColumn();
             accountType = new DataGridViewTextBoxColumn();
             accountStaff = new DataGridViewTextBoxColumn();
             splitContainer30 = new SplitContainer();
@@ -728,7 +727,7 @@
             txtSearchNumberPhone.Location = new Point(94, 3);
             txtSearchNumberPhone.Name = "txtSearchNumberPhone";
             txtSearchNumberPhone.Size = new Size(301, 29);
-            txtSearchNumberPhone.TabIndex = 1;
+            txtSearchNumberPhone.TabIndex = 0;
             // 
             // label2
             // 
@@ -850,7 +849,7 @@
             txtNumberPhone.Location = new Point(93, 3);
             txtNumberPhone.Name = "txtNumberPhone";
             txtNumberPhone.Size = new Size(302, 29);
-            txtNumberPhone.TabIndex = 1;
+            txtNumberPhone.TabIndex = 0;
             // 
             // rtbAddress
             // 
@@ -859,7 +858,7 @@
             rtbAddress.Location = new Point(93, 93);
             rtbAddress.Name = "rtbAddress";
             rtbAddress.Size = new Size(302, 124);
-            rtbAddress.TabIndex = 1;
+            rtbAddress.TabIndex = 2;
             rtbAddress.Text = "";
             // 
             // groupBox2
@@ -893,7 +892,7 @@
             btnAddCustomer.Location = new Point(3, 3);
             btnAddCustomer.Name = "btnAddCustomer";
             btnAddCustomer.Size = new Size(121, 43);
-            btnAddCustomer.TabIndex = 2;
+            btnAddCustomer.TabIndex = 0;
             btnAddCustomer.Text = "Thêm KH";
             btnAddCustomer.TextAlign = ContentAlignment.MiddleRight;
             btnAddCustomer.UseVisualStyleBackColor = true;
@@ -908,7 +907,7 @@
             btnUpdateCustomer.Location = new Point(130, 3);
             btnUpdateCustomer.Name = "btnUpdateCustomer";
             btnUpdateCustomer.Size = new Size(121, 43);
-            btnUpdateCustomer.TabIndex = 2;
+            btnUpdateCustomer.TabIndex = 1;
             btnUpdateCustomer.Text = "Sửa KH";
             btnUpdateCustomer.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateCustomer.UseVisualStyleBackColor = true;
@@ -933,11 +932,11 @@
             // 
             tpOrder.BackColor = Color.Azure;
             tpOrder.Controls.Add(splitContainer4);
-            tpOrder.Location = new Point(4, 29);
+            tpOrder.Location = new Point(4, 24);
             tpOrder.Margin = new Padding(3, 4, 3, 4);
             tpOrder.Name = "tpOrder";
             tpOrder.Padding = new Padding(3, 4, 3, 4);
-            tpOrder.Size = new Size(1256, 623);
+            tpOrder.Size = new Size(1256, 628);
             tpOrder.TabIndex = 1;
             tpOrder.Text = "Đơn hàng";
             // 
@@ -956,7 +955,7 @@
             // 
             splitContainer4.Panel2.Controls.Add(splitContainer5);
             splitContainer4.Panel2MinSize = 400;
-            splitContainer4.Size = new Size(1250, 615);
+            splitContainer4.Size = new Size(1250, 620);
             splitContainer4.SplitterDistance = 842;
             splitContainer4.TabIndex = 3;
             // 
@@ -973,7 +972,7 @@
             dtgvOrder.ReadOnly = true;
             dtgvOrder.RowHeadersWidth = 62;
             dtgvOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvOrder.Size = new Size(842, 615);
+            dtgvOrder.Size = new Size(842, 620);
             dtgvOrder.TabIndex = 0;
             dtgvOrder.CellClick += dtgvOrder_CellClick;
             // 
@@ -1037,7 +1036,7 @@
             // 
             splitContainer5.Panel2.Controls.Add(splitContainer6);
             splitContainer5.Panel2MinSize = 250;
-            splitContainer5.Size = new Size(404, 615);
+            splitContainer5.Size = new Size(404, 620);
             splitContainer5.SplitterDistance = 234;
             splitContainer5.TabIndex = 4;
             // 
@@ -1094,7 +1093,7 @@
             txtSearchOrderID.Location = new Point(93, 3);
             txtSearchOrderID.Name = "txtSearchOrderID";
             txtSearchOrderID.Size = new Size(302, 27);
-            txtSearchOrderID.TabIndex = 1;
+            txtSearchOrderID.TabIndex = 0;
             // 
             // label7
             // 
@@ -1128,7 +1127,7 @@
             dtpkSearchOrderTo.Location = new Point(93, 81);
             dtpkSearchOrderTo.Name = "dtpkSearchOrderTo";
             dtpkSearchOrderTo.Size = new Size(302, 27);
-            dtpkSearchOrderTo.TabIndex = 5;
+            dtpkSearchOrderTo.TabIndex = 2;
             // 
             // dtpkSearchOrderFrom
             // 
@@ -1138,7 +1137,7 @@
             dtpkSearchOrderFrom.Location = new Point(93, 43);
             dtpkSearchOrderFrom.Name = "dtpkSearchOrderFrom";
             dtpkSearchOrderFrom.Size = new Size(302, 27);
-            dtpkSearchOrderFrom.TabIndex = 9;
+            dtpkSearchOrderFrom.TabIndex = 1;
             // 
             // panel2
             // 
@@ -1157,7 +1156,7 @@
             btnSearchOrderCancel.Location = new Point(184, 3);
             btnSearchOrderCancel.Name = "btnSearchOrderCancel";
             btnSearchOrderCancel.Size = new Size(43, 43);
-            btnSearchOrderCancel.TabIndex = 2;
+            btnSearchOrderCancel.TabIndex = 1;
             btnSearchOrderCancel.UseVisualStyleBackColor = true;
             btnSearchOrderCancel.Click += btnSearchOrderCancel_Click;
             // 
@@ -1170,7 +1169,7 @@
             btnSearchOrder.Location = new Point(3, 3);
             btnSearchOrder.Name = "btnSearchOrder";
             btnSearchOrder.Size = new Size(121, 43);
-            btnSearchOrder.TabIndex = 2;
+            btnSearchOrder.TabIndex = 0;
             btnSearchOrder.Text = "Tìm kiếm";
             btnSearchOrder.TextAlign = ContentAlignment.MiddleRight;
             btnSearchOrder.UseVisualStyleBackColor = true;
@@ -1192,7 +1191,7 @@
             // splitContainer6.Panel2
             // 
             splitContainer6.Panel2.Controls.Add(groupBox6);
-            splitContainer6.Size = new Size(404, 377);
+            splitContainer6.Size = new Size(404, 382);
             splitContainer6.SplitterDistance = 248;
             splitContainer6.TabIndex = 1;
             // 
@@ -1321,7 +1320,7 @@
             txtOrderTotal.Location = new Point(3, 6);
             txtOrderTotal.Name = "txtOrderTotal";
             txtOrderTotal.Size = new Size(248, 26);
-            txtOrderTotal.TabIndex = 7;
+            txtOrderTotal.TabIndex = 0;
             // 
             // label13
             // 
@@ -1345,7 +1344,7 @@
             txtOrderCustomerName.Location = new Point(93, 41);
             txtOrderCustomerName.Name = "txtOrderCustomerName";
             txtOrderCustomerName.Size = new Size(302, 28);
-            txtOrderCustomerName.TabIndex = 7;
+            txtOrderCustomerName.TabIndex = 1;
             // 
             // txtOrderStaff
             // 
@@ -1357,7 +1356,7 @@
             txtOrderStaff.Location = new Point(93, 83);
             txtOrderStaff.Name = "txtOrderStaff";
             txtOrderStaff.Size = new Size(302, 28);
-            txtOrderStaff.TabIndex = 7;
+            txtOrderStaff.TabIndex = 2;
             // 
             // txtOrderStatus
             // 
@@ -1369,7 +1368,7 @@
             txtOrderStatus.Location = new Point(93, 122);
             txtOrderStatus.Name = "txtOrderStatus";
             txtOrderStatus.Size = new Size(302, 28);
-            txtOrderStatus.TabIndex = 7;
+            txtOrderStatus.TabIndex = 3;
             // 
             // txtOrderID
             // 
@@ -1381,7 +1380,7 @@
             txtOrderID.Location = new Point(93, 0);
             txtOrderID.Name = "txtOrderID";
             txtOrderID.Size = new Size(302, 28);
-            txtOrderID.TabIndex = 7;
+            txtOrderID.TabIndex = 0;
             // 
             // groupBox6
             // 
@@ -1389,7 +1388,7 @@
             groupBox6.Dock = DockStyle.Fill;
             groupBox6.Location = new Point(0, 0);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(404, 125);
+            groupBox6.Size = new Size(404, 130);
             groupBox6.TabIndex = 2;
             groupBox6.TabStop = false;
             groupBox6.Text = "Chức năng";
@@ -1401,7 +1400,7 @@
             flowLayoutPanel2.Dock = DockStyle.Fill;
             flowLayoutPanel2.Location = new Point(3, 23);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(398, 99);
+            flowLayoutPanel2.Size = new Size(398, 104);
             flowLayoutPanel2.TabIndex = 3;
             // 
             // btnAddOrder
@@ -1413,7 +1412,7 @@
             btnAddOrder.Location = new Point(3, 3);
             btnAddOrder.Name = "btnAddOrder";
             btnAddOrder.Size = new Size(121, 43);
-            btnAddOrder.TabIndex = 2;
+            btnAddOrder.TabIndex = 0;
             btnAddOrder.Text = "Thêm đơn";
             btnAddOrder.TextAlign = ContentAlignment.MiddleRight;
             btnAddOrder.UseVisualStyleBackColor = true;
@@ -1426,7 +1425,7 @@
             btnView.Location = new Point(130, 3);
             btnView.Name = "btnView";
             btnView.Size = new Size(121, 43);
-            btnView.TabIndex = 2;
+            btnView.TabIndex = 1;
             btnView.Text = "Xem chi tiết";
             btnView.UseVisualStyleBackColor = true;
             btnView.Click += btnView_Click;
@@ -1456,7 +1455,7 @@
             // splitContainer10.Panel2
             // 
             splitContainer10.Panel2.Controls.Add(splitContainer11);
-            splitContainer10.Panel2MinSize = 80;
+            splitContainer10.Panel2MinSize = 400;
             splitContainer10.Size = new Size(1250, 622);
             splitContainer10.SplitterDistance = 846;
             splitContainer10.TabIndex = 4;
@@ -1475,6 +1474,7 @@
             // 
             splitContainer11.Dock = DockStyle.Fill;
             splitContainer11.FixedPanel = FixedPanel.Panel1;
+            splitContainer11.IsSplitterFixed = true;
             splitContainer11.Location = new Point(0, 0);
             splitContainer11.Name = "splitContainer11";
             splitContainer11.Orientation = Orientation.Horizontal;
@@ -1499,7 +1499,7 @@
             groupBox9.Location = new Point(0, 0);
             groupBox9.Name = "groupBox9";
             groupBox9.Size = new Size(400, 92);
-            groupBox9.TabIndex = 1;
+            groupBox9.TabIndex = 0;
             groupBox9.TabStop = false;
             groupBox9.Text = "Bộ lọc tìm kiếm";
             // 
@@ -1558,7 +1558,7 @@
             txtSearchProductID.Location = new Point(96, 3);
             txtSearchProductID.Name = "txtSearchProductID";
             txtSearchProductID.Size = new Size(176, 27);
-            txtSearchProductID.TabIndex = 1;
+            txtSearchProductID.TabIndex = 0;
             // 
             // label22
             // 
@@ -1579,7 +1579,7 @@
             txtSearchProductName.Location = new Point(96, 36);
             txtSearchProductName.Name = "txtSearchProductName";
             txtSearchProductName.Size = new Size(176, 27);
-            txtSearchProductName.TabIndex = 3;
+            txtSearchProductName.TabIndex = 1;
             // 
             // btnSearchProduct
             // 
@@ -1589,8 +1589,8 @@
             btnSearchProduct.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchProduct.Location = new Point(2, 3);
             btnSearchProduct.Name = "btnSearchProduct";
-            btnSearchProduct.Size = new Size(110, 42);
-            btnSearchProduct.TabIndex = 4;
+            btnSearchProduct.Size = new Size(110, 60);
+            btnSearchProduct.TabIndex = 0;
             btnSearchProduct.Text = "Tìm kiếm";
             btnSearchProduct.TextAlign = ContentAlignment.MiddleRight;
             btnSearchProduct.UseVisualStyleBackColor = true;
@@ -1721,7 +1721,7 @@
             rtbProductInfomation.Location = new Point(95, 109);
             rtbProductInfomation.Name = "rtbProductInfomation";
             rtbProductInfomation.Size = new Size(296, 62);
-            rtbProductInfomation.TabIndex = 5;
+            rtbProductInfomation.TabIndex = 3;
             rtbProductInfomation.Text = "";
             // 
             // label25
@@ -1743,7 +1743,7 @@
             cbProductCategory.Location = new Point(95, 177);
             cbProductCategory.Name = "cbProductCategory";
             cbProductCategory.Size = new Size(296, 28);
-            cbProductCategory.TabIndex = 12;
+            cbProductCategory.TabIndex = 4;
             // 
             // label34
             // 
@@ -1764,7 +1764,7 @@
             cbProductManufacturer.Location = new Point(95, 213);
             cbProductManufacturer.Name = "cbProductManufacturer";
             cbProductManufacturer.Size = new Size(296, 28);
-            cbProductManufacturer.TabIndex = 13;
+            cbProductManufacturer.TabIndex = 5;
             // 
             // label35
             // 
@@ -1806,7 +1806,7 @@
             txtProductPrice.Location = new Point(-1, 3);
             txtProductPrice.Name = "txtProductPrice";
             txtProductPrice.Size = new Size(246, 27);
-            txtProductPrice.TabIndex = 6;
+            txtProductPrice.TabIndex = 0;
             // 
             // label23
             // 
@@ -1829,7 +1829,7 @@
             txtProductID.Location = new Point(95, 0);
             txtProductID.Name = "txtProductID";
             txtProductID.Size = new Size(296, 28);
-            txtProductID.TabIndex = 8;
+            txtProductID.TabIndex = 0;
             // 
             // splitContainer32
             // 
@@ -1873,7 +1873,7 @@
             groupBox11.Location = new Point(0, 0);
             groupBox11.Name = "groupBox11";
             groupBox11.Size = new Size(400, 75);
-            groupBox11.TabIndex = 2;
+            groupBox11.TabIndex = 0;
             groupBox11.TabStop = false;
             groupBox11.Text = "Chức năng";
             // 
@@ -1910,7 +1910,7 @@
             btnUpdateProduct.Location = new Point(307, 22);
             btnUpdateProduct.Name = "btnUpdateProduct";
             btnUpdateProduct.Size = new Size(90, 43);
-            btnUpdateProduct.TabIndex = 2;
+            btnUpdateProduct.TabIndex = 3;
             btnUpdateProduct.Text = "Sửa SP";
             btnUpdateProduct.UseVisualStyleBackColor = false;
             btnUpdateProduct.Click += btnUpdateProduct_Click;
@@ -2017,7 +2017,7 @@
             groupBox12.Location = new Point(0, 0);
             groupBox12.Name = "groupBox12";
             groupBox12.Size = new Size(404, 211);
-            groupBox12.TabIndex = 1;
+            groupBox12.TabIndex = 0;
             groupBox12.TabStop = false;
             groupBox12.Text = "Bộ lọc tìm kiếm";
             // 
@@ -2084,7 +2084,7 @@
             txtSearchManuID.Location = new Point(94, 3);
             txtSearchManuID.Name = "txtSearchManuID";
             txtSearchManuID.Size = new Size(301, 27);
-            txtSearchManuID.TabIndex = 1;
+            txtSearchManuID.TabIndex = 0;
             // 
             // label30
             // 
@@ -2191,7 +2191,7 @@
             txtManufacturerID.Location = new Point(93, 0);
             txtManufacturerID.Name = "txtManufacturerID";
             txtManufacturerID.Size = new Size(302, 28);
-            txtManufacturerID.TabIndex = 9;
+            txtManufacturerID.TabIndex = 0;
             // 
             // groupBox14
             // 
@@ -2212,7 +2212,7 @@
             flowLayoutPanel6.Location = new Point(3, 23);
             flowLayoutPanel6.Name = "flowLayoutPanel6";
             flowLayoutPanel6.Size = new Size(398, 129);
-            flowLayoutPanel6.TabIndex = 3;
+            flowLayoutPanel6.TabIndex = 0;
             // 
             // btnAddManufacturer
             // 
@@ -2223,7 +2223,7 @@
             btnAddManufacturer.Location = new Point(3, 3);
             btnAddManufacturer.Name = "btnAddManufacturer";
             btnAddManufacturer.Size = new Size(121, 43);
-            btnAddManufacturer.TabIndex = 4;
+            btnAddManufacturer.TabIndex = 0;
             btnAddManufacturer.Text = "Thêm hãng";
             btnAddManufacturer.TextAlign = ContentAlignment.MiddleRight;
             btnAddManufacturer.UseVisualStyleBackColor = true;
@@ -2238,7 +2238,7 @@
             btnUpdateManufacturer.Location = new Point(130, 3);
             btnUpdateManufacturer.Name = "btnUpdateManufacturer";
             btnUpdateManufacturer.Size = new Size(121, 43);
-            btnUpdateManufacturer.TabIndex = 5;
+            btnUpdateManufacturer.TabIndex = 1;
             btnUpdateManufacturer.Text = "Sửa hãng";
             btnUpdateManufacturer.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateManufacturer.UseVisualStyleBackColor = true;
@@ -2332,7 +2332,7 @@
             groupBox15.Location = new Point(0, 0);
             groupBox15.Name = "groupBox15";
             groupBox15.Size = new Size(404, 211);
-            groupBox15.TabIndex = 1;
+            groupBox15.TabIndex = 0;
             groupBox15.TabStop = false;
             groupBox15.Text = "Bộ lọc tìm kiếm";
             // 
@@ -2399,7 +2399,7 @@
             txtSearchCateID.Location = new Point(94, 3);
             txtSearchCateID.Name = "txtSearchCateID";
             txtSearchCateID.Size = new Size(301, 27);
-            txtSearchCateID.TabIndex = 1;
+            txtSearchCateID.TabIndex = 0;
             // 
             // label36
             // 
@@ -2506,7 +2506,7 @@
             txtCategoryID.Location = new Point(93, 0);
             txtCategoryID.Name = "txtCategoryID";
             txtCategoryID.Size = new Size(302, 28);
-            txtCategoryID.TabIndex = 10;
+            txtCategoryID.TabIndex = 0;
             // 
             // groupBox17
             // 
@@ -2516,7 +2516,7 @@
             groupBox17.Location = new Point(0, 0);
             groupBox17.Name = "groupBox17";
             groupBox17.Size = new Size(404, 155);
-            groupBox17.TabIndex = 2;
+            groupBox17.TabIndex = 0;
             groupBox17.TabStop = false;
             groupBox17.Text = "Chức năng";
             // 
@@ -2529,7 +2529,7 @@
             btnAddCate.Location = new Point(6, 26);
             btnAddCate.Name = "btnAddCate";
             btnAddCate.Size = new Size(121, 43);
-            btnAddCate.TabIndex = 4;
+            btnAddCate.TabIndex = 0;
             btnAddCate.Text = "Thêm DM";
             btnAddCate.TextAlign = ContentAlignment.MiddleRight;
             btnAddCate.UseVisualStyleBackColor = true;
@@ -2544,7 +2544,7 @@
             btnUpdateCate.Location = new Point(133, 26);
             btnUpdateCate.Name = "btnUpdateCate";
             btnUpdateCate.Size = new Size(121, 43);
-            btnUpdateCate.TabIndex = 5;
+            btnUpdateCate.TabIndex = 1;
             btnUpdateCate.Text = "Sửa DM";
             btnUpdateCate.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateCate.UseVisualStyleBackColor = true;
@@ -2660,7 +2660,7 @@
             groupBox18.Location = new Point(0, 0);
             groupBox18.Name = "groupBox18";
             groupBox18.Size = new Size(404, 211);
-            groupBox18.TabIndex = 1;
+            groupBox18.TabIndex = 0;
             groupBox18.TabStop = false;
             groupBox18.Text = "Bộ lọc tìm kiếm";
             // 
@@ -2707,7 +2707,7 @@
             txtSearchGRNID.Location = new Point(93, 3);
             txtSearchGRNID.Name = "txtSearchGRNID";
             txtSearchGRNID.Size = new Size(302, 27);
-            txtSearchGRNID.TabIndex = 1;
+            txtSearchGRNID.TabIndex = 0;
             // 
             // label41
             // 
@@ -2739,7 +2739,7 @@
             dtpkSearchGRNTo.Location = new Point(93, 76);
             dtpkSearchGRNTo.Name = "dtpkSearchGRNTo";
             dtpkSearchGRNTo.Size = new Size(302, 27);
-            dtpkSearchGRNTo.TabIndex = 5;
+            dtpkSearchGRNTo.TabIndex = 2;
             // 
             // dtpkSearchGRNFrom
             // 
@@ -2747,7 +2747,7 @@
             dtpkSearchGRNFrom.Location = new Point(93, 38);
             dtpkSearchGRNFrom.Name = "dtpkSearchGRNFrom";
             dtpkSearchGRNFrom.Size = new Size(302, 27);
-            dtpkSearchGRNFrom.TabIndex = 9;
+            dtpkSearchGRNFrom.TabIndex = 1;
             // 
             // panel1
             // 
@@ -2766,7 +2766,7 @@
             btnSearchGRNCancel.Location = new Point(200, 1);
             btnSearchGRNCancel.Name = "btnSearchGRNCancel";
             btnSearchGRNCancel.Size = new Size(43, 43);
-            btnSearchGRNCancel.TabIndex = 2;
+            btnSearchGRNCancel.TabIndex = 1;
             btnSearchGRNCancel.UseVisualStyleBackColor = true;
             btnSearchGRNCancel.Click += btnSearchGRNCancel_Click;
             // 
@@ -2779,7 +2779,7 @@
             btnSearchGRN.Location = new Point(3, 0);
             btnSearchGRN.Name = "btnSearchGRN";
             btnSearchGRN.Size = new Size(110, 43);
-            btnSearchGRN.TabIndex = 2;
+            btnSearchGRN.TabIndex = 0;
             btnSearchGRN.Text = "Tìm kiếm";
             btnSearchGRN.TextAlign = ContentAlignment.MiddleRight;
             btnSearchGRN.UseVisualStyleBackColor = true;
@@ -2853,7 +2853,7 @@
             txtGRNStaff.Location = new Point(93, 69);
             txtGRNStaff.Name = "txtGRNStaff";
             txtGRNStaff.Size = new Size(302, 28);
-            txtGRNStaff.TabIndex = 11;
+            txtGRNStaff.TabIndex = 2;
             // 
             // label45
             // 
@@ -2921,7 +2921,7 @@
             txtGRNTotal.Location = new Point(3, 0);
             txtGRNTotal.Name = "txtGRNTotal";
             txtGRNTotal.Size = new Size(240, 28);
-            txtGRNTotal.TabIndex = 11;
+            txtGRNTotal.TabIndex = 0;
             // 
             // label12
             // 
@@ -2956,7 +2956,7 @@
             txtGRNUnit.Location = new Point(93, 34);
             txtGRNUnit.Name = "txtGRNUnit";
             txtGRNUnit.Size = new Size(302, 28);
-            txtGRNUnit.TabIndex = 11;
+            txtGRNUnit.TabIndex = 1;
             // 
             // txtGRNID
             // 
@@ -2968,7 +2968,7 @@
             txtGRNID.Location = new Point(93, 0);
             txtGRNID.Name = "txtGRNID";
             txtGRNID.Size = new Size(302, 28);
-            txtGRNID.TabIndex = 11;
+            txtGRNID.TabIndex = 0;
             // 
             // txtGRNDate
             // 
@@ -2980,7 +2980,7 @@
             txtGRNDate.Location = new Point(93, 105);
             txtGRNDate.Name = "txtGRNDate";
             txtGRNDate.Size = new Size(302, 28);
-            txtGRNDate.TabIndex = 11;
+            txtGRNDate.TabIndex = 3;
             // 
             // groupBox20
             // 
@@ -3001,7 +3001,7 @@
             flowLayoutPanel8.Location = new Point(3, 23);
             flowLayoutPanel8.Name = "flowLayoutPanel8";
             flowLayoutPanel8.Size = new Size(398, 129);
-            flowLayoutPanel8.TabIndex = 3;
+            flowLayoutPanel8.TabIndex = 0;
             // 
             // btnDetailAndUpdateGRN
             // 
@@ -3010,7 +3010,7 @@
             btnDetailAndUpdateGRN.Location = new Point(3, 3);
             btnDetailAndUpdateGRN.Name = "btnDetailAndUpdateGRN";
             btnDetailAndUpdateGRN.Size = new Size(190, 43);
-            btnDetailAndUpdateGRN.TabIndex = 2;
+            btnDetailAndUpdateGRN.TabIndex = 0;
             btnDetailAndUpdateGRN.Text = "Xem chi tiết";
             btnDetailAndUpdateGRN.UseVisualStyleBackColor = true;
             btnDetailAndUpdateGRN.Click += btnDetailAndUpdateGRN_Click;
@@ -3022,7 +3022,7 @@
             btnAddGRN.Location = new Point(199, 3);
             btnAddGRN.Name = "btnAddGRN";
             btnAddGRN.Size = new Size(185, 43);
-            btnAddGRN.TabIndex = 2;
+            btnAddGRN.TabIndex = 1;
             btnAddGRN.Text = "Thêm phiếu nhập";
             btnAddGRN.UseVisualStyleBackColor = true;
             btnAddGRN.Click += btnAddGRN_Click;
@@ -3176,7 +3176,7 @@
             groupBox21.Location = new Point(0, 0);
             groupBox21.Name = "groupBox21";
             groupBox21.Size = new Size(404, 150);
-            groupBox21.TabIndex = 1;
+            groupBox21.TabIndex = 0;
             groupBox21.TabStop = false;
             groupBox21.Text = "Bộ lọc tìm kiếm";
             // 
@@ -3243,7 +3243,7 @@
             txtSearchStaffID.Location = new Point(94, 3);
             txtSearchStaffID.Name = "txtSearchStaffID";
             txtSearchStaffID.Size = new Size(301, 27);
-            txtSearchStaffID.TabIndex = 1;
+            txtSearchStaffID.TabIndex = 0;
             // 
             // label48
             // 
@@ -3335,7 +3335,7 @@
             txtStaffID.Location = new Point(98, 0);
             txtStaffID.Name = "txtStaffID";
             txtStaffID.Size = new Size(297, 28);
-            txtStaffID.TabIndex = 12;
+            txtStaffID.TabIndex = 0;
             // 
             // label49
             // 
@@ -3414,7 +3414,7 @@
             cbStaffGender.Location = new Point(98, 76);
             cbStaffGender.Name = "cbStaffGender";
             cbStaffGender.Size = new Size(297, 28);
-            cbStaffGender.TabIndex = 6;
+            cbStaffGender.TabIndex = 2;
             // 
             // label51
             // 
@@ -3447,7 +3447,7 @@
             rtbStaffAdress.Location = new Point(98, 248);
             rtbStaffAdress.Name = "rtbStaffAdress";
             rtbStaffAdress.Size = new Size(297, 54);
-            rtbStaffAdress.TabIndex = 9;
+            rtbStaffAdress.TabIndex = 7;
             rtbStaffAdress.Text = "";
             // 
             // label67
@@ -3470,7 +3470,7 @@
             cbStaffRole.Location = new Point(98, 218);
             cbStaffRole.Name = "cbStaffRole";
             cbStaffRole.Size = new Size(297, 28);
-            cbStaffRole.TabIndex = 8;
+            cbStaffRole.TabIndex = 6;
             // 
             // cboStaffStatus
             // 
@@ -3481,7 +3481,7 @@
             cboStaffStatus.Location = new Point(98, 182);
             cboStaffStatus.Name = "cboStaffStatus";
             cboStaffStatus.Size = new Size(297, 28);
-            cboStaffStatus.TabIndex = 6;
+            cboStaffStatus.TabIndex = 5;
             // 
             // txtStaffPhone
             // 
@@ -3490,7 +3490,7 @@
             txtStaffPhone.Location = new Point(98, 147);
             txtStaffPhone.Name = "txtStaffPhone";
             txtStaffPhone.Size = new Size(297, 27);
-            txtStaffPhone.TabIndex = 7;
+            txtStaffPhone.TabIndex = 4;
             // 
             // dtpStaffBornDate
             // 
@@ -3498,7 +3498,7 @@
             dtpStaffBornDate.Location = new Point(98, 112);
             dtpStaffBornDate.Name = "dtpStaffBornDate";
             dtpStaffBornDate.Size = new Size(297, 27);
-            dtpStaffBornDate.TabIndex = 10;
+            dtpStaffBornDate.TabIndex = 3;
             // 
             // groupBox23
             // 
@@ -3519,7 +3519,7 @@
             flowLayoutPanel9.Location = new Point(3, 23);
             flowLayoutPanel9.Name = "flowLayoutPanel9";
             flowLayoutPanel9.Size = new Size(398, 107);
-            flowLayoutPanel9.TabIndex = 3;
+            flowLayoutPanel9.TabIndex = 0;
             // 
             // btnAddStaff
             // 
@@ -3530,7 +3530,7 @@
             btnAddStaff.Location = new Point(3, 3);
             btnAddStaff.Name = "btnAddStaff";
             btnAddStaff.Size = new Size(121, 43);
-            btnAddStaff.TabIndex = 4;
+            btnAddStaff.TabIndex = 0;
             btnAddStaff.Text = "Thêm NV";
             btnAddStaff.TextAlign = ContentAlignment.MiddleRight;
             btnAddStaff.UseVisualStyleBackColor = true;
@@ -3545,7 +3545,7 @@
             btnUpdateStaff.Location = new Point(130, 3);
             btnUpdateStaff.Name = "btnUpdateStaff";
             btnUpdateStaff.Size = new Size(121, 43);
-            btnUpdateStaff.TabIndex = 5;
+            btnUpdateStaff.TabIndex = 1;
             btnUpdateStaff.Text = "Sửa NV";
             btnUpdateStaff.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateStaff.UseVisualStyleBackColor = true;
@@ -3586,7 +3586,7 @@
             dtgvAccount.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvAccount.BackgroundColor = Color.FromArgb(194, 231, 255);
             dtgvAccount.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvAccount.Columns.AddRange(new DataGridViewColumn[] { AccountID, passWord, accountType, accountStaff });
+            dtgvAccount.Columns.AddRange(new DataGridViewColumn[] { AccountID, accountType, accountStaff });
             dtgvAccount.Dock = DockStyle.Fill;
             dtgvAccount.Location = new Point(0, 0);
             dtgvAccount.MultiSelect = false;
@@ -3603,12 +3603,6 @@
             AccountID.HeaderText = "Mã tài khoản";
             AccountID.Name = "AccountID";
             AccountID.ReadOnly = true;
-            // 
-            // passWord
-            // 
-            passWord.HeaderText = "Mật khẩu";
-            passWord.Name = "passWord";
-            passWord.ReadOnly = true;
             // 
             // accountType
             // 
@@ -3651,7 +3645,7 @@
             groupBox26.Location = new Point(0, 0);
             groupBox26.Name = "groupBox26";
             groupBox26.Size = new Size(404, 211);
-            groupBox26.TabIndex = 1;
+            groupBox26.TabIndex = 0;
             groupBox26.TabStop = false;
             groupBox26.Text = "Bộ lọc tìm kiếm";
             // 
@@ -3692,7 +3686,7 @@
             txtSearchLoginName.Location = new Point(94, 3);
             txtSearchLoginName.Name = "txtSearchLoginName";
             txtSearchLoginName.Size = new Size(301, 27);
-            txtSearchLoginName.TabIndex = 1;
+            txtSearchLoginName.TabIndex = 0;
             // 
             // btnSearchAccount
             // 
@@ -3703,7 +3697,7 @@
             btnSearchAccount.Location = new Point(94, 55);
             btnSearchAccount.Name = "btnSearchAccount";
             btnSearchAccount.Size = new Size(110, 44);
-            btnSearchAccount.TabIndex = 2;
+            btnSearchAccount.TabIndex = 1;
             btnSearchAccount.Text = "Tìm kiếm";
             btnSearchAccount.TextAlign = ContentAlignment.MiddleRight;
             btnSearchAccount.UseVisualStyleBackColor = true;
@@ -3805,7 +3799,7 @@
             txtLoginName.Location = new Point(93, 3);
             txtLoginName.Name = "txtLoginName";
             txtLoginName.Size = new Size(302, 27);
-            txtLoginName.TabIndex = 1;
+            txtLoginName.TabIndex = 0;
             // 
             // cbAccountType
             // 
@@ -3816,7 +3810,7 @@
             cbAccountType.Location = new Point(93, 85);
             cbAccountType.Name = "cbAccountType";
             cbAccountType.Size = new Size(302, 28);
-            cbAccountType.TabIndex = 6;
+            cbAccountType.TabIndex = 2;
             // 
             // label64
             // 
@@ -3850,7 +3844,7 @@
             cbAccountStaff.Location = new Point(93, 126);
             cbAccountStaff.Name = "cbAccountStaff";
             cbAccountStaff.Size = new Size(302, 28);
-            cbAccountStaff.TabIndex = 7;
+            cbAccountStaff.TabIndex = 3;
             // 
             // groupBox28
             // 
@@ -3871,7 +3865,7 @@
             flowLayoutPanel10.Location = new Point(3, 23);
             flowLayoutPanel10.Name = "flowLayoutPanel10";
             flowLayoutPanel10.Size = new Size(398, 82);
-            flowLayoutPanel10.TabIndex = 3;
+            flowLayoutPanel10.TabIndex = 0;
             // 
             // btnAddAccount
             // 
@@ -3882,7 +3876,7 @@
             btnAddAccount.Location = new Point(3, 3);
             btnAddAccount.Name = "btnAddAccount";
             btnAddAccount.Size = new Size(121, 43);
-            btnAddAccount.TabIndex = 4;
+            btnAddAccount.TabIndex = 0;
             btnAddAccount.Text = "Thêm TK";
             btnAddAccount.TextAlign = ContentAlignment.MiddleRight;
             btnAddAccount.UseVisualStyleBackColor = true;
@@ -3897,7 +3891,7 @@
             btnUpdateAccount.Location = new Point(130, 3);
             btnUpdateAccount.Name = "btnUpdateAccount";
             btnUpdateAccount.Size = new Size(121, 43);
-            btnUpdateAccount.TabIndex = 5;
+            btnUpdateAccount.TabIndex = 1;
             btnUpdateAccount.Text = "Sửa TK";
             btnUpdateAccount.TextAlign = ContentAlignment.MiddleRight;
             btnUpdateAccount.UseVisualStyleBackColor = true;
@@ -4893,10 +4887,6 @@
         private Label label69;
         private Panel panel2;
         private Button btnSearchOrderCancel;
-        private DataGridViewTextBoxColumn AccountID;
-        private DataGridViewTextBoxColumn passWord;
-        private DataGridViewTextBoxColumn accountType;
-        private DataGridViewTextBoxColumn accountStaff;
         private ToolStrip toolStrip1;
         private ToolStripButton tsbLogout;
         private ToolStripButton tsbStatistics;
@@ -4929,5 +4919,8 @@
         private Label txtGRNDate;
         private Label txtStaffID;
         private TextBox txtLoginName;
+        private DataGridViewTextBoxColumn AccountID;
+        private DataGridViewTextBoxColumn accountType;
+        private DataGridViewTextBoxColumn accountStaff;
     }
 }

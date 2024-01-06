@@ -72,6 +72,7 @@ namespace GUI
                 btnCancel.Enabled = false;
                 btnDeleteProduct.Enabled = false;
                 btnPayment.Enabled = false;
+                lbNewCustomer.Text = "Cảm ơn quý khách đã mua hàng";
 
                 dtgvDetail.Enabled = false;
                 dtgvDetail.ClearSelection();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrder));
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -145,7 +146,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 123F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
             tableLayoutPanel3.Size = new Size(473, 247);
-            tableLayoutPanel3.TabIndex = 1;
+            tableLayoutPanel3.TabIndex = 0;
             // 
             // txtCustomerName
             // 
@@ -156,7 +157,7 @@
             txtCustomerName.Margin = new Padding(3, 2, 3, 2);
             txtCustomerName.Name = "txtCustomerName";
             txtCustomerName.Size = new Size(376, 27);
-            txtCustomerName.TabIndex = 4;
+            txtCustomerName.TabIndex = 1;
             // 
             // label2
             // 
@@ -203,7 +204,7 @@
             txtPhone.Margin = new Padding(3, 2, 3, 2);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(376, 27);
-            txtPhone.TabIndex = 3;
+            txtPhone.TabIndex = 0;
             txtPhone.TextChanged += txtPhone_Leave;
             txtPhone.Leave += txtPhone_Leave;
             // 
@@ -215,7 +216,7 @@
             rtbCustomerAdress.Location = new Point(94, 81);
             rtbCustomerAdress.Name = "rtbCustomerAdress";
             rtbCustomerAdress.Size = new Size(376, 117);
-            rtbCustomerAdress.TabIndex = 5;
+            rtbCustomerAdress.TabIndex = 2;
             rtbCustomerAdress.Text = "";
             // 
             // lbNewCustomer
@@ -266,7 +267,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 111F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
             tableLayoutPanel1.Size = new Size(467, 247);
-            tableLayoutPanel1.TabIndex = 5;
+            tableLayoutPanel1.TabIndex = 0;
             // 
             // label6
             // 
@@ -316,7 +317,7 @@
             txtOrderID.Margin = new Padding(3, 2, 3, 2);
             txtOrderID.Name = "txtOrderID";
             txtOrderID.Size = new Size(371, 27);
-            txtOrderID.TabIndex = 5;
+            txtOrderID.TabIndex = 0;
             // 
             // label9
             // 
@@ -356,7 +357,6 @@
             // btnPayment
             // 
             btnPayment.BackColor = Color.FromArgb(194, 231, 255);
-            btnPayment.Dock = DockStyle.Fill;
             btnPayment.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnPayment.ForeColor = Color.Brown;
             btnPayment.Location = new Point(0, 0);
@@ -377,7 +377,7 @@
             btnCancel.Margin = new Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(110, 43);
-            btnCancel.TabIndex = 1;
+            btnCancel.TabIndex = 2;
             btnCancel.Text = "Hủy đơn";
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
@@ -391,7 +391,7 @@
             btnDeleteProduct.Margin = new Padding(3, 2, 3, 2);
             btnDeleteProduct.Name = "btnDeleteProduct";
             btnDeleteProduct.Size = new Size(110, 43);
-            btnDeleteProduct.TabIndex = 3;
+            btnDeleteProduct.TabIndex = 1;
             btnDeleteProduct.Text = "Xóa SP";
             btnDeleteProduct.UseVisualStyleBackColor = false;
             btnDeleteProduct.Click += btnDeleteProduct_Click;
@@ -405,7 +405,7 @@
             btnAddProduct.Margin = new Padding(3, 2, 3, 2);
             btnAddProduct.Name = "btnAddProduct";
             btnAddProduct.Size = new Size(110, 43);
-            btnAddProduct.TabIndex = 2;
+            btnAddProduct.TabIndex = 0;
             btnAddProduct.Text = "Thêm SP";
             btnAddProduct.UseVisualStyleBackColor = false;
             btnAddProduct.Click += btnAddProduct_Click;
@@ -419,7 +419,7 @@
             txtTotal.Location = new Point(93, 104);
             txtTotal.Name = "txtTotal";
             txtTotal.Size = new Size(371, 27);
-            txtTotal.TabIndex = 14;
+            txtTotal.TabIndex = 3;
             // 
             // dtpkDate
             // 
@@ -429,7 +429,7 @@
             dtpkDate.Location = new Point(93, 36);
             dtpkDate.Name = "dtpkDate";
             dtpkDate.Size = new Size(371, 27);
-            dtpkDate.TabIndex = 15;
+            dtpkDate.TabIndex = 1;
             // 
             // cbStatus
             // 
@@ -441,7 +441,7 @@
             cbStatus.Location = new Point(93, 70);
             cbStatus.Name = "cbStatus";
             cbStatus.Size = new Size(371, 28);
-            cbStatus.TabIndex = 16;
+            cbStatus.TabIndex = 2;
             // 
             // label5
             // 
@@ -527,11 +527,13 @@
             // 
             // frmOrder
             // 
+            AcceptButton = btnPayment;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
             ClientSize = new Size(944, 601);
             Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmOrder";
             StartPosition = FormStartPosition.CenterScreen;
