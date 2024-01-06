@@ -75,7 +75,6 @@
             txtAccountID.Name = "txtAccountID";
             txtAccountID.Size = new Size(253, 33);
             txtAccountID.TabIndex = 2;
-            txtAccountID.Text = "quanly";
             // 
             // txtPassword
             // 
@@ -85,7 +84,6 @@
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(253, 33);
             txtPassword.TabIndex = 4;
-            txtPassword.Text = "1";
             // 
             // label2
             // 
