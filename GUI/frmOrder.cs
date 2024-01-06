@@ -48,9 +48,26 @@ namespace GUI
             if (result != -1)
             {
                 customer = CustomerDAL.Instance.GetCustomer(phone);
+                txtCustomerName.Text = customer.CustomerName;
+                rtbCustomerAdress.Text = customer.CustomerAddress;
+
+                txtCustomerName.Enabled = false;
+                rtbCustomerAdress.Enabled = false;
+
+                lbNewCustomer.Visible = false;
                 return true;
             }
-            else { return false; }
+            else 
+            {
+                lbNewCustomer.Visible = true;
+                lbNewCustomer.Text = "Khách hàng mới sẽ được tự động lưu vào hệ thống";
+
+                txtCustomerName.Enabled = true;
+                rtbCustomerAdress.Enabled = true;
+                txtCustomerName.Text = String.Empty;
+                rtbCustomerAdress.Text = String.Empty;
+                return false; 
+            }
         }
         private bool CheckContainProduct(int id)
         {
@@ -104,9 +121,11 @@ namespace GUI
             {
                 if (o.CustomerNumberPhone != String.Empty)
                     txtPhone.Text = o.CustomerNumberPhone;
+                customer = CustomerDAL.Instance.GetCustomer(o.CustomerNumberPhone);
                 dtpkDate.Text = DateTime.Now.ToShortDateString();
                 cbStatus.Text = "Chưa thanh toán";
                 txtTotal.Text = "0";
+                CheckCustomer(txtPhone.Text);
             }
         }
         private void RemoveOldProduct(int id)
@@ -165,26 +184,7 @@ namespace GUI
         {
             if (CheckNumberPhone(txtPhone.Text))
             {
-                if (CheckCustomer(txtPhone.Text))
-                {
-                    txtCustomerName.Text = customer.CustomerName;
-                    rtbCustomerAdress.Text = customer.CustomerAddress;
-
-                    txtCustomerName.Enabled = false;
-                    rtbCustomerAdress.Enabled = false;
-
-                    lbNewCustomer.Visible = false;
-                }
-                else
-                {
-                    lbNewCustomer.Visible = true;
-                    lbNewCustomer.Text = "Khách hàng mới sẽ được tự động lưu vào hệ thống";
-
-                    txtCustomerName.Enabled = true;
-                    rtbCustomerAdress.Enabled = true;
-                    txtCustomerName.Text = String.Empty;
-                    rtbCustomerAdress.Text = String.Empty;
-                }
+                CheckCustomer(txtPhone.Text);
             }
             else
             {

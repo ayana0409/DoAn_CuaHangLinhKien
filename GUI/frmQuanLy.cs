@@ -205,7 +205,7 @@ namespace GUI
                 "{0}/{1}/{2}",
                 1,
                 DateTime.Now.Month,
-                DateTime.Now.Year
+                DateTime.Now.Year - 2
                 ));
             dtpkSearchGRNTo.Value = DateTime.Parse(String.Format(
                 "{0}/{1}/{2}",
@@ -217,7 +217,7 @@ namespace GUI
                 "{0}/{1}/{2}",
                 1,
                 DateTime.Now.Month,
-                DateTime.Now.Year
+                DateTime.Now.Year - 2
                 ));
             dtpkSearchOrderTo.Value = DateTime.Parse(String.Format(
                 "{0}/{1}/{2}",
@@ -294,7 +294,7 @@ namespace GUI
 
         private void ClearCategoryInputBox()
         {
-            txtCateID.Text = String.Empty;
+            txtCategoryID.Text = String.Empty;
             txtCateName.Text = String.Empty;
         }
         #endregion
@@ -417,6 +417,7 @@ namespace GUI
                 pbProductImage.Image = null;
             }
             ofdSelectProductImage.FileName = null;
+            CheckImageButton();
         }
         private void btnDeleteProductImage_Click(object sender, EventArgs e)
         {
@@ -429,12 +430,13 @@ namespace GUI
                     pbProductImage.Image = null;
                     _tempImageName = null;
                 }
+                CheckImageButton();
             }
         }
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             if (txtProductName.Text == String.Empty ||
-                    txtOrderTotal.Text == String.Empty ||
+                    txtProductPrice.Text == String.Empty ||
                     cbProductCategory.SelectedItem == null ||
                     cbProductManufacturer.SelectedItem == null ||
                     _tempImageName == null)
@@ -455,7 +457,7 @@ namespace GUI
 
             string name = txtProductName.Text;
             string info = rtbProductInfomation.Text;
-            double price = System.Convert.ToDouble(txtOrderTotal.Text);
+            double price = System.Convert.ToDouble(txtProductPrice.Text);
             int quantity = (int)nmudQuantity.Value;
 
 
@@ -481,7 +483,7 @@ namespace GUI
         {
             if (txtProductID.Text == String.Empty ||
                 txtProductName.Text == String.Empty ||
-                txtOrderTotal.Text == String.Empty ||
+                txtProductPrice.Text == String.Empty ||
                 cbProductCategory.SelectedItem == null ||
                 cbProductManufacturer.SelectedItem == null ||
                 _tempImageName == String.Empty)
@@ -503,7 +505,7 @@ namespace GUI
             int id = System.Convert.ToInt32(txtProductID.Text);
             string name = txtProductName.Text;
             string info = rtbProductInfomation.Text;
-            double price = Double.Parse(txtOrderTotal.Text);
+            double price = Double.Parse(txtProductPrice.Text);
             int quantity = (int)nmudQuantity.Value;
 
             string oldImage = ProductDAL.Instance.GetProduct(id).Image;
@@ -1033,12 +1035,12 @@ namespace GUI
         private void btnUpdateCate_Click(object sender, EventArgs e)
         {
             if (txtCateName.Text == String.Empty ||
-                txtCateID.Text == String.Empty)
+                txtCategoryID.Text == String.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin !");
                 return;
             }
-            int id = System.Convert.ToInt32(txtCateID.Text);
+            int id = System.Convert.ToInt32(txtCategoryID.Text);
             string name = txtCateName.Text;
 
             DialogResult result = MessageBox.Show("Bạn có muốn sửa thông tin của\ndanh mục [" + name + "]?",
@@ -1280,8 +1282,8 @@ namespace GUI
             {
                 DataGridViewRow row = dtgvAccount.SelectedRows[0];
                 txtLoginName.Text = row.Cells[0].Value.ToString();
-                cbAccountType.Text = row.Cells[2].Value.ToString();
-                cbAccountStaff.Text = row.Cells[3].Value.ToString();
+                cbAccountType.Text = row.Cells[1].Value.ToString();
+                cbAccountStaff.Text = row.Cells[2].Value.ToString();
             }
         }
         private void btnAddAccount_Click(object sender, EventArgs e)
