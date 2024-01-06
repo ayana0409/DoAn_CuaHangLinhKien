@@ -19,7 +19,6 @@ namespace GUI
         private Customer customer = new();
         public List<OrderDetail> listDetail = [];
         public bool _isAdd = false;
-
         private bool _isReading = false;
         
         public frmOrder(Order? readOder = null, bool isRead = true)
@@ -40,7 +39,6 @@ namespace GUI
             LoadDetailList();
             CheckReading();
         }
-
         private bool CheckCustomer(string phone)
         {
             int result;
@@ -76,7 +74,6 @@ namespace GUI
                     return true;
             return false;
         }
-
         private void CheckReading()
         {
             if (_isReading)
@@ -95,7 +92,6 @@ namespace GUI
                 dtgvDetail.ClearSelection();
             }
         }
-
         private void CheckTotal()
         {
             double total = 0;
@@ -104,7 +100,6 @@ namespace GUI
 
             txtTotal.Text = total.ToString();
         }
-
         private void LoadOrder(Order o)
         {
             if (_isReading)
