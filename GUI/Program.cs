@@ -17,7 +17,7 @@ namespace DoAn_CuaHangLinhKien
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
-            Application.SetHighDpiMode(HighDpiMode.DpiUnaware);
+            Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
             Application.Run(new frmLogin());
 

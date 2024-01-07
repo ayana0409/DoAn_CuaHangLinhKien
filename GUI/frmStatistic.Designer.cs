@@ -150,10 +150,10 @@
             colCustomer.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
             colCustomer.FillWeight = 4.49915457F;
             colCustomer.HeaderText = "Số lượng";
-            colCustomer.MinimumWidth = 50;
+            colCustomer.MinimumWidth = 130;
             colCustomer.Name = "colCustomer";
             colCustomer.ReadOnly = true;
-            colCustomer.Width = 50;
+            colCustomer.Width = 130;
             // 
             // colDate
             // 

@@ -41,9 +41,7 @@ namespace GUI
             double total = 0;
             int quantity = 0;
 
-            dtgvStatistic.Columns[0].HeaderCell.Value = "Mã sản phẩm";
-            dtgvStatistic.Columns[2].HeaderCell.Value = "Số lượng nhập";
-            dtgvStatistic.Columns[3].HeaderCell.Value = "Giá nhập";
+            dtgvStatistic.Columns[2].HeaderCell.Value = "SL nhập";
 
             listGRN = StatisticGRN(dtpkFrom.Value.ToString("yyyy/MM/dd"),
                 dtpkTo.Value.ToString("yyyy/MM/dd"));
@@ -73,9 +71,7 @@ namespace GUI
             double total = 0;
             int quantity = 0;
 
-            dtgvStatistic.Columns[0].HeaderCell.Value = "Mã sản phẩm";
-            dtgvStatistic.Columns[2].HeaderCell.Value = "Số lượng bán";
-            dtgvStatistic.Columns[3].HeaderCell.Value = "Giá bán";
+            dtgvStatistic.Columns[2].HeaderCell.Value = "SL bán";
 
             listOrder = StatisticOrder(
                 dtpkFrom.Value.ToString("yyyy/MM/dd"),
