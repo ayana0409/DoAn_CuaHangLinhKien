@@ -46,7 +46,7 @@
             label2 = new Label();
             label4 = new Label();
             label3 = new Label();
-            label5 = new Label();
+            lbPrice = new Label();
             label6 = new Label();
             txtID = new TextBox();
             rtbDetail = new RichTextBox();
@@ -229,7 +229,7 @@
             tableLayoutPanel1.Controls.Add(label2, 0, 0);
             tableLayoutPanel1.Controls.Add(label4, 0, 2);
             tableLayoutPanel1.Controls.Add(label3, 0, 1);
-            tableLayoutPanel1.Controls.Add(label5, 0, 3);
+            tableLayoutPanel1.Controls.Add(lbPrice, 0, 3);
             tableLayoutPanel1.Controls.Add(label6, 0, 4);
             tableLayoutPanel1.Controls.Add(txtID, 1, 0);
             tableLayoutPanel1.Controls.Add(rtbDetail, 1, 4);
@@ -292,16 +292,16 @@
             label3.TabIndex = 1;
             label3.Text = "Tên SP:";
             // 
-            // label5
+            // lbPrice
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            label5.ForeColor = Color.Brown;
-            label5.Location = new Point(3, 129);
-            label5.Name = "label5";
-            label5.Size = new Size(75, 20);
-            label5.TabIndex = 3;
-            label5.Text = "Giá nhập:";
+            lbPrice.AutoSize = true;
+            lbPrice.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lbPrice.ForeColor = Color.Brown;
+            lbPrice.Location = new Point(3, 129);
+            lbPrice.Name = "lbPrice";
+            lbPrice.Size = new Size(75, 20);
+            lbPrice.TabIndex = 3;
+            lbPrice.Text = "Giá nhập:";
             // 
             // label6
             // 
@@ -413,7 +413,7 @@
         private Label label1;
         private GroupBox groupBox2;
         private TableLayoutPanel tableLayoutPanel1;
-        private Label label5;
+        private Label lbPrice;
         private Label label4;
         private Label label3;
         private Label label2;

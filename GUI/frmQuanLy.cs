@@ -70,12 +70,13 @@ namespace GUI
                 TabControl.TabPages.Remove(tpAccount);
             }
         }
-        private bool CheckNumberPhone(string phone)
+        private bool CheckNumber(string phone, bool _isNumberPhone = false)
         {
             bool result = false;
             char[] chars = phone.ToCharArray();
-            if (chars.Length != 10 && chars.Length != 11)
-                return false;
+            if (_isNumberPhone) 
+                if (chars.Length != 10 && chars.Length != 11)
+                    return false;
             foreach (char c in chars)
             {
                 switch (c)
@@ -90,7 +91,8 @@ namespace GUI
                     case '7':
                     case '8':
                     case '9':
-                        result = true; break;
+                        result = true; continue;
+                    default: return false;
                 }
             }
             return result;
@@ -130,7 +132,7 @@ namespace GUI
             txtProductID.Text = String.Empty;
             txtProductName.Text = String.Empty;
             rtbProductInfomation.Text = String.Empty;
-            nmudQuantity.Value = 0;
+            txtProductQuantity.Text = String.Empty;
             cbProductCategory.Text = String.Empty;
             cbProductManufacturer.Text = String.Empty;
             pbProductImage.Image = null;
@@ -375,7 +377,7 @@ namespace GUI
             txtProductName.Text = v.Product.ProductName;
             txtProductPrice.Text = v.Product.Price.ToString("#,###");
             rtbProductInfomation.Text = v.Product.Information;
-            nmudQuantity.Value = v.Product.Quantity;
+            txtProductQuantity.Text = v.Product.Quantity.ToString();
             cbProductCategory.Text = CategoryDAL.Instance.GetCategory(v.Product.CategoryID).CategoryName;
             cbProductManufacturer.Text = ManufacturerDAL.Instance.GetManufacturer(v.Product.ManufacturerID).ManufacturerName;
 
@@ -435,13 +437,21 @@ namespace GUI
         }
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
+            
             if (txtProductName.Text == String.Empty ||
                     txtProductPrice.Text == String.Empty ||
                     cbProductCategory.SelectedItem == null ||
                     cbProductManufacturer.SelectedItem == null ||
+                    txtProductQuantity.Text == String.Empty ||
                     _tempImageName == null)
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                return;
+            }
+
+            if (!CheckNumber(txtProductQuantity.Text))
+            {
+                MessageBox.Show("Sai định dạng số lượng!");
                 return;
             }
 
@@ -458,7 +468,7 @@ namespace GUI
             string name = txtProductName.Text;
             string info = rtbProductInfomation.Text;
             double price = System.Convert.ToDouble(txtProductPrice.Text);
-            int quantity = (int)nmudQuantity.Value;
+            int quantity = System.Convert.ToInt32(txtProductQuantity.Text);
 
 
             string fileName = _tempImageName;
@@ -492,6 +502,12 @@ namespace GUI
                 return;
             }
 
+            if (!CheckNumber(txtProductQuantity.Text))
+            {
+                MessageBox.Show("Sai định dạng số lượng!");
+                return;
+            }
+
             DialogResult result = MessageBox.Show(
                 "Bạn có muốn sửa thông tin của sản phẩm?",
                 "Xác nhận",
@@ -506,7 +522,7 @@ namespace GUI
             string name = txtProductName.Text;
             string info = rtbProductInfomation.Text;
             double price = Double.Parse(txtProductPrice.Text);
-            int quantity = (int)nmudQuantity.Value;
+            int quantity = System.Convert.ToInt32(txtProductQuantity.Text);
 
             string oldImage = ProductDAL.Instance.GetProduct(id).Image;
 
@@ -577,7 +593,7 @@ namespace GUI
             Role role = (Role)cbStaffRole.SelectedItem;
             string phone = txtStaffPhone.Text;
 
-            if (!CheckNumberPhone(phone))
+            if (!CheckNumber(phone, true))
             {
                 MessageBox.Show("Sai định dạng số điện thoại!");
                 return;
@@ -625,7 +641,7 @@ namespace GUI
             Role role = (Role)cbStaffRole.SelectedItem;
             string phone = txtStaffPhone.Text;
 
-            if (!CheckNumberPhone(phone))
+            if (!CheckNumber(phone, true))
             {
                 MessageBox.Show("Sai định dạng số điện thoại!");
                 return;

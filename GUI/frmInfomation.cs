@@ -31,6 +31,10 @@ namespace GUI
         {
             listProduct = ProductDAL.Instance.GetListProduct();
             LoadProduct();
+
+            if (_isOrder)
+                lbPrice.Text = "Giá bán";
+
         }
 
         private void LoadProduct()
@@ -43,10 +47,10 @@ namespace GUI
                 flpProduct.Controls.Add(ctrViewer);
             }
         }
-        private bool CheckNumber(string phone)
+        private bool CheckNumber(string num)
         {
             bool result = false;
-            char[] chars = phone.ToCharArray();
+            char[] chars = num.ToCharArray();
             foreach (char c in chars)
             {
                 switch (c)
@@ -61,8 +65,8 @@ namespace GUI
                     case '7':
                     case '8':
                     case '9':
-                        result = true; break;
-                    default: result = false; break;
+                        result = true; continue;
+                    default: return false;
                 }
             }
             return result;

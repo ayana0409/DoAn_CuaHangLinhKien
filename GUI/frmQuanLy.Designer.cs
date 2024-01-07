@@ -120,7 +120,6 @@
             label27 = new Label();
             label28 = new Label();
             txtProductName = new TextBox();
-            nmudQuantity = new NumericUpDown();
             rtbProductInfomation = new RichTextBox();
             label25 = new Label();
             cbProductCategory = new ComboBox();
@@ -132,6 +131,7 @@
             txtProductPrice = new TextBox();
             label23 = new Label();
             txtProductID = new Label();
+            txtProductQuantity = new TextBox();
             splitContainer32 = new SplitContainer();
             panel7 = new Panel();
             pbProductImage = new PictureBox();
@@ -407,7 +407,6 @@
             splitContainer12.SuspendLayout();
             groupBox10.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nmudQuantity).BeginInit();
             panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer32).BeginInit();
             splitContainer32.Panel1.SuspendLayout();
@@ -1435,10 +1434,10 @@
             // 
             tpProduct.BackColor = Color.Azure;
             tpProduct.Controls.Add(splitContainer10);
-            tpProduct.Location = new Point(4, 29);
+            tpProduct.Location = new Point(4, 24);
             tpProduct.Name = "tpProduct";
             tpProduct.Padding = new Padding(3);
-            tpProduct.Size = new Size(1256, 623);
+            tpProduct.Size = new Size(1256, 628);
             tpProduct.TabIndex = 2;
             tpProduct.Text = "Sản phẩm";
             // 
@@ -1457,7 +1456,7 @@
             // 
             splitContainer10.Panel2.Controls.Add(splitContainer11);
             splitContainer10.Panel2MinSize = 400;
-            splitContainer10.Size = new Size(1250, 617);
+            splitContainer10.Size = new Size(1250, 622);
             splitContainer10.SplitterDistance = 846;
             splitContainer10.TabIndex = 4;
             // 
@@ -1468,7 +1467,7 @@
             flpProduct.Dock = DockStyle.Fill;
             flpProduct.Location = new Point(0, 0);
             flpProduct.Name = "flpProduct";
-            flpProduct.Size = new Size(846, 617);
+            flpProduct.Size = new Size(846, 622);
             flpProduct.TabIndex = 0;
             // 
             // splitContainer11
@@ -1489,7 +1488,7 @@
             // 
             splitContainer11.Panel2.Controls.Add(splitContainer12);
             splitContainer11.Panel2MinSize = 80;
-            splitContainer11.Size = new Size(400, 617);
+            splitContainer11.Size = new Size(400, 622);
             splitContainer11.SplitterDistance = 92;
             splitContainer11.TabIndex = 4;
             // 
@@ -1612,7 +1611,7 @@
             // splitContainer12.Panel2
             // 
             splitContainer12.Panel2.Controls.Add(splitContainer32);
-            splitContainer12.Size = new Size(400, 521);
+            splitContainer12.Size = new Size(400, 526);
             splitContainer12.SplitterDistance = 310;
             splitContainer12.TabIndex = 1;
             // 
@@ -1636,7 +1635,6 @@
             tableLayoutPanel8.Controls.Add(label27, 0, 1);
             tableLayoutPanel8.Controls.Add(label28, 0, 2);
             tableLayoutPanel8.Controls.Add(txtProductName, 1, 1);
-            tableLayoutPanel8.Controls.Add(nmudQuantity, 1, 2);
             tableLayoutPanel8.Controls.Add(rtbProductInfomation, 1, 3);
             tableLayoutPanel8.Controls.Add(label25, 0, 4);
             tableLayoutPanel8.Controls.Add(cbProductCategory, 1, 4);
@@ -1646,6 +1644,7 @@
             tableLayoutPanel8.Controls.Add(panel, 1, 6);
             tableLayoutPanel8.Controls.Add(label23, 0, 3);
             tableLayoutPanel8.Controls.Add(txtProductID, 1, 0);
+            tableLayoutPanel8.Controls.Add(txtProductQuantity, 1, 2);
             tableLayoutPanel8.Dock = DockStyle.Fill;
             tableLayoutPanel8.Location = new Point(3, 23);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -1704,16 +1703,6 @@
             txtProductName.Name = "txtProductName";
             txtProductName.Size = new Size(296, 27);
             txtProductName.TabIndex = 1;
-            // 
-            // nmudQuantity
-            // 
-            nmudQuantity.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            nmudQuantity.BackColor = Color.FromArgb(255, 253, 239);
-            nmudQuantity.Location = new Point(95, 75);
-            nmudQuantity.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
-            nmudQuantity.Name = "nmudQuantity";
-            nmudQuantity.Size = new Size(296, 27);
-            nmudQuantity.TabIndex = 2;
             // 
             // rtbProductInfomation
             // 
@@ -1832,6 +1821,15 @@
             txtProductID.Size = new Size(296, 28);
             txtProductID.TabIndex = 0;
             // 
+            // txtProductQuantity
+            // 
+            txtProductQuantity.BackColor = Color.FromArgb(255, 253, 239);
+            txtProductQuantity.Dock = DockStyle.Fill;
+            txtProductQuantity.Location = new Point(95, 75);
+            txtProductQuantity.Name = "txtProductQuantity";
+            txtProductQuantity.Size = new Size(296, 27);
+            txtProductQuantity.TabIndex = 1;
+            // 
             // splitContainer32
             // 
             splitContainer32.Dock = DockStyle.Fill;
@@ -1849,8 +1847,8 @@
             // 
             splitContainer32.Panel2.Controls.Add(groupBox11);
             splitContainer32.Panel2MinSize = 80;
-            splitContainer32.Size = new Size(400, 207);
-            splitContainer32.SplitterDistance = 123;
+            splitContainer32.Size = new Size(400, 212);
+            splitContainer32.SplitterDistance = 128;
             splitContainer32.TabIndex = 3;
             // 
             // panel7
@@ -1859,7 +1857,7 @@
             panel7.Dock = DockStyle.Fill;
             panel7.Location = new Point(0, 0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(400, 123);
+            panel7.Size = new Size(400, 128);
             panel7.TabIndex = 1;
             // 
             // pbProductImage
@@ -1869,7 +1867,7 @@
             pbProductImage.Dock = DockStyle.Fill;
             pbProductImage.Location = new Point(0, 0);
             pbProductImage.Name = "pbProductImage";
-            pbProductImage.Size = new Size(400, 123);
+            pbProductImage.Size = new Size(400, 128);
             pbProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbProductImage.TabIndex = 0;
             pbProductImage.TabStop = false;
@@ -3564,10 +3562,10 @@
             // 
             tpAccount.BackColor = Color.Azure;
             tpAccount.Controls.Add(splitContainer29);
-            tpAccount.Location = new Point(4, 24);
+            tpAccount.Location = new Point(4, 29);
             tpAccount.Name = "tpAccount";
             tpAccount.Padding = new Padding(3);
-            tpAccount.Size = new Size(1256, 628);
+            tpAccount.Size = new Size(1256, 623);
             tpAccount.TabIndex = 7;
             tpAccount.Text = "Tài khoản";
             // 
@@ -3586,7 +3584,7 @@
             // 
             splitContainer29.Panel2.Controls.Add(splitContainer30);
             splitContainer29.Panel2MinSize = 400;
-            splitContainer29.Size = new Size(1250, 622);
+            splitContainer29.Size = new Size(1250, 617);
             splitContainer29.SplitterDistance = 842;
             splitContainer29.TabIndex = 5;
             // 
@@ -3603,7 +3601,7 @@
             dtgvAccount.ReadOnly = true;
             dtgvAccount.RowHeadersWidth = 62;
             dtgvAccount.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvAccount.Size = new Size(842, 622);
+            dtgvAccount.Size = new Size(842, 617);
             dtgvAccount.TabIndex = 0;
             dtgvAccount.CellClick += dtgvAccount_CellClick;
             // 
@@ -3643,7 +3641,7 @@
             // 
             splitContainer30.Panel2.Controls.Add(splitContainer31);
             splitContainer30.Panel2MinSize = 250;
-            splitContainer30.Size = new Size(404, 622);
+            splitContainer30.Size = new Size(404, 617);
             splitContainer30.SplitterDistance = 211;
             splitContainer30.TabIndex = 4;
             // 
@@ -3728,7 +3726,7 @@
             // splitContainer31.Panel2
             // 
             splitContainer31.Panel2.Controls.Add(groupBox28);
-            splitContainer31.Size = new Size(404, 407);
+            splitContainer31.Size = new Size(404, 402);
             splitContainer31.SplitterDistance = 295;
             splitContainer31.TabIndex = 1;
             // 
@@ -3861,7 +3859,7 @@
             groupBox28.Dock = DockStyle.Fill;
             groupBox28.Location = new Point(0, 0);
             groupBox28.Name = "groupBox28";
-            groupBox28.Size = new Size(404, 108);
+            groupBox28.Size = new Size(404, 103);
             groupBox28.TabIndex = 2;
             groupBox28.TabStop = false;
             groupBox28.Text = "Chức năng";
@@ -3873,7 +3871,7 @@
             flowLayoutPanel10.Dock = DockStyle.Fill;
             flowLayoutPanel10.Location = new Point(3, 23);
             flowLayoutPanel10.Name = "flowLayoutPanel10";
-            flowLayoutPanel10.Size = new Size(398, 82);
+            flowLayoutPanel10.Size = new Size(398, 77);
             flowLayoutPanel10.TabIndex = 0;
             // 
             // btnAddAccount
@@ -4460,7 +4458,6 @@
             groupBox10.ResumeLayout(false);
             tableLayoutPanel8.ResumeLayout(false);
             tableLayoutPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nmudQuantity).EndInit();
             panel.ResumeLayout(false);
             panel.PerformLayout();
             splitContainer32.Panel1.ResumeLayout(false);
@@ -4709,7 +4706,6 @@
         private Label label19;
         private Label label20;
         private SplitContainer splitContainer7;
-        private NumericUpDown nmudQuantity;
         private Label label23;
         private RichTextBox rtbProductInfomation;
         private PictureBox pbProductImage;
@@ -4932,5 +4928,6 @@
         private DataGridViewTextBoxColumn accountType;
         private DataGridViewTextBoxColumn accountStaff;
         private Panel panel7;
+        private TextBox txtProductQuantity;
     }
 }

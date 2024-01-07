@@ -46,6 +46,7 @@ namespace GUI
             if (result != -1)
             {
                 customer = CustomerDAL.Instance.GetCustomer(phone);
+                txtPhone.Text = customer.CustomerNumberPhone.Trim();
                 txtCustomerName.Text = customer.CustomerName;
                 rtbCustomerAdress.Text = customer.CustomerAddress;
 
