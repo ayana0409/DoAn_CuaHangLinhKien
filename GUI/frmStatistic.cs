@@ -14,6 +14,8 @@ namespace GUI
 {
     public partial class frmStatistic : Form
     {
+        private DataTable listGRN;
+        private DataTable listOrder;
         public frmStatistic()
         {
             InitializeComponent();
@@ -31,10 +33,6 @@ namespace GUI
                 DateTime.Now.Year
                 ));
         }
-
-        private DataTable listGRN;
-        private DataTable listOrder;
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -110,25 +108,6 @@ namespace GUI
             string query = "exec proc_Statistic_GRN @from , @to";
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { from, to });
             return data;
-        }
-
-        private Double SumOrderTotal(List<Order> list)
-        {
-            Double total = 0;
-            foreach (Order o in list)
-            {
-                total += o.Total; ; 
-            }
-            return total;
-        }
-        private Double SumGRNTotal(List<GRN> list)
-        {
-            Double total = 0;
-            foreach (GRN o in list)
-            {
-                total += o.Total; ;
-            }
-            return total;
         }
     }
 }

@@ -62,6 +62,7 @@ namespace GUI
                     case '8':
                     case '9':
                         result = true; break;
+                    default: result = false; break;
                 }
             }
             return result;
@@ -97,20 +98,20 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (nmQuantity.Value <= 0 || txtPrice.Text == String.Empty)
+            if (txtQuantity.Text == String.Empty || txtPrice.Text == String.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin");
                 return;
             }
 
-            if (!CheckNumber(txtPrice.Text))
+            if (!CheckNumber(txtPrice.Text) || !CheckNumber(txtQuantity.Text))
             {
-                MessageBox.Show("Sai định dạng giá tiền");
+                MessageBox.Show("Sai định dạng số lượng");
                 return;
             }
 
             selectedProduct = ProductDAL.Instance.GetProduct(System.Convert.ToInt32(txtID.Text));
-            quantity = System.Convert.ToInt32(nmQuantity.Value);
+            quantity = System.Convert.ToInt32(txtQuantity.Text);
             price = System.Convert.ToDouble(txtPrice.Text);
 
             if (_isOrder)

@@ -45,9 +45,9 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.MidnightBlue;
-            btnLogin.Location = new Point(238, 258);
+            btnLogin.Location = new Point(238, 268);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(121, 43);
+            btnLogin.Size = new Size(133, 43);
             btnLogin.TabIndex = 0;
             btnLogin.Text = "Đăng nhập";
             btnLogin.UseVisualStyleBackColor = false;
@@ -61,7 +61,7 @@
             btnExit.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = Color.MidnightBlue;
             btnExit.Image = Properties.Resources.icons8_export_26;
-            btnExit.Location = new Point(448, 258);
+            btnExit.Location = new Point(448, 268);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(43, 43);
             btnExit.TabIndex = 1;
@@ -90,7 +90,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label2.ForeColor = Color.Lavender;
-            label2.Location = new Point(133, 218);
+            label2.Location = new Point(138, 218);
             label2.Name = "label2";
             label2.Size = new Size(94, 36);
             label2.TabIndex = 3;
@@ -103,7 +103,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label1.ForeColor = Color.Lavender;
-            label1.Location = new Point(133, 170);
+            label1.Location = new Point(138, 170);
             label1.Name = "label1";
             label1.Size = new Size(94, 29);
             label1.TabIndex = 1;
@@ -116,7 +116,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Lavender;
-            label3.Location = new Point(133, 118);
+            label3.Location = new Point(143, 132);
             label3.Name = "label3";
             label3.Size = new Size(358, 32);
             label3.TabIndex = 0;
@@ -131,7 +131,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             CancelButton = btnExit;
-            ClientSize = new Size(624, 441);
+            ClientSize = new Size(640, 480);
             Controls.Add(btnExit);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);

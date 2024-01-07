@@ -151,8 +151,8 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.94118F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77.05882F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.2293587F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 74.7706451F));
             tableLayoutPanel1.Controls.Add(flowLayoutPanel3, 1, 4);
             tableLayoutPanel1.Controls.Add(txtGRNUnit, 1, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
@@ -182,9 +182,9 @@
             flowLayoutPanel3.Anchor = AnchorStyles.Top;
             flowLayoutPanel3.Controls.Add(btnAddProduct);
             flowLayoutPanel3.Controls.Add(btnDeleteProduct);
-            flowLayoutPanel3.Location = new Point(106, 143);
+            flowLayoutPanel3.Location = new Point(113, 143);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(323, 54);
+            flowLayoutPanel3.Size = new Size(320, 54);
             flowLayoutPanel3.TabIndex = 2;
             // 
             // btnAddProduct
@@ -217,10 +217,10 @@
             // 
             txtGRNUnit.BackColor = Color.FromArgb(255, 253, 239);
             txtGRNUnit.Dock = DockStyle.Fill;
-            txtGRNUnit.Location = new Point(103, 36);
+            txtGRNUnit.Location = new Point(113, 36);
             txtGRNUnit.Margin = new Padding(3, 2, 3, 2);
             txtGRNUnit.Name = "txtGRNUnit";
-            txtGRNUnit.Size = new Size(330, 27);
+            txtGRNUnit.Size = new Size(320, 27);
             txtGRNUnit.TabIndex = 1;
             // 
             // label1
@@ -231,7 +231,7 @@
             label1.ForeColor = Color.Brown;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(94, 34);
+            label1.Size = new Size(104, 34);
             label1.TabIndex = 0;
             label1.Text = "Mã phiếu nhập:";
             label1.TextAlign = ContentAlignment.MiddleLeft;
@@ -244,7 +244,7 @@
             label2.ForeColor = Color.Brown;
             label2.Location = new Point(3, 34);
             label2.Name = "label2";
-            label2.Size = new Size(94, 32);
+            label2.Size = new Size(104, 32);
             label2.TabIndex = 1;
             label2.Text = "Đơn vị nhập:";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -257,7 +257,7 @@
             label3.ForeColor = Color.Brown;
             label3.Location = new Point(3, 66);
             label3.Name = "label3";
-            label3.Size = new Size(94, 35);
+            label3.Size = new Size(104, 35);
             label3.TabIndex = 2;
             label3.Text = "Ngày nhập:";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -266,19 +266,19 @@
             // 
             txtGRNID.BackColor = Color.FromArgb(255, 253, 239);
             txtGRNID.Dock = DockStyle.Fill;
-            txtGRNID.Location = new Point(103, 2);
+            txtGRNID.Location = new Point(113, 2);
             txtGRNID.Margin = new Padding(3, 2, 3, 2);
             txtGRNID.Name = "txtGRNID";
             txtGRNID.ReadOnly = true;
-            txtGRNID.Size = new Size(330, 27);
+            txtGRNID.Size = new Size(320, 27);
             txtGRNID.TabIndex = 0;
             // 
             // dtpkGRNDate
             // 
             dtpkGRNDate.Dock = DockStyle.Fill;
-            dtpkGRNDate.Location = new Point(103, 69);
+            dtpkGRNDate.Location = new Point(113, 69);
             dtpkGRNDate.Name = "dtpkGRNDate";
-            dtpkGRNDate.Size = new Size(330, 27);
+            dtpkGRNDate.Size = new Size(320, 27);
             dtpkGRNDate.TabIndex = 2;
             // 
             // flowLayoutPanel1
@@ -288,7 +288,7 @@
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 143);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(94, 99);
+            flowLayoutPanel1.Size = new Size(104, 99);
             flowLayoutPanel1.TabIndex = 6;
             // 
             // btnAddGRNImage
@@ -298,7 +298,7 @@
             btnAddGRNImage.ForeColor = Color.Brown;
             btnAddGRNImage.Location = new Point(3, 3);
             btnAddGRNImage.Name = "btnAddGRNImage";
-            btnAddGRNImage.Size = new Size(90, 43);
+            btnAddGRNImage.Size = new Size(101, 43);
             btnAddGRNImage.TabIndex = 0;
             btnAddGRNImage.Text = "Chọn hình";
             btnAddGRNImage.UseVisualStyleBackColor = true;
@@ -311,7 +311,7 @@
             btnDeleteGRNImage.ForeColor = Color.Brown;
             btnDeleteGRNImage.Location = new Point(3, 52);
             btnDeleteGRNImage.Name = "btnDeleteGRNImage";
-            btnDeleteGRNImage.Size = new Size(90, 43);
+            btnDeleteGRNImage.Size = new Size(101, 43);
             btnDeleteGRNImage.TabIndex = 1;
             btnDeleteGRNImage.Text = "Xóa hình";
             btnDeleteGRNImage.UseVisualStyleBackColor = true;
@@ -325,7 +325,7 @@
             label4.ForeColor = Color.Brown;
             label4.Location = new Point(3, 101);
             label4.Name = "label4";
-            label4.Size = new Size(94, 39);
+            label4.Size = new Size(104, 39);
             label4.TabIndex = 2;
             label4.Text = "Tổng:";
             label4.TextAlign = ContentAlignment.MiddleLeft;
@@ -336,9 +336,9 @@
             txtTotal.Dock = DockStyle.Fill;
             txtTotal.Enabled = false;
             txtTotal.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtTotal.Location = new Point(103, 104);
+            txtTotal.Location = new Point(113, 104);
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(330, 33);
+            txtTotal.Size = new Size(320, 33);
             txtTotal.TabIndex = 3;
             // 
             // groupBox2
