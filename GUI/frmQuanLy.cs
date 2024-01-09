@@ -1370,8 +1370,9 @@ namespace GUI
                 else
                     AccountDAL.Instance.UpdateAccountID(oldLoginName, loginName, pass, accType.TypeID, staff.StaffID);
 
-                if (dtgvAccount.SelectedRows[0].Cells[3].Value.ToString() != "Trống")
-                    StaffDAL.Instance.SetAccountStaff(((Staff)dtgvAccount.SelectedRows[0].Cells[3].Value).StaffID, "null");
+                // dtgvAccount.SelectedRows[0].Cells[3].Value.ToString() != "Trống"
+                if (dtgvAccount.SelectedRows[0].Cells[2].Value.ToString() != "Trống")
+                    StaffDAL.Instance.SetAccountStaff(((Staff)dtgvAccount.SelectedRows[0].Cells[2].Value).StaffID, "null");
                 StaffDAL.Instance.SetAccountStaff(staff.StaffID, loginName);
 
                 LoadStaff();
