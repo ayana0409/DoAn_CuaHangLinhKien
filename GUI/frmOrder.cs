@@ -63,8 +63,6 @@ namespace GUI
 
                 txtCustomerName.Enabled = true;
                 rtbCustomerAdress.Enabled = true;
-                txtCustomerName.Text = String.Empty;
-                rtbCustomerAdress.Text = String.Empty;
                 return false; 
             }
         }

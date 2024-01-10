@@ -3562,10 +3562,10 @@
             // 
             tpAccount.BackColor = Color.Azure;
             tpAccount.Controls.Add(splitContainer29);
-            tpAccount.Location = new Point(4, 29);
+            tpAccount.Location = new Point(4, 24);
             tpAccount.Name = "tpAccount";
             tpAccount.Padding = new Padding(3);
-            tpAccount.Size = new Size(1256, 623);
+            tpAccount.Size = new Size(1256, 628);
             tpAccount.TabIndex = 7;
             tpAccount.Text = "Tài khoản";
             // 
@@ -3584,7 +3584,7 @@
             // 
             splitContainer29.Panel2.Controls.Add(splitContainer30);
             splitContainer29.Panel2MinSize = 400;
-            splitContainer29.Size = new Size(1250, 617);
+            splitContainer29.Size = new Size(1250, 622);
             splitContainer29.SplitterDistance = 842;
             splitContainer29.TabIndex = 5;
             // 
@@ -3601,7 +3601,7 @@
             dtgvAccount.ReadOnly = true;
             dtgvAccount.RowHeadersWidth = 62;
             dtgvAccount.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvAccount.Size = new Size(842, 617);
+            dtgvAccount.Size = new Size(842, 622);
             dtgvAccount.TabIndex = 0;
             dtgvAccount.CellClick += dtgvAccount_CellClick;
             // 
@@ -3641,7 +3641,7 @@
             // 
             splitContainer30.Panel2.Controls.Add(splitContainer31);
             splitContainer30.Panel2MinSize = 250;
-            splitContainer30.Size = new Size(404, 617);
+            splitContainer30.Size = new Size(404, 622);
             splitContainer30.SplitterDistance = 211;
             splitContainer30.TabIndex = 4;
             // 
@@ -3726,7 +3726,7 @@
             // splitContainer31.Panel2
             // 
             splitContainer31.Panel2.Controls.Add(groupBox28);
-            splitContainer31.Size = new Size(404, 402);
+            splitContainer31.Size = new Size(404, 407);
             splitContainer31.SplitterDistance = 295;
             splitContainer31.TabIndex = 1;
             // 
@@ -3859,7 +3859,7 @@
             groupBox28.Dock = DockStyle.Fill;
             groupBox28.Location = new Point(0, 0);
             groupBox28.Name = "groupBox28";
-            groupBox28.Size = new Size(404, 103);
+            groupBox28.Size = new Size(404, 108);
             groupBox28.TabIndex = 2;
             groupBox28.TabStop = false;
             groupBox28.Text = "Chức năng";
@@ -3871,7 +3871,7 @@
             flowLayoutPanel10.Dock = DockStyle.Fill;
             flowLayoutPanel10.Location = new Point(3, 23);
             flowLayoutPanel10.Name = "flowLayoutPanel10";
-            flowLayoutPanel10.Size = new Size(398, 77);
+            flowLayoutPanel10.Size = new Size(398, 82);
             flowLayoutPanel10.TabIndex = 0;
             // 
             // btnAddAccount

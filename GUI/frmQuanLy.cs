@@ -786,6 +786,12 @@ namespace GUI
                 return;
             }
 
+            if (!CheckNumber(txtNumberPhone.Text, true))
+            {
+                MessageBox.Show("Sai định dạng SDT");
+                return;
+            }
+
             string phone = txtNumberPhone.Text;
             string name = txtName.Text;
             string address = rtbAddress.Text;
@@ -884,6 +890,8 @@ namespace GUI
             order = frm.order;
             if (loginAccount.StaffID != null)
                 order.StaffID = (int)loginAccount.StaffID;
+
+            LoadCustomer();
 
             OrderDAL.Instance.InsertOrder(order.StaffID,
                 order.CustomerNumberPhone,
