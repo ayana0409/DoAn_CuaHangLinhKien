@@ -22,9 +22,7 @@ namespace GUI
     {
         #region VAR
         public Account loginAccount = new();
-
         public List<string> listDeleteProductImage = [];
-
         string? _tempImageName = null;
         private string productImagePath = "C:\\CuaHangLinhKien\\HinhAnhSanPham\\";
         #endregion
@@ -50,6 +48,7 @@ namespace GUI
             SetSearchDate();
             CheckStaff();
         }
+        // METHOD
         #region METHOD
         #region OTHER METHOD
         private void CheckRole()
