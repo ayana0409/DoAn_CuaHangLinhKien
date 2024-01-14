@@ -1321,7 +1321,10 @@ namespace GUI
                 DataGridViewRow row = dtgvAccount.SelectedRows[0];
                 txtLoginName.Text = row.Cells[0].Value.ToString();
                 cbAccountType.Text = row.Cells[1].Value.ToString();
-                cbAccountStaff.Text = row.Cells[2].Value.ToString();
+                if (row.Cells[2].Value.ToString() != "Trống")
+                    cbAccountStaff.Text = row.Cells[2].Value.ToString();
+                else
+                    cbAccountStaff.SelectedItem = null;
             }
         }
         private void btnAddAccount_Click(object sender, EventArgs e)
@@ -1371,6 +1374,7 @@ namespace GUI
                 MessageBox.Show("Vui lòng nhập đủ thông tin!");
                 return;
             }
+
             string loginName = txtLoginName.Text;
             string pass = txtPassword.Text;
             AccountType accType = (AccountType)cbAccountType.SelectedItem;
@@ -1392,7 +1396,6 @@ namespace GUI
                 else
                     AccountDAL.Instance.UpdateAccountID(oldLoginName, loginName, pass, accType.TypeID, staff.StaffID);
 
-                // dtgvAccount.SelectedRows[0].Cells[3].Value.ToString() != "Trống"
                 if (dtgvAccount.SelectedRows[0].Cells[2].Value.ToString() != "Trống")
                     StaffDAL.Instance.SetAccountStaff(((Staff)dtgvAccount.SelectedRows[0].Cells[2].Value).StaffID, "null");
                 StaffDAL.Instance.SetAccountStaff(staff.StaffID, loginName);
