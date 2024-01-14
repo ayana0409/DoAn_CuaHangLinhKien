@@ -74,5 +74,10 @@ namespace GUI
             deleteProductImage(productImageDelete);
         }
         #endregion
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txtAccountID.Focus();
+        }
     }
 }

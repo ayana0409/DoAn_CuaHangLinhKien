@@ -146,6 +146,7 @@
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             FormClosed += frmLogin_FormClosed;
+            Load += frmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

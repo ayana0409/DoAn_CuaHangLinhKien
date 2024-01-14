@@ -102,8 +102,7 @@ namespace GUI
             if (loginAccount.StaffID != null)
             {
                 Staff staff = StaffDAL.Instance.GetStaff((int)loginAccount.StaffID);
-                tslStaffName.Text = RoleDAL.Instance.GetRole(staff.RoleID)
-                    + " " + staff.StaffName;
+                tslStaffName.Text = staff.StaffName;
             }
             else
                 tslStaffName.Text = "Nhân viên";
@@ -884,6 +883,12 @@ namespace GUI
         }
         private void btnCustomerAddOrder_Click(object sender, EventArgs e)
         {
+            if (loginAccount.StaffID == null)
+            {
+                MessageBox.Show("Không thể tạo đơn hàng\nTài khoản chưa xác định nhân viên");
+                return;
+            }
+
             if (dtgvCustomer.SelectedRows[0] == null)
             {
                 MessageBox.Show("Vui lòng chọn khách hàng");
