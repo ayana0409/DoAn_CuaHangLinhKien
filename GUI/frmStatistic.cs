@@ -54,7 +54,7 @@ namespace GUI
                 row.Cells[3].Value = s["GiaNhap"];
                 dtgvStatistic.Rows.Add(row);
 
-                total += (double)s["GiaNhap"];
+                total += (double)s["GiaNhap"] * (int)s["SoLuongNhap"];
                 quantity += (int)s["SoLuongNhap"];
             }
 
@@ -86,7 +86,7 @@ namespace GUI
                 row.Cells[3].Value = s["GiaBan"];
                 dtgvStatistic.Rows.Add(row);
 
-                total += (double)s["GiaBan"];
+                total += (double)s["GiaBan"] * (int)s["SoLuongBan"];
                 quantity += (int)s["SoLuongBan"];
             }
 

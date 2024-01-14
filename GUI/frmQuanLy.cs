@@ -239,7 +239,7 @@ namespace GUI
             foreach (Customer c in listCustomer)
             {
                 DataGridViewRow row = (DataGridViewRow)dtgvCustomer.Rows[0].Clone();
-                row.Cells[0].Value = c.CustomerNumberPhone.ToString();
+                row.Cells[0].Value = c.CustomerNumberPhone.ToString().Trim();
                 row.Cells[1].Value = c.CustomerName.ToString();
                 row.Cells[2].Value = c.CustomerAddress.ToString();
                 dtgvCustomer.Rows.Add(row);
@@ -831,9 +831,20 @@ namespace GUI
                 return;
             }
 
-            string phone = txtNumberPhone.Text;
+            if (!CheckNumber(txtNumberPhone.Text, true))
+            {
+                MessageBox.Show("Sai định dạng SDT");
+                return;
+            }
+
+            string phone = txtNumberPhone.Text.Trim();
             string name = txtName.Text;
             string address = rtbAddress.Text;
+            string oldPhone = "";
+            if (dtgvCustomer.SelectedRows.Count > 0)
+            {
+                oldPhone = dtgvCustomer.SelectedRows[0].Cells[0].Value.ToString().Trim();
+            }
 
             DialogResult result = MessageBox.Show("Bạn có muốn sửa thông tin của\nkhách hàng [" + name + "]?",
                 "Thông báo",
@@ -847,7 +858,10 @@ namespace GUI
 
             try
             {
-                CustomerDAL.Instance.UpdateCustomer(phone, name, address);
+                if (oldPhone ==  phone)
+                    CustomerDAL.Instance.UpdateCustomer(phone, name, address);
+                else
+                    CustomerDAL.Instance.UpdateCustomerPhone(phone, name, address, oldPhone);
                 LoadCustomer();
                 ClearCustomer();
                 MessageBox.Show("Sửa thành công");

@@ -244,8 +244,8 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.318182F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80.6818161F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.8415413F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 78.1584549F));
             tableLayoutPanel1.Controls.Add(label6, 0, 0);
             tableLayoutPanel1.Controls.Add(label7, 0, 1);
             tableLayoutPanel1.Controls.Add(label8, 0, 2);
@@ -290,9 +290,9 @@
             label7.ForeColor = Color.Brown;
             label7.Location = new Point(3, 33);
             label7.Name = "label7";
-            label7.Size = new Size(48, 34);
+            label7.Size = new Size(75, 20);
             label7.TabIndex = 2;
-            label7.Text = "Ngày nhập:";
+            label7.Text = "Ngày lập:";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label8
@@ -313,10 +313,10 @@
             txtOrderID.Dock = DockStyle.Fill;
             txtOrderID.Enabled = false;
             txtOrderID.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            txtOrderID.Location = new Point(93, 2);
+            txtOrderID.Location = new Point(105, 2);
             txtOrderID.Margin = new Padding(3, 2, 3, 2);
             txtOrderID.Name = "txtOrderID";
-            txtOrderID.Size = new Size(371, 27);
+            txtOrderID.Size = new Size(359, 27);
             txtOrderID.TabIndex = 0;
             // 
             // label9
@@ -327,7 +327,7 @@
             label9.ForeColor = Color.Brown;
             label9.Location = new Point(3, 101);
             label9.Name = "label9";
-            label9.Size = new Size(74, 34);
+            label9.Size = new Size(94, 20);
             label9.TabIndex = 4;
             label9.Text = "Tổng giá trị: ";
             // 
@@ -335,7 +335,7 @@
             // 
             splitContainer3.Dock = DockStyle.Fill;
             splitContainer3.IsSplitterFixed = true;
-            splitContainer3.Location = new Point(93, 137);
+            splitContainer3.Location = new Point(105, 137);
             splitContainer3.Margin = new Padding(3, 2, 3, 2);
             splitContainer3.Name = "splitContainer3";
             splitContainer3.Orientation = Orientation.Horizontal;
@@ -349,7 +349,7 @@
             splitContainer3.Panel2.Controls.Add(btnCancel);
             splitContainer3.Panel2.Controls.Add(btnDeleteProduct);
             splitContainer3.Panel2.Controls.Add(btnAddProduct);
-            splitContainer3.Size = new Size(371, 108);
+            splitContainer3.Size = new Size(359, 108);
             splitContainer3.SplitterDistance = 51;
             splitContainer3.SplitterWidth = 3;
             splitContainer3.TabIndex = 12;
@@ -362,7 +362,7 @@
             btnPayment.Location = new Point(0, 0);
             btnPayment.Margin = new Padding(3, 2, 3, 2);
             btnPayment.Name = "btnPayment";
-            btnPayment.Size = new Size(371, 51);
+            btnPayment.Size = new Size(356, 51);
             btnPayment.TabIndex = 0;
             btnPayment.Text = "Thanh toán và xuất hóa đơn";
             btnPayment.UseVisualStyleBackColor = false;
@@ -373,7 +373,7 @@
             btnCancel.BackColor = Color.Azure;
             btnCancel.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnCancel.ForeColor = Color.Brown;
-            btnCancel.Location = new Point(258, 2);
+            btnCancel.Location = new Point(246, 2);
             btnCancel.Margin = new Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(110, 43);
@@ -387,7 +387,7 @@
             btnDeleteProduct.BackColor = Color.Azure;
             btnDeleteProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnDeleteProduct.ForeColor = Color.Brown;
-            btnDeleteProduct.Location = new Point(133, 2);
+            btnDeleteProduct.Location = new Point(125, 2);
             btnDeleteProduct.Margin = new Padding(3, 2, 3, 2);
             btnDeleteProduct.Name = "btnDeleteProduct";
             btnDeleteProduct.Size = new Size(110, 43);
@@ -416,9 +416,9 @@
             txtTotal.Dock = DockStyle.Fill;
             txtTotal.Enabled = false;
             txtTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            txtTotal.Location = new Point(93, 104);
+            txtTotal.Location = new Point(105, 104);
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(371, 27);
+            txtTotal.Size = new Size(359, 27);
             txtTotal.TabIndex = 3;
             // 
             // dtpkDate
@@ -426,9 +426,9 @@
             dtpkDate.Dock = DockStyle.Fill;
             dtpkDate.Enabled = false;
             dtpkDate.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpkDate.Location = new Point(93, 36);
+            dtpkDate.Location = new Point(105, 36);
             dtpkDate.Name = "dtpkDate";
-            dtpkDate.Size = new Size(371, 27);
+            dtpkDate.Size = new Size(359, 27);
             dtpkDate.TabIndex = 1;
             // 
             // cbStatus
@@ -438,9 +438,9 @@
             cbStatus.Enabled = false;
             cbStatus.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbStatus.FormattingEnabled = true;
-            cbStatus.Location = new Point(93, 70);
+            cbStatus.Location = new Point(105, 70);
             cbStatus.Name = "cbStatus";
-            cbStatus.Size = new Size(371, 28);
+            cbStatus.Size = new Size(359, 28);
             cbStatus.TabIndex = 2;
             // 
             // label5

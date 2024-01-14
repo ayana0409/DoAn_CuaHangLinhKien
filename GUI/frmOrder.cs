@@ -172,8 +172,6 @@ namespace GUI
 
             CheckTotal();
         }
-
-
         private void txtPhone_Leave(object sender, EventArgs e)
         {
             if (CheckNumberPhone(txtPhone.Text))
@@ -187,8 +185,6 @@ namespace GUI
 
                 txtCustomerName.Enabled = true;
                 rtbCustomerAdress.Enabled = true;
-                txtCustomerName.Text = String.Empty;
-                rtbCustomerAdress.Text = String.Empty;
             }
         }
 
@@ -236,6 +232,22 @@ namespace GUI
                 MessageBox.Show("Vui lòng chọn ít nhất 1 sản phẩm");
                 return;
             }
+
+            if (txtPhone.Text == String.Empty ||
+                txtCustomerName.Text == String.Empty ||
+                rtbCustomerAdress.Text == String.Empty)
+            { 
+                MessageBox.Show("Vui lòng nhập thông tin khách hàng");
+                return; 
+            }
+
+            if (!CheckNumberPhone(txtPhone.Text))
+            {
+                MessageBox.Show("Sai định dạng SDT");
+                return;
+            }
+
+
             DialogResult result = MessageBox.Show(
                 "Bạn có muốn thanh toán và in hóa đơn?",
                 "Thông báo",

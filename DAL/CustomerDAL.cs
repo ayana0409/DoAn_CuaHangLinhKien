@@ -88,6 +88,15 @@ namespace DAL
 
             return result > 0;
         }
+
+        public bool UpdateCustomerPhone(string numberphone, string name, string address, string oldPhone)
+        {
+            string query = string.Format("Update KhachHang set SDTKhachHang = N'{2}', HoVaTenKhachHang = N'{0}', DiaChi = N'{1}' where SDTKhachHang = N'{3}'",
+               name, address, numberphone, oldPhone);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
         #endregion
     }
 }
