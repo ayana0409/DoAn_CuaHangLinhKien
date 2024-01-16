@@ -91,9 +91,8 @@ namespace DAL
 
         public bool UpdateCustomerPhone(string numberphone, string name, string address, string oldPhone)
         {
-            string query = string.Format("Update KhachHang set SDTKhachHang = N'{2}', HoVaTenKhachHang = N'{0}', DiaChi = N'{1}' where SDTKhachHang = N'{3}'",
-               name, address, numberphone, oldPhone);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            string query = "exec proc_UpdateCustomerPhone @newPhone , @oldPhone , @name , @address ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { numberphone, oldPhone, name, address});
 
             return result > 0;
         }
